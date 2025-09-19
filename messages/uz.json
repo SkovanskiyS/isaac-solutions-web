@@ -1,0 +1,151 @@
+{
+  "navigation": {
+    "home": "Bosh sahifa",
+    "services": "Xizmatlar",
+    "pricing": "Narxlar",
+    "portfolio": "Portfolio",
+    "about": "Biz haqimizda",
+    "company": "Isaac Solutions",
+    "startProject": "Loyihangizni bugun boshlang"
+  },
+  "hero": {
+    "badge": "AI-ga asoslangan ishlab chiqish",
+    "title": "Aqlli yarating. Tez yarating.",
+    "titleHighlight": "Biz bilan yarating.",
+    "subtitle": "Biz yuqori sifatli dasturiy ta'minot yechimlari va AI-ga asoslangan MVPlarni taqdim etishda ixtisoslasmiz — startaplar va korporatsiyalarga g'oyadan ishga tushirishgacha bo'lgan vaqtni qisqartirishda yordam beramiz.",
+    "viewWork": "Ishlarimizni ko'ring",
+    "features": {
+      "speed": {
+        "title": "Tezlik va Innovatsiya",
+        "description": "MVPlar oylar emas, haftalarda tayyorlanadi"
+      },
+      "design": {
+        "title": "UX va UI",
+        "description": "Foydalanuvchilar yoqtiradigan chiroyli dizaynlar"
+      },
+      "delivery": {
+        "title": "Ishonchli yetkazib berish",
+        "description": "Biznes maqsadlaringizga moslashtirilgan ishonchli yechimlar"
+      }
+    }
+  },
+  "services": {
+    "title": "Bizning xizmatlarimiz",
+    "subtitle": "Sizning biznes ehtiyojlaringizga moslashtirilgan keng qamrovli ishlab chiqish yechimlari",
+    "webDev": {
+      "title": "Veb-ishlab chiqish",
+      "description": "Biz zamonaviy, kengaytiriladigan va moslashuvchan veb-ilovalarni yaratamiz, ular sizning biznesingiz bilan birga o'sish uchun mo'ljallangan. Landing sahifalaridan tortib korporativ platformalargacha, bizning yechimlarimiz ishlash va foydalanish qulayligini hisobga olgan holda qurilgan.",
+      "features": [
+        "React, Next.js, TypeScript",
+        "Moslashuvchan dizayn",
+        "Ishlash optimallashtirilgan"
+      ]
+    },
+    "mobileDev": {
+      "title": "Mobil ishlab chiqish",
+      "description": "Bizning jamoa iOS va Android uchun intuitiv mobil ilovalarni yaratadi, barcha qurilmalarda silliq tajribani ta'minlaydi. Biznes ilovasi yoki mijozlarga mo'ljallangan yechim bo'ladimi, biz uni tez, xavfsiz va foydalanuvchi uchun qulay qilamiz.",
+      "features": [
+        "React Native, Flutter",
+        "Mahalliy ishlash",
+        "Ilova do'koniga joylashtirish"
+      ]
+    },
+    "uxUi": {
+      "title": "UX va UI dizayn",
+      "description": "Ajoyib foydalanuvchi tajribasini yaratadigan chiroyli, intuitiv dizaynlar. Biz foydalanish qulayligi, mavjudlik va vizual jozibadorlikka e'tibor qaratamiz, mahsulotingiz foydalanuvchilarni xursand qilishi uchun.",
+      "features": [
+        "Foydalanuvchi tajribasi dizayni",
+        "Interfeys dizayni",
+        "Prototiplash va sinov"
+      ]
+    },
+    "aiAdvantage": {
+      "prefix": "AI ustunligi:",
+      "text": "Biz yetkazib berishni tezlashtirish, g'oyalarni tezda tekshirish va sifatni eng yuqori darajada saqlash uchun AI-ga asoslangan ishlab chiqishdan foydalanamiz."
+    }
+  },
+  "about": {
+    "title": "Bizning jamoa bilan tanishing",
+    "subtitle": "Innovatsiya va tajriba bilan dasturiy ta'minot ishlab chiqishning kelajagini qurayotgan uchta ishtiyoqli tadbirkor.",
+    "vision": {
+      "title": "Bizning qarashimiz",
+      "description": "Biz faqat texnik talablarga javob beradigan emas, balki haqiqiy biznes qiymatini keltiradigan yuqori sifatli dasturiy ta'minot yechimlarini taqdim etishga ishonamiz. Texnologiya va biznes strategiyasidagi birlashgan tajribamiz har bir loyihaning muvaffaqiyatga erishishini ta'minlaydi."
+    },
+    "team": {
+      "javohir": {
+        "name": "Javohir Atabekov",
+        "role": "Bosh texnologiya direktori (CTO)",
+        "description": "CTO va SAP Business One maslahatchisi bo'lib, ERP joriy etish, raqamli transformatsiya va biznes jarayonlarini optimallashtirish bo'yicha kuchli tajribaga ega. Texnologiyani biznes maqsadlari bilan bog'lagan holda kengaytiriladigan o'sishni ta'minlaydigan tashabbuslarni boshqaradigan malakali loyiha menejeri.",
+        "expertise": "Mutaxassislik:",
+        "skills": [
+          "SAP Business One",
+          "Mahsulot strategiyasi",
+          "Loyiha boshqaruvi",
+          "Tizim integratsiyasi",
+          "Ma'lumotlar tahlili va BI"
+        ]
+      },
+      "jahongir": {
+        "name": "Jahongir Masharipov",
+        "role": "Asoschisi va bosh direktor",
+        "description": "Sportni hamma uchun ochiq qilish haqida ishtiyoqli. Sport loyihalarini boshqarish va innovatsion jamoalarni boshqarishda 2 yildan ortiq tajriba.",
+        "expertise": "Mutaxassislik:",
+        "skills": [
+          "Sport boshqaruvi",
+          "Jamoa rahbarligi",
+          "Loyiha innovatsiyasi",
+          "Biznes rivojlantirish"
+        ]
+      },
+      "alex": {
+        "name": "Alex Smith",
+        "role": "Bosh dasturchi",
+        "description": "Zamonaviy veb texnologiyalari va bulut yechimlari bo'yicha tajribaga ega tajribali full-stack dasturchi. Kengaytiriladigan ilovalarni yaratish va kichik dasturchilarni yuqori sifatli dasturiy ta'minot yechimlari yaratish uchun yo'naltirish haqida ishtiyoqli.",
+        "expertise": "Mutaxassislik:",
+        "skills": [
+          "Full-Stack ishlab chiqish",
+          "React/Next.js",
+          "Bulut arxitekturasi",
+          "Jamoa mentorlik qilish"
+        ]
+      }
+    },
+    "linkedinButton": "LinkedIn profilini ko'rish"
+  },
+  "pricing": {
+    "title": "Isaac Solutions - Autsorsing paketlari",
+    "badge": "Autsorsing paketlari",
+    "subtitle": "Sizning biznes ehtiyojlaringizga mos keladigan moslashuvchan autsorsing yechimlari - tez MVPlarni ishga tushirishdan tortib korporativ darajadagi tizimlarni kengaytirishgacha.",
+    "softwareDev": {
+      "title": "Dasturiy ta'minot ishlab chiqish",
+      "starter": {
+        "name": "Boshlang'ich dasturchi",
+        "price": "$600 - $900",
+        "priceLocal": "7.5M - 11M so'm",
+        "features": [
+          "Landing sahifa (2-3 sahifa)",
+          "Mobil moslashuvchan",
+          "Asosiy SEO sozlash",
+          "1 oylik bepul qo'llab-quvvatlash"
+        ]
+      },
+      "standard": {
+        "name": "Standart dasturchi",
+        "price": "$950 - $1,600",
+        "priceLocal": "12M - 20M so'm",
+        "popular": "Eng mashhur",
+        "features": [
+          "Biznes veb-sayti (5-7 sahifa)",
+          "Aloqa shakllari va integratsiyalar (Telegram, Email)",
+          "Moslashuvchan dizayn (desktop + mobil)",
+          "Asosiy CMS (oson kontent tahrirlash)"
+        ]
+      }
+    }
+  },
+  "common": {
+    "getStarted": "Boshlash",
+    "learnMore": "Batafsil",
+    "contactUs": "Biz bilan bog'laning"
+  }
+}

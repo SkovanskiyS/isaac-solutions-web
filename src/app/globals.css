@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ===================================
+   * THEME VARIABLES - LIGHT MODE
+   * ================================= */
+  :root {
+    /* Core Colors */
+    --background: 0 0% 98%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    
+    /* Interactive Elements */
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 5% 45%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    
+    /* States */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    
+    /* Layout */
+    --radius: 0.5rem;
+    
+    /* Custom Brand Variables */
+    --gradient-from: 220 20% 97%;
+    --gradient-to: 280 20% 97%;
+    --nav-bg: 0 0% 100% / 0.95;
+    --card-bg: 0 0% 100% / 0.95;
+    
+    /* Semantic Colors */
+    --text-primary: var(--foreground);
+    --text-secondary: 240 5% 40%;
+    --text-muted: var(--muted-foreground);
+    --accent-blue: 220 91% 60%;
+    --accent-purple: 280 91% 70%;
+    --chart-grid: var(--border);
+    --chart-price: 142 76% 36%;
+  }
+
+  /* ===================================
+   * THEME VARIABLES - DARK MODE
+   * ================================= */
+  .dark {
+    /* Core Colors */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Interactive Elements */
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* States */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    
+    /* Custom Brand Variables - Dark Mode */
+    --gradient-from: 240 15% 9%;
+    --gradient-to: 240 12% 6%;
+    --nav-bg: 240 10% 3.9% / 0.8;
+    --card-bg: 240 10% 3.9% / 0.5;
+    
+    /* Semantic Colors - Dark Mode Overrides */
+    --text-primary: var(--foreground);
+    --text-secondary: var(--muted-foreground);
+    --text-muted: var(--muted-foreground);
+    --chart-grid: var(--border);
+    --chart-price: 158 64% 52%;
+  }
+
+  /* ===================================
+   * BASE ELEMENT STYLES
+   * ================================= */
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Prevent layout shift during theme transitions */
+    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+                color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ===================================
+   * PERFORMANCE OPTIMIZATIONS
+   * ================================= */
+  
+  /* Optimize theme transitions - applied to all elements that need it */
+  *,
+  *::before,
+  *::after {
+    transition: 
+      color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* ===================================
+   * ANIMATIONS
+   * ================================= */
+  @keyframes scroll {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}
+
+@layer utilities {
+  /* ===================================
+   * ANIMATION UTILITIES
+   * ================================= */
+  .animate-scroll-20s {
+    animation: scroll 20s linear infinite;
+    will-change: transform;
+  }
+  
+  .animate-scroll-40s {
+    animation: scroll 40s linear infinite;
+    will-change: transform;
+  }
+  
+  .animate-scroll-60s {
+    animation: scroll 60s linear infinite;
+    will-change: transform;
+  }
+  
+  .hover\:pause-animation:hover {
+    animation-play-state: paused;
+  }
+
+  /* ===================================
+   * PERFORMANCE UTILITIES
+   * ================================= */
+  .gpu-layer {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-auto {
+    will-change: auto;
+  }
+
+  /* ===================================
+   * THEME UTILITIES
+   * ================================= */
+  .text-brand-blue {
+    color: hsl(var(--accent-blue));
+  }
+
+  .text-brand-purple {
+    color: hsl(var(--accent-purple));
+  }
+
+  .bg-nav {
+    background-color: hsl(var(--nav-bg));
+  }
+
+  .bg-card-translucent {
+    background-color: hsl(var(--card-bg));
+  }
+
+  .gradient-brand {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--accent-blue)) 0%,
+      hsl(var(--accent-purple)) 100%
+    );
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "company": "Isaac Solutions",
+    "startProject": "Start Your Project Today"
+  },
+  "hero": {
+    "badge": "AI-Powered Development",
+    "title": "Build Smart. Build Fast.",
+    "titleHighlight": "Build with Us.",
+    "subtitle": "We specialize in delivering high-quality software solutions and AI-powered MVPs — helping startups and enterprises move from idea to launch in record time.",
+    "viewWork": "View Our Work",
+    "features": {
+      "speed": {
+        "title": "Speed & Innovation",
+        "description": "MVPs delivered in weeks, not months"
+      },
+      "design": {
+        "title": "UX & UI",
+        "description": "Beautiful designs that users love"
+      },
+      "delivery": {
+        "title": "Trusted Delivery",
+        "description": "Reliable solutions tailored to your business goals"
+      }
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive development solutions tailored to your business needs",
+    "webDev": {
+      "title": "Web Development",
+      "description": "We craft modern, scalable, and responsive web applications designed to grow with your business. From landing pages to enterprise platforms, our solutions are built with performance and usability in mind.",
+      "features": [
+        "React, Next.js, TypeScript",
+        "Responsive design",
+        "Performance optimized"
+      ]
+    },
+    "mobileDev": {
+      "title": "Mobile Development",
+      "description": "Our team builds intuitive mobile applications for iOS and Android, ensuring a smooth experience across devices. Whether it's a business app or a customer-facing solution, we make it fast, secure, and user-friendly.",
+      "features": [
+        "React Native, Flutter",
+        "Native performance",
+        "App store deployment"
+      ]
+    },
+    "uxUi": {
+      "title": "UX & UI Design",
+      "description": "Beautiful, intuitive designs that create exceptional user experiences. We focus on usability, accessibility, and visual appeal to ensure your product delights users.",
+      "features": [
+        "User Experience Design",
+        "Interface Design",
+        "Prototyping & Testing"
+      ]
+    },
+    "aiAdvantage": {
+      "prefix": "AI Advantage:",
+      "text": "We use AI-driven development to accelerate delivery, validate ideas quickly, and keep quality at the highest standard."
+    }
+  },
+  "about": {
+    "title": "Meet Our Team",
+    "subtitle": "Three passionate entrepreneurs building the future of software development with innovation and expertise.",
+    "vision": {
+      "title": "Our Vision",
+      "description": "We believe in delivering high-quality software solutions that not only meet technical requirements but also drive real business value. Our combined expertise in technology and business strategy ensures every project is built for success."
+    },
+    "team": {
+      "javohir": {
+        "name": "Javohir Atabekov",
+        "role": "Chief Technology Officer (CTO)",
+        "description": "CTO and SAP Business One consultant with strong experience in ERP implementation, digital transformation, and business process optimization. Skilled project manager leading initiatives that connect technology with business goals to deliver scalable growth.",
+        "expertise": "Expertise:",
+        "skills": [
+          "SAP Business One",
+          "Product Strategy",
+          "Project Management",
+          "System Integration",
+          "Data Analytics & BI"
+        ]
+      },
+      "jahongir": {
+        "name": "Jahongir Masharipov",
+        "role": "Founder and CEO",
+        "description": "Passionate about making sports accessible to everyone. Over 2 years of experience in managing sports projects and leading innovative teams.",
+        "expertise": "Expertise:",
+        "skills": [
+          "Sports Management",
+          "Team Leadership",
+          "Project Innovation",
+          "Business Development"
+        ]
+      },
+      "alex": {
+        "name": "Alex Smith",
+        "role": "Lead Developer",
+        "description": "Experienced full-stack developer with expertise in modern web technologies and cloud solutions. Passionate about creating scalable applications and mentoring junior developers to build high-quality software solutions.",
+        "expertise": "Expertise:",
+        "skills": [
+          "Full-Stack Development",
+          "React/Next.js",
+          "Cloud Architecture",
+          "Team Mentoring"
+        ]
+      }
+    },
+    "linkedinButton": "View LinkedIn Profile"
+  },
+  "pricing": {
+    "title": "Isaac Solutions - Outsourcing Packages",
+    "badge": "Outsourcing Packages",
+    "subtitle": "Flexible outsourcing solutions to fit your business needs - from launching fast MVPs to scaling enterprise-level systems.",
+    "softwareDev": {
+      "title": "Software Development",
+      "starter": {
+        "name": "Starter Dev",
+        "price": "$600 - $900",
+        "priceLocal": "7.5M - 11M UZS",
+        "features": [
+          "Landing page (2-3 pages)",
+          "Mobile responsive",
+          "Basic SEO setup",
+          "1-month free support"
+        ]
+      },
+      "standard": {
+        "name": "Standard Dev",
+        "price": "$950 - $1,600",
+        "priceLocal": "12M - 20M UZS",
+        "popular": "Most Popular",
+        "features": [
+          "Business website (5-7 pages)",
+          "Contact forms & integrations (Telegram, Email)",
+          "Responsive design (desktop + mobile)",
+          "Basic CMS (easy content editing)"
+        ]
+      }
+    }
+  },
+  "common": {
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us"
+  }
+}
