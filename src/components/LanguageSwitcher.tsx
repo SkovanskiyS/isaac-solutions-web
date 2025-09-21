@@ -33,12 +33,14 @@ export default function LanguageSwitcher() {
     if (newLocale === locale) return;
 
     startTransition(() => {
-      // Store language preference in both localStorage and cookie
+      // Store language preference
       localStorage.setItem('preferred-language', newLocale);
       document.cookie = `preferred-language=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}`; // 1 year
       
-      // Replace current locale in pathname with new locale
-      const newPathname = pathname.replace(`/${locale}`, `/${newLocale}`);
+      // Navigate to the new locale
+      const segments = pathname.split('/');
+      segments[1] = newLocale; // Replace the locale segment
+      const newPathname = segments.join('/');
       
       router.push(newPathname);
       setIsOpen(false);
@@ -48,50 +50,48 @@ export default function LanguageSwitcher() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button
-          variant="outline"
-          size="sm"
-          className="flex items-center space-x-2 min-w-[80px] hover:bg-muted/50"
+        <Button 
+          variant="ghost" 
+          size="sm" 
+          className="flex items-center gap-2 hover:bg-muted"
           disabled={isPending}
         >
           <Globe className="w-4 h-4" />
-          <span className="hidden sm:inline">{currentLanguage.flag}</span>
-          <span className="text-xs font-medium">{currentLanguage.code.toUpperCase()}</span>
+          <span className="text-sm font-medium">
+            {currentLanguage?.flag} {currentLanguage?.name}
+          </span>
+          {isPending && <div className="w-3 h-3 border border-current border-t-transparent rounded-full animate-spin ml-1" />}
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-[280px] sm:w-[300px]">
-        <SheetHeader>
-          <SheetTitle className="flex items-center space-x-2">
-            <Globe className="w-5 h-5" />
-            <span>Choose Language</span>
-          </SheetTitle>
+      <SheetContent side="right" className="w-[300px] p-6">
+        <SheetHeader className="mb-6">
+          <SheetTitle>Select Language</SheetTitle>
           <SheetDescription>
-            Select your preferred language
+            Choose your preferred language
           </SheetDescription>
         </SheetHeader>
-        <div className="mt-6 space-y-2">
-          {languages.map((language) => (
+        <div className="space-y-3">
+          {languages.map((lang) => (
             <Button
-              key={language.code}
-              variant={language.code === locale ? "default" : "ghost"}
-              className="w-full justify-start text-left h-12"
-              onClick={() => handleLanguageChange(language.code)}
+              key={lang.code}
+              variant="ghost"
+              className={`w-full justify-start text-left p-4 h-auto hover:bg-muted ${
+                locale === lang.code ? 'bg-muted border border-border' : ''
+              }`}
+              onClick={() => handleLanguageChange(lang.code)}
               disabled={isPending}
             >
               <div className="flex items-center justify-between w-full">
-                <div className="flex items-center space-x-3">
-                  <span className="text-lg">{language.flag}</span>
-                  <span className="font-medium">{language.name}</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">{lang.flag}</span>
+                  <span className="font-medium">{lang.name}</span>
                 </div>
-                {language.code === locale && (
-                  <Check className="w-4 h-4 text-primary-foreground" />
+                {locale === lang.code && (
+                  <Check className="w-4 h-4 text-green-500" />
                 )}
               </div>
             </Button>
           ))}
-        </div>
-        <div className="mt-6 text-xs text-muted-foreground">
-          Your language preference will be saved for future visits.
         </div>
       </SheetContent>
     </Sheet>

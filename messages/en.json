@@ -14,20 +14,25 @@
     "titleHighlight": "Build with Us.",
     "subtitle": "We specialize in delivering high-quality software solutions and AI-powered MVPs — helping startups and enterprises move from idea to launch in record time.",
     "viewWork": "View Our Work",
-    "features": {
-      "speed": {
-        "title": "Speed & Innovation",
-        "description": "MVPs delivered in weeks, not months"
-      },
-      "design": {
-        "title": "UX & UI",
-        "description": "Beautiful designs that users love"
-      },
-      "delivery": {
-        "title": "Trusted Delivery",
-        "description": "Reliable solutions tailored to your business goals"
-      }
+    "startProject": "Start Your Project Today"
+  },
+  "features": {
+    "speed": {
+      "title": "Speed & Innovation",
+      "description": "MVPs delivered in weeks, not months"
+    },
+    "uxUi": {
+      "title": "UX & UI",
+      "description": "Beautiful designs that users love"
+    },
+    "trusted": {
+      "title": "Trusted Delivery",
+      "description": "Reliable solutions tailored to your business goals"
     }
+  },
+  "clientLogos": {
+    "title": "Trusted by Industry Leaders",
+    "subtitle": "Join the companies that trust us with their most important projects"
   },
   "services": {
     "title": "Our Services",
@@ -50,7 +55,7 @@
         "App store deployment"
       ]
     },
-    "uxUi": {
+    "uxUiDesign": {
       "title": "UX & UI Design",
       "description": "Beautiful, intuitive designs that create exceptional user experiences. We focus on usability, accessibility, and visual appeal to ensure your product delights users.",
       "features": [
@@ -60,21 +65,17 @@
       ]
     },
     "aiAdvantage": {
-      "prefix": "AI Advantage:",
-      "text": "We use AI-driven development to accelerate delivery, validate ideas quickly, and keep quality at the highest standard."
+      "label": "AI Advantage:",
+      "description": "We use AI-driven development to accelerate delivery, validate ideas quickly, and keep quality at the highest standard."
     }
   },
   "about": {
     "title": "Meet Our Team",
     "subtitle": "Three passionate entrepreneurs building the future of software development with innovation and expertise.",
-    "vision": {
-      "title": "Our Vision",
-      "description": "We believe in delivering high-quality software solutions that not only meet technical requirements but also drive real business value. Our combined expertise in technology and business strategy ensures every project is built for success."
-    },
     "team": {
       "javohir": {
         "name": "Javohir Atabekov",
-        "role": "Chief Technology Officer (CTO)",
+        "position": "Chief Technology Officer (CTO)",
         "description": "CTO and SAP Business One consultant with strong experience in ERP implementation, digital transformation, and business process optimization. Skilled project manager leading initiatives that connect technology with business goals to deliver scalable growth.",
         "expertise": "Expertise:",
         "skills": [
@@ -87,65 +88,63 @@
       },
       "jahongir": {
         "name": "Jahongir Masharipov",
-        "role": "Founder and CEO",
-        "description": "Passionate about making sports accessible to everyone. Over 2 years of experience in managing sports projects and leading innovative teams.",
-        "expertise": "Expertise:",
+        "position": "Chief Executive Officer (CEO)",
+        "description": "Visionary CEO with deep expertise in business strategy, market analysis, and client relationship management. Leads strategic initiatives that drive company growth and ensure client success through innovative solutions and exceptional service delivery.",
         "skills": [
-          "Sports Management",
-          "Team Leadership",
-          "Project Innovation",
-          "Business Development"
-        ]
-      },
-      "alex": {
-        "name": "Alex Smith",
-        "role": "Lead Developer",
-        "description": "Experienced full-stack developer with expertise in modern web technologies and cloud solutions. Passionate about creating scalable applications and mentoring junior developers to build high-quality software solutions.",
-        "expertise": "Expertise:",
-        "skills": [
-          "Full-Stack Development",
-          "React/Next.js",
-          "Cloud Architecture",
-          "Team Mentoring"
+          "Business Strategy",
+          "Market Analysis",
+          "Client Relations",
+          "Strategic Planning",
+          "Team Leadership"
         ]
       }
     },
-    "linkedinButton": "View LinkedIn Profile"
+    "philosophy": {
+      "title": "Our Philosophy",
+      "description": "We believe in delivering high-quality software solutions that not only meet technical requirements but also drive real business value. Our combined expertise in technology and business strategy ensures every project is built for success."
+    }
+  },
+  "cta": {
+    "title": "Ready to Build Your Next Big Idea?",
+    "subtitle": "Join successful startups and enterprises who trust us to deliver exceptional software solutions. Let's discuss your project and turn your vision into reality.",
+    "getStarted": "Get Started Today",
+    "viewStories": "View Success Stories",
+    "features": [
+      "24-hour response time",
+      "Free consultation",
+      "No commitment required"
+    ]
+  },
+  "footer": {
+    "company": "BuildFast",
+    "description": "Building high-quality software and AI-powered solutions that drive business growth.",
+    "services": {
+      "title": "Services",
+      "items": [
+        "Web Development",
+        "Mobile Apps",
+        "BI Dashboards"
+      ]
+    },
+    "company_info": {
+      "title": "Company",
+      "items": [
+        "About",
+        "Portfolio"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "items": [
+        "hello@isaacbuilds.com",
+        "+1 (555) 123-4567"
+      ]
+    },
+    "copyright": "© 2024 Isaac Solutions. All rights reserved."
   },
   "pricing": {
     "title": "Isaac Solutions - Outsourcing Packages",
-    "badge": "Outsourcing Packages",
     "subtitle": "Flexible outsourcing solutions to fit your business needs - from launching fast MVPs to scaling enterprise-level systems.",
-    "softwareDev": {
-      "title": "Software Development",
-      "starter": {
-        "name": "Starter Dev",
-        "price": "$600 - $900",
-        "priceLocal": "7.5M - 11M UZS",
-        "features": [
-          "Landing page (2-3 pages)",
-          "Mobile responsive",
-          "Basic SEO setup",
-          "1-month free support"
-        ]
-      },
-      "standard": {
-        "name": "Standard Dev",
-        "price": "$950 - $1,600",
-        "priceLocal": "12M - 20M UZS",
-        "popular": "Most Popular",
-        "features": [
-          "Business website (5-7 pages)",
-          "Contact forms & integrations (Telegram, Email)",
-          "Responsive design (desktop + mobile)",
-          "Basic CMS (easy content editing)"
-        ]
-      }
-    }
-  },
-  "common": {
-    "getStarted": "Get Started",
-    "learnMore": "Learn More",
-    "contactUs": "Contact Us"
+    "badge": "Outsourcing Packages"
   }
 }

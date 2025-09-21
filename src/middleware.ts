@@ -1,12 +1,10 @@
-// Disabled next-intl middleware for client-side translations
-// import createMiddleware from 'next-intl/middleware';
+import createMiddleware from 'next-intl/middleware';
 
-// export default createMiddleware({
-//   locales: ['en', 'uz', 'ru'],
-//   defaultLocale: 'en'
-// });
+export default createMiddleware({
+  locales: ['en', 'uz', 'ru'],
+  defaultLocale: 'en'
+});
 
-// No middleware needed for client-side translations
 export const config = {
-  matcher: []
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };

@@ -10,6 +10,7 @@ import ContactForm from "@/components/ContactForm";
 import Navigation from "@/components/Navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 import {
   Code2,
   Smartphone,
@@ -31,6 +32,8 @@ import {
 } from "lucide-react";
 
 export default function Home() {
+  const t = useTranslations();
+  
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -43,44 +46,43 @@ export default function Home() {
           <div className="text-center">
             <Badge className="mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20">
               <Zap className="w-4 h-4 mr-1" />
-              AI-Powered Development
+              {t('hero.badge')}
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
-              Build Smart. Build Fast.{" "}
+              {t('hero.title')}{" "}
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Build with Us.
+                {t('hero.titleHighlight')}
               </span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              We specialize in delivering high-quality software solutions and AI-powered MVPs — 
-              helping startups and enterprises move from idea to launch in record time.
+              {t('hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <ContactForm 
-                buttonText="Start Your Project Today"
+                buttonText={t('hero.startProject')}
               />
               <a href="#portfolio">
                 <Button variant="outline" size="xl" className="flex-shrink-0">
                   <Globe className="w-5 h-5 mr-2" />
-                  View Our Work
+                  {t('hero.viewWork')}
                 </Button>
               </a>
             </div>
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
                 <Zap className="w-8 h-8 text-blue-400 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">Speed & Innovation</h3>
-                <p className="text-muted-foreground">MVPs delivered in weeks, not months</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('features.speed.title')}</h3>
+                <p className="text-muted-foreground">{t('features.speed.description')}</p>
               </div>
               <div className="text-center">
                 <Globe className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">UX & UI</h3>
-                <p className="text-muted-foreground">Beautiful designs that users love</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('features.uxUi.title')}</h3>
+                <p className="text-muted-foreground">{t('features.uxUi.description')}</p>
               </div>
               <div className="text-center">
                 <CheckCircle className="w-8 h-8 text-green-400 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold text-foreground mb-2">Trusted Delivery</h3>
-                <p className="text-muted-foreground">Reliable solutions tailored to your business goals</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{t('features.trusted.title')}</h3>
+                <p className="text-muted-foreground">{t('features.trusted.description')}</p>
               </div>
             </div>
           </div>
@@ -95,10 +97,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Our Services
+              {t('services.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive development solutions tailored to your business needs
+              {t('services.subtitle')}
             </p>
           </div>
 
@@ -108,24 +110,24 @@ export default function Home() {
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-4">
                   <Code2 className="w-6 h-6 text-foreground" />
                 </div>
-                <CardTitle className="text-foreground">Web Development</CardTitle>
+                <CardTitle className="text-foreground">{t('services.webDev.title')}</CardTitle>
                 <CardDescription>
-                  We craft modern, scalable, and responsive web applications designed to grow with your business. From landing pages to enterprise platforms, our solutions are built with performance and usability in mind.
+                  {t('services.webDev.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>React, Next.js, TypeScript</span>
+                    <span>{t('services.webDev.features.0')}</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>Responsive design</span>
+                    <span>{t('services.webDev.features.1')}</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>Performance optimized</span>
+                    <span>{t('services.webDev.features.2')}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -136,24 +138,24 @@ export default function Home() {
                 <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center mb-4">
                   <Smartphone className="w-6 h-6 text-foreground" />
                 </div>
-                <CardTitle className="text-foreground">Mobile Development</CardTitle>
+                <CardTitle className="text-foreground">{t('services.mobileDev.title')}</CardTitle>
                 <CardDescription>
-                  Our team builds intuitive mobile applications for iOS and Android, ensuring a smooth experience across devices. Whether it's a business app or a customer-facing solution, we make it fast, secure, and user-friendly.
+                  {t('services.mobileDev.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>React Native, Flutter</span>
+                    <span>{t('services.mobileDev.features.0')}</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>Native performance</span>
+                    <span>{t('services.mobileDev.features.1')}</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>App store deployment</span>
+                    <span>{t('services.mobileDev.features.2')}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -164,24 +166,24 @@ export default function Home() {
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg flex items-center justify-center mb-4">
                   <Palette className="w-6 h-6 text-foreground" />
                 </div>
-                <CardTitle className="text-foreground">UX & UI Design</CardTitle>
+                <CardTitle className="text-foreground">{t('services.uxUiDesign.title')}</CardTitle>
                 <CardDescription>
-                  Beautiful, intuitive designs that create exceptional user experiences. We focus on usability, accessibility, and visual appeal to ensure your product delights users.
+                  {t('services.uxUiDesign.description')}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>User Experience Design</span>
+                    <span>{t('services.uxUiDesign.features.0')}</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>Interface Design</span>
+                    <span>{t('services.uxUiDesign.features.1')}</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>Prototyping & Testing</span>
+                    <span>{t('services.uxUiDesign.features.2')}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -191,8 +193,8 @@ export default function Home() {
           <div className="mt-16 text-center">
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
               <Lightbulb className="w-5 h-5 text-blue-400 mr-2" />
-              <span className="text-foreground font-semibold">AI Advantage:</span>
-              <span className="text-muted-foreground ml-2">We use AI-driven development to accelerate delivery, validate ideas quickly, and keep quality at the highest standard.</span>
+              <span className="text-foreground font-semibold">{t('services.aiAdvantage.label')}</span>
+              <span className="text-muted-foreground ml-2">{t('services.aiAdvantage.description')}</span>
             </div>
           </div>
         </div>
