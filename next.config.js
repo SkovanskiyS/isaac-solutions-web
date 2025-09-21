@@ -5,7 +5,6 @@ const withNextIntl = require('next-intl/plugin')(
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true,
     domains: [
       "source.unsplash.com",
       "images.unsplash.com",
@@ -34,6 +33,13 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+  },
+  // Performance optimizations
+  poweredByHeader: false,
+  compress: true,
+  swcMinify: true,
+  experimental: {
+    optimizeCss: true,
   },
 };
 

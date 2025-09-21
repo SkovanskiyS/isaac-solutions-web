@@ -10,6 +10,14 @@ interface PortfolioProps {
   className?: string;
 }
 
+interface Project {
+  id: number;
+  nameKey: string;
+  descriptionKey: string;
+  tagsKey: string;
+  image: string;
+}
+
 export default function Portfolio({ className = "" }: PortfolioProps) {
   const t = useTranslations('portfolio');
   
@@ -67,14 +75,8 @@ function ProjectCard({
   project, 
   t 
 }: { 
-  project: {
-    id: number;
-    nameKey: string;
-    descriptionKey: string;
-    tagsKey: string;
-    image: string;
-  };
-  t: any;
+  project: Project;
+  t: ReturnType<typeof useTranslations>;
 }) {
   const name = t(`projects.${project.nameKey}`);
   const description = t(`projects.${project.descriptionKey}`);

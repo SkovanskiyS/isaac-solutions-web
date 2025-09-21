@@ -14,18 +14,11 @@ import { useTranslations } from 'next-intl';
 import {
   Code2,
   Smartphone,
-  BarChart3,
   Zap,
-  Target,
-  Users,
-  Clock,
   CheckCircle,
-  Star,
   ArrowRight,
   Lightbulb,
   Globe,
-  TrendingUp,
-  Award,
   Palette,
   User,
   Linkedin
