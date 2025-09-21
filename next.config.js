@@ -1,7 +1,6 @@
-// Disabled next-intl plugin for client-side translations
-// const withNextIntl = require('next-intl/plugin')(
-//   './src/i18n/request.ts'
-// );
+const withNextIntl = require('next-intl/plugin')(
+  './i18n/request.ts'
+);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -38,5 +37,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
-// module.exports = withNextIntl(nextConfig);
+module.exports = withNextIntl(nextConfig);
