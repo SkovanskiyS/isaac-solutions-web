@@ -208,10 +208,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Meet Our Team
+              {t('about.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Three passionate entrepreneurs building the future of software development with innovation and expertise.
+              {t('about.subtitle')}
             </p>
           </div>
 
@@ -221,28 +221,24 @@ export default function Home() {
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 border-4 border-blue-600">
                 <Image 
                   src="/javohir-atabekov.jpg" 
-                  alt="Javohir Atabekov - CTO"
+                  alt={`${t('about.team.javohir.name')} - ${t('about.team.javohir.position')}`}
                   width={96}
                   height={96}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Javohir Atabekov</h3>
-              <p className="text-blue-600 font-semibold mb-4">Chief Technology Officer (CTO)</p>
+              <h3 className="text-2xl font-bold text-foreground mb-2">{t('about.team.javohir.name')}</h3>
+              <p className="text-blue-600 font-semibold mb-4">{t('about.team.javohir.position')}</p>
               <div className="text-muted-foreground space-y-3 text-left flex-grow">
                 <p>
-                  CTO and SAP Business One consultant with strong experience in ERP implementation, digital transformation, 
-                  and business process optimization. Skilled project manager leading initiatives that connect technology with 
-                  business goals to deliver scalable growth.
+                  {t('about.team.javohir.bio')}
                 </p>
                 <div className="pt-4">
-                  <h4 className="font-semibold text-foreground mb-2">Expertise:</h4>
+                  <h4 className="font-semibold text-foreground mb-2">{t('about.team.javohir.expertise')}</h4>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline">SAP Business One</Badge>
-                    <Badge variant="outline">Product Strategy</Badge>
-                    <Badge variant="outline">Project Management</Badge>
-                    <Badge variant="outline">System Integration</Badge>
-                    <Badge variant="outline">Data Analytics & BI</Badge>
+                    {(t.raw('about.team.javohir.skills') as string[]).map((skill: string, index: number) => (
+                      <Badge key={index} variant="outline">{skill}</Badge>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -254,7 +250,7 @@ export default function Home() {
                   className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 mx-auto"
                 >
                   <Linkedin className="w-4 h-4" />
-                  View LinkedIn Profile
+                  {t('about.linkedinProfile')}
                 </Button>
               </div>
             </Card>
@@ -264,26 +260,24 @@ export default function Home() {
               <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 border-4 border-green-600">
                 <Image 
                   src="/jahongir-masharipov.jpg" 
-                  alt="Jahongir Masharipov - Founder and CEO"
+                  alt={`${t('about.team.jahongir.name')} - ${t('about.team.jahongir.position')}`}
                   width={96}
                   height={96}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Jahongir Masharipov</h3>
-              <p className="text-green-600 font-semibold mb-4">Founder and CEO</p>
+              <h3 className="text-2xl font-bold text-foreground mb-2">{t('about.team.jahongir.name')}</h3>
+              <p className="text-green-600 font-semibold mb-4">{t('about.team.jahongir.position')}</p>
               <div className="text-muted-foreground space-y-3 text-left flex-grow">
                 <p>
-                  Passionate about making sports accessible to everyone. Over 2 years of experience in managing 
-                  sports projects and leading innovative teams.
+                  {t('about.team.jahongir.bio')}
                 </p>
                 <div className="pt-4">
-                  <h4 className="font-semibold text-foreground mb-2">Expertise:</h4>
+                  <h4 className="font-semibold text-foreground mb-2">{t('about.team.jahongir.expertise')}</h4>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline">Sports Management</Badge>
-                    <Badge variant="outline">Team Leadership</Badge>
-                    <Badge variant="outline">Project Innovation</Badge>
-                    <Badge variant="outline">Business Development</Badge>
+                    {(t.raw('about.team.jahongir.skills') as string[]).map((skill: string, index: number) => (
+                      <Badge key={index} variant="outline">{skill}</Badge>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -295,7 +289,7 @@ export default function Home() {
                   className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 mx-auto"
                 >
                   <Linkedin className="w-4 h-4" />
-                  View LinkedIn Profile
+                  {t('about.linkedinProfile')}
                 </Button>
               </div>
             </Card>
@@ -305,21 +299,18 @@ export default function Home() {
               <div className="w-24 h-24 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <User className="w-12 h-12 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Alex Smith</h3>
-              <p className="text-orange-600 font-semibold mb-4">Lead Developer</p>
+              <h3 className="text-2xl font-bold text-foreground mb-2">{t('about.team.alex.name')}</h3>
+              <p className="text-orange-600 font-semibold mb-4">{t('about.team.alex.position')}</p>
               <div className="text-muted-foreground space-y-3 text-left flex-grow">
                 <p>
-                  Experienced full-stack developer with expertise in modern web technologies and cloud solutions. 
-                  Passionate about creating scalable applications and mentoring junior developers to build 
-                  high-quality software solutions.
+                  {t('about.team.alex.bio')}
                 </p>
                 <div className="pt-4">
-                  <h4 className="font-semibold text-foreground mb-2">Expertise:</h4>
+                  <h4 className="font-semibold text-foreground mb-2">{t('about.team.alex.expertise')}</h4>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline">Full-Stack Development</Badge>
-                    <Badge variant="outline">React/Next.js</Badge>
-                    <Badge variant="outline">Cloud Architecture</Badge>
-                    <Badge variant="outline">Team Mentoring</Badge>
+                    {(t.raw('about.team.alex.skills') as string[]).map((skill: string, index: number) => (
+                      <Badge key={index} variant="outline">{skill}</Badge>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -331,7 +322,7 @@ export default function Home() {
                   className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 mx-auto"
                 >
                   <Linkedin className="w-4 h-4" />
-                  View LinkedIn Profile
+                  {t('about.linkedinProfile')}
                 </Button>
               </div>
             </Card>
@@ -340,11 +331,9 @@ export default function Home() {
           {/* Company Mission Statement */}
           <div className="mt-16 text-center">
             <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">{t('about.vision.title')}</h3>
               <p className="text-lg text-muted-foreground">
-                We believe in delivering high-quality software solutions that not only meet technical requirements 
-                but also drive real business value. Our combined expertise in technology and business strategy 
-                ensures every project is built for success.
+                {t('about.vision.description')}
               </p>
             </div>
           </div>
@@ -355,36 +344,29 @@ export default function Home() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500/5 to-purple-500/5">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-foreground mb-6">
-            Ready to Build Your Next Big Idea?
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join successful startups and enterprises who trust us to deliver exceptional software solutions. 
-            Let's discuss your project and turn your vision into reality.
+            {t('cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <ContactForm 
-              buttonText="Get Started Today"
+              buttonText={t('cta.getStarted')}
             />
             <a href="#portfolio">
               <Button variant="outline" size="lg">
                 <ArrowRight className="w-4 h-4 mr-2" />
-                View Success Stories
+                {t('cta.viewStories')}
               </Button>
             </a>
           </div>
           <div className="mt-12 flex justify-center items-center space-x-8 text-muted-foreground">
-            <div className="flex items-center">
-              <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
-              <span>24-hour response time</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
-              <span>Free consultation</span>
-            </div>
-            <div className="flex items-center">
-              <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
-              <span>No commitment required</span>
-            </div>
+            {(t.raw('cta.features') as string[]).map((feature: string, index: number) => (
+              <div key={index} className="flex items-center">
+                <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
+                <span>{feature}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -398,35 +380,37 @@ export default function Home() {
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                   <Code2 className="w-5 h-5 text-foreground" />
                 </div>
-                <span className="text-xl font-bold text-foreground">BuildFast</span>
+                <span className="text-xl font-bold text-foreground">{t('footer.company')}</span>
               </div>
               <p className="text-muted-foreground mb-4">
-                Building high-quality software and AI-powered solutions that drive business growth.
+                {t('footer.description')}
               </p>
             </div>
 
             <div>
-              <h4 className="text-foreground font-semibold mb-4">Services</h4>
+              <h4 className="text-foreground font-semibold mb-4">{t('footer.services.title')}</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#services" className="hover:text-foreground transition-colors">Web Development</a></li>
-                <li><a href="#services" className="hover:text-foreground transition-colors">Mobile Apps</a></li>
-                <li><a href="#services" className="hover:text-foreground transition-colors">BI Dashboards</a></li>
+                {(t.raw('footer.services.items') as string[]).map((item: string, index: number) => (
+                  <li key={index}><a href="#services" className="hover:text-foreground transition-colors">{item}</a></li>
+                ))}
               </ul>
             </div>
 
             <div>
-              <h4 className="text-foreground font-semibold mb-4">Company</h4>
+              <h4 className="text-foreground font-semibold mb-4">{t('footer.company_info.title')}</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#about" className="hover:text-foreground transition-colors">About</a></li>
-                <li><a href="#portfolio" className="hover:text-foreground transition-colors">Portfolio</a></li>
-                <li><a href="#contact" className="hover:text-foreground transition-colors">Contact</a></li>
+                {(t.raw('footer.company_info.items') as string[]).map((item: string, index: number) => (
+                  <li key={index}>
+                    <a href={`#${item.toLowerCase()}`} className="hover:text-foreground transition-colors">{item}</a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
           <div className="border-t border-border mt-8 pt-8 text-center">
             <p className="text-muted-foreground">
-              © 2024 BuildFast. All rights reserved.
+              {t('footer.copyright')}
             </p>
           </div>
         </div>

@@ -88,20 +88,44 @@
       },
       "jahongir": {
         "name": "Jahongir Masharipov",
-        "position": "Chief Executive Officer (CEO)",
-        "description": "Visionary CEO with deep expertise in business strategy, market analysis, and client relationship management. Leads strategic initiatives that drive company growth and ensure client success through innovative solutions and exceptional service delivery.",
-        "skills": [
-          "Business Strategy",
-          "Market Analysis",
-          "Client Relations",
-          "Strategic Planning",
-          "Team Leadership"
-        ]
+        "position": "Founder and CEO",
+        "bio": "Passionate about making sports accessible to everyone. Over 2 years of experience in managing sports projects and leading innovative teams.",
+        "expertise": "Expertise:",
+        "skills": ["Sports Management", "Team Leadership", "Project Innovation", "Business Development"]
+      },
+      "alex": {
+        "name": "Alex Smith",
+        "position": "Lead Developer",
+        "bio": "Experienced full-stack developer with expertise in modern web technologies and cloud solutions. Passionate about creating scalable applications and mentoring junior developers to build high-quality software solutions.",
+        "expertise": "Expertise:",
+        "skills": ["Full-Stack Development", "React/Next.js", "Cloud Architecture", "Team Mentoring"]
       }
     },
-    "philosophy": {
-      "title": "Our Philosophy",
+    "linkedinProfile": "View LinkedIn Profile",
+    "vision": {
+      "title": "Our Vision",
       "description": "We believe in delivering high-quality software solutions that not only meet technical requirements but also drive real business value. Our combined expertise in technology and business strategy ensures every project is built for success."
+    }
+  },
+  "portfolio": {
+    "title": "Featured Projects",
+    "subtitle": "Discover our latest work showcasing innovation, quality, and client success.",
+    "projects": {
+      "bron24": {
+        "name": "Bron24",
+        "description": "A comprehensive 24/7 business management platform with real-time analytics, customer management, and automated workflows. Built for modern enterprises.",
+        "tags": ["Web App", "Dashboard", "Analytics", "SaaS"]
+      },
+      "vitaCoffee": {
+        "name": "Vita Coffee",
+        "description": "Premium coffee e-commerce platform with subscription management, inventory tracking, and mobile-optimized checkout experience.",
+        "tags": ["E-commerce", "Subscription", "Mobile App"]
+      },
+      "techflowCrm": {
+        "name": "TechFlow CRM",
+        "description": "Customer relationship management system with advanced lead tracking, automated email campaigns, and detailed reporting dashboard.",
+        "tags": ["CRM", "Automation", "Email Marketing"]
+      }
     }
   },
   "cta": {

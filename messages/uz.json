@@ -48,82 +48,100 @@
     },
     "mobileDev": {
       "title": "Mobil rivojlantirish",
-      "description": "Bizning jamoamiz iOS va Android uchun intuitiv mobil ilovalarni yaratadi, barcha qurilmalarda silliq tajriba ta'minlaydi. Bu biznes ilovasi yoki mijozga yo'naltirilgan yechim bo'lsin, biz uni tez, xavfsiz va foydalanish uchun qulay qilamiz.",
+      "description": "Foydalanuvchilar yoqtiradigan asl mobil ilovalarni yarating. Bizning tajribamiz iOS, Android va barcha qurilmalarda mavjudligingizni ta'minlaydigan o'zaro faol platform yechimlarini qamrab oladi.",
       "features": [
+        "iOS va Android",
         "React Native, Flutter",
-        "Native ishlash",
-        "App Store'ga joylashtirish"
+        "O'zaro faol platform yechimlari"
       ]
     },
-    "uxUiDesign": {
-      "title": "UX va UI dizayn",
-      "description": "Ajoyib foydalanuvchi tajribasini yaratadigan chiroyli, intuitiv dizaynlar. Biz mahsulotingiz foydalanuvchilarni xursand qilishini ta'minlash uchun foydalanishga qulaylik, qulaylik va vizual jozibadorlikka e'tibor qaratamiz.",
+    "uiUx": {
+      "title": "UI/UX dizayn",
+      "description": "Ajoyib foydalanuvchi tajribasini yaratadigan chiroyli, intuitiv dizaynlar. Biz mahsulotingiz foydalanuvchilarni xursand qilishi uchun foydalanishga qulaylik, accessibility va vizual jozibadorlikka e'tibor beramiz.",
       "features": [
         "Foydalanuvchi tajribasi dizayni",
         "Interfeys dizayni",
-        "Prototiplash va sinov"
+        "Prototip va sinov"
       ]
     },
     "aiAdvantage": {
       "label": "AI afzalligi:",
-      "description": "Biz yetkazib berishni tezlashtirish, g'oyalarni tez tekshirish va sifatni eng yuqori darajada ushlab turish uchun AI-ga asoslangan rivojlanishdan foydalanamiz."
+      "description": "Biz yetkazib berishni tezlashtirish, g'oyalarni tezda tasdiqlash va sifatni eng yuqori darajada saqlash uchun AI-ga asoslangan rivojlantirishdan foydalanamiz."
+    }
+  },
+  "portfolio": {
+    "title": "Tanlangan loyihalar",
+    "subtitle": "Innovatsiya, sifat va mijozlar muvaffaqiyatini namoyish etadigan so'nggi ishlarimizni kashf eting.",
+    "projects": {
+      "bron24": {
+        "name": "Bron24",
+        "description": "Real vaqt tahlillari, mijozlarni boshqarish va avtomatlashtirilgan ish jarayonlari bilan 24/7 biznes boshqaruv platformasi. Zamonaviy korxonalar uchun yaratilgan.",
+        "tags": ["Veb-ilova", "Boshqaruv paneli", "Tahlil", "SaaS"]
+      },
+      "vitaCoffee": {
+        "name": "Vita Coffee",
+        "description": "Obuna boshqaruvi, inventar kuzatuvi va mobil qurilmalar uchun optimallashtirilgan to'lov jarayoni bilan premium qahva elektron tijorat platformasi.",
+        "tags": ["Elektron tijorat", "Obuna", "Mobil ilova"]
+      },
+      "techflowCrm": {
+        "name": "TechFlow CRM",
+        "description": "Ilg'or lead kuzatuvi, avtomatlashtirilgan email kampaniyalari va batafsil hisobot paneli bilan mijozlar bilan munosabatlarni boshqarish tizimi.",
+        "tags": ["CRM", "Avtomatlashtirish", "Email marketing"]
+      }
     }
   },
   "about": {
     "title": "Bizning jamoa bilan tanishing",
-    "subtitle": "Innovatsiya va tajriba bilan dasturiy ta'minot rivojlantirishning kelajagini quruvchi uchta ishtiyoqli tadbirkor.",
+    "subtitle": "Innovatsiya va ekspertlik bilan dasturiy ta'minot rivojlantirishining kelajagini quruvchi uchta ishtiyoqli tadbirkor.",
     "team": {
       "javohir": {
         "name": "Javohir Atabekov",
         "position": "Bosh texnologiya direktori (CTO)",
-        "description": "CTO va SAP Business One maslahatchisi, ERP joriy etish, raqamli transformatsiya va biznes jarayonlarini optimallashtirish bo'yicha katta tajribaga ega. Texnologiyalarni biznes maqsadlari bilan bog'laydigan va kengaytiriladigan o'sishni ta'minlaydigan tashabbuslarni boshqaradigan tajribali loyiha menejeri.",
-        "expertise": "Mutaxassislik:",
-        "skills": [
-          "SAP Business One",
-          "Mahsulot strategiyasi",
-          "Loyiha boshqaruvi",
-          "Tizim integratsiyasi",
-          "Ma'lumotlar tahlili va BI"
-        ]
+        "bio": "ERP joriy etish, raqamli transformatsiya va biznes jarayonlarini optimallashtirishda katta tajribaga ega CTO va SAP Business One maslahatchisi. Texnologiyalarni biznes maqsadlari bilan bog'laydigan va kengaytiriladigan o'sishni ta'minlaydigan tashabbuslarni boshqaradigan tajribali loyiha menejeri.",
+        "expertise": "Ekspertlik:",
+        "skills": ["SAP Business One", "Mahsulot strategiyasi", "Loyiha boshqaruvi", "Tizim integratsiyasi", "Ma'lumotlar tahlili va BI"]
       },
       "jahongir": {
         "name": "Jahongir Masharipov",
-        "position": "Bosh ijrochi direktor (CEO)",
-        "description": "Biznes strategiyasi, bozor tahlili va mijozlar bilan munosabatlarni boshqarishda chuqur tajribaga ega bo'lgan bashoratli CEO. Kompaniya o'sishini rag'batlantiradigan va innovatsion yechimlar va ajoyib xizmat ko'rsatish orqali mijozlar muvaffaqiyatini ta'minlaydigan strategik tashabbuslarni boshqaradi.",
-        "skills": [
-          "Biznes strategiyasi",
-          "Bozor tahlili",
-          "Mijozlar bilan munosabatlar",
-          "Strategik rejalashtirish",
-          "Jamoa rahbarligi"
-        ]
+        "position": "Asoschisi va bosh direktor",
+        "bio": "Sportni hamma uchun ochiq qilishga ishtiyoqli. Sport loyihalarini boshqarish va innovatsion jamoalarni boshqarishda 2 yildan ortiq tajriba.",
+        "expertise": "Ekspertlik:",
+        "skills": ["Sport boshqaruvi", "Jamoa rahbarligi", "Loyiha innovatsiyasi", "Biznes rivojlantirish"]
+      },
+      "alex": {
+        "name": "Aleks Smit",
+        "position": "Yetakchi ishlab chiquvchi",
+        "bio": "Zamonaviy veb texnologiyalar va bulut yechimlari bo'yicha ekspertlikka ega tajribali full-stack ishlab chiquvchi. Kengaytiriladigan ilovalarni yaratish va yuqori sifatli dasturiy ta'minot yechimlarini qurish uchun yosh ishlab chiquvchilarga nasihat berishga ishtiyoqli.",
+        "expertise": "Ekspertlik:",
+        "skills": ["Full-Stack rivojlantirish", "React/Next.js", "Bulut arxitekturasi", "Jamoa mentorlik"]
       }
     },
-    "philosophy": {
-      "title": "Bizning falsafamiz",
-      "description": "Biz nafaqat texnik talablarga javob beradigan, balki haqiqiy biznes qiymatini keltirib chiqaradigan yuqori sifatli dasturiy ta'minot yechimlarini yetkazib berishga ishonamiz. Texnologiya va biznes strategiyasidagi birlashgan tajribamiz har bir loyihaning muvaffaqiyat uchun qurilishini ta'minlaydi."
+    "linkedinProfile": "LinkedIn profilini ko'rish",
+    "vision": {
+      "title": "Bizning ko'rishtimiz",
+      "description": "Biz nafaqat texnik talablarni qondiradigan, balki haqiqiy biznes qiymatini olib keladigan yuqori sifatli dasturiy ta'minot yechimlarini taqdim etishga ishonamiz. Texnologiya va biznes strategiyasidagi birlashgan tajribamiz har bir loyiha muvaffaqiyat uchun qurilishini kafolatlaydi."
     }
   },
   "cta": {
     "title": "Keyingi katta g'oyangizni amalga oshirishga tayyormisiz?",
-    "subtitle": "Ajoyib dasturiy ta'minot yechimlarini yetkazib berishda bizga ishongan muvaffaqiyatli startaplar va korxonalarga qo'shiling. Keling, loyihangizni muhokama qilaylik va tasavvuringizni haqiqatga aylantiraylik.",
+    "subtitle": "Ajoyib dasturiy ta'minot yechimlarini etkazib berishda bizga ishongan muvaffaqiyatli startaplar va korxonalarga qo'shiling. Loyihangizni muhokama qilaylik va ko'rishtimizni haqiqatga aylantirmoq.",
     "getStarted": "Bugun boshlang",
     "viewStories": "Muvaffaqiyat hikoyalarini ko'ring",
     "features": [
-      "24 soatlik javob berish vaqti",
+      "24 soatlik javob vaqti",
       "Bepul maslahat",
       "Hech qanday majburiyat yo'q"
     ]
   },
   "footer": {
     "company": "BuildFast",
-    "description": "Biznes o'sishini rag'batlantiradigan yuqori sifatli dasturiy ta'minot va AI-ga asoslangan yechimlarni yaratish.",
+    "description": "Biznes o'sishini rag'batlantiruvchi yuqori sifatli dasturiy ta'minot va AI-ga asoslangan yechimlarni yaratish.",
     "services": {
       "title": "Xizmatlar",
       "items": [
         "Veb rivojlantirish",
         "Mobil ilovalar",
-        "BI boshqaruv panellari"
+        "BI panellari"
       ]
     },
     "company_info": {
@@ -143,8 +161,8 @@
     "copyright": "© 2024 Isaac Solutions. Barcha huquqlar himoyalangan."
   },
   "pricing": {
-    "title": "Isaac Solutions - Autsorsing paketlari",
-    "subtitle": "Biznes ehtiyojlaringizga mos keladigan moslashuvchan autsorsing yechimlari — tez MVPlarni ishga tushirishdan tortib korxona tizimlarini kengaytirishgacha.",
-    "badge": "Autsorsing paketlari"
+    "title": "Isaac Solutions - Autsorting paketlari",
+    "subtitle": "Biznes ehtiyojlaringizga mos keladigan moslashuvchan autsorting yechimlari — tez MVPlarni ishga tushirishdan tortib korxona darajasidagi tizimlarni kengaytirishgacha.",
+    "badge": "Autsorting paketlari"
   }
 }

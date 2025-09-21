@@ -5,6 +5,7 @@ import "../globals.css";
 import ClientBody from "../ClientBody";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Script from "next/script";
+import type { Metadata } from "next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +16,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const metadata: Metadata = {
+  title: "Isaac Solutions - AI-Powered Development",
+  description: "We specialize in delivering high-quality software solutions and AI-powered MVPs — helping startups and enterprises move from idea to launch in record time.",
+};
 
 export default async function LocaleLayout({
   children,
@@ -37,7 +43,23 @@ export default async function LocaleLayout({
           src="//unpkg.com/same-runtime/dist/index.global.js"
         />
         <Script id="theme-init" strategy="beforeInteractive">
-          {`(function(){try{var s=localStorage.getItem('nrm-theme');var t=(s==='dark'||s==='light')?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');var e=document.documentElement;e.classList.remove('dark','light');e.classList.add(t);e.setAttribute('data-theme',t);}catch(e){}})();`}
+          {`
+            (function() {
+              try {
+                const theme = localStorage.getItem('nrm-theme');
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const selectedTheme = (theme === 'dark' || theme === 'light') ? theme : systemTheme;
+                
+                document.documentElement.classList.remove('dark', 'light');
+                document.documentElement.classList.add(selectedTheme);
+                document.documentElement.setAttribute('data-theme', selectedTheme);
+              } catch (e) {
+                // Fallback to light theme if localStorage is not available
+                document.documentElement.classList.add('light');
+                document.documentElement.setAttribute('data-theme', 'light');
+              }
+            })();
+          `}
         </Script>
       </head>
       <body suppressHydrationWarning className="antialiased">
