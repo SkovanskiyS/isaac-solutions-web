@@ -163,6 +163,148 @@
   "pricing": {
     "title": "Isaac Solutions - Autsorting paketlari",
     "subtitle": "Biznes ehtiyojlaringizga mos keladigan moslashuvchan autsorting yechimlari — tez MVPlarni ishga tushirishdan tortib korxona darajasidagi tizimlarni kengaytirishgacha.",
-    "badge": "Autsorting paketlari"
+    "badge": "Autsorting paketlari",
+    "softwareDev": {
+      "title": "Dasturiy ta'minot ishlab chiqish",
+      "packages": {
+        "starter": {
+          "title": "Boshlang'ich ishlab chiqish",
+          "priceUsd": "$600 - $900",
+          "priceUzs": "7.5M - 11M so'm",
+          "features": [
+            "Landing sahifa (2-3 sahifa)",
+            "Mobil javobgar",
+            "Asosiy SEO sozlamalari",
+            "1 oylik bepul qo'llab-quvvatlash"
+          ]
+        },
+        "standard": {
+          "title": "Standart ishlab chiqish",
+          "priceUsd": "$950 - $1,600",
+          "priceUzs": "12M - 20M so'm",
+          "mostPopular": "Eng mashhur",
+          "features": [
+            "Biznes veb-sayti (5-7 sahifa)",
+            "Aloqa formalari va integratsiyalar (Telegram, Email)",
+            "Javobgar dizayn (desktop + mobil)",
+            "Asosiy CMS (oson kontent tahrirlash)",
+            "Ishlash optimizatsiyasi",
+            "3 oylik bepul qo'llab-quvvatlash"
+          ]
+        },
+        "premium": {
+          "title": "Premium ishlab chiqish",
+          "priceUsd": "$1,700 - $2,500",
+          "priceUzs": "21M - 31M so'm",
+          "features": [
+            "Murakkab veb-ilova (10+ sahifa)",
+            "Foydalanuvchi autentifikatsiyasi va boshqaruv paneli",
+            "Ma'lumotlar bazasi integratsiyasi",
+            "API ishlab chiqish",
+            "Rolga asoslangan ruxsatlar bilan rivojlangan CMS",
+            "6 oylik bepul qo'llab-quvvatlash"
+          ]
+        }
+      }
+    },
+    "uiUxDesign": {
+      "title": "UI/UX Dizayn",
+      "packages": {
+        "basic": {
+          "title": "Asosiy dizayn",
+          "priceUsd": "$300 - $500",
+          "priceUzs": "3.7M - 6.2M so'm",
+          "features": [
+            "Landing sahifa maketi",
+            "Mobil-birinchi javobgar dizayn",
+            "Asosiy brending (logo, rang palitri)",
+            "2 dizayn tahrirlash"
+          ]
+        },
+        "standard": {
+          "title": "Standart dizayn",
+          "priceUsd": "$600 - $900",
+          "priceUzs": "7.5M - 11M so'm",
+          "features": [
+            "Ko'p sahifali veb-sayt dizayni (5-7 sahifa)",
+            "Foydalanuvchi tajribasi ramkalari",
+            "To'liq brand identifikatsiya paketi",
+            "Interaktiv prototiplar",
+            "5 dizayn tahrirlash"
+          ]
+        },
+        "premium": {
+          "title": "Premium dizayn",
+          "priceUsd": "$1,000 - $1,500",
+          "priceUzs": "12.5M - 19M so'm",
+          "features": [
+            "Murakkab ilova UI dizayni (10+ ekran)",
+            "Rivojlangan foydalanuvchi yo'li xaritalash",
+            "Dizayn tizimi yaratish",
+            "Yuqori aniqlikdagi interaktiv prototiplar",
+            "Cheksiz dizayn tahrirlash",
+            "Ishlab chiquvchilar uchun hujjatlar"
+          ]
+        }
+      }
+    },
+    "customSolutions": {
+      "title": "Maxsus yechimlar",
+      "enterprise": {
+        "title": "Korporativ va masshtablanadigan yechimlar",
+        "price": "Maxsus taklif",
+        "description": "Katta miqyosli loyihalar, korporativ ilovalar yoki maxsus e'tibor talab qiladigan noyob talablar uchun.",
+        "features": [
+          "Maxsus talablar tahlili",
+          "Masshtablanadigan arxitektura rejalashtiruvi",
+          "To'liq funksional korporativ yechimlar",
+          "Uchinchi tomon integratsiyalari",
+          "Maxsus loyiha boshqaruvi",
+          "Ustuvor qo'llab-quvvatlash va texnik xizmat"
+        ]
+      }
+    },
+    "consultation": {
+      "title": "Bepul maslahat",
+      "subtitle": "Qaysi paket ehtiyojlaringizga mos kelishini bilmayapsizmi?",
+      "description": "Loyiha talablaringizni muhokama qilish va shaxsiylashtirilgan tavsiyalar olish uchun ekspertlarimiz bilan bepul 30 daqiqalik maslahat rejalashtiring."
+    },
+    "cta": {
+      "title": "Boshlashga tayyormisiz?",
+      "description": "Loyiha talablaringizni muhokama qilish va shaxsiylashtirilgan taklif olish uchun bugun biz bilan bog'laning.",
+      "buttonText": "Loyihangizni bugun boshlang"
+    }
+  },
+  "contactForm": {
+    "modal": {
+      "title": "Bugun boshlang",
+      "subtitle": "Loyihangiz haqida bizga ayting va biz 24 soat ichida siz bilan bog'lanamiz.",
+      "thankYouTitle": "Rahmat!",
+      "fields": {
+        "fullName": {
+          "label": "To'liq ism *",
+          "placeholder": "To'liq ismingizni kiriting",
+          "required": "Ism kiritish majburiy",
+          "minLength": "Ism kamida 2 ta belgidan iborat bo'lishi kerak"
+        },
+        "phone": {
+          "label": "Telefon raqami *",
+          "placeholder": "+1 (555) 123-4567",
+          "required": "Telefon raqami kiritish majburiy",
+          "invalid": "Iltimos, to'g'ri telefon raqamini kiriting"
+        }
+      },
+      "buttons": {
+        "sendMessage": "Xabar yuborish",
+        "sending": "Yuborilmoqda...",
+        "defaultButton": "Keling, birga quraylik"
+      },
+      "success": {
+        "title": "Rahmat, {name}!",
+        "message": "Biz tez orada {phone} raqamiga qo'ng'iroq qilamiz",
+        "autoClose": "Bu oyna avtomatik ravishda yopiladi"
+      },
+      "footer": "ESC tugmasini bosing yoki tashqariga bosing"
+    }
   }
 }

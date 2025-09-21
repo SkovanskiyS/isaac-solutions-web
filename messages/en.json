@@ -169,6 +169,148 @@
   "pricing": {
     "title": "Isaac Solutions - Outsourcing Packages",
     "subtitle": "Flexible outsourcing solutions to fit your business needs - from launching fast MVPs to scaling enterprise-level systems.",
-    "badge": "Outsourcing Packages"
+    "badge": "Outsourcing Packages",
+    "softwareDev": {
+      "title": "Software Development",
+      "packages": {
+        "starter": {
+          "title": "Starter Dev",
+          "priceUsd": "$600 - $900",
+          "priceUzs": "7.5M - 11M UZS",
+          "features": [
+            "Landing page (2-3 pages)",
+            "Mobile responsive",
+            "Basic SEO setup",
+            "1-month free support"
+          ]
+        },
+        "standard": {
+          "title": "Standard Dev",
+          "priceUsd": "$950 - $1,600",
+          "priceUzs": "12M - 20M UZS",
+          "mostPopular": "Most Popular",
+          "features": [
+            "Business website (5-7 pages)",
+            "Contact forms & integrations (Telegram, Email)",
+            "Responsive design (desktop + mobile)",
+            "Basic CMS (easy content editing)",
+            "Performance optimization",
+            "3-month free support"
+          ]
+        },
+        "premium": {
+          "title": "Premium Dev",
+          "priceUsd": "$1,700 - $2,500",
+          "priceUzs": "21M - 31M UZS",
+          "features": [
+            "Complex web application (10+ pages)",
+            "User authentication & dashboard",
+            "Database integration",
+            "API development",
+            "Advanced CMS with role-based permissions",
+            "6-month free support"
+          ]
+        }
+      }
+    },
+    "uiUxDesign": {
+      "title": "UI/UX Design",
+      "packages": {
+        "basic": {
+          "title": "Basic Design",
+          "priceUsd": "$300 - $500",
+          "priceUzs": "3.7M - 6.2M UZS",
+          "features": [
+            "Landing page mockup",
+            "Mobile-first responsive design",
+            "Basic branding (logo, color palette)",
+            "2 design revisions"
+          ]
+        },
+        "standard": {
+          "title": "Standard Design",
+          "priceUsd": "$600 - $900",
+          "priceUzs": "7.5M - 11M UZS",
+          "features": [
+            "Multi-page website design (5-7 pages)",
+            "User experience wireframing",
+            "Complete brand identity package",
+            "Interactive prototypes",
+            "5 design revisions"
+          ]
+        },
+        "premium": {
+          "title": "Premium Design",
+          "priceUsd": "$1,000 - $1,500",
+          "priceUzs": "12.5M - 19M UZS",
+          "features": [
+            "Complex application UI design (10+ screens)",
+            "Advanced user journey mapping",
+            "Design system creation",
+            "High-fidelity interactive prototypes",
+            "Unlimited design revisions",
+            "Developer handoff documentation"
+          ]
+        }
+      }
+    },
+    "customSolutions": {
+      "title": "Custom Solutions",
+      "enterprise": {
+        "title": "Enterprise & Scalable Solutions",
+        "price": "Custom Quote",
+        "description": "For large-scale projects, enterprise applications, or unique requirements that need specialized attention.",
+        "features": [
+          "Custom requirement analysis",
+          "Scalable architecture planning",
+          "Full-stack enterprise solutions",
+          "Third-party integrations",
+          "Dedicated project management",
+          "Priority support & maintenance"
+        ]
+      }
+    },
+    "consultation": {
+      "title": "Free Consultation",
+      "subtitle": "Not sure which package fits your needs?",
+      "description": "Schedule a free 30-minute consultation with our experts to discuss your project requirements and get personalized recommendations."
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Contact us today to discuss your project requirements and get a personalized quote.",
+      "buttonText": "Start Your Project Today"
+    }
+  },
+  "contactForm": {
+    "modal": {
+      "title": "Get Started Today",
+      "subtitle": "Tell us about your project and we'll get back to you within 24 hours.",
+      "thankYouTitle": "Thank You!",
+      "fields": {
+        "fullName": {
+          "label": "Full Name *",
+          "placeholder": "Enter your full name",
+          "required": "Name is required",
+          "minLength": "Name must be at least 2 characters"
+        },
+        "phone": {
+          "label": "Phone Number *",
+          "placeholder": "+1 (555) 123-4567",
+          "required": "Phone number is required",
+          "invalid": "Please enter a valid phone number"
+        }
+      },
+      "buttons": {
+        "sendMessage": "Send Message",
+        "sending": "Sending...",
+        "defaultButton": "Let's Build Together"
+      },
+      "success": {
+        "title": "Thank you, {name}!",
+        "message": "We'll contact you soon at {phone}",
+        "autoClose": "This window will close automatically"
+      },
+      "footer": "Press ESC or click outside to close"
+    }
   }
 }

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ArrowRight, CheckCircle, User, Phone, X } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface ContactFormProps {
   variant?: 'default' | 'outline';
@@ -17,8 +18,9 @@ export default function ContactForm({
   variant = 'default',
   size = 'xl',
   className = '',
-  buttonText = "Let's Build Together"
+  buttonText
 }: ContactFormProps) {
+  const t = useTranslations('contactForm');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,20 +60,20 @@ export default function ContactForm({
 
     // Name validation
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = t('modal.fields.fullName.required');
       isValid = false;
     } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'Name must be at least 2 characters';
+      newErrors.name = t('modal.fields.fullName.minLength');
       isValid = false;
     }
 
     // Phone validation (basic international format)
     const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+      newErrors.phone = t('modal.fields.phone.required');
       isValid = false;
     } else if (!phoneRegex.test(formData.phone.replace(/[\s\-\(\)]/g, ''))) {
-      newErrors.phone = 'Please enter a valid phone number';
+      newErrors.phone = t('modal.fields.phone.invalid');
       isValid = false;
     }
 
@@ -169,7 +171,7 @@ export default function ContactForm({
             {/* Header with Close Button */}
             <div className="flex justify-between items-center p-6 pb-4">
               <h2 className="text-xl font-semibold text-foreground">
-                {isSubmitted ? 'Thank You!' : 'Get Started Today'}
+                {isSubmitted ? t('modal.thankYouTitle') : t('modal.title')}
               </h2>
               <Button
                 variant="ghost"
@@ -189,13 +191,13 @@ export default function ContactForm({
                     <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">
-                    Thank you, {formData.name}!
+                    {t('modal.success.title', { name: formData.name })}
                   </h3>
                   <p className="text-muted-foreground">
-                    We'll contact you soon at {formData.phone}
+                    {t('modal.success.message', { phone: formData.phone })}
                   </p>
                   <p className="text-sm text-muted-foreground mt-2">
-                    This window will close automatically
+                    {t('modal.success.autoClose')}
                   </p>
                 </div>
               </div>
@@ -203,14 +205,14 @@ export default function ContactForm({
               /* Contact Form */
               <div className="px-6 pb-6">
                 <p className="text-sm text-muted-foreground mb-6">
-                  Tell us about your project and we'll get back to you within 24 hours.
+                  {t('modal.subtitle')}
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Name Field */}
                   <div className="space-y-2">
                     <Label htmlFor="modal-name" className="text-sm font-medium text-foreground">
-                      Full Name *
+                      {t('modal.fields.fullName.label')} *
                     </Label>
                     <div className="relative">
                       <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -219,7 +221,7 @@ export default function ContactForm({
                         type="text"
                         value={formData.name}
                         onChange={(e) => handleInputChange('name', e.target.value)}
-                        placeholder="Enter your full name"
+                        placeholder={t('modal.fields.fullName.placeholder')}
                         className={`pl-10 w-full transition-all duration-200 ${
                           errors.name 
                             ? 'border-red-500 focus:ring-red-500' 
@@ -239,7 +241,7 @@ export default function ContactForm({
                   {/* Phone Field */}
                   <div className="space-y-2">
                     <Label htmlFor="modal-phone" className="text-sm font-medium text-foreground">
-                      Phone Number *
+                      {t('modal.fields.phone.label')} *
                     </Label>
                     <div className="relative">
                       <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -248,7 +250,7 @@ export default function ContactForm({
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => handleInputChange('phone', e.target.value)}
-                        placeholder="+1 (555) 123-4567"
+                        placeholder={t('modal.fields.phone.placeholder')}
                         className={`pl-10 w-full transition-all duration-200 ${
                           errors.phone 
                             ? 'border-red-500 focus:ring-red-500' 
@@ -275,12 +277,12 @@ export default function ContactForm({
                       {isSubmitting ? (
                         <>
                           <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                          Sending...
+                          {t('modal.buttons.sending')}
                         </>
                       ) : (
                         <>
                           <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                          Send Message
+                          {t('modal.buttons.sendMessage')}
                         </>
                       )}
                     </Button>
@@ -290,7 +292,7 @@ export default function ContactForm({
                 {/* Footer */}
                 <div className="mt-4 text-center">
                   <p className="text-xs text-muted-foreground">
-                    Press ESC or click outside to close
+                    {t('modal.footer')}
                   </p>
                 </div>
               </div>
