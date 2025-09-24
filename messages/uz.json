@@ -213,18 +213,93 @@
     "title": "Isaac Solutions - Autsorsing paketlari",
     "subtitle": "Tez MVPlardan tortib korporativ tizimlargacha - biznesingiz ehtiyojlariga mos moslashuvchan autsorsing yechimlari.",
     "badge": "Autsorsing paketlari",
+    "webDev": {
+      "title": "Veb-sayt yaratish",
+      "packages": {
+        "starter": {
+          "title": "Starter Sayt",
+          "priceUsd": "$300 - $500",
+          "priceUzs": "3.8M - 6.5M so'm",
+          "features": [
+            "Landing sahifa (2-3 bo'lim)",
+            "Mobil moslashuvchanlik",
+            "Aloqa formasi + Telegram/email integratsiya"
+          ]
+        },
+        "standard": {
+          "title": "Business Sayt",
+          "priceUsd": "$700 - $1,300",
+          "priceUzs": "9M - 16.5M so'm",
+          "mostPopular": "Eng mashhur",
+          "features": [
+            "Ko'p sahifali biznes sayt (5-7 sahifa)",
+            "Blog/yangiliklar bo'limi",
+            "Oddiy kontent boshqaruv tizimi (CMS)",
+            "SEO optimallashtirilgan tuzilma"
+          ]
+        },
+        "premium": {
+          "title": "Premium Sayt",
+          "priceUsd": "$1,300 - $2,800",
+          "priceUzs": "16.5M - 36M so'm",
+          "features": [
+            "Veb-ilova yoki internet-magazin",
+            "To'lov tizimlari (Payme, Click, Stripe)",
+            "Administrator paneli",
+            "Kengaytirilgan SEO + analitika"
+          ]
+        }
+      }
+    },
+    "mobileDev": {
+      "title": "Mobil ilova yaratish",
+      "packages": {
+        "starter": {
+          "title": "Starter Mobile",
+          "priceUsd": "$800 - $1,200",
+          "priceUzs": "10M - 15M so'm",
+          "features": [
+            "Oddiy ilova (2-3 ekran)",
+            "Android yoki iOS (nativ)",
+            "Asosiy UI/UX dizayn"
+          ]
+        },
+        "standard": {
+          "title": "Standard Mobile",
+          "priceUsd": "$1,500 - $2,500",
+          "priceUzs": "19M - 32M so'm",
+          "mostPopular": "Eng yaxshi narx",
+          "features": [
+            "Krossplatforma ilova (Flutter / React Native)",
+            "5-8 ekran (kirish, profil, formalar)",
+            "API integratsiya",
+            "Push-bildirishnomalar"
+          ]
+        },
+        "premium": {
+          "title": "Premium Mobile",
+          "priceUsd": "$3,000 - $5,000",
+          "priceUzs": "38M - 65M so'm",
+          "features": [
+            "To'liq ko'lamli mobil ilova (marketplace, yetkazib berish, fintech)",
+            "Nativ iOS va Android (Swift/Kotlin)",
+            "Xavfsiz to'lovlar + integratsiyalar",
+            "Administrator paneli + analitika"
+          ]
+        }
+      }
+    },
     "softwareDev": {
-      "title": "Dasturiy ta'minot ishlab chiqish",
+      "title": "Dasturiy ta'minot yaratish",
       "packages": {
         "starter": {
           "title": "Starter Dev",
           "priceUsd": "$600 - $900",
           "priceUzs": "7.5M - 11M so'm",
           "features": [
-            "Landing sahifa (2-3 sahifa)",
-            "Mobil moslashuvchan",
-            "Asosiy SEO sozlash",
-            "1 oylik bepul texnik yordam"
+            "Kichik modul yoki vosita",
+            "Moslashuvchan UI",
+            "Asosiy API integratsiya"
           ]
         },
         "standard": {
@@ -233,25 +308,21 @@
           "priceUzs": "12M - 20M so'm",
           "mostPopular": "Eng mashhur",
           "features": [
-            "Biznes veb-sayt (5-7 sahifa)",
-            "Aloqa shakllari va integratsiyalar (Telegram, Email)",
-            "Moslashuvchan dizayn (desktop + mobil)",
-            "Asosiy CMS (oson kontent tahrirlash)",
-            "Ishlash tezligini optimallashtirish",
-            "3 oylik bepul texnik yordam"
+            "O'rta darajadagi biznes ilova",
+            "REST API integratsiya",
+            "Autentifikatsiya tizimi",
+            "CMS / boshqaruv paneli"
           ]
         },
         "premium": {
           "title": "Premium Dev",
-          "priceUsd": "$1,700 - $2,500",
-          "priceUzs": "21M - 31M so'm",
+          "priceUsd": "$1,600 - $3,200",
+          "priceUzs": "20M - 40M so'm",
           "features": [
-            "Murakkab veb ilova (10+ sahifa)",
-            "Foydalanuvchi autentifikatsiyasi va dashboard",
-            "Ma'lumotlar bazasi integratsiyasi",
-            "API ishlab chiqish",
-            "Kengaytirilgan CMS rol-asoslangan ruxsatlar bilan",
-            "6 oylik bepul texnik yordam"
+            "Korporativ yechim (ERP, CRM, HRM)",
+            "Bulutli joylashtirish",
+            "To'lovlar va kengaytirilgan integratsiyalar",
+            "Masshtabli arxitektura"
           ]
         }
       }
@@ -259,40 +330,79 @@
     "uiUxDesign": {
       "title": "UI/UX Dizayn",
       "packages": {
-        "basic": {
-          "title": "Basic Dizayn",
-          "priceUsd": "$300 - $500",
-          "priceUzs": "3.7M - 6.2M so'm",
+        "starter": {
+          "title": "Starter UX",
+          "priceUsd": "$200 - $310",
+          "priceUzs": "2.5M - 4M so'm",
           "features": [
-            "Landing sahifa maketi",
-            "Mobile-first moslashuvchan dizayn",
-            "Asosiy brending (logotip, rang sxemasi)",
-            "2 ta dizayn qayta ko'rib chiqish"
+            "Logotip dizayni",
+            "Landing yoki 1 ekran dizayni",
+            "Staylgayd (ranglar, shriftlar)",
+            "1 ta tuzatish raundi"
           ]
         },
         "standard": {
-          "title": "Standard Dizayn",
-          "priceUsd": "$600 - $900",
-          "priceUzs": "7.5M - 11M so'm",
+          "title": "Standard UX",
+          "priceUsd": "$600 - $1,200",
+          "priceUzs": "7.5M - 15M so'm",
+          "mostPopular": "Eng yaxshi narx",
           "features": [
-            "Ko'p sahifali veb-sayt dizayni (5-7 sahifa)",
-            "Foydalanuvchi tajribasi wireframing",
-            "To'liq brend identifikatsiya paketi",
-            "Interaktiv prototiplar",
-            "5 ta dizayn qayta ko'rib chiqish"
+            "Sayt / ilova dizayni (8-12 ekran)",
+            "Wireframes + hi-fi maketlar",
+            "Interaktiv prototip (Figma)",
+            "2 ta tuzatish raundi"
           ]
         },
         "premium": {
-          "title": "Premium Dizayn",
-          "priceUsd": "$1,000 - $1,500",
-          "priceUzs": "12.5M - 19M so'm",
+          "title": "Premium UX",
+          "priceUsd": "$1,200 - $1,700",
+          "priceUzs": "15M - 22M so'm",
           "features": [
-            "Murakkab ilova UI dizayni (10+ ekran)",
-            "Kengaytirilgan foydalanuvchi sayohati xaritalash",
-            "Dizayn tizimini yaratish",
-            "Yuqori aniqlikdagi interaktiv prototiplar",
-            "Cheksiz dizayn qayta ko'rib chiqishlar",
-            "Dasturchilarga topshirish hujjatlari"
+            "To'liq mahsulot dizayni (20+ ekran)",
+            "UX tadqiqot (user flow, personalar)",
+            "Dizayn tizimi + qayta foydalaniladigan komponentlar",
+            "Foydalanish qulayligi testi",
+            "Cheksiz tuzatishlar (loyiha doirasida)"
+          ]
+        }
+      }
+    },
+    "allInPackage": {
+      "title": "All-In Paket",
+      "subtitle": "Yagona tom ostida barcha xizmatlarni talab qiluvchi bizneslar uchun – to'liq raqamli transformatsiya.",
+      "packages": {
+        "starter": {
+          "title": "All-In Starter",
+          "priceUsd": "$2,000 - $3,200",
+          "priceUzs": "25M - 40M so'm",
+          "features": [
+            "Biznes sayt (5 sahifa)",
+            "Oddiy mobil ilova (Android yoki iOS)",
+            "Asosiy Telegram bot",
+            "Starter UX paketi"
+          ]
+        },
+        "standard": {
+          "title": "All-In Growth",
+          "priceUsd": "$4,000 - $6,000",
+          "priceUzs": "50M - 75M so'm",
+          "mostPopular": "Eng yaxshi tanlov",
+          "features": [
+            "Sayt + CMS + SEO",
+            "Krossplatforma ilova (Flutter)",
+            "To'lov tizimli biznes Telegram bot",
+            "Standard UX paketi"
+          ]
+        },
+        "premium": {
+          "title": "All-In Premium",
+          "priceUsd": "$8,000 - $12,000",
+          "priceUzs": "100M - 150M so'm",
+          "features": [
+            "Internet-magazin / ERP tizimi",
+            "Nativ iOS va Android ilovalar",
+            "Premium Telegram bot (CRM, AI chatbot)",
+            "Premium UX dizayn (tadqiqot + dizayn tizimi)"
           ]
         }
       }
@@ -362,7 +472,7 @@
     "cta": {
       "title": "Boshlashga tayyormisiz?",
       "description": "Loyihangiz talablarini muhokama qilish va shaxsiy narx olish uchun bugun biz bilan bog'laning.",
-      "buttonText": "Loyihangizni bugun boshlang"
+      "buttonText": "Loyihani boshlash"
     }
   }
 }

@@ -1,7 +1,7 @@
 ﻿import Navigation from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Check, Code2, MessageCircle, Palette, Wrench } from "lucide-react";
+import { Check, Code2, MessageCircle, Palette, Wrench, Smartphone, Package } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { useTranslations } from "next-intl";
 
@@ -27,27 +27,27 @@ export default function PricingPage() {
             </p>
           </div>
 
-          {/* Software Development */}
+          {/* Web Development */}
           <div className="mb-16 sm:mb-20">
             <div className="flex items-center justify-center mb-8">
               <Code2 className="w-8 h-8 text-blue-600 mr-3" />
-              <h2 className="text-3xl font-bold text-foreground">{t('softwareDev.title')}</h2>
+              <h2 className="text-3xl font-bold text-foreground">{t('webDev.title')}</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
               <Card className="p-6 sm:p-8 flex flex-col h-full">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{t('softwareDev.packages.starter.title')}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t('webDev.packages.starter.title')}</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
-                    {t('softwareDev.packages.starter.priceUsd')}
+                    {t('webDev.packages.starter.priceUsd')}
                   </div>
                   <div className="text-sm text-muted-foreground mb-4">
-                    {t('softwareDev.packages.starter.priceUzs')}
+                    {t('webDev.packages.starter.priceUzs')}
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-8 flex-grow">
-                  {(t.raw('softwareDev.packages.starter.features') as string[]).map((feature: string, index: number) => (
+                  {(t.raw('webDev.packages.starter.features') as string[]).map((feature: string, index: number) => (
                     <li key={index} className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
@@ -56,27 +56,52 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={t('cta.buttonText')} />
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
                 </div>
               </Card>
 
               <Card className="p-6 sm:p-8 border-2 border-blue-500 relative flex flex-col h-full">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-blue-500">{t('softwareDev.packages.standard.mostPopular')}</Badge>
+                  <Badge className="bg-blue-500">{t('webDev.packages.standard.mostPopular')}</Badge>
                 </div>
                 
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{t('softwareDev.packages.standard.title')}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t('webDev.packages.standard.title')}</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
-                    {t('softwareDev.packages.standard.priceUsd')}
+                    {t('webDev.packages.standard.priceUsd')}
                   </div>
                   <div className="text-sm text-muted-foreground mb-4">
-                    {t('softwareDev.packages.standard.priceUzs')}
+                    {t('webDev.packages.standard.priceUzs')}
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-8 flex-grow">
-                  {(t.raw('softwareDev.packages.standard.features') as string[]).map((feature: string, index: number) => (
+                  {(t.raw('webDev.packages.standard.features') as string[]).map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto flex justify-center">
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
+                </div>
+              </Card>
+
+              <Card className="p-8 flex flex-col h-full">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{t('webDev.packages.premium.title')}</h3>
+                  <div className="text-2xl font-bold mb-4 text-blue-600">
+                    {t('webDev.packages.premium.priceUsd')}
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-4">
+                    {t('webDev.packages.premium.priceUzs')}
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {(t.raw('webDev.packages.premium.features') as string[]).map((feature: string, index: number) => (
                     <li key={index} className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
@@ -88,20 +113,30 @@ export default function PricingPage() {
                   <ContactForm buttonText={t('cta.buttonText')} />
                 </div>
               </Card>
+            </div>
+          </div>
 
-              <Card className="p-8 flex flex-col h-full">
+          {/* Mobile Development */}
+          <div className="mb-16 sm:mb-20">
+            <div className="flex items-center justify-center mb-8">
+              <Smartphone className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-foreground">{t('mobileDev.title')}</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+              <Card className="p-6 sm:p-8 flex flex-col h-full">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{t('softwareDev.packages.premium.title')}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t('mobileDev.packages.starter.title')}</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
-                    {t('softwareDev.packages.premium.priceUsd')}
+                    {t('mobileDev.packages.starter.priceUsd')}
                   </div>
                   <div className="text-sm text-muted-foreground mb-4">
-                    {t('softwareDev.packages.premium.priceUzs')}
+                    {t('mobileDev.packages.starter.priceUzs')}
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-8 flex-grow">
-                  {(t.raw('softwareDev.packages.premium.features') as string[]).map((feature: string, index: number) => (
+                  {(t.raw('mobileDev.packages.starter.features') as string[]).map((feature: string, index: number) => (
                     <li key={index} className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
@@ -110,7 +145,61 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={t('cta.buttonText')} />
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
+                </div>
+              </Card>
+
+              <Card className="p-6 sm:p-8 border-2 border-blue-500 relative flex flex-col h-full">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-blue-500">{t('mobileDev.packages.standard.mostPopular')}</Badge>
+                </div>
+                
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{t('mobileDev.packages.standard.title')}</h3>
+                  <div className="text-2xl font-bold mb-4 text-blue-600">
+                    {t('mobileDev.packages.standard.priceUsd')}
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-4">
+                    {t('mobileDev.packages.standard.priceUzs')}
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {(t.raw('mobileDev.packages.standard.features') as string[]).map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto flex justify-center">
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
+                </div>
+              </Card>
+
+              <Card className="p-8 flex flex-col h-full">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{t('mobileDev.packages.premium.title')}</h3>
+                  <div className="text-2xl font-bold mb-4 text-blue-600">
+                    {t('mobileDev.packages.premium.priceUsd')}
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-4">
+                    {t('mobileDev.packages.premium.priceUzs')}
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {(t.raw('mobileDev.packages.premium.features') as string[]).map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto flex justify-center">
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
                 </div>
               </Card>
             </div>
@@ -126,17 +215,17 @@ export default function PricingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
               <Card className="p-6 sm:p-8 flex flex-col h-full">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{t('telegramBot.packages.starter.title')}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t('mobileDev.packages.starter.title')}</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
-                    {t('telegramBot.packages.starter.priceUsd')}
+                    {t('mobileDev.packages.starter.priceUsd')}
                   </div>
                   <div className="text-sm text-muted-foreground mb-4">
-                    {t('telegramBot.packages.starter.priceUzs')}
+                    {t('mobileDev.packages.starter.priceUzs')}
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-8 flex-grow">
-                  {(t.raw('telegramBot.packages.starter.features') as string[]).map((feature: string, index: number) => (
+                  {(t.raw('mobileDev.packages.starter.features') as string[]).map((feature: string, index: number) => (
                     <li key={index} className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
@@ -145,27 +234,27 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={t('cta.buttonText')} />
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
                 </div>
               </Card>
 
               <Card className="p-6 sm:p-8 border-2 border-blue-500 relative flex flex-col h-full">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-blue-500">{t('telegramBot.packages.business.mostPopular')}</Badge>
+                  <Badge className="bg-blue-500">{t('mobileDev.packages.standard.mostPopular')}</Badge>
                 </div>
                 
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{t('telegramBot.packages.business.title')}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t('mobileDev.packages.standard.title')}</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
-                    {t('telegramBot.packages.business.priceUsd')}
+                    {t('mobileDev.packages.standard.priceUsd')}
                   </div>
                   <div className="text-sm text-muted-foreground mb-4">
-                    {t('telegramBot.packages.business.priceUzs')}
+                    {t('mobileDev.packages.standard.priceUzs')}
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-8 flex-grow">
-                  {(t.raw('telegramBot.packages.business.features') as string[]).map((feature: string, index: number) => (
+                  {(t.raw('mobileDev.packages.standard.features') as string[]).map((feature: string, index: number) => (
                     <li key={index} className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
@@ -174,23 +263,23 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={t('cta.buttonText')} />
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
                 </div>
               </Card>
 
               <Card className="p-8 flex flex-col h-full">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{t('telegramBot.packages.premium.title')}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t('mobileDev.packages.premium.title')}</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
-                    {t('telegramBot.packages.premium.priceUsd')}
+                    {t('mobileDev.packages.premium.priceUsd')}
                   </div>
                   <div className="text-sm text-muted-foreground mb-4">
-                    {t('telegramBot.packages.premium.priceUzs')}
+                    {t('mobileDev.packages.premium.priceUzs')}
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-8 flex-grow">
-                  {(t.raw('telegramBot.packages.premium.features') as string[]).map((feature: string, index: number) => (
+                  {(t.raw('mobileDev.packages.premium.features') as string[]).map((feature: string, index: number) => (
                     <li key={index} className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
@@ -199,11 +288,12 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={t('cta.buttonText')} />
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
                 </div>
               </Card>
             </div>
           </div>
+
 
           {/* UI/UX Design */}
           <div className="mb-16 sm:mb-20">
@@ -213,19 +303,19 @@ export default function PricingPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-              <Card className="p-8 flex flex-col h-full">
+              <Card className="p-6 sm:p-8 flex flex-col h-full">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2">{t('uiUxDesign.packages.basic.title')}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t('uiUxDesign.packages.starter.title')}</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
-                    {t('uiUxDesign.packages.basic.priceUsd')}
+                    {t('uiUxDesign.packages.starter.priceUsd')}
                   </div>
                   <div className="text-sm text-muted-foreground mb-4">
-                    {t('uiUxDesign.packages.basic.priceUzs')}
+                    {t('uiUxDesign.packages.starter.priceUzs')}
                   </div>
                 </div>
                 
                 <ul className="space-y-3 mb-8 flex-grow">
-                  {(t.raw('uiUxDesign.packages.basic.features') as string[]).map((feature: string, index: number) => (
+                  {(t.raw('uiUxDesign.packages.starter.features') as string[]).map((feature: string, index: number) => (
                     <li key={index} className="flex items-start">
                       <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                       <span>{feature}</span>
@@ -234,11 +324,15 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={t('cta.buttonText')} />
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
                 </div>
               </Card>
 
-              <Card className="p-8 flex flex-col h-full">
+              <Card className="p-6 sm:p-8 border-2 border-blue-500 relative flex flex-col h-full">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-blue-500">{t('uiUxDesign.packages.standard.mostPopular')}</Badge>
+                </div>
+                
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold mb-2">{t('uiUxDesign.packages.standard.title')}</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
@@ -259,7 +353,7 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={t('cta.buttonText')} />
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
                 </div>
               </Card>
 
@@ -284,44 +378,100 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={t('cta.buttonText')} />
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
                 </div>
               </Card>
             </div>
           </div>
 
-          {/* Custom Solutions */}
+          {/* All-In Package */}
           <div className="mb-16 sm:mb-20">
             <div className="flex items-center justify-center mb-8">
               <Wrench className="w-8 h-8 text-blue-600 mr-3" />
-              <h2 className="text-3xl font-bold text-foreground">{t('customSolutions.title')}</h2>
+              <h2 className="text-3xl font-bold text-foreground">{t('allInPackage.title')}</h2>
             </div>
+
+            <p className="text-center text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+              {t('allInPackage.subtitle')}
+            </p>
             
-            <div className="grid md:grid-cols-1 gap-8 max-w-4xl mx-auto">
-              <Card className="p-8 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+              <Card className="p-6 sm:p-8 flex flex-col h-full">
                 <div className="mb-6">
-                  <h3 className="text-3xl font-bold mb-4">{t('customSolutions.enterprise.title')}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t('allInPackage.packages.starter.title')}</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
-                    {t('customSolutions.enterprise.price')}
+                    {t('allInPackage.packages.starter.priceUsd')}
                   </div>
-                  <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                    {t('customSolutions.enterprise.description')}
-                  </p>
+                  <div className="text-sm text-muted-foreground mb-4">
+                    {t('allInPackage.packages.starter.priceUzs')}
+                  </div>
                 </div>
                 
-                <div className="grid md:grid-cols-1 gap-6 mb-8 text-left">
-                  <ul className="space-y-3">
-                    {(t.raw('customSolutions.enterprise.features') as string[]).map((feature: string, index: number) => (
-                      <li key={index} className="flex items-start">
-                        <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {(t.raw('allInPackage.packages.starter.features') as string[]).map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto flex justify-center">
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
+                </div>
+              </Card>
+
+              <Card className="p-6 sm:p-8 border-2 border-blue-500 relative flex flex-col h-full">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-blue-500">{t('allInPackage.packages.standard.mostPopular')}</Badge>
                 </div>
                 
-                <div className="flex justify-center">
-                  <ContactForm buttonText={t('cta.buttonText')} />
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{t('allInPackage.packages.standard.title')}</h3>
+                  <div className="text-2xl font-bold mb-4 text-blue-600">
+                    {t('allInPackage.packages.standard.priceUsd')}
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-4">
+                    {t('allInPackage.packages.standard.priceUzs')}
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {(t.raw('allInPackage.packages.standard.features') as string[]).map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto flex justify-center">
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
+                </div>
+              </Card>
+
+              <Card className="p-8 flex flex-col h-full">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{t('allInPackage.packages.premium.title')}</h3>
+                  <div className="text-2xl font-bold mb-4 text-blue-600">
+                    {t('allInPackage.packages.premium.priceUsd')}
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-4">
+                    {t('allInPackage.packages.premium.priceUzs')}
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {(t.raw('allInPackage.packages.premium.features') as string[]).map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto flex justify-center">
+                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
                 </div>
               </Card>
             </div>
