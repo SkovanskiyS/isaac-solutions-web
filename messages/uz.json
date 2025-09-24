@@ -6,24 +6,24 @@
     "portfolio": "Portfolio",
     "about": "Biz haqimizda",
     "company": "Isaac Solutions",
-    "startProject": "Loyihangizni bugun boshlang"
+    "startProject": "Loyihangizni boshlang"
   },
   "hero": {
-    "badge": "AI-ga asoslangan ishlab chiqish",
-    "title": "Aqlli yarating. Tez yarating.",
+    "badge": "AI asosidagi rivojlantirish",
+    "title": "Tez yarating. Aql bilan yarating.",
     "titleHighlight": "Biz bilan yarating.",
-    "subtitle": "Biz yuqori sifatli dasturiy ta'minot yechimlari va AI-ga asoslangan MVPlarni taqdim etishda ixtisoslasmiz — startaplar va korporatsiyalarga g'oyadan ishga tushirishgacha bo'lgan vaqtni qisqartirishda yordam beramiz.",
-    "viewWork": "Ishlarimizni ko'ring",
+    "subtitle": "Biz yuqori sifatli dasturiy yechimlar va AI yordamida MVPlarni tez yetkazib beramiz — startap va korxonalarga g'oyadan ishga tushirishgacha qisqa muddatda yordam beramiz.",
+    "viewWork": "Ishlarimizni ko'rish",
     "startProject": "Loyihangizni bugun boshlang"
   },
   "features": {
     "speed": {
-      "title": "Tezlik va innovatsiya",
-      "description": "MVPlar oylar emas, haftalar ichida yetkaziladi"
+      "title": "Tezlik va Innovatsiya",
+      "description": "MVP loyihalar haftalar ichida, oylar emas"
     },
     "uxUi": {
       "title": "UX va UI",
-      "description": "Foydalanuvchilar yoqtiradigan chiroyli dizaynlar"
+      "description": "Foydalanuvchilar sevadigan chiroyli dizaynlar"
     },
     "trusted": {
       "title": "Ishonchli yetkazib berish",
@@ -31,117 +31,134 @@
     }
   },
   "clientLogos": {
-    "title": "Sanoat yetakchilari tomonidan ishonilgan",
+    "title": "Sanoat yetakchilari ishonadi",
     "subtitle": "Eng muhim loyihalarini bizga ishongan kompaniyalarga qo'shiling"
   },
   "services": {
-    "title": "Bizning xizmatlarimiz",
-    "subtitle": "Biznes ehtiyojlaringizga moslashtirilgan keng qamrovli rivojlanish yechimlari",
+    "title": "Bizning xizmatlar",
+    "subtitle": "Biznes ehtiyojlaringizga moslashtirilgan kompleks ishlab chiqish yechimlari",
     "webDev": {
-      "title": "Veb rivojlantirish",
-      "description": "Biz biznesingiz bilan birga o'sish uchun mo'ljallangan zamonaviy, kengaytiriladigan va javobgar veb-ilovalarni yaratamiz. Landing sahifalardan tortib korxona platformalarigacha, bizning yechimlarimiz ishlash va foydalanishga qulaylik hisobga olingan holda yaratiladi.",
+      "title": "Veb-ishlab chiqish",
+      "description": "Biz biznesingiz bilan birga o'sishga mo'ljallangan zamonaviy, kengaytiriladigan va moslashuvchan veb-ilovalarni yaratamiz. Landing sahifalardan tortib korporativ platformalargacha, bizning yechimlarimiz unumdorlik va qulaylikni hisobga olgan holda yaratilgan.",
       "features": [
         "React, Next.js, TypeScript",
-        "Javobgar dizayn",
+        "Moslashuvchan dizayn",
         "Optimallashtirilgan ishlash"
       ]
     },
     "mobileDev": {
-      "title": "Mobil rivojlantirish",
-      "description": "Foydalanuvchilar yoqtiradigan asl mobil ilovalarni yarating. Bizning tajribamiz iOS, Android va barcha qurilmalarda mavjudligingizni ta'minlaydigan o'zaro faol platform yechimlarini qamrab oladi.",
+      "title": "Mobil ishlab chiqish",
+      "description": "Jamoamiz iOS va Android uchun intuitiv mobil ilovalarni yaratib, barcha qurilmalarda silliq tajribani ta'minlaydi. Bu biznes ilova yoki mijozga yo'naltirilgan yechim bo'ladimi, biz uni tez, xavfsiz va foydalanish uchun qulay qilamiz.",
       "features": [
-        "iOS va Android",
         "React Native, Flutter",
-        "O'zaro faol platform yechimlari"
+        "Nativ ishlash",
+        "App Store joylash"
       ]
     },
-    "uiUx": {
-      "title": "UI/UX dizayn",
-      "description": "Ajoyib foydalanuvchi tajribasini yaratadigan chiroyli, intuitiv dizaynlar. Biz mahsulotingiz foydalanuvchilarni xursand qilishi uchun foydalanishga qulaylik, accessibility va vizual jozibadorlikka e'tibor beramiz.",
+    "uxUiDesign": {
+      "title": "UX va UI Dizayn",
+      "description": "Chiroyli va qulay interfeyslar, foydalanuvchi uchun ajoyib tajriba yaratamiz. Biz foydalanish qulayligi, kirish imkoniyati va vizual jozibadorlikka e'tibor qaratamiz, shunda mahsulotingiz foydalanuvchilarni quvontiradi.",
       "features": [
         "Foydalanuvchi tajribasi dizayni",
         "Interfeys dizayni",
-        "Prototip va sinov"
+        "Prototiplash va testlash"
       ]
     },
     "aiAdvantage": {
-      "label": "AI afzalligi:",
-      "description": "Biz yetkazib berishni tezlashtirish, g'oyalarni tezda tasdiqlash va sifatni eng yuqori darajada saqlash uchun AI-ga asoslangan rivojlantirishdan foydalanamiz."
-    }
-  },
-  "portfolio": {
-    "title": "Tanlangan loyihalar",
-    "subtitle": "Innovatsiya, sifat va mijozlar muvaffaqiyatini namoyish etadigan so'nggi ishlarimizni kashf eting.",
-    "projects": {
-      "bron24": {
-        "name": "Bron24",
-        "description": "Real vaqt tahlillari, mijozlarni boshqarish va avtomatlashtirilgan ish jarayonlari bilan 24/7 biznes boshqaruv platformasi. Zamonaviy korxonalar uchun yaratilgan.",
-        "tags": ["Veb-ilova", "Boshqaruv paneli", "Tahlil", "SaaS"]
-      },
-      "vitaCoffee": {
-        "name": "Vita Coffee",
-        "description": "Obuna boshqaruvi, inventar kuzatuvi va mobil qurilmalar uchun optimallashtirilgan to'lov jarayoni bilan premium qahva elektron tijorat platformasi.",
-        "tags": ["Elektron tijorat", "Obuna", "Mobil ilova"]
-      },
-      "techflowCrm": {
-        "name": "TechFlow CRM",
-        "description": "Ilg'or lead kuzatuvi, avtomatlashtirilgan email kampaniyalari va batafsil hisobot paneli bilan mijozlar bilan munosabatlarni boshqarish tizimi.",
-        "tags": ["CRM", "Avtomatlashtirish", "Email marketing"]
-      }
+      "label": "AI Afzalligi:",
+      "description": "Biz AI-ga asoslangan ishlab chiqishdan foydalanib, yetkazib berishni tezlashtiramiz, g'oyalarni tez tekshiramiz va sifatni eng yuqori darajada saqlaymiz."
     }
   },
   "about": {
-    "title": "Bizning jamoa bilan tanishing",
-    "subtitle": "Innovatsiya va ekspertlik bilan dasturiy ta'minot rivojlantirishining kelajagini quruvchi uchta ishtiyoqli tadbirkor.",
+    "title": "Jamoamiz bilan tanishing",
+    "subtitle": "Dasturiy ta'minot ishlab chiqishning kelajagini innovatsiya va tajriba bilan qurayotgan uch g'ayratli tadbirkor.",
     "team": {
       "javohir": {
         "name": "Javohir Atabekov",
-        "position": "Bosh texnologiya direktori (CTO)",
-        "bio": "ERP joriy etish, raqamli transformatsiya va biznes jarayonlarini optimallashtirishda katta tajribaga ega CTO va SAP Business One maslahatchisi. Texnologiyalarni biznes maqsadlari bilan bog'laydigan va kengaytiriladigan o'sishni ta'minlaydigan tashabbuslarni boshqaradigan tajribali loyiha menejeri.",
-        "expertise": "Ekspertlik:",
-        "skills": ["SAP Business One", "Mahsulot strategiyasi", "Loyiha boshqaruvi", "Tizim integratsiyasi", "Ma'lumotlar tahlili va BI"]
+        "position": "Texnologiya bo'yicha direktor (CTO)",
+        "bio": "SAP Business One bo'yicha maslahatchi va CTO, ERP joriy etish hamda biznes jarayonlarini optimallashtirishda katta tajribaga ega. Texnologik strategiya va yechimlarni boshqarib, biznes maqsadlarini ishonchli va masshtablanuvchi tizimlar bilan uyg'unlashtiradi.",
+        "description": "ERP joriy etish, raqamli transformatsiya va biznes jarayonlarini optimallashtirishda kuchli tajribaga ega CTO va SAP Business One maslahatchisi. Texnologiyani biznes maqsadlari bilan bog'lab, masshtabli o'sishni ta'minlovchi loyihalarni boshqaradigan mohir loyiha menejeri.",
+        "expertise": "Ekspertiza:",
+        "skills": [
+          "SAP Business One",
+          "Mahsulot strategiyasi",
+          "Loyiha boshqaruvi",
+          "Tizimlarni integratsiyalash",
+          "Ma'lumotlar tahlili va BI"
+        ]
       },
       "jahongir": {
         "name": "Jahongir Masharipov",
-        "position": "Asoschisi va bosh direktor",
-        "bio": "Sportni hamma uchun ochiq qilishga ishtiyoqli. Sport loyihalarini boshqarish va innovatsion jamoalarni boshqarishda 2 yildan ortiq tajriba.",
-        "expertise": "Ekspertlik:",
-        "skills": ["Sport boshqaruvi", "Jamoa rahbarligi", "Loyiha innovatsiyasi", "Biznes rivojlantirish"]
+        "position": "Asoschisi va CEO",
+        "bio": "Sportni hamma uchun qulay qilishga ishtiyoqli. Sport loyihalarini boshqarish va innovatsion jamoalarni boshqarishda 2 yildan ortiq tajribaga ega.",
+        "expertise": "Ekspertiza:",
+        "skills": [
+          "Sport boshqaruvi",
+          "Jamoa yetakchiligi",
+          "Loyiha innovatsiyasi",
+          "Biznes rivojlantirish"
+        ]
       },
       "alex": {
-        "name": "Aleks Smit",
-        "position": "Yetakchi ishlab chiquvchi",
-        "bio": "Zamonaviy veb texnologiyalar va bulut yechimlari bo'yicha ekspertlikka ega tajribali full-stack ishlab chiquvchi. Kengaytiriladigan ilovalarni yaratish va yuqori sifatli dasturiy ta'minot yechimlarini qurish uchun yosh ishlab chiquvchilarga nasihat berishga ishtiyoqli.",
-        "expertise": "Ekspertlik:",
-        "skills": ["Full-Stack rivojlantirish", "React/Next.js", "Bulut arxitekturasi", "Jamoa mentorlik"]
+        "name": "Alex Smith",
+        "position": "Yetakchi dasturchi",
+        "bio": "Zamonaviy veb texnologiyalari va bulutli yechimlarda tajribaga ega full-stack dasturchi. Kengaytiriladigan ilovalarni yaratish va yosh dasturchilarga yuqori sifatli dasturiy yechimlarni yaratishni o'rgatishga ishtiyoqli.",
+        "expertise": "Ekspertiza:",
+        "skills": [
+          "Full-Stack ishlab chiqish",
+          "React/Next.js",
+          "Bulutli arxitektura",
+          "Jamoa mentoring"
+        ]
       }
     },
     "linkedinProfile": "LinkedIn profilini ko'rish",
     "vision": {
-      "title": "Bizning ko'rishtimiz",
-      "description": "Biz nafaqat texnik talablarni qondiradigan, balki haqiqiy biznes qiymatini olib keladigan yuqori sifatli dasturiy ta'minot yechimlarini taqdim etishga ishonamiz. Texnologiya va biznes strategiyasidagi birlashgan tajribamiz har bir loyiha muvaffaqiyat uchun qurilishini kafolatlaydi."
+      "title": "Bizning Maqsadimiz",
+      "description": "Biz nafaqat texnik talablarga javob beradigan, balki haqiqiy biznes qiymatini keltiradigan yuqori sifatli dasturiy yechimlarni yetkazib berishga ishonamiz. Texnologiya va biznes strategiyasidagi birlashgan tajribamiz har bir loyihaning muvaffaqiyat uchun yaratilishini ta'minlaydi."
+    }
+  },
+  "portfolio": {
+    "title": "Tanlangan loyihalar",
+    "subtitle": "Innovatsiya, sifat va mijoz muvaffaqiyatini namoyish etuvchi so'nggi ishlarimizni ko'ring.",
+    "projects": {
+      "bron24": {
+        "name": "Bron24",
+        "description": "Real vaqt tahlili, mijozlarni boshqarish va avtomatlashtirilgan ish jarayonlari bilan jihozlangan 24/7 biznesni boshqarish platformasi. Zamonaviy korxonalar uchun yaratilgan.",
+        "tags": ["Veb ilova", "Dashboard", "Tahlillar", "SaaS"]
+      },
+      "vitaCoffee": {
+        "name": "Vita Coffee",
+        "description": "Obuna boshqaruvi, zaxira kuzatuvi va mobil qurilmalarga moslashgan to'lov tajribasi bilan premium qahva e-tijorat platformasi.",
+        "tags": ["E-tijorat", "Obuna", "Mobil ilova"]
+      },
+      "techflowCrm": {
+        "name": "TechFlow CRM",
+        "description": "Keng qamrovli mijozlar bilan munosabatlarni boshqarish tizimi, rivojlangan potensial mijozlarni kuzatish, avtomatlashtirilgan email kampaniyalar va batafsil hisobot paneli bilan.",
+        "tags": ["CRM", "Avtomatlashtirish", "Email Marketing"]
+      }
     }
   },
   "cta": {
-    "title": "Keyingi katta g'oyangizni amalga oshirishga tayyormisiz?",
-    "subtitle": "Ajoyib dasturiy ta'minot yechimlarini etkazib berishda bizga ishongan muvaffaqiyatli startaplar va korxonalarga qo'shiling. Loyihangizni muhokama qilaylik va ko'rishtimizni haqiqatga aylantirmoq.",
+    "title": "Keyingi katta g'oyangizni yaratishga tayyormisiz?",
+    "subtitle": "Ajoyib dasturiy yechimlarni yetkazib berishga ishonadigan muvaffaqiyatli startaplar va korxonalarga qo'shiling. Keling, loyihangizni muhokama qilamiz va g'oyangizni reallikka aylantiramiz.",
     "getStarted": "Bugun boshlang",
     "viewStories": "Muvaffaqiyat hikoyalarini ko'ring",
     "features": [
-      "24 soatlik javob vaqti",
+      "24 soat ichida javob",
       "Bepul maslahat",
-      "Hech qanday majburiyat yo'q"
+      "Majburiyatsiz"
     ]
   },
   "footer": {
     "company": "BuildFast",
-    "description": "Biznes o'sishini rag'batlantiruvchi yuqori sifatli dasturiy ta'minot va AI-ga asoslangan yechimlarni yaratish.",
+    "description": "Biznes o'sishini ta'minlovchi yuqori sifatli dasturiy ta'minot va AI-ga asoslangan yechimlarni yaratish.",
     "services": {
       "title": "Xizmatlar",
       "items": [
-        "Veb rivojlantirish",
+        "Veb-ishlab chiqish",
         "Mobil ilovalar",
-        "BI panellari"
+        "BI Dashboardlar"
       ]
     },
     "company_info": {
@@ -160,125 +177,10 @@
     },
     "copyright": "© 2024 Isaac Solutions. Barcha huquqlar himoyalangan."
   },
-  "pricing": {
-    "title": "Isaac Solutions - Autsorting paketlari",
-    "subtitle": "Biznes ehtiyojlaringizga mos keladigan moslashuvchan autsorting yechimlari — tez MVPlarni ishga tushirishdan tortib korxona darajasidagi tizimlarni kengaytirishgacha.",
-    "badge": "Autsorting paketlari",
-    "softwareDev": {
-      "title": "Dasturiy ta'minot ishlab chiqish",
-      "packages": {
-        "starter": {
-          "title": "Boshlang'ich ishlab chiqish",
-          "priceUsd": "$600 - $900",
-          "priceUzs": "7.5M - 11M so'm",
-          "features": [
-            "Landing sahifa (2-3 sahifa)",
-            "Mobil javobgar",
-            "Asosiy SEO sozlamalari",
-            "1 oylik bepul qo'llab-quvvatlash"
-          ]
-        },
-        "standard": {
-          "title": "Standart ishlab chiqish",
-          "priceUsd": "$950 - $1,600",
-          "priceUzs": "12M - 20M so'm",
-          "mostPopular": "Eng mashhur",
-          "features": [
-            "Biznes veb-sayti (5-7 sahifa)",
-            "Aloqa formalari va integratsiyalar (Telegram, Email)",
-            "Javobgar dizayn (desktop + mobil)",
-            "Asosiy CMS (oson kontent tahrirlash)",
-            "Ishlash optimizatsiyasi",
-            "3 oylik bepul qo'llab-quvvatlash"
-          ]
-        },
-        "premium": {
-          "title": "Premium ishlab chiqish",
-          "priceUsd": "$1,700 - $2,500",
-          "priceUzs": "21M - 31M so'm",
-          "features": [
-            "Murakkab veb-ilova (10+ sahifa)",
-            "Foydalanuvchi autentifikatsiyasi va boshqaruv paneli",
-            "Ma'lumotlar bazasi integratsiyasi",
-            "API ishlab chiqish",
-            "Rolga asoslangan ruxsatlar bilan rivojlangan CMS",
-            "6 oylik bepul qo'llab-quvvatlash"
-          ]
-        }
-      }
-    },
-    "uiUxDesign": {
-      "title": "UI/UX Dizayn",
-      "packages": {
-        "basic": {
-          "title": "Asosiy dizayn",
-          "priceUsd": "$300 - $500",
-          "priceUzs": "3.7M - 6.2M so'm",
-          "features": [
-            "Landing sahifa maketi",
-            "Mobil-birinchi javobgar dizayn",
-            "Asosiy brending (logo, rang palitri)",
-            "2 dizayn tahrirlash"
-          ]
-        },
-        "standard": {
-          "title": "Standart dizayn",
-          "priceUsd": "$600 - $900",
-          "priceUzs": "7.5M - 11M so'm",
-          "features": [
-            "Ko'p sahifali veb-sayt dizayni (5-7 sahifa)",
-            "Foydalanuvchi tajribasi ramkalari",
-            "To'liq brand identifikatsiya paketi",
-            "Interaktiv prototiplar",
-            "5 dizayn tahrirlash"
-          ]
-        },
-        "premium": {
-          "title": "Premium dizayn",
-          "priceUsd": "$1,000 - $1,500",
-          "priceUzs": "12.5M - 19M so'm",
-          "features": [
-            "Murakkab ilova UI dizayni (10+ ekran)",
-            "Rivojlangan foydalanuvchi yo'li xaritalash",
-            "Dizayn tizimi yaratish",
-            "Yuqori aniqlikdagi interaktiv prototiplar",
-            "Cheksiz dizayn tahrirlash",
-            "Ishlab chiquvchilar uchun hujjatlar"
-          ]
-        }
-      }
-    },
-    "customSolutions": {
-      "title": "Maxsus yechimlar",
-      "enterprise": {
-        "title": "Korporativ va masshtablanadigan yechimlar",
-        "price": "Maxsus taklif",
-        "description": "Katta miqyosli loyihalar, korporativ ilovalar yoki maxsus e'tibor talab qiladigan noyob talablar uchun.",
-        "features": [
-          "Maxsus talablar tahlili",
-          "Masshtablanadigan arxitektura rejalashtiruvi",
-          "To'liq funksional korporativ yechimlar",
-          "Uchinchi tomon integratsiyalari",
-          "Maxsus loyiha boshqaruvi",
-          "Ustuvor qo'llab-quvvatlash va texnik xizmat"
-        ]
-      }
-    },
-    "consultation": {
-      "title": "Bepul maslahat",
-      "subtitle": "Qaysi paket ehtiyojlaringizga mos kelishini bilmayapsizmi?",
-      "description": "Loyiha talablaringizni muhokama qilish va shaxsiylashtirilgan tavsiyalar olish uchun ekspertlarimiz bilan bepul 30 daqiqalik maslahat rejalashtiring."
-    },
-    "cta": {
-      "title": "Boshlashga tayyormisiz?",
-      "description": "Loyiha talablaringizni muhokama qilish va shaxsiylashtirilgan taklif olish uchun bugun biz bilan bog'laning.",
-      "buttonText": "Loyihangizni bugun boshlang"
-    }
-  },
   "contactForm": {
     "modal": {
       "title": "Bugun boshlang",
-      "subtitle": "Loyihangiz haqida bizga ayting va biz 24 soat ichida siz bilan bog'lanamiz.",
+      "subtitle": "Loyihangiz haqida bizga ayting va 24 soat ichida javob beramiz.",
       "thankYouTitle": "Rahmat!",
       "fields": {
         "fullName": {
@@ -288,23 +190,138 @@
           "minLength": "Ism kamida 2 ta belgidan iborat bo'lishi kerak"
         },
         "phone": {
-          "label": "Telefon raqami *",
+          "label": "Telefon raqam *",
           "placeholder": "+1 (555) 123-4567",
-          "required": "Telefon raqami kiritish majburiy",
+          "required": "Telefon raqam kiritish majburiy",
           "invalid": "Iltimos, to'g'ri telefon raqamini kiriting"
         }
       },
       "buttons": {
         "sendMessage": "Xabar yuborish",
         "sending": "Yuborilmoqda...",
-        "defaultButton": "Keling, birga quraylik"
+        "defaultButton": "Birga quramiz"
       },
       "success": {
         "title": "Rahmat, {name}!",
-        "message": "Biz tez orada {phone} raqamiga qo'ng'iroq qilamiz",
-        "autoClose": "Bu oyna avtomatik ravishda yopiladi"
+        "message": "Tez orada {phone} raqami orqali siz bilan bog'lanamiz",
+        "autoClose": "Ushbu oyna avtomatik ravishda yopiladi"
       },
-      "footer": "ESC tugmasini bosing yoki tashqariga bosing"
+      "footer": "Yopish uchun ESC tugmasini bosing yoki tashqariga bosing"
+    }
+  },
+  "pricing": {
+    "title": "Isaac Solutions - Autsorsing paketlari",
+    "subtitle": "Tez MVPlardan tortib korporativ tizimlargacha - biznesingiz ehtiyojlariga mos moslashuvchan autsorsing yechimlari.",
+    "badge": "Autsorsing paketlari",
+    "softwareDev": {
+      "title": "Dasturiy ta'minot ishlab chiqish",
+      "packages": {
+        "starter": {
+          "title": "Starter Dev",
+          "priceUsd": "$600 - $900",
+          "priceUzs": "7.5M - 11M so'm",
+          "features": [
+            "Landing sahifa (2-3 sahifa)",
+            "Mobil moslashuvchan",
+            "Asosiy SEO sozlash",
+            "1 oylik bepul texnik yordam"
+          ]
+        },
+        "standard": {
+          "title": "Standard Dev",
+          "priceUsd": "$950 - $1,600",
+          "priceUzs": "12M - 20M so'm",
+          "mostPopular": "Eng mashhur",
+          "features": [
+            "Biznes veb-sayt (5-7 sahifa)",
+            "Aloqa shakllari va integratsiyalar (Telegram, Email)",
+            "Moslashuvchan dizayn (desktop + mobil)",
+            "Asosiy CMS (oson kontent tahrirlash)",
+            "Ishlash tezligini optimallashtirish",
+            "3 oylik bepul texnik yordam"
+          ]
+        },
+        "premium": {
+          "title": "Premium Dev",
+          "priceUsd": "$1,700 - $2,500",
+          "priceUzs": "21M - 31M so'm",
+          "features": [
+            "Murakkab veb ilova (10+ sahifa)",
+            "Foydalanuvchi autentifikatsiyasi va dashboard",
+            "Ma'lumotlar bazasi integratsiyasi",
+            "API ishlab chiqish",
+            "Kengaytirilgan CMS rol-asoslangan ruxsatlar bilan",
+            "6 oylik bepul texnik yordam"
+          ]
+        }
+      }
+    },
+    "uiUxDesign": {
+      "title": "UI/UX Dizayn",
+      "packages": {
+        "basic": {
+          "title": "Basic Dizayn",
+          "priceUsd": "$300 - $500",
+          "priceUzs": "3.7M - 6.2M so'm",
+          "features": [
+            "Landing sahifa maketi",
+            "Mobile-first moslashuvchan dizayn",
+            "Asosiy brending (logotip, rang sxemasi)",
+            "2 ta dizayn qayta ko'rib chiqish"
+          ]
+        },
+        "standard": {
+          "title": "Standard Dizayn",
+          "priceUsd": "$600 - $900",
+          "priceUzs": "7.5M - 11M so'm",
+          "features": [
+            "Ko'p sahifali veb-sayt dizayni (5-7 sahifa)",
+            "Foydalanuvchi tajribasi wireframing",
+            "To'liq brend identifikatsiya paketi",
+            "Interaktiv prototiplar",
+            "5 ta dizayn qayta ko'rib chiqish"
+          ]
+        },
+        "premium": {
+          "title": "Premium Dizayn",
+          "priceUsd": "$1,000 - $1,500",
+          "priceUzs": "12.5M - 19M so'm",
+          "features": [
+            "Murakkab ilova UI dizayni (10+ ekran)",
+            "Kengaytirilgan foydalanuvchi sayohati xaritalash",
+            "Dizayn tizimini yaratish",
+            "Yuqori aniqlikdagi interaktiv prototiplar",
+            "Cheksiz dizayn qayta ko'rib chiqishlar",
+            "Dasturchilarga topshirish hujjatlari"
+          ]
+        }
+      }
+    },
+    "customSolutions": {
+      "title": "Maxsus yechimlar",
+      "enterprise": {
+        "title": "Korporativ va kengaytiriladigan yechimlar",
+        "price": "Maxsus narx",
+        "description": "Maxsus e'tibor talab qiladigan katta masshtabli loyihalar, korporativ ilovalar yoki noyob talablar uchun.",
+        "features": [
+          "Maxsus talablar tahlili",
+          "Kengaytiriladigan arxitektura rejalashtirish",
+          "To'liq stack korporativ yechimlari",
+          "Uchinchi tomon integratsiyalari",
+          "Ajratilgan loyiha boshqaruvi",
+          "Ustuvor texnik yordam va xizmat ko'rsatish"
+        ]
+      }
+    },
+    "consultation": {
+      "title": "Bepul konsultatsiya",
+      "subtitle": "Qaysi paket sizning ehtiyojlaringizga mos kelishiga ishonchingiz komil emasmi?",
+      "description": "Loyihangiz talablarini muhokama qilish va shaxsiy tavsiyalar olish uchun bizning mutaxassislarimiz bilan bepul 30 daqiqalik konsultatsiya belgilang."
+    },
+    "cta": {
+      "title": "Boshlashga tayyormisiz?",
+      "description": "Loyihangiz talablarini muhokama qilish va shaxsiy narx olish uchun bugun biz bilan bog'laning.",
+      "buttonText": "Loyihangizni bugun boshlang"
     }
   }
 }

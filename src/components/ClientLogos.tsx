@@ -2,10 +2,17 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+
+interface Logo {
+  id: number;
+  name: string;
+  src: string;
+  fallback?: string;
+  alt: string;
+}
 
 // Real company logos - using multiple reliable sources with fallbacks
-const clientLogos = [
+const clientLogos: Logo[] = [
   {
     id: 1,
     name: "Microsoft",
@@ -114,7 +121,7 @@ const clientLogos = [
 ];
 
 // Individual logo component with fallback handling
-function LogoImage({ logo, index }: { logo: any; index: number }) {
+function LogoImage({ logo, index }: { logo: Logo; index: number }) {
   const [currentSrc, setCurrentSrc] = useState(logo.src);
   const [hasError, setHasError] = useState(false);
 
@@ -153,8 +160,6 @@ interface ClientLogosProps {
 }
 
 export default function ClientLogos({ className = "", speed = 'normal' }: ClientLogosProps) {
-  const t = useTranslations('clientLogos');
-  
   // Animation speed mapping
   const speedClasses = {
     slow: 'animate-scroll-60s',
@@ -170,10 +175,10 @@ export default function ClientLogos({ className = "", speed = 'normal' }: Client
       {/* Section Header */}
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-          {t('title')}
+          Trusted by Industry Leaders
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          {t('subtitle')}
+          Join the companies that trust us with their most important projects
         </p>
       </div>
 

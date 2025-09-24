@@ -5,12 +5,6 @@ const withNextIntl = require('next-intl/plugin')(
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "source.unsplash.com",
-      "images.unsplash.com",
-      "ext.same-assets.com",
-      "ugc.same-assets.com",
-    ],
     remotePatterns: [
       {
         protocol: "https",
@@ -32,12 +26,31 @@ const nextConfig = {
         hostname: "ugc.same-assets.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.worldvectorlogo.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "ui-avatars.com",
+        pathname: "/**",
+      },
     ],
   },
   // Performance optimizations
   poweredByHeader: false,
   compress: true,
-  swcMinify: true,
   experimental: {
     optimizeCss: true,
   },
