@@ -297,6 +297,47 @@
         }
       }
     },
+    "telegramBot": {
+      "title": "Telegram Bot",
+      "packages": {
+        "starter": {
+          "title": "Starter Bot",
+          "priceUsd": "$240 - $430",
+          "priceUzs": "3M - 5.5M so'm",
+          "features": [
+            "Oddiy menyu bot (FAQ, kontaktlar)",
+            "Maxsus brending",
+            "1 ta til qo'llab-quvvatlash",
+            "1 oylik texnik yordam"
+          ]
+        },
+        "business": {
+          "title": "Business Bot",
+          "priceUsd": "$800 - $1,600",
+          "priceUzs": "10M - 20M so'm",
+          "mostPopular": "Eng mashhur",
+          "features": [
+            "Buyurtma tizimi (mahsulotlar/xizmatlar)",
+            "Onlayn to'lovlar (Payme, Click)",
+            "Adminlar uchun bildirishnomalar",
+            "Ko'p tilli qo'llab-quvvatlash",
+            "2 oylik texnik yordam"
+          ]
+        },
+        "premium": {
+          "title": "Premium Bot",
+          "priceUsd": "$1,600 - $2,700",
+          "priceUzs": "20M - 35M so'm",
+          "features": [
+            "To'liq CRM / ERP integratsiyasi",
+            "Mijozlar bazasi + tahlillar",
+            "Xodimlar uchun rol asosidagi kirish",
+            "AI chatbot funksiyalari",
+            "3 oylik premium texnik yordam"
+          ]
+        }
+      }
+    },
     "customSolutions": {
       "title": "Maxsus yechimlar",
       "enterprise": {

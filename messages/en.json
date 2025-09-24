@@ -255,6 +255,47 @@
         }
       }
     },
+    "telegramBot": {
+      "title": "Telegram Bot",
+      "packages": {
+        "starter": {
+          "title": "Starter Bot",
+          "priceUsd": "$240 - $430",
+          "priceUzs": "3M - 5.5M UZS",
+          "features": [
+            "Simple menu bot (FAQ, contacts)",
+            "Custom branding",
+            "1 language support",
+            "1-month support"
+          ]
+        },
+        "business": {
+          "title": "Business Bot",
+          "priceUsd": "$800 - $1,600",
+          "priceUzs": "10M - 20M UZS",
+          "mostPopular": "Most Popular",
+          "features": [
+            "Ordering system (products/services)",
+            "Online payments (Payme, Click)",
+            "Notifications for admins",
+            "Multi-language support",
+            "2-month support"
+          ]
+        },
+        "premium": {
+          "title": "Premium Bot",
+          "priceUsd": "$1,600 - $2,700",
+          "priceUzs": "20M - 35M UZS",
+          "features": [
+            "Full CRM / ERP integration",
+            "Customer database + analytics",
+            "Role-based access for staff",
+            "AI chatbot functions",
+            "3-month premium support"
+          ]
+        }
+      }
+    },
     "customSolutions": {
       "title": "Custom Solutions",
       "enterprise": {
