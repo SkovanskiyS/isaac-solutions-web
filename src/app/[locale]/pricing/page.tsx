@@ -116,6 +116,95 @@ export default function PricingPage() {
             </div>
           </div>
 
+          {/* Telegram Bot */}
+          <div className="mb-16 sm:mb-20">
+            <div className="flex items-center justify-center mb-8">
+              <MessageCircle className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-foreground">{t('telegramBot.title')}</h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+              <Card className="p-6 sm:p-8 flex flex-col h-full">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{t('telegramBot.packages.starter.title')}</h3>
+                  <div className="text-2xl font-bold mb-4 text-blue-600">
+                    {t('telegramBot.packages.starter.priceUsd')}
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-4">
+                    {t('telegramBot.packages.starter.priceUzs')}
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {(t.raw('telegramBot.packages.starter.features') as string[]).map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto flex justify-center">
+                  <ContactForm buttonText={t('cta.buttonText')} />
+                </div>
+              </Card>
+
+              <Card className="p-6 sm:p-8 border-2 border-blue-500 relative flex flex-col h-full">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-blue-500">{t('telegramBot.packages.business.mostPopular')}</Badge>
+                </div>
+                
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{t('telegramBot.packages.business.title')}</h3>
+                  <div className="text-2xl font-bold mb-4 text-blue-600">
+                    {t('telegramBot.packages.business.priceUsd')}
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-4">
+                    {t('telegramBot.packages.business.priceUzs')}
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {(t.raw('telegramBot.packages.business.features') as string[]).map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto flex justify-center">
+                  <ContactForm buttonText={t('cta.buttonText')} />
+                </div>
+              </Card>
+
+              <Card className="p-8 flex flex-col h-full">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-2">{t('telegramBot.packages.premium.title')}</h3>
+                  <div className="text-2xl font-bold mb-4 text-blue-600">
+                    {t('telegramBot.packages.premium.priceUsd')}
+                  </div>
+                  <div className="text-sm text-muted-foreground mb-4">
+                    {t('telegramBot.packages.premium.priceUzs')}
+                  </div>
+                </div>
+                
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {(t.raw('telegramBot.packages.premium.features') as string[]).map((feature: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="mt-auto flex justify-center">
+                  <ContactForm buttonText={t('cta.buttonText')} />
+                </div>
+              </Card>
+            </div>
+          </div>
+
           {/* UI/UX Design */}
           <div className="mb-16 sm:mb-20">
             <div className="flex items-center justify-center mb-8">
