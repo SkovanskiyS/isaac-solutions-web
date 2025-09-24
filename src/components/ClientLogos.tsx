@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface Logo {
   id: number;
@@ -160,6 +161,8 @@ interface ClientLogosProps {
 }
 
 export default function ClientLogos({ className = "", speed = 'normal' }: ClientLogosProps) {
+  const t = useTranslations();
+  
   // Animation speed mapping
   const speedClasses = {
     slow: 'animate-scroll-60s',
@@ -175,10 +178,10 @@ export default function ClientLogos({ className = "", speed = 'normal' }: Client
       {/* Section Header */}
       <div className="text-center mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-          Trusted by Industry Leaders
+          {t('clientLogos.title')}
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Join the companies that trust us with their most important projects
+          {t('clientLogos.subtitle')}
         </p>
       </div>
 

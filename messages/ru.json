@@ -199,7 +199,7 @@
       "buttons": {
         "sendMessage": "Отправить сообщение",
         "sending": "Отправка...",
-        "defaultButton": "Построим вместе"
+        "defaultButton": "Начать проект сегодня"
       },
       "success": {
         "title": "Спасибо, {name}!",

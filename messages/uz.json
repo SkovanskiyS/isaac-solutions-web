@@ -199,7 +199,7 @@
       "buttons": {
         "sendMessage": "Xabar yuborish",
         "sending": "Yuborilmoqda...",
-        "defaultButton": "Birga quramiz"
+        "defaultButton": "Loyihani boshlash"
       },
       "success": {
         "title": "Rahmat, {name}!",

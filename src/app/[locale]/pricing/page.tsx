@@ -56,7 +56,7 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
+                  <ContactForm buttonText={t('cta.buttonText')} />
                 </div>
               </Card>
 
@@ -85,7 +85,7 @@ export default function PricingPage() {
                 </ul>
                 
                 <div className="mt-auto flex justify-center">
-                  <ContactForm buttonText={contactT('modal.buttons.defaultButton')} />
+                  <ContactForm buttonText={t('cta.buttonText')} />
                 </div>
               </Card>
 
