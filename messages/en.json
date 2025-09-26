@@ -95,11 +95,11 @@
         "skills": ["Sports Management", "Team Leadership", "Project Innovation", "Business Development"]
       },
       "alex": {
-        "name": "Alex Smith",
-        "position": "Lead Developer",
-        "bio": "Experienced full-stack developer with expertise in modern web technologies and cloud solutions. Passionate about creating scalable applications and mentoring junior developers to build high-quality software solutions.",
+        "name": "Fayzullo Lutpillayev",
+        "position": "Founder & Innovator",
+        "bio": "Entrepreneur and tech enthusiast with a passion for building innovative solutions in IoT, AI, and AR/VR. Experienced in leading startups, developing smart home systems, and creating immersive digital products. Dedicated to combining technology and business strategy to bring ideas to life and make a real impact.",
         "expertise": "Expertise:",
-        "skills": ["Full-Stack Development", "React/Next.js", "Cloud Architecture", "Team Mentoring"]
+        "skills": ["IoT & Smart Home Systems", "Artificial Intelligence Applications", "AR/VR Product Development", "Startup Strategy & Leadership", "Project Innovation"]
       }
     },
     "linkedinProfile": "View LinkedIn Profile",
