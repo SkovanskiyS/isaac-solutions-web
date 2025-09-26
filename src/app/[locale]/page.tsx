@@ -278,7 +278,7 @@ export default function Home() {
               {/* LinkedIn Button at bottom */}
               <div className="mt-6 pt-4 border-t border-border">
                 <Button 
-                  onClick={() => window.open('https://www.linkedin.com/in/jahongir-masharipov', '_blank')}
+                  onClick={() => window.open('https://uz.linkedin.com/in/jaxongir-masharipov-67a584256', '_blank')}
                   className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 mx-auto"
                 >
                   <Linkedin className="w-4 h-4" />
