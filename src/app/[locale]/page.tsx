@@ -317,7 +317,7 @@ export default function Home() {
               {/* LinkedIn Button at bottom */}
               <div className="mt-6 pt-4 border-t border-border">
                 <Button 
-                  onClick={() => window.open('https://www.linkedin.com/in/fayzullo-lutpillayev', '_blank')}
+                  onClick={() => window.open('https://www.linkedin.com/in/fayzullo-lutpillayev-892923258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app', '_blank')}
                   className="bg-blue-600 hover:bg-blue-700 text-white flex items-center gap-2 mx-auto"
                 >
                   <Linkedin className="w-4 h-4" />
