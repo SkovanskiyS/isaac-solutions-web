@@ -289,8 +289,14 @@ export default function Home() {
 
             {/* Team Member 3 */}
             <Card className="p-8 text-center hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
-              <div className="w-24 h-24 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <User className="w-12 h-12 text-white" />
+              <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 border-4 border-orange-600">
+                <Image 
+                  src="/fayzullo-lutpillayev.jpg" 
+                  alt={`${t('about.team.alex.name')} - ${t('about.team.alex.position')}`}
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-2">{t('about.team.alex.name')}</h3>
               <p className="text-orange-600 font-semibold mb-4">{t('about.team.alex.position')}</p>
