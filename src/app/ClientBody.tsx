@@ -1,9 +1,15 @@
 "use client";
 
 import React from "react";
-import ParticleBackground from "../components/ParticleBackground";
+import dynamic from "next/dynamic";
 import ThemeToggle from "../components/ThemeToggle";
 import { useTheme } from "../contexts/ThemeContext";
+
+// Lazy load ParticleBackground for better performance
+const ParticleBackground = dynamic(() => import("../components/ParticleBackground"), {
+  ssr: false,
+  loading: () => null
+});
 
 export default function ClientBody({
   children,

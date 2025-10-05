@@ -114,8 +114,8 @@
     "projects": {
       "bron24": {
         "name": "Bron24",
-        "description": "A comprehensive 24/7 business management platform with real-time analytics, customer management, and automated workflows. Built for modern enterprises.",
-        "tags": ["Web App", "Dashboard", "Analytics", "SaaS"]
+        "description": "A modern sports field booking platform for football and other sports. Features real-time availability, instant booking, live venue status, and rating system.",
+        "tags": ["Booking Platform", "Sports", "Real-time", "Mobile App"]
       },
       "vitaCoffee": {
         "name": "Vita Coffee",
@@ -148,7 +148,7 @@
       "items": [
         "Web Development",
         "Mobile Apps",
-        "BI Dashboards"
+        "UX & UI Design"
       ]
     },
     "company_info": {

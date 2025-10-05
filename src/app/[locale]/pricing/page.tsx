@@ -478,12 +478,14 @@ export default function PricingPage() {
           </div>
 
           {/* Contact CTA */}
-          <div className="text-center bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/10 dark:to-purple-950/10 rounded-2xl p-12">
-            <h2 className="text-3xl font-bold mb-4">{t('cta.title')}</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <div className="text-center bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/10 dark:to-purple-950/10 rounded-2xl p-6 sm:p-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">{t('cta.title')}</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               {t('cta.description')}
             </p>
-            <ContactForm buttonText={t('cta.buttonText')} className="max-w-md mx-auto" />
+            <div className="flex justify-center w-full">
+              <ContactForm buttonText={t('cta.buttonText')} className="w-full max-w-xs sm:max-w-md mx-auto" />
+            </div>
           </div>
         </div>
       </section>

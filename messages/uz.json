@@ -125,8 +125,8 @@
     "projects": {
       "bron24": {
         "name": "Bron24",
-        "description": "Real vaqt tahlili, mijozlarni boshqarish va avtomatlashtirilgan ish jarayonlari bilan jihozlangan 24/7 biznesni boshqarish platformasi. Zamonaviy korxonalar uchun yaratilgan.",
-        "tags": ["Veb ilova", "Dashboard", "Tahlillar", "SaaS"]
+        "description": "Futbol va boshqa sport turlari uchun zamonaviy sport maydoni bron qilish platformasi. Real vaqt mavjudligi, oniy bron qilish va reyting tizimini o'z ichiga oladi.",
+        "tags": ["Bron platformasi", "Sport", "Real vaqt", "Mobil ilova"]
       },
       "vitaCoffee": {
         "name": "Vita Coffee",
@@ -159,7 +159,7 @@
       "items": [
         "Veb-ishlab chiqish",
         "Mobil ilovalar",
-        "BI Dashboardlar"
+        "UX & UI dizayn"
       ]
     },
     "company_info": {

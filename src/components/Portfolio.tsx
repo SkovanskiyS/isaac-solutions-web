@@ -47,14 +47,14 @@ export default function Portfolio({ className = "" }: PortfolioProps) {
   ];
 
   return (
-    <section id="portfolio" className={`py-24 px-4 sm:px-6 lg:px-8 scroll-mt-20 ${className}`}>
+    <section id="portfolio" className={`py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-20 ${className}`}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             ✨ {t('title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             {t('subtitle')}
           </p>
         </div>
@@ -84,12 +84,12 @@ function ProjectCard({
 
   return (
     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-border/50 bg-card/50 backdrop-blur-sm">
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative w-full aspect-[4/3] overflow-hidden">
         <Image
           src={project.image}
           alt={`${name} project screenshot`}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          className="object-contain transition-transform duration-500 group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           priority
         />

@@ -4,13 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ThemeToggle from "@/components/ThemeToggle";
-import ClientLogos from "@/components/ClientLogos";
-import Portfolio from "@/components/Portfolio";
-import ContactForm from "@/components/ContactForm";
 import Navigation from "@/components/Navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
+import dynamic from 'next/dynamic';
 import {
   Code2,
   Smartphone,
@@ -23,6 +21,21 @@ import {
   User,
   Linkedin
 } from "lucide-react";
+
+// Lazy load heavy components for better performance
+const ClientLogos = dynamic(() => import('@/components/ClientLogos'), {
+  loading: () => <div className="h-24 animate-pulse bg-muted/20 rounded mx-auto max-w-6xl" />,
+  ssr: false
+});
+
+const Portfolio = dynamic(() => import('@/components/Portfolio'), {
+  loading: () => <div className="h-96 animate-pulse bg-muted/20 rounded mx-auto max-w-6xl" />,
+  ssr: false
+});
+
+const ContactForm = dynamic(() => import('@/components/ContactForm'), {
+  ssr: false
+});
 
 export default function Home() {
   const t = useTranslations();
@@ -50,13 +63,14 @@ export default function Home() {
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               {t('hero.subtitle')}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mx-auto max-w-md">
               <ContactForm 
                 buttonText={t('hero.startProject')}
+                size="xl"
               />
-              <a href="#portfolio">
-                <Button variant="outline" size="xl" className="flex-shrink-0">
-                  <Globe className="w-5 h-5 mr-2" />
+              <a href="#portfolio" className="w-full sm:w-auto">
+                <Button variant="outline" size="xl" className="flex-shrink-0 w-full sm:w-auto">
+                  <ArrowRight className="w-5 h-5 mr-2" />
                   {t('hero.viewWork')}
                 </Button>
               </a>
@@ -348,22 +362,23 @@ export default function Home() {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             {t('cta.subtitle')}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mx-auto max-w-md">
             <ContactForm 
               buttonText={t('cta.getStarted')}
+              size="xl"
             />
-            <a href="#portfolio">
-              <Button variant="outline" size="lg">
-                <ArrowRight className="w-4 h-4 mr-2" />
+            <a href="#portfolio" className="w-full sm:w-auto">
+              <Button variant="outline" size="xl" className="w-full sm:w-auto">
+                <ArrowRight className="w-5 h-5 mr-2" />
                 {t('cta.viewStories')}
               </Button>
             </a>
           </div>
-          <div className="mt-12 flex justify-center items-center space-x-8 text-muted-foreground">
+          <div className="mt-12 flex flex-col items-start justify-start gap-3 text-muted-foreground mx-auto w-fit">
             {(t.raw('cta.features') as string[]).map((feature: string, index: number) => (
               <div key={index} className="flex items-center">
-                <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
-                <span>{feature}</span>
+                <CheckCircle className="w-5 h-5 text-green-400 mr-2 flex-shrink-0" />
+                <span className="text-sm sm:text-base">{feature}</span>
               </div>
             ))}
           </div>

@@ -1,35 +1,47 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ContactForm from "@/components/ContactForm";
-import { Code2 } from "lucide-react";
+import { Code2, Menu, X } from "lucide-react";
 import { useTranslations } from 'next-intl';
 
 interface NavigationProps {
   currentPage?: 'home' | 'pricing';
 }
 
-// Smooth scroll function with offset for sticky navigation
-const smoothScrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    const navHeight = 64; // Height of sticky navigation (h-16 = 64px)
-    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const offsetPosition = elementPosition - navHeight - 20; // Extra 20px padding
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
-  }
-};
-
 export default function Navigation({ currentPage = 'home' }: NavigationProps) {
   const t = useTranslations('navigation');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Smooth scroll function with offset for sticky navigation and mobile menu close
+  const smoothScrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navHeight = 64; // Height of sticky navigation (h-16 = 64px)
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navHeight - 20; // Extra 20px padding
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      
+      // Close mobile menu after navigation
+      closeMobileMenu();
+    }
+  };
   
   return (
     <nav className="border-b border-border bg-[hsl(var(--nav-bg))] backdrop-blur-xl sticky top-0 z-50">
@@ -66,16 +78,102 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
             <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button - TODO: Add mobile menu in future */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
-            <ContactForm 
-              buttonText={t('startProject')}
+            <Button
+              variant="ghost"
               size="sm"
-            />
+              onClick={toggleMobileMenu}
+              className="h-8 w-8 p-0"
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
             <LanguageSwitcher />
             <ThemeToggle />
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden border-t border-border bg-[hsl(var(--nav-bg))] backdrop-blur-xl">
+            <div className="px-4 py-6 space-y-4">
+              {currentPage === 'home' ? (
+                <>
+                  <button 
+                    onClick={() => smoothScrollToSection('home')} 
+                    className="block w-full text-left text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
+                  >
+                    {t('home')}
+                  </button>
+                  <button 
+                    onClick={() => smoothScrollToSection('services')} 
+                    className="block w-full text-left text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
+                  >
+                    {t('services')}
+                  </button>
+                  <Link 
+                    href="/pricing" 
+                    className="block text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
+                    onClick={closeMobileMenu}
+                  >
+                    {t('pricing')}
+                  </Link>
+                  <button 
+                    onClick={() => smoothScrollToSection('portfolio')} 
+                    className="block w-full text-left text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
+                  >
+                    {t('portfolio')}
+                  </button>
+                  <button 
+                    onClick={() => smoothScrollToSection('about')} 
+                    className="block w-full text-left text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
+                  >
+                    {t('about')}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link 
+                    href="/" 
+                    className="block text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
+                    onClick={closeMobileMenu}
+                  >
+                    {t('home')}
+                  </Link>
+                  <Link 
+                    href="/#services" 
+                    className="block text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
+                    onClick={closeMobileMenu}
+                  >
+                    {t('services')}
+                  </Link>
+                  <Link 
+                    href="/pricing" 
+                    className="block text-blue-500 font-semibold hover:text-blue-400 transition-colors duration-150 py-2"
+                    onClick={closeMobileMenu}
+                  >
+                    {t('pricing')}
+                  </Link>
+                  <Link 
+                    href="/#portfolio" 
+                    className="block text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
+                    onClick={closeMobileMenu}
+                  >
+                    {t('portfolio')}
+                  </Link>
+                  <Link 
+                    href="/#about" 
+                    className="block text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
+                    onClick={closeMobileMenu}
+                  >
+                    {t('about')}
+                  </Link>
+                </>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

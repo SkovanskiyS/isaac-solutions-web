@@ -145,12 +145,12 @@ export default function ContactForm({
   return (
     <>
       {/* Trigger Button */}
-      <div className={className}>
+      <div className={`flex justify-center w-full ${className}`}>
         <Button
           size={size}
           variant={variant}
           onClick={handleButtonClick}
-          className="group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          className="group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto"
         >
           <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
           {buttonText}
