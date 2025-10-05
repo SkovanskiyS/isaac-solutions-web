@@ -47,7 +47,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <section id="home" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden scroll-mt-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 blur-3xl"></div>
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center">
             <Badge className="mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20">
@@ -354,7 +353,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500/5 to-purple-500/5">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-foreground mb-6">
             {t('cta.title')}

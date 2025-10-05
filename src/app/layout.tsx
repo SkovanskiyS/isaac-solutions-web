@@ -28,7 +28,7 @@ export default async function RootLayout({
 }) {
   const locale = await getLocale();
   return (
-    <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <head>
         <Script crossOrigin="anonymous" src="//unpkg.com/same-runtime/dist/index.global.js" />
         <Script id="theme-init" strategy="beforeInteractive">
