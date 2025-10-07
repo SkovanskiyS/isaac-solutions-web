@@ -94,7 +94,7 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
                       <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
@@ -229,7 +229,7 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <Card className="card-elevated p-6 sm:p-8 border-2 border-green-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300 group overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 border-2 border-green-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
                       <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
@@ -368,7 +368,7 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
                       <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
@@ -509,7 +509,7 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 transition-all duration-300 group overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
                       <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
@@ -656,7 +656,7 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
-                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 group overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
                       <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
