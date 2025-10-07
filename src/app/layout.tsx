@@ -34,10 +34,6 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <Script
-          crossOrigin="anonymous"
-          src="//unpkg.com/same-runtime/dist/index.global.js"
-        />
         <Script id="theme-init" strategy="beforeInteractive">
           {`
             (function() {

@@ -104,6 +104,15 @@ export default function ContactForm({
     const newErrors = { name: "", phone: "" };
     let isValid = true;
 
+    // Check custom country code if "Other" is selected
+    if (selectedCountryCode === "other") {
+      if (!customCountryCode.trim() || !customCountryCode.startsWith("+")) {
+        newErrors.phone = "Please enter a valid country code starting with +";
+        setErrors(newErrors);
+        return false;
+      }
+    }
+
     // Name validation - only letters, spaces, and common name characters
     if (!formData.name.trim()) {
       newErrors.name = "Full name is required";
@@ -203,14 +212,6 @@ export default function ContactForm({
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Validate custom country code if "Other" is selected
-    if (selectedCountryCode === "other") {
-      if (!customCountryCode.trim() || !customCountryCode.startsWith("+")) {
-        setErrors((prev) => ({ ...prev, phone: "Please enter a valid country code starting with +" }));
-        return;
-      }
-    }
 
     if (!validateForm()) return;
 
