@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface TradingViewWidgetProps {
   symbol?: string;
   width?: string | number;
   height?: string | number;
-  theme?: 'light' | 'dark';
+  theme?: "light" | "dark";
   onPriceUpdate?: (price: number) => void;
 }
 
@@ -23,7 +23,7 @@ export default function TradingViewWidget({
   width = "100%",
   height = "500",
   theme = "dark",
-  onPriceUpdate
+  onPriceUpdate,
 }: TradingViewWidgetProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentPrice, setCurrentPrice] = useState(1.0854);
@@ -32,7 +32,7 @@ export default function TradingViewWidget({
   // Check if forex market is open
   const checkMarketHours = () => {
     const now = new Date();
-    const utc = new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
+    const utc = new Date(now.getTime() + now.getTimezoneOffset() * 60000);
     const day = utc.getDay(); // 0 = Sunday, 6 = Saturday
     const hour = utc.getHours();
 
@@ -58,31 +58,46 @@ export default function TradingViewWidget({
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Clear any existing content
-    containerRef.current.innerHTML = '';
+    // Clear any existing content safely (prevents XSS)
+    while (containerRef.current.firstChild) {
+      containerRef.current.removeChild(containerRef.current.firstChild);
+    }
 
     // Create the TradingView widget container
-    const widgetContainer = document.createElement('div');
-    widgetContainer.className = 'tradingview-widget-container';
-    widgetContainer.style.height = '100%';
-    widgetContainer.style.width = '100%';
+    const widgetContainer = document.createElement("div");
+    widgetContainer.className = "tradingview-widget-container";
+    widgetContainer.style.height = "100%";
+    widgetContainer.style.width = "100%";
 
-    const widgetDiv = document.createElement('div');
-    widgetDiv.className = 'tradingview-widget-container__widget';
-    widgetDiv.style.height = 'calc(100% - 32px)';
-    widgetDiv.style.width = '100%';
+    const widgetDiv = document.createElement("div");
+    widgetDiv.className = "tradingview-widget-container__widget";
+    widgetDiv.style.height = "calc(100% - 32px)";
+    widgetDiv.style.width = "100%";
 
-    const copyrightDiv = document.createElement('div');
-    copyrightDiv.className = 'tradingview-widget-copyright';
-    copyrightDiv.innerHTML = '<a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a>';
+    const copyrightDiv = document.createElement("div");
+    copyrightDiv.className = "tradingview-widget-copyright";
+
+    // Create copyright link safely (prevents XSS)
+    const copyrightLink = document.createElement("a");
+    copyrightLink.href = "https://www.tradingview.com/";
+    copyrightLink.rel = "noopener nofollow";
+    copyrightLink.target = "_blank";
+
+    const copyrightSpan = document.createElement("span");
+    copyrightSpan.className = "blue-text";
+    copyrightSpan.textContent = "Track all markets on TradingView";
+
+    copyrightLink.appendChild(copyrightSpan);
+    copyrightDiv.appendChild(copyrightLink);
 
     widgetContainer.appendChild(widgetDiv);
     widgetContainer.appendChild(copyrightDiv);
 
     // Create the script
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js';
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
     script.async = true;
 
     const config = {
@@ -107,10 +122,11 @@ export default function TradingViewWidget({
       withdateranges: false,
       compareSymbols: [],
       studies: [],
-      autosize: true
+      autosize: true,
     };
 
-    script.innerHTML = JSON.stringify(config);
+    // Use textContent instead of innerHTML (prevents XSS)
+    script.textContent = JSON.stringify(config);
     widgetContainer.appendChild(script);
 
     containerRef.current.appendChild(widgetContainer);
@@ -122,7 +138,7 @@ export default function TradingViewWidget({
 
     if (isMarketOpen) {
       priceInterval = setInterval(() => {
-        setCurrentPrice(prev => {
+        setCurrentPrice((prev) => {
           // More realistic price movement during market hours
           const change = (Math.random() - 0.5) * 0.0008;
           const newPrice = Math.max(1.05, Math.min(1.12, prev + change));
@@ -141,11 +157,16 @@ export default function TradingViewWidget({
   }, [isMarketOpen, onPriceUpdate, currentPrice]);
 
   return (
-    <div className="relative w-full h-full bg-zinc-900/50 rounded-lg overflow-hidden" style={{ height, width }}>
+    <div
+      className="relative w-full h-full bg-zinc-900/50 rounded-lg overflow-hidden"
+      style={{ height, width }}
+    >
       {!isMarketOpen && (
         <div className="absolute top-4 right-4 z-10 bg-red-500/20 border border-red-500/50 rounded px-3 py-2">
           <div className="text-red-400 text-sm font-medium">Market Closed</div>
-          <div className="text-red-300 text-xs">Forex trading resumes Sunday 22:00 UTC</div>
+          <div className="text-red-300 text-xs">
+            Forex trading resumes Sunday 22:00 UTC
+          </div>
         </div>
       )}
       <div ref={containerRef} className="w-full h-full" />

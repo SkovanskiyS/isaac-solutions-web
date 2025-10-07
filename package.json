@@ -8,7 +8,10 @@
     "start": "next start",
     "typecheck": "npx tsc --noEmit",
     "lint": "npm run typecheck && next lint",
-    "format": "npx @biomejs/biome format --write"
+    "format": "npx @biomejs/biome format --write",
+    "security-check": "node security-check.js",
+    "precommit": "npm run security-check",
+    "test-auth": "node test-auth-middleware.js"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
@@ -19,6 +22,8 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-toggle": "^1.1.9",
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.74.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "critters": "^0.0.23",

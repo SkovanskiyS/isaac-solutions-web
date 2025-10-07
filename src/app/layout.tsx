@@ -1,24 +1,24 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
-import Script from 'next/script';
-import { ThemeProvider } from '@/contexts/ThemeContext';
-import { getLocale } from 'next-intl/server';
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+import Script from "next/script";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { getLocale } from "next-intl/server";
 
 const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: 'Isaac Solutions - AI-Powered Development',
+  title: "Isaac Solutions - AI-Powered Development",
   description:
-    'We specialize in delivering high-quality software solutions and AI-powered MVPs — helping startups and enterprises move from idea to launch in record time.',
+    "We specialize in delivering high-quality software solutions and AI-powered MVPs — helping startups and enterprises move from idea to launch in record time.",
 };
 
 export default async function RootLayout({
@@ -28,9 +28,16 @@ export default async function RootLayout({
 }) {
   const locale = await getLocale();
   return (
-    <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
-        <Script crossOrigin="anonymous" src="//unpkg.com/same-runtime/dist/index.global.js" />
+        <Script
+          crossOrigin="anonymous"
+          src="//unpkg.com/same-runtime/dist/index.global.js"
+        />
         <Script id="theme-init" strategy="beforeInteractive">
           {`
             (function() {
@@ -50,9 +57,7 @@ export default async function RootLayout({
         </Script>
       </head>
       <body suppressHydrationWarning className="antialiased">
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

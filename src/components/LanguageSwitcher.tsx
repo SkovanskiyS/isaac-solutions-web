@@ -1,23 +1,15 @@
 "use client";
 
-import React, { useState, useTransition } from 'react';
+import React, { useState, useTransition, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { Globe, Check } from 'lucide-react';
-import { useLocale } from 'next-intl';
-import { useRouter, usePathname } from 'next/navigation';
+import { Globe, Check, ChevronDown } from "lucide-react";
+import { useLocale } from "next-intl";
+import { useRouter, usePathname } from "next/navigation";
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'uz', name: 'O\'zbek', flag: '🇺🇿' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' }
+  { code: "en", name: "English", flag: "🇺🇸", nativeName: "English" },
+  { code: "uz", name: "O'zbek", flag: "🇺🇿", nativeName: "O'zbekcha" },
+  { code: "ru", name: "Русский", flag: "🇷🇺", nativeName: "Русский" },
 ];
 
 export default function LanguageSwitcher() {
@@ -26,74 +18,193 @@ export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const currentLanguage = languages.find(lang => lang.code === locale) || languages[0];
+  const currentLanguage =
+    languages.find((lang) => lang.code === locale) || languages[0];
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Close dropdown on Escape key
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isOpen]);
 
   const handleLanguageChange = (newLocale: string) => {
-    if (newLocale === locale) return;
+    if (newLocale === locale) {
+      setIsOpen(false);
+      return;
+    }
 
     startTransition(() => {
       // Store language preference
-      localStorage.setItem('preferred-language', newLocale);
+      localStorage.setItem("preferred-language", newLocale);
       document.cookie = `preferred-language=${newLocale}; path=/; max-age=${60 * 60 * 24 * 365}`; // 1 year
-      
+
       // Navigate to the new locale
-      const segments = pathname.split('/');
+      const segments = pathname.split("/");
       segments[1] = newLocale; // Replace the locale segment
-      const newPathname = segments.join('/');
-      
+      const newPathname = segments.join("/");
+
       router.push(newPathname);
       setIsOpen(false);
     });
   };
 
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger asChild>
-        <Button 
-          variant="ghost" 
-          size="sm" 
-          className="flex items-center gap-2 hover:bg-muted"
-          disabled={isPending}
-        >
-          <Globe className="w-4 h-4" />
-          <span className="text-sm font-medium">
-            {currentLanguage?.flag} {currentLanguage?.name}
-          </span>
-          {isPending && <div className="w-3 h-3 border border-current border-t-transparent rounded-full animate-spin ml-1" />}
-        </Button>
-      </SheetTrigger>
-      <SheetContent side="right" className="w-[300px] p-6">
-        <SheetHeader className="mb-6">
-          <SheetTitle>Select Language</SheetTitle>
-          <SheetDescription>
-            Choose your preferred language
-          </SheetDescription>
-        </SheetHeader>
-        <div className="space-y-3">
-          {languages.map((lang) => (
-            <Button
-              key={lang.code}
-              variant="ghost"
-              className={`w-full justify-start text-left p-4 h-auto hover:bg-muted ${
-                locale === lang.code ? 'bg-muted border border-border' : ''
-              }`}
-              onClick={() => handleLanguageChange(lang.code)}
-              disabled={isPending}
-            >
-              <div className="flex items-center justify-between w-full">
-                <div className="flex items-center gap-3">
-                  <span className="text-xl">{lang.flag}</span>
-                  <span className="font-medium">{lang.name}</span>
-                </div>
-                {locale === lang.code && (
-                  <Check className="w-4 h-4 text-green-500" />
-                )}
-              </div>
-            </Button>
-          ))}
-        </div>
-      </SheetContent>
-    </Sheet>
+    <div className="relative" ref={dropdownRef}>
+      <Button
+        variant="ghost"
+        size="sm"
+        className={`
+          flex items-center gap-2 
+          hover:bg-muted/80 
+          active:scale-95 
+          transition-all 
+          duration-200
+          rounded-lg
+          px-3 py-2
+          ${isOpen ? "bg-muted shadow-sm" : ""}
+        `}
+        disabled={isPending}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <Globe
+          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "text-blue-500" : ""}`}
+        />
+        <span className="text-sm font-medium hidden sm:inline">
+          {currentLanguage?.flag}
+        </span>
+        <span className="text-sm font-medium hidden md:inline">
+          {currentLanguage?.name}
+        </span>
+        <ChevronDown
+          className={`
+            w-3.5 h-3.5 
+            transition-all 
+            duration-300 
+            ${isOpen ? "rotate-180 text-blue-500" : "text-muted-foreground"}
+          `}
+        />
+        {isPending && (
+          <div className="w-3 h-3 border-2 border-blue-500 border-t-transparent rounded-full animate-spin ml-1" />
+        )}
+      </Button>
+
+      {/* Dropdown Menu */}
+      {isOpen && (
+        <>
+          {/* Backdrop overlay for mobile */}
+          <div
+            className="fixed inset-0 z-40 md:hidden"
+            onClick={() => setIsOpen(false)}
+          />
+
+          <div
+            className={`
+              absolute top-full mt-2 right-0 
+              w-56 
+              bg-background/95 backdrop-blur-xl
+              border border-border/50 
+              rounded-xl 
+              shadow-xl shadow-black/5
+              overflow-hidden 
+              z-50 
+              animate-in fade-in slide-in-from-top-2 duration-200
+            `}
+            style={{
+              boxShadow:
+                "0 10px 40px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06)",
+            }}
+          >
+            {/* Dropdown Header */}
+            <div className="px-4 py-2.5 border-b border-border/50 bg-muted/30">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                Select Language
+              </p>
+            </div>
+
+            {/* Language Options */}
+            <div className="py-1">
+              {languages.map((lang, index) => (
+                <button
+                  key={lang.code}
+                  className={`
+                    w-full flex items-center justify-between 
+                    px-4 py-3
+                    text-left 
+                    transition-all duration-150
+                    hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50
+                    dark:hover:from-blue-950/30 dark:hover:to-purple-950/30
+                    active:scale-[0.98]
+                    ${
+                      locale === lang.code
+                        ? "bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/40 dark:to-purple-950/40"
+                        : ""
+                    }
+                    ${index !== languages.length - 1 ? "border-b border-border/30" : ""}
+                    group
+                  `}
+                  onClick={() => handleLanguageChange(lang.code)}
+                  disabled={isPending}
+                >
+                  <div className="flex items-center gap-3 flex-1">
+                    <span className="text-2xl transition-transform duration-200 group-hover:scale-110">
+                      {lang.flag}
+                    </span>
+                    <div className="flex flex-col">
+                      <span
+                        className={`
+                        font-semibold text-sm
+                        ${locale === lang.code ? "text-blue-600 dark:text-blue-400" : "text-foreground"}
+                      `}
+                      >
+                        {lang.name}
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {lang.nativeName}
+                      </span>
+                    </div>
+                  </div>
+                  {locale === lang.code && (
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500 shadow-sm">
+                      <Check
+                        className="w-3.5 h-3.5 text-white"
+                        strokeWidth={3}
+                      />
+                    </div>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+    </div>
   );
 }

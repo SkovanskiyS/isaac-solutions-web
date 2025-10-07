@@ -1,13 +1,15 @@
 "use client";
 
-import React, { createContext, useContext, ReactNode } from 'react';
-import { useLocale } from 'next-intl';
+import React, { createContext, useContext, ReactNode } from "react";
+import { useLocale } from "next-intl";
 
 interface LanguageContextType {
   locale: string;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined,
+);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const locale = useLocale();
@@ -22,7 +24,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 export function useLanguage() {
   const context = useContext(LanguageContext);
   if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    throw new Error("useLanguage must be used within a LanguageProvider");
   }
   return context;
 }

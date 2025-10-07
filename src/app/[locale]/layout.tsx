@@ -1,6 +1,6 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import ClientBody from '../ClientBody';
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import ClientBody from "../ClientBody";
 
 export default async function LocaleLayout({
   children,

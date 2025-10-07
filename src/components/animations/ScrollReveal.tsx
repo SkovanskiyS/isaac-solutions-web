@@ -12,13 +12,13 @@ interface ScrollRevealProps {
   once?: boolean;
 }
 
-export default function ScrollReveal({ 
-  children, 
-  delay = 0, 
+export default function ScrollReveal({
+  children,
+  delay = 0,
   duration = 0.6,
   className = "",
   direction = "up",
-  once = true
+  once = true,
 }: ScrollRevealProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once, margin: "-100px" });
@@ -27,25 +27,29 @@ export default function ScrollReveal({
     up: { y: 50, x: 0 },
     down: { y: -50, x: 0 },
     left: { x: 50, y: 0 },
-    right: { x: -50, y: 0 }
+    right: { x: -50, y: 0 },
   };
 
   return (
     <motion.div
       ref={ref}
-      initial={{ 
+      initial={{
         opacity: 0,
-        ...directions[direction]
+        ...directions[direction],
       }}
-      animate={isInView ? { 
-        opacity: 1, 
-        x: 0, 
-        y: 0 
-      } : {}}
-      transition={{ 
-        duration, 
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              x: 0,
+              y: 0,
+            }
+          : {}
+      }
+      transition={{
+        duration,
         delay,
-        ease: [0.25, 0.4, 0.25, 1]
+        ease: [0.25, 0.4, 0.25, 1],
       }}
       className={className}
     >

@@ -8,7 +8,7 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation currentPage="pricing" />
-      
+
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -19,7 +19,8 @@ export default function PricingPage() {
               Isaac Solutions � Outsourcing Packages
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Flexible outsourcing solutions to fit your business needs � from launching fast MVPs to scaling enterprise-level systems.
+              Flexible outsourcing solutions to fit your business needs � from
+              launching fast MVPs to scaling enterprise-level systems.
             </p>
           </div>
 
@@ -27,9 +28,11 @@ export default function PricingPage() {
           <div className="mb-20">
             <div className="flex items-center justify-center mb-8">
               <Code2 className="w-8 h-8 text-blue-600 mr-3" />
-              <h2 className="text-3xl font-bold text-foreground">Software Development</h2>
+              <h2 className="text-3xl font-bold text-foreground">
+                Software Development
+              </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Card className="p-8">
                 <div className="mb-6">
@@ -41,7 +44,7 @@ export default function PricingPage() {
                     7.5M � 11M UZS
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -60,15 +63,18 @@ export default function PricingPage() {
                     <span>1-month free support</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
 
               <Card className="p-8 border-2 border-blue-500 relative">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <Badge className="bg-blue-500">Most Popular</Badge>
                 </div>
-                
+
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold mb-2">Standard Dev</h3>
                   <div className="text-2xl font-bold mb-4 text-blue-600">
@@ -78,7 +84,7 @@ export default function PricingPage() {
                     12M � 20M UZS
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -101,8 +107,11 @@ export default function PricingPage() {
                     <span>2-month support</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
 
               <Card className="p-8">
@@ -115,7 +124,7 @@ export default function PricingPage() {
                     20M � 40M UZS
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -138,8 +147,11 @@ export default function PricingPage() {
                     <span>3-month dedicated support</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
             </div>
           </div>
@@ -148,9 +160,11 @@ export default function PricingPage() {
           <div className="mb-20">
             <div className="flex items-center justify-center mb-8">
               <MessageCircle className="w-8 h-8 text-green-600 mr-3" />
-              <h2 className="text-3xl font-bold text-foreground">Telegram Bot Development</h2>
+              <h2 className="text-3xl font-bold text-foreground">
+                Telegram Bot Development
+              </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Card className="p-8">
                 <div className="mb-6">
@@ -162,7 +176,7 @@ export default function PricingPage() {
                     3M � 5.5M UZS
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -181,15 +195,18 @@ export default function PricingPage() {
                     <span>1-month support</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
 
               <Card className="p-8 border-2 border-green-500 relative">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <Badge className="bg-green-500">Most Popular</Badge>
                 </div>
-                
+
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold mb-2">Business Bot</h3>
                   <div className="text-2xl font-bold mb-4 text-green-600">
@@ -199,7 +216,7 @@ export default function PricingPage() {
                     10M � 20M UZS
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -222,8 +239,11 @@ export default function PricingPage() {
                     <span>2-month support</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
 
               <Card className="p-8">
@@ -236,7 +256,7 @@ export default function PricingPage() {
                     20M � 35M UZS
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -259,8 +279,11 @@ export default function PricingPage() {
                     <span>3-month premium support</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
             </div>
           </div>
@@ -269,9 +292,11 @@ export default function PricingPage() {
           <div className="mb-20">
             <div className="flex items-center justify-center mb-8">
               <Palette className="w-8 h-8 text-purple-600 mr-3" />
-              <h2 className="text-3xl font-bold text-foreground">UI/UX Design</h2>
+              <h2 className="text-3xl font-bold text-foreground">
+                UI/UX Design
+              </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Card className="p-8">
                 <div className="mb-6">
@@ -283,7 +308,7 @@ export default function PricingPage() {
                     2.5M � 4M UZS
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -302,15 +327,18 @@ export default function PricingPage() {
                     <span>1 round of revisions</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
 
               <Card className="p-8 border-2 border-purple-500 relative">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <Badge className="bg-purple-500">Best Value</Badge>
                 </div>
-                
+
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold mb-2">Standard UX</h3>
                   <div className="text-2xl font-bold mb-4 text-purple-600">
@@ -320,7 +348,7 @@ export default function PricingPage() {
                     7.5M � 15M UZS
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -339,8 +367,11 @@ export default function PricingPage() {
                     <span>2 rounds of revisions</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
 
               <Card className="p-8">
@@ -353,7 +384,7 @@ export default function PricingPage() {
                     15M � 22M UZS
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -376,8 +407,11 @@ export default function PricingPage() {
                     <span>Unlimited revisions (within scope)</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
             </div>
           </div>
@@ -386,9 +420,11 @@ export default function PricingPage() {
           <div className="mb-20">
             <div className="flex items-center justify-center mb-8">
               <Wrench className="w-8 h-8 text-orange-600 mr-3" />
-              <h2 className="text-3xl font-bold text-foreground">IT Support (Monthly Plans)</h2>
+              <h2 className="text-3xl font-bold text-foreground">
+                IT Support (Monthly Plans)
+              </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Card className="p-8">
                 <div className="mb-6">
@@ -400,7 +436,7 @@ export default function PricingPage() {
                     2M � 3.8M UZS/month
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -419,15 +455,18 @@ export default function PricingPage() {
                     <span>Remote support</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
 
               <Card className="p-8 border-2 border-orange-500 relative">
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <Badge className="bg-orange-500">Most Popular</Badge>
                 </div>
-                
+
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold mb-2">Standard Care</h3>
                   <div className="text-2xl font-bold mb-4 text-orange-600">
@@ -437,7 +476,7 @@ export default function PricingPage() {
                     3.8M � 6.5M UZS/month
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -460,8 +499,11 @@ export default function PricingPage() {
                     <span>24h response time</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
 
               <Card className="p-8">
@@ -474,7 +516,7 @@ export default function PricingPage() {
                     9.6M � 24M UZS/month
                   </div>
                 </div>
-                
+
                 <ul className="space-y-3 mb-8">
                   <li className="flex items-start">
                     <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5" />
@@ -501,8 +543,11 @@ export default function PricingPage() {
                     <span>Monthly reports</span>
                   </li>
                 </ul>
-                
-                <ContactForm buttonText="Start Your Project Today" className="w-full" />
+
+                <ContactForm
+                  buttonText="Start Your Project Today"
+                  className="w-full"
+                />
               </Card>
             </div>
           </div>

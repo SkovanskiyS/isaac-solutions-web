@@ -54,6 +54,65 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  // Security headers
+  async headers() {
+    return [
+      {
+        // Apply security headers to all routes
+        source: '/(.*)',
+        headers: [
+          {
+            // Prevent clickjacking attacks
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            // Prevent MIME type sniffing
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            // Enable XSS protection (legacy browsers)
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+          {
+            // Force HTTPS connections
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains; preload',
+          },
+          {
+            // Restrict browser features
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+          },
+          {
+            // Control which referrer information is sent
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          {
+            // Content Security Policy - allows TradingView widgets and Supabase
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://s.tradingview.com https://s3.tradingview.com",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: https: blob:",
+              "font-src 'self' data:",
+              "connect-src 'self' https://gojsvtjidhpagqpuvgkt.supabase.co wss://gojsvtjidhpagqpuvgkt.supabase.co https://s.tradingview.com https://s3.tradingview.com",
+              "frame-src https://s.tradingview.com https://www.tradingview.com",
+              "object-src 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              "frame-ancestors 'none'",
+              "upgrade-insecure-requests",
+            ].join('; '),
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = withNextIntl(nextConfig);

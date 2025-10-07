@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 interface Particle {
   x: number;
@@ -21,11 +21,13 @@ export default function ParticleBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     if (prefersReducedMotion) {
       return; // Skip animation for users who prefer reduced motion
     }
@@ -37,13 +39,15 @@ export default function ParticleBackground() {
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
     // Create particles with reduced count for better performance
     const createParticles = () => {
       const particles: Particle[] = [];
       // Reduced particle count for better performance
-      const particleCount = Math.floor((window.innerWidth * window.innerHeight) / 8000); // Half the previous count
+      const particleCount = Math.floor(
+        (window.innerWidth * window.innerHeight) / 8000,
+      ); // Half the previous count
 
       for (let i = 0; i < particleCount; i++) {
         particles.push({
@@ -53,7 +57,7 @@ export default function ParticleBackground() {
           speedX: (Math.random() - 0.5) * 1,
           speedY: (Math.random() - 0.5) * 1,
           opacity: Math.random() * 0.2 + 0.4, // 0.4 to 0.6 opacity - More subtle
-          pulsePhase: Math.random() * Math.PI * 2
+          pulsePhase: Math.random() * Math.PI * 2,
         });
       }
 
@@ -66,7 +70,7 @@ export default function ParticleBackground() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particlesRef.current.forEach(particle => {
+      particlesRef.current.forEach((particle) => {
         // Update position
         particle.x += particle.speedX;
         particle.y += particle.speedY;
@@ -96,7 +100,7 @@ export default function ParticleBackground() {
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener("resize", resizeCanvas);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
@@ -107,7 +111,7 @@ export default function ParticleBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ mixBlendMode: 'normal' }}
+      style={{ mixBlendMode: "normal" }}
     />
   );
 }

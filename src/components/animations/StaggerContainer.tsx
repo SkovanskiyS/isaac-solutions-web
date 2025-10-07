@@ -9,10 +9,10 @@ interface StaggerContainerProps {
   className?: string;
 }
 
-export default function StaggerContainer({ 
-  children, 
+export default function StaggerContainer({
+  children,
   staggerDelay = 0.1,
-  className = "" 
+  className = "",
 }: StaggerContainerProps) {
   return (
     <motion.div
@@ -21,9 +21,9 @@ export default function StaggerContainer({
       variants={{
         visible: {
           transition: {
-            staggerChildren: staggerDelay
-          }
-        }
+            staggerChildren: staggerDelay,
+          },
+        },
       }}
       className={className}
     >
@@ -32,18 +32,21 @@ export default function StaggerContainer({
   );
 }
 
-export const StaggerItem = ({ children, className = "" }: { children: ReactNode; className?: string }) => (
+export const StaggerItem = ({
+  children,
+  className = "",
+}: { children: ReactNode; className?: string }) => (
   <motion.div
     variants={{
       hidden: { opacity: 0, y: 20 },
-      visible: { 
-        opacity: 1, 
+      visible: {
+        opacity: 1,
         y: 0,
         transition: {
           duration: 0.5,
-          ease: [0.25, 0.4, 0.25, 1]
-        }
-      }
+          ease: [0.25, 0.4, 0.25, 1],
+        },
+      },
     }}
     className={className}
   >

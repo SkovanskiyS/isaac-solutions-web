@@ -16,15 +16,18 @@ const geistMono = Geist_Mono({
 
 export default async function LocaleLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
-  const {locale} = await params;
+  const { locale } = await params;
 
   return (
-    <html lang={locale} className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang={locale}
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
       <head>
         <Script
           crossOrigin="anonymous"
