@@ -44,34 +44,34 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
   };
   
   return (
-    <nav className="border-b border-border bg-[hsl(var(--nav-bg))] backdrop-blur-xl sticky top-0 z-50">
+    <nav className="border-b border-border/50 bg-[hsl(var(--nav-bg))] backdrop-blur-xl sticky top-0 z-50 shadow-corporate">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 active:scale-95 transition-all duration-150">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <Code2 className="w-5 h-5 text-foreground" />
+          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 active:scale-95 transition-all duration-150 group">
+            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-corporate group-hover:shadow-corporate-lg transition-shadow">
+              <Code2 className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-foreground">{t('company')}</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{t('company')}</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {currentPage === 'home' ? (
               <>
-                <button onClick={() => smoothScrollToSection('home')} className="text-foreground hover:text-blue-400 active:text-blue-500 active:scale-95 transition-all duration-150 font-medium">{t('home')}</button>
-                <button onClick={() => smoothScrollToSection('services')} className="text-foreground hover:text-blue-400 active:text-blue-500 active:scale-95 transition-all duration-150 font-medium">{t('services')}</button>
-                <Link href="/pricing" className="text-foreground hover:text-blue-400 active:text-blue-500 active:scale-95 transition-all duration-150 font-medium">{t('pricing')}</Link>
-                <button onClick={() => smoothScrollToSection('portfolio')} className="text-foreground hover:text-blue-400 active:text-blue-500 active:scale-95 transition-all duration-150 font-medium">{t('portfolio')}</button>
-                <button onClick={() => smoothScrollToSection('about')} className="text-foreground hover:text-blue-400 active:text-blue-500 active:scale-95 transition-all duration-150 font-medium">{t('about')}</button>
+                <button onClick={() => smoothScrollToSection('home')} className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300">{t('home')}</button>
+                <button onClick={() => smoothScrollToSection('services')} className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300">{t('services')}</button>
+                <Link href="/pricing" className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300">{t('pricing')}</Link>
+                <button onClick={() => smoothScrollToSection('portfolio')} className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300">{t('portfolio')}</button>
+                <button onClick={() => smoothScrollToSection('about')} className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300">{t('about')}</button>
               </>
             ) : (
               <>
-                <Link href="/" className="text-foreground hover:text-blue-400 active:text-blue-500 active:scale-95 transition-all duration-150 font-medium">{t('home')}</Link>
-                <Link href="/#services" className="text-foreground hover:text-blue-400 active:text-blue-500 active:scale-95 transition-all duration-150 font-medium">{t('services')}</Link>
-                <Link href="/pricing" className="text-blue-500 font-semibold active:text-blue-600 active:scale-95 transition-all duration-150 hover:text-blue-400">{t('pricing')}</Link>
-                <Link href="/#portfolio" className="text-foreground hover:text-blue-400 active:text-blue-500 active:scale-95 transition-all duration-150 font-medium">{t('portfolio')}</Link>
-                <Link href="/#about" className="text-foreground hover:text-blue-400 active:text-blue-500 active:scale-95 transition-all duration-150 font-medium">{t('about')}</Link>
+                <Link href="/" className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300">{t('home')}</Link>
+                <Link href="/#services" className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300">{t('services')}</Link>
+                <Link href="/pricing" className="text-blue-500 font-semibold active:text-blue-600 active:scale-95 transition-all duration-150 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-blue-500">{t('pricing')}</Link>
+                <Link href="/#portfolio" className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300">{t('portfolio')}</Link>
+                <Link href="/#about" className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300">{t('about')}</Link>
               </>
             )}
             <LanguageSwitcher />

@@ -35,6 +35,7 @@
     "subtitle": "Join the companies that trust us with their most important projects"
   },
   "services": {
+    "badge": "Our Services",
     "title": "Our Services",
     "subtitle": "Comprehensive development solutions tailored to your business needs",
     "webDev": {
@@ -70,6 +71,7 @@
     }
   },
   "about": {
+    "badge": "Our Team",
     "title": "Meet Our Team",
     "subtitle": "Three passionate entrepreneurs building the future of software development with innovation and expertise.",
     "team": {
@@ -188,7 +190,7 @@
           "title": "Business Site",
           "priceUsd": "$700 - $1,300",
           "priceUzs": "9M - 16.5M UZS",
-          "mostPopular": "Most Popular",
+          "mostPopular": "Best Value",
           "features": [
             "Multi-page business website (5–7 pages)",
             "Blog/News section",
@@ -264,7 +266,7 @@
           "title": "Standard Dev",
           "priceUsd": "$950 - $1,600",
           "priceUzs": "12M - 20M UZS",
-          "mostPopular": "Most Popular",
+          "mostPopular": "Best Value",
           "features": [
             "Mid-level business app",
             "REST API integration",
@@ -344,7 +346,7 @@
           "title": "All-In Growth",
           "priceUsd": "$4,000 - $6,000",
           "priceUzs": "50M - 75M UZS",
-          "mostPopular": "Best Choice",
+          "mostPopular": "Best Value",
           "features": [
             "Website + CMS + SEO",
             "Cross-platform mobile app (Flutter)",
@@ -379,11 +381,11 @@
             "1-month support"
           ]
         },
-        "business": {
+        "standard": {
           "title": "Business Bot",
           "priceUsd": "$800 - $1,600",
           "priceUzs": "10M - 20M UZS",
-          "mostPopular": "Most Popular",
+          "mostPopular": "Best Value",
           "features": [
             "Ordering system (products/services)",
             "Online payments (Payme, Click)",

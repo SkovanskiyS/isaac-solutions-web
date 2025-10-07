@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -24,6 +25,7 @@ export default function ContactForm({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: ''
@@ -32,6 +34,11 @@ export default function ContactForm({
     name: '',
     phone: ''
   });
+
+  // Ensure component is mounted (client-side only)
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Handle ESC key press to close modal
   useEffect(() => {
@@ -157,15 +164,15 @@ export default function ContactForm({
         </Button>
       </div>
 
-      {/* Modal Overlay */}
-      {isModalOpen && (
+      {/* Modal Overlay - Rendered using Portal */}
+      {mounted && isModalOpen && createPortal(
         <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in-0 duration-300"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] flex items-center justify-center p-4 animate-in fade-in-0 duration-300"
           onClick={handleOverlayClick}
         >
           {/* Modal Content */}
           <div 
-            className="bg-card border border-border rounded-xl shadow-2xl w-full max-w-md mx-auto animate-in zoom-in-95 duration-300"
+            className="bg-card border border-border rounded-xl shadow-2xl w-full max-w-md mx-auto animate-in zoom-in-95 duration-300 relative"
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal
           >
             {/* Header with Close Button */}
@@ -298,7 +305,8 @@ export default function ContactForm({
               </div>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

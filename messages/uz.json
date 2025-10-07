@@ -35,6 +35,7 @@
     "subtitle": "Eng muhim loyihalarini bizga ishongan kompaniyalarga qo'shiling"
   },
   "services": {
+    "badge": "Bizning xizmatlar",
     "title": "Bizning xizmatlar",
     "subtitle": "Biznes ehtiyojlaringizga moslashtirilgan kompleks ishlab chiqish yechimlari",
     "webDev": {
@@ -70,6 +71,7 @@
     }
   },
   "about": {
+    "badge": "Bizning jamoa",
     "title": "Jamoamiz bilan tanishing",
     "subtitle": "Dasturiy ta'minot ishlab chiqishning kelajagini innovatsiya va tajriba bilan qurayotgan uch g'ayratli tadbirkor.",
     "team": {
@@ -231,7 +233,7 @@
           "title": "Business Sayt",
           "priceUsd": "$700 - $1,300",
           "priceUzs": "9M - 16.5M so'm",
-          "mostPopular": "Eng mashhur",
+          "mostPopular": "Eng yaxshi narx",
           "features": [
             "Ko'p sahifali biznes sayt (5-7 sahifa)",
             "Blog/yangiliklar bo'limi",
@@ -307,7 +309,7 @@
           "title": "Standard Dev",
           "priceUsd": "$950 - $1,600",
           "priceUzs": "12M - 20M so'm",
-          "mostPopular": "Eng mashhur",
+          "mostPopular": "Eng yaxshi narx",
           "features": [
             "O'rta darajadagi biznes ilova",
             "REST API integratsiya",
@@ -387,7 +389,7 @@
           "title": "All-In Growth",
           "priceUsd": "$4,000 - $6,000",
           "priceUzs": "50M - 75M so'm",
-          "mostPopular": "Eng yaxshi tanlov",
+          "mostPopular": "Eng yaxshi narx",
           "features": [
             "Sayt + CMS + SEO",
             "Krossplatforma ilova (Flutter)",
@@ -422,11 +424,11 @@
             "1 oylik texnik yordam"
           ]
         },
-        "business": {
+        "standard": {
           "title": "Business Bot",
           "priceUsd": "$800 - $1,600",
           "priceUzs": "10M - 20M so'm",
-          "mostPopular": "Eng mashhur",
+          "mostPopular": "Eng yaxshi narx",
           "features": [
             "Buyurtma tizimi (mahsulotlar/xizmatlar)",
             "Onlayn to'lovlar (Payme, Click)",
