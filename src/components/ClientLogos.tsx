@@ -1,171 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Badge } from "@/components/ui/badge";
+import FadeIn from "@/components/animations/FadeIn";
+import { Building2 } from "lucide-react";
 
 interface Logo {
   id: number;
   name: string;
   src: string;
-  fallback?: string;
   alt: string;
 }
 
-// Real company logos - using multiple reliable sources with fallbacks
+// Real client logos from portfolio projects
 const clientLogos: Logo[] = [
   {
     id: 1,
-    name: "Microsoft",
-    src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg",
-    alt: "Microsoft",
+    name: "Bron24",
+    src: "/portfolio/bron24.png",
+    alt: "Bron24 - Online Booking Platform",
   },
   {
     id: 2,
-    name: "Google",
-    src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
-    alt: "Google",
-  },
-  {
-    id: 3,
-    name: "Apple",
-    src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg",
-    alt: "Apple",
-  },
-  {
-    id: 4,
-    name: "Amazon",
-    src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-    alt: "Amazon",
-  },
-  {
-    id: 5,
-    name: "Meta",
-    src: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg",
-    alt: "Meta",
-  },
-  {
-    id: 6,
-    name: "Netflix",
-    src: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
-    fallback: "https://cdn.worldvectorlogo.com/logos/netflix-3.svg",
-    alt: "Netflix",
-  },
-  {
-    id: 7,
-    name: "Tesla",
-    src: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
-    fallback: "https://cdn.worldvectorlogo.com/logos/tesla-9.svg",
-    alt: "Tesla",
-  },
-  {
-    id: 8,
-    name: "Adobe",
-    src: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Corporate_Logo.svg",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adobe/adobe-original.svg",
-    alt: "Adobe",
-  },
-  {
-    id: 9,
-    name: "Spotify",
-    src: "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spotify/spotify-original.svg",
-    alt: "Spotify",
-  },
-  {
-    id: 10,
-    name: "Airbnb",
-    src: "https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg",
-    fallback: "https://cdn.worldvectorlogo.com/logos/airbnb-2.svg",
-    alt: "Airbnb",
-  },
-  {
-    id: 11,
-    name: "Uber",
-    src: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png",
-    fallback: "https://cdn.worldvectorlogo.com/logos/uber-1.svg",
-    alt: "Uber",
-  },
-  {
-    id: 12,
-    name: "Dropbox",
-    src: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Dropbox_logo_2017.svg",
-    fallback: "https://cdn.worldvectorlogo.com/logos/dropbox-1.svg",
-    alt: "Dropbox",
-  },
-  {
-    id: 13,
-    name: "LinkedIn",
-    src: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
-    alt: "LinkedIn",
-  },
-  {
-    id: 14,
-    name: "GitHub",
-    src: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-    alt: "GitHub",
-  },
-  {
-    id: 15,
-    name: "Slack",
-    src: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg",
-    fallback:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg",
-    alt: "Slack",
+    name: "Vita Coffee",
+    src: "/portfolio/vita-coffee.png",
+    alt: "Vita Coffee - Coffee Shop Brand",
   },
 ];
-
-// Individual logo component with fallback handling
-function LogoImage({ logo, index }: { logo: Logo; index: number }) {
-  const [currentSrc, setCurrentSrc] = useState(logo.src);
-  const [hasError, setHasError] = useState(false);
-
-  const handleError = () => {
-    if (currentSrc === logo.src && logo.fallback) {
-      // Try fallback URL first
-      setCurrentSrc(logo.fallback);
-    } else if (!hasError) {
-      // If fallback also fails, use avatar generator
-      setCurrentSrc(
-        `https://ui-avatars.com/api/?name=${encodeURIComponent(logo.name)}&size=160&background=random&color=fff&bold=true&format=svg`,
-      );
-      setHasError(true);
-    }
-  };
-
-  return (
-    <div className="flex-shrink-0 group">
-      <div className="relative w-24 h-16 md:w-32 md:h-20 lg:w-40 lg:h-24 flex items-center justify-center p-4 rounded-lg transition-all duration-300 hover:scale-110 bg-white/5 dark:bg-white/5">
-        <Image
-          src={currentSrc}
-          alt={logo.alt}
-          width={160}
-          height={96}
-          className="max-w-full max-h-full object-contain transition-all duration-500 opacity-80 hover:opacity-100 hover:scale-105"
-          priority={index < 15}
-          onError={handleError}
-          unoptimized={hasError} // Use unoptimized for generated avatars
-        />
-      </div>
-    </div>
-  );
-}
 
 interface ClientLogosProps {
   className?: string;
@@ -174,47 +37,65 @@ interface ClientLogosProps {
 
 export default function ClientLogos({
   className = "",
-  speed = "normal",
 }: ClientLogosProps) {
   const t = useTranslations();
 
-  // Animation speed mapping
-  const speedClasses = {
-    slow: "animate-scroll-60s",
-    normal: "animate-scroll-40s",
-    fast: "animate-scroll-20s",
-  };
-
-  // Duplicate logos for seamless infinite scroll
-  const duplicatedLogos = [...clientLogos, ...clientLogos];
-
   return (
-    <div className={`w-full py-12 bg-background ${className}`}>
-      {/* Section Header */}
-      <div className="text-center mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-          {t("clientLogos.title")}
-        </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          {t("clientLogos.subtitle")}
-        </p>
-      </div>
+    <section className={`w-full py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-muted/5 to-background ${className}`}>
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <FadeIn className="text-center mb-12">
+          <Badge className="mb-4 glass border-blue-500/30 text-blue-500 font-semibold px-4 py-1.5">
+            <Building2 className="w-4 h-4 mr-1" />
+            {t("trustedCompanies.badge") || "Our Clients"}
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            {t("trustedCompanies.title") || "Trusted by Industry Leaders"}
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            {t("trustedCompanies.subtitle") || "Join the companies that trust us with their most important projects."}
+          </p>
+        </FadeIn>
 
-      {/* Logo Carousel Container */}
-      <div className="relative overflow-hidden">
-        {/* Gradient overlays for smooth edge fade */}
-        <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
-
-        {/* Scrolling Container */}
-        <div
-          className={`flex gap-8 md:gap-12 ${speedClasses[speed]} hover:pause-animation`}
-        >
-          {duplicatedLogos.map((logo, index) => (
-            <LogoImage key={`${logo.id}-${index}`} logo={logo} index={index} />
+        {/* Logo Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {clientLogos.map((logo, index) => (
+            <FadeIn key={logo.id} delay={0.1 * (index + 1)}>
+              <div className="group relative">
+                {/* Card Container */}
+                <div className="relative glass rounded-2xl p-8 md:p-12 border-2 border-border hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 shadow-corporate hover:shadow-2xl hover:shadow-blue-500/10 bg-card/50 backdrop-blur-sm overflow-hidden">
+                  {/* Background gradient effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Logo Container */}
+                  <div className="relative flex items-center justify-center h-32 md:h-40">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={300}
+                      height={160}
+                      className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-lg
+                        dark:brightness-0 dark:invert dark:opacity-90 dark:group-hover:opacity-100
+                        light:opacity-80 light:group-hover:opacity-100"
+                      priority={index < 2}
+                    />
+                  </div>
+                  
+                  {/* Company Name */}
+                  <div className="relative mt-6 text-center">
+                    <p className="text-lg font-semibold text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                      {logo.name}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

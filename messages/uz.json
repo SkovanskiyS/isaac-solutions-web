@@ -34,6 +34,11 @@
     "title": "Sanoat yetakchilari ishonadi",
     "subtitle": "Eng muhim loyihalarini bizga ishongan kompaniyalarga qo'shiling"
   },
+  "trustedCompanies": {
+    "badge": "Bizning mijozlar",
+    "title": "Sanoat yetakchilari ishonadi",
+    "subtitle": "Eng muhim loyihalarini bizga ishongan kompaniyalarga qo'shiling."
+  },
   "services": {
     "badge": "Bizning xizmatlar",
     "title": "Bizning xizmatlar",
