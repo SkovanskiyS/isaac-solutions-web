@@ -83,19 +83,20 @@ export default function LanguageSwitcher() {
         size="sm"
         className={`
           flex items-center gap-2 
-          hover:bg-muted/80 
+          hover:bg-accent/80 
           active:scale-95 
           transition-all 
           duration-200
-          rounded-lg
+          rounded-xl
           px-3 py-2
-          ${isOpen ? "bg-muted shadow-sm" : ""}
+          border border-border/50
+          ${isOpen ? "bg-accent shadow-md border-blue-500/30" : "hover:border-border"}
         `}
         disabled={isPending}
         onClick={() => setIsOpen(!isOpen)}
       >
         <Globe
-          className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "text-blue-500" : ""}`}
+          className={`w-4 h-4 transition-all duration-200 ${isOpen ? "text-blue-500 scale-110" : "text-muted-foreground"}`}
         />
         <span className="text-sm font-medium hidden sm:inline">
           {currentLanguage?.flag}
