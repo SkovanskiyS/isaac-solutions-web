@@ -58,12 +58,12 @@ export default function PricingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto pt-6">
               <ScrollReveal delay={0.1}>
-                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full hover:scale-105 transition-all duration-300 shadow-corporate-lg">
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("webDev.packages.starter.title")}
                     </h3>
-                    <div className="text-2xl font-bold mb-4 text-blue-600">
+                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
                       {t("webDev.packages.starter.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -88,11 +88,13 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm buttonText={t("cta.buttonText")} />
                   </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 relative flex flex-col h-full hover:scale-105 hover:shadow-corporate-xl transition-all duration-300 shadow-corporate-lg overflow-visible">
+                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group overflow-hidden">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
                       <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
@@ -108,7 +110,7 @@ export default function PricingPage() {
                     <h3 className="text-2xl font-bold mb-2">
                       {t("webDev.packages.standard.title")}
                     </h3>
-                    <div className="text-2xl font-bold mb-4 text-blue-600">
+                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                       {t("webDev.packages.standard.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -133,16 +135,18 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm buttonText={t("cta.buttonText")} />
                   </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
-                <Card className="card-elevated p-8 flex flex-col h-full hover:scale-105 transition-all duration-300 shadow-corporate-lg">
+                <Card className="card-elevated p-8 flex flex-col h-full rounded-2xl border-2 border-purple-500/20 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("webDev.packages.premium.title")}
                     </h3>
-                    <div className="text-2xl font-bold mb-4 text-blue-600">
+                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                       {t("webDev.packages.premium.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -167,6 +171,8 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm buttonText={t("cta.buttonText")} />
                   </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-pink-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
             </div>
@@ -185,12 +191,12 @@ export default function PricingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto pt-6">
               <ScrollReveal delay={0.1}>
-                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full hover:scale-105 transition-all duration-300 shadow-corporate-lg">
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-green-500/20 hover:shadow-2xl hover:shadow-green-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("mobileDev.packages.starter.title")}
                     </h3>
-                    <div className="text-2xl font-bold mb-4 text-blue-600">
+                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
                       {t("mobileDev.packages.starter.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -217,11 +223,13 @@ export default function PricingPage() {
                       buttonText={contactT("modal.buttons.defaultButton")}
                     />
                   </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 relative flex flex-col h-full hover:scale-105 hover:shadow-corporate-xl transition-all duration-300 shadow-corporate-lg overflow-visible">
+                <Card className="card-elevated p-6 sm:p-8 border-2 border-green-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300 group overflow-hidden">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
                       <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
@@ -237,7 +245,7 @@ export default function PricingPage() {
                     <h3 className="text-2xl font-bold mb-2">
                       {t("mobileDev.packages.standard.title")}
                     </h3>
-                    <div className="text-2xl font-bold mb-4 text-blue-600">
+                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
                       {t("mobileDev.packages.standard.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -264,16 +272,18 @@ export default function PricingPage() {
                       buttonText={contactT("modal.buttons.defaultButton")}
                     />
                   </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-teal-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
-                <Card className="card-elevated p-8 flex flex-col h-full hover:scale-105 transition-all duration-300 shadow-corporate-lg">
+                <Card className="card-elevated p-8 flex flex-col h-full rounded-2xl border-2 border-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("mobileDev.packages.premium.title")}
                     </h3>
-                    <div className="text-2xl font-bold mb-4 text-blue-600">
+                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                       {t("mobileDev.packages.premium.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -300,6 +310,8 @@ export default function PricingPage() {
                       buttonText={contactT("modal.buttons.defaultButton")}
                     />
                   </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
             </div>

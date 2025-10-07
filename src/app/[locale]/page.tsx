@@ -157,14 +157,14 @@ export default function Home() {
       {/* Services Section */}
       <section
         id="services"
-        className="py-24 px-4 sm:px-6 lg:px-8 scroll-mt-20 relative"
+        className="py-24 px-4 sm:px-6 lg:px-8 scroll-mt-20 relative bg-gradient-to-b from-background via-muted/5 to-background"
       >
         {/* Background decoration */}
         <div className="absolute inset-0 gradient-corporate -z-10"></div>
 
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
-            <Badge className="mb-4 glass border-blue-500/30 text-blue-500 font-semibold">
+            <Badge className="mb-4 glass border-blue-500/30 text-blue-500 font-semibold px-4 py-1.5">
               {t("services.badge") || "Our Services"}
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -175,17 +175,17 @@ export default function Home() {
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             <ScrollReveal delay={0.1}>
-              <Card className="card-elevated h-full border-2 hover:border-blue-500/50 shadow-corporate-lg">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-corporate">
-                    <Code2 className="w-7 h-7 text-white" />
+              <Card className="group relative card-elevated h-full border-2 hover:border-blue-500/50 shadow-corporate-lg hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 rounded-2xl overflow-hidden bg-gradient-to-b from-card/95 to-card">
+                <CardHeader className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-blue-500/30">
+                    <Code2 className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-foreground text-2xl">
+                  <CardTitle className="text-foreground text-2xl mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                     {t("services.webDev.title")}
                   </CardTitle>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base leading-relaxed">
                     {t("services.webDev.description")}
                   </CardDescription>
                 </CardHeader>
@@ -205,19 +205,21 @@ export default function Home() {
                     </li>
                   </ul>
                 </CardContent>
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
-              <Card className="card-elevated h-full border-2 hover:border-green-500/50 shadow-corporate-lg">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-corporate">
-                    <Smartphone className="w-7 h-7 text-white" />
+              <Card className="group relative card-elevated h-full border-2 hover:border-green-500/50 shadow-corporate-lg hover:shadow-2xl hover:shadow-green-500/10 transition-all duration-500 hover:-translate-y-2 rounded-2xl overflow-hidden bg-gradient-to-b from-card/95 to-card">
+                <CardHeader className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-green-500/30">
+                    <Smartphone className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-foreground text-2xl">
+                  <CardTitle className="text-foreground text-2xl mb-3 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">
                     {t("services.mobileDev.title")}
                   </CardTitle>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base leading-relaxed">
                     {t("services.mobileDev.description")}
                   </CardDescription>
                 </CardHeader>
@@ -237,19 +239,21 @@ export default function Home() {
                     </li>
                   </ul>
                 </CardContent>
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <Card className="card-elevated h-full border-2 hover:border-purple-500/50 shadow-corporate-lg">
-                <CardHeader>
-                  <div className="w-14 h-14 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-corporate">
-                    <Palette className="w-7 h-7 text-white" />
+              <Card className="group relative card-elevated h-full border-2 hover:border-purple-500/50 shadow-corporate-lg hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:-translate-y-2 rounded-2xl overflow-hidden bg-gradient-to-b from-card/95 to-card">
+                <CardHeader className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg shadow-purple-500/30">
+                    <Palette className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-foreground text-2xl">
+                  <CardTitle className="text-foreground text-2xl mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
                     {t("services.uxUiDesign.title")}
                   </CardTitle>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-base leading-relaxed">
                     {t("services.uxUiDesign.description")}
                   </CardDescription>
                 </CardHeader>
@@ -269,17 +273,19 @@ export default function Home() {
                     </li>
                   </ul>
                 </CardContent>
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
             </ScrollReveal>
           </div>
 
           <ScrollReveal delay={0.4} className="mt-16 text-center">
-            <div className="inline-flex items-center px-8 py-4 glass-strong rounded-full border-2 border-blue-500/30 hover:scale-105 transition-transform duration-300 shadow-corporate-lg">
-              <Lightbulb className="w-6 h-6 text-blue-500 mr-3 animate-bounce-subtle" />
-              <span className="text-foreground font-semibold text-lg">
+            <div className="inline-flex items-center px-10 py-5 glass-strong rounded-2xl border-2 border-blue-500/30 hover:border-blue-500/50 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 shadow-corporate-lg group">
+              <Lightbulb className="w-7 h-7 text-blue-500 mr-4 group-hover:animate-pulse group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)] transition-all" />
+              <span className="text-foreground font-bold text-xl">
                 {t("services.aiAdvantage.label")}
               </span>
-              <span className="text-muted-foreground ml-2">
+              <span className="text-muted-foreground ml-3 text-lg">
                 {t("services.aiAdvantage.description")}
               </span>
             </div>
@@ -316,8 +322,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Founder 1 */}
             <ScrollReveal delay={0.1}>
-              <Card className="card-elevated p-8 text-center flex flex-col h-full border-2 border-blue-500/20">
-                <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-6 border-4 border-blue-500 hover:border-blue-400 transition-colors shadow-corporate-lg ring-4 ring-blue-500/20">
+              <Card className="card-elevated p-8 text-center flex flex-col h-full border-2 border-blue-500/20 rounded-2xl hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-blue-500 hover:border-blue-400 transition-colors shadow-2xl ring-4 ring-blue-500/20 group-hover:ring-blue-500/40">
                   <Image
                     src="/javohir-atabekov.jpg"
                     alt={`${t("about.team.javohir.name")} - ${t("about.team.javohir.position")}`}
@@ -371,13 +377,15 @@ export default function Home() {
                     {t("about.linkedinProfile")}
                   </Button>
                 </div>
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
             </ScrollReveal>
 
             {/* Founder 2 */}
             <ScrollReveal delay={0.2}>
-              <Card className="card-elevated p-8 text-center flex flex-col h-full border-2 border-green-500/20">
-                <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-6 border-4 border-green-500 hover:border-green-400 transition-colors shadow-corporate-lg ring-4 ring-green-500/20">
+              <Card className="card-elevated p-8 text-center flex flex-col h-full border-2 border-green-500/20 rounded-2xl hover:shadow-2xl hover:shadow-green-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-green-500 hover:border-green-400 transition-colors shadow-2xl ring-4 ring-green-500/20 group-hover:ring-green-500/40">
                   <Image
                     src="/jahongir-masharipov.jpg"
                     alt={`${t("about.team.jahongir.name")} - ${t("about.team.jahongir.position")}`}
@@ -431,13 +439,15 @@ export default function Home() {
                     {t("about.linkedinProfile")}
                   </Button>
                 </div>
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
             </ScrollReveal>
 
             {/* Team Member 3 */}
             <ScrollReveal delay={0.3}>
-              <Card className="card-elevated p-8 text-center flex flex-col h-full border-2 border-orange-500/20">
-                <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-6 border-4 border-orange-500 hover:border-orange-400 transition-colors shadow-corporate-lg ring-4 ring-orange-500/20">
+              <Card className="card-elevated p-8 text-center flex flex-col h-full border-2 border-orange-500/20 rounded-2xl hover:shadow-2xl hover:shadow-orange-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-orange-500 hover:border-orange-400 transition-colors shadow-2xl ring-4 ring-orange-500/20 group-hover:ring-orange-500/40">
                   <Image
                     src="/fayzullo-lutpillayev.jpg"
                     alt={`${t("about.team.alex.name")} - ${t("about.team.alex.position")}`}
@@ -489,6 +499,8 @@ export default function Home() {
                     {t("about.linkedinProfile")}
                   </Button>
                 </div>
+                {/* Corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </Card>
             </ScrollReveal>
           </div>
@@ -508,33 +520,46 @@ export default function Home() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background relative">
+        {/* Background decoration */}
+        <div className="absolute inset-0 gradient-corporate -z-10 opacity-30"></div>
+        
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-6">
-            {t("cta.title")}
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            {t("cta.subtitle")}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mx-auto max-w-md">
-            <ContactForm buttonText={t("cta.getStarted")} size="xl" />
-            <a href="#portfolio" className="w-full sm:w-auto">
-              <Button variant="outline" size="xl" className="w-full sm:w-auto">
-                <ArrowRight className="w-5 h-5 mr-2" />
-                {t("cta.viewStories")}
-              </Button>
-            </a>
-          </div>
-          <div className="mt-12 flex flex-col items-start justify-start gap-3 text-muted-foreground mx-auto w-fit">
-            {(t.raw("cta.features") as string[]).map(
-              (feature: string, index: number) => (
-                <div key={index} className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-400 mr-2 flex-shrink-0" />
-                  <span className="text-sm sm:text-base">{feature}</span>
-                </div>
-              ),
-            )}
-          </div>
+          <ScrollReveal>
+            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              {t("cta.title")}
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+              {t("cta.subtitle")}
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mx-auto max-w-md mb-12">
+              <ContactForm buttonText={t("cta.getStarted")} size="xl" />
+              <a href="#portfolio" className="w-full sm:w-auto">
+                <Button variant="outline" size="xl" className="w-full sm:w-auto group hover:shadow-lg transition-all">
+                  <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                  {t("cta.viewStories")}
+                </Button>
+              </a>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.3}>
+            <div className="inline-block glass-strong p-8 rounded-2xl border-2 border-blue-500/30 shadow-corporate-xl">
+              <div className="flex flex-col items-start gap-4 text-muted-foreground">
+                {(t.raw("cta.features") as string[]).map(
+                  (feature: string, index: number) => (
+                    <div key={index} className="flex items-center group hover:translate-x-2 transition-transform">
+                      <CheckCircle className="w-6 h-6 text-green-500 mr-3 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="text-base font-medium">{feature}</span>
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
