@@ -46,6 +46,16 @@ const nextConfig = {
         hostname: "ui-avatars.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.payme.uz",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.click.uz",
+        pathname: "/**",
+      },
     ],
   },
   // Performance optimizations

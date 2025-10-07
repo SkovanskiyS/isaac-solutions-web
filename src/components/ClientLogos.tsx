@@ -14,7 +14,7 @@ interface Logo {
   alt: string;
 }
 
-// Real client logos from portfolio projects
+// Real client logos from portfolio projects and partners
 const clientLogos: Logo[] = [
   {
     id: 1,
@@ -27,6 +27,30 @@ const clientLogos: Logo[] = [
     name: "Vita Coffee",
     src: "/portfolio/vita-coffee.png",
     alt: "Vita Coffee - Coffee Shop Brand",
+  },
+  {
+    id: 3,
+    name: "Beeline",
+    src: "https://upload.wikimedia.org/wikipedia/commons/3/31/Beeline_logo_2021.svg",
+    alt: "Beeline - Telecommunications Company",
+  },
+  {
+    id: 4,
+    name: "Amity University",
+    src: "https://upload.wikimedia.org/wikipedia/en/1/1c/Amity_University_logo.png",
+    alt: "Amity University - Educational Institution",
+  },
+  {
+    id: 5,
+    name: "Payme",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Payme_logo.svg/512px-Payme_logo.svg.png",
+    alt: "Payme - Payment System",
+  },
+  {
+    id: 6,
+    name: "Click",
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Click_Uzbekistan_logo.svg/512px-Click_Uzbekistan_logo.svg.png",
+    alt: "Click - Payment System",
   },
 ];
 
@@ -57,8 +81,8 @@ export default function ClientLogos({
           </p>
         </FadeIn>
 
-        {/* Logo Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* Logo Grid - 3 columns on desktop for 6 logos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {clientLogos.map((logo, index) => (
             <FadeIn key={logo.id} delay={0.1 * (index + 1)}>
               <div className="group relative">
