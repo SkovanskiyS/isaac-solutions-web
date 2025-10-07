@@ -75,11 +75,14 @@ export default function ContactForm({
     }
 
     // Phone validation
-    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+    // Remove formatting characters for validation
+    const cleanPhone = formData.phone.replace(/[\s\-\(\)]/g, "");
+    const phoneRegex = /^\+998[0-9]{9}$|^998[0-9]{9}$|^[0-9]{9}$/; // Uzbek format: +998XXXXXXXXX or 998XXXXXXXXX or XXXXXXXXX
+    
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
       isValid = false;
-    } else if (!phoneRegex.test(formData.phone.replace(/[\s\-\(\)]/g, ""))) {
+    } else if (cleanPhone.length < 9) {
       newErrors.phone = "Please enter a valid phone number";
       isValid = false;
     }
@@ -90,7 +93,14 @@ export default function ContactForm({
 
   // Handle input changes
   const handleInputChange = (field: "name" | "phone", value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    // For phone field, only allow numbers, +, spaces, parentheses, and hyphens
+    if (field === "phone") {
+      // Remove any characters that are not digits, +, space, (, ), or -
+      const sanitizedValue = value.replace(/[^\d\+\s\(\)\-]/g, "");
+      setFormData((prev) => ({ ...prev, [field]: sanitizedValue }));
+    } else {
+      setFormData((prev) => ({ ...prev, [field]: value }));
+    }
     // Clear errors as user types
     if (errors[field]) {
       setErrors((prev) => ({ ...prev, [field]: "" }));
@@ -289,13 +299,14 @@ export default function ContactForm({
                           onChange={(e) =>
                             handleInputChange("phone", e.target.value)
                           }
-                          placeholder="+1 (555) 000-0000"
+                          placeholder="+998 (90) 123-45-67"
                           className={`pl-10 w-full transition-all duration-200 ${
                             errors.phone
                               ? "border-red-500 focus:ring-red-500"
                               : "focus:ring-blue-500"
                           }`}
                           disabled={isSubmitting}
+                          inputMode="numeric"
                         />
                       </div>
                       {errors.phone && (
