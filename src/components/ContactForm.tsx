@@ -5,8 +5,26 @@ import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ArrowRight, CheckCircle, User, Phone, X } from "lucide-react";
+import { ArrowRight, CheckCircle, User, Phone, X, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
+
+// Country codes with flags
+const COUNTRY_CODES = [
+  { code: "+998", country: "Uzbekistan", flag: "🇺🇿" },
+  { code: "+7", country: "Russia/Kazakhstan", flag: "🇷🇺" },
+  { code: "+1", country: "USA/Canada", flag: "🇺🇸" },
+  { code: "+44", country: "United Kingdom", flag: "🇬🇧" },
+  { code: "+91", country: "India", flag: "🇮🇳" },
+  { code: "+86", country: "China", flag: "🇨🇳" },
+  { code: "+49", country: "Germany", flag: "🇩🇪" },
+  { code: "+33", country: "France", flag: "🇫🇷" },
+  { code: "+81", country: "Japan", flag: "🇯🇵" },
+  { code: "+82", country: "South Korea", flag: "🇰🇷" },
+  { code: "+971", country: "UAE", flag: "🇦🇪" },
+  { code: "+966", country: "Saudi Arabia", flag: "🇸🇦" },
+  { code: "+90", country: "Turkey", flag: "🇹🇷" },
+  { code: "other", country: "Other", flag: "🌍" },
+];
 
 interface ContactFormProps {
   variant?: "default" | "outline";
@@ -26,6 +44,9 @@ export default function ContactForm({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [selectedCountryCode, setSelectedCountryCode] = useState("+998");
+  const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+  const [customCountryCode, setCustomCountryCode] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -60,30 +81,55 @@ export default function ContactForm({
     };
   }, [isModalOpen]);
 
+  // Handle click outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (showCountryDropdown && !target.closest('.country-selector')) {
+        setShowCountryDropdown(false);
+      }
+    };
+
+    if (showCountryDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showCountryDropdown]);
+
   // Form validation
   const validateForm = () => {
     const newErrors = { name: "", phone: "" };
     let isValid = true;
 
-    // Name validation
+    // Name validation - only letters, spaces, and common name characters
     if (!formData.name.trim()) {
       newErrors.name = "Full name is required";
       isValid = false;
     } else if (formData.name.trim().length < 2) {
       newErrors.name = "Name must be at least 2 characters";
       isValid = false;
+    } else if (!/^[a-zA-Z\s\u0400-\u04FF\u0600-\u06FF'-]+$/.test(formData.name)) {
+      newErrors.name = "Name can only contain letters and spaces";
+      isValid = false;
     }
 
-    // Phone validation
-    // Remove formatting characters for validation
+    // Phone validation - only digits
     const cleanPhone = formData.phone.replace(/[\s\-\(\)]/g, "");
-    const phoneRegex = /^\+998[0-9]{9}$|^998[0-9]{9}$|^[0-9]{9}$/; // Uzbek format: +998XXXXXXXXX or 998XXXXXXXXX or XXXXXXXXX
     
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
       isValid = false;
-    } else if (cleanPhone.length < 9) {
-      newErrors.phone = "Please enter a valid phone number";
+    } else if (!/^\d+$/.test(cleanPhone)) {
+      newErrors.phone = "Phone number can only contain digits";
+      isValid = false;
+    } else if (cleanPhone.length < 7) {
+      newErrors.phone = "Phone number must be at least 7 digits";
+      isValid = false;
+    } else if (cleanPhone.length > 15) {
+      newErrors.phone = "Phone number is too long";
       isValid = false;
     }
 
@@ -93,13 +139,14 @@ export default function ContactForm({
 
   // Handle input changes
   const handleInputChange = (field: "name" | "phone", value: string) => {
-    // For phone field, only allow numbers, +, spaces, parentheses, and hyphens
-    if (field === "phone") {
-      // Remove any characters that are not digits, +, space, (, ), or -
-      const sanitizedValue = value.replace(/[^\d\+\s\(\)\-]/g, "");
+    if (field === "name") {
+      // Only allow letters, spaces, and common name characters (including Cyrillic and Arabic)
+      const sanitizedValue = value.replace(/[^a-zA-Z\s\u0400-\u04FF\u0600-\u06FF'-]/g, "");
       setFormData((prev) => ({ ...prev, [field]: sanitizedValue }));
-    } else {
-      setFormData((prev) => ({ ...prev, [field]: value }));
+    } else if (field === "phone") {
+      // Only allow digits, spaces, parentheses, and hyphens for formatting
+      const sanitizedValue = value.replace(/[^\d\s\(\)\-]/g, "");
+      setFormData((prev) => ({ ...prev, [field]: sanitizedValue }));
     }
     // Clear errors as user types
     if (errors[field]) {
@@ -107,13 +154,43 @@ export default function ContactForm({
     }
   };
 
+  // Handle country code selection
+  const handleCountryCodeSelect = (code: string) => {
+    if (code === "other") {
+      setSelectedCountryCode("other");
+      setCustomCountryCode("");
+    } else {
+      setSelectedCountryCode(code);
+      setCustomCountryCode("");
+    }
+    setShowCountryDropdown(false);
+  };
+
+  // Handle custom country code input
+  const handleCustomCountryCodeChange = (value: string) => {
+    // Only allow + and digits
+    const sanitized = value.replace(/[^\d\+]/g, "");
+    if (sanitized.startsWith("+") || sanitized === "") {
+      setCustomCountryCode(sanitized);
+    }
+  };
+
+  // Get the full phone number with country code
+  const getFullPhoneNumber = () => {
+    const code = selectedCountryCode === "other" ? customCountryCode : selectedCountryCode;
+    return `${code} ${formData.phone}`;
+  };
+
   // Close modal and reset state
   const closeModal = () => {
     setIsModalOpen(false);
+    setShowCountryDropdown(false);
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: "", phone: "" });
       setErrors({ name: "", phone: "" });
+      setSelectedCountryCode("+998");
+      setCustomCountryCode("");
     }, 300); // Wait for fade-out animation
   };
 
@@ -121,11 +198,21 @@ export default function ContactForm({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Validate custom country code if "Other" is selected
+    if (selectedCountryCode === "other") {
+      if (!customCountryCode.trim() || !customCountryCode.startsWith("+")) {
+        setErrors((prev) => ({ ...prev, phone: "Please enter a valid country code starting with +" }));
+        return;
+      }
+    }
+
     if (!validateForm()) return;
 
     setIsSubmitting(true);
 
     try {
+      const fullPhone = getFullPhoneNumber();
+      
       // Submit to Supabase API
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -134,7 +221,7 @@ export default function ContactForm({
         },
         body: JSON.stringify({
           name: formData.name.trim(),
-          phone: formData.phone.trim(),
+          phone: fullPhone.trim(),
         }),
       });
 
@@ -290,24 +377,90 @@ export default function ContactForm({
                       >
                         Phone Number *
                       </Label>
-                      <div className="relative">
-                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                        <Input
-                          id="modal-phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={(e) =>
-                            handleInputChange("phone", e.target.value)
-                          }
-                          placeholder="+998 (90) 123-45-67"
-                          className={`pl-10 w-full transition-all duration-200 ${
-                            errors.phone
-                              ? "border-red-500 focus:ring-red-500"
-                              : "focus:ring-blue-500"
-                          }`}
-                          disabled={isSubmitting}
-                          inputMode="numeric"
-                        />
+                      <div className="flex gap-2">
+                        {/* Country Code Selector */}
+                        <div className="relative country-selector">
+                          <button
+                            type="button"
+                            onClick={() => setShowCountryDropdown(!showCountryDropdown)}
+                            className="h-10 px-3 py-2 border border-input bg-background rounded-md hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-2 min-w-[120px]"
+                            disabled={isSubmitting}
+                          >
+                            <span className="text-lg">
+                              {selectedCountryCode === "other" 
+                                ? "🌍" 
+                                : COUNTRY_CODES.find(c => c.code === selectedCountryCode)?.flag}
+                            </span>
+                            <span className="text-sm font-medium">
+                              {selectedCountryCode === "other" 
+                                ? customCountryCode || "Other" 
+                                : selectedCountryCode}
+                            </span>
+                            <ChevronDown className="w-4 h-4 ml-auto text-muted-foreground" />
+                          </button>
+
+                          {/* Dropdown Menu */}
+                          {showCountryDropdown && (
+                            <div className="absolute top-full left-0 mt-1 w-[280px] bg-card border border-border rounded-lg shadow-lg z-50 max-h-[300px] overflow-y-auto">
+                              {COUNTRY_CODES.map((country) => (
+                                <button
+                                  key={country.code}
+                                  type="button"
+                                  onClick={() => handleCountryCodeSelect(country.code)}
+                                  className="w-full px-4 py-2.5 text-left hover:bg-accent transition-colors flex items-center gap-3 border-b border-border/50 last:border-0"
+                                >
+                                  <span className="text-xl">{country.flag}</span>
+                                  <div className="flex-1">
+                                    <div className="text-sm font-medium text-foreground">
+                                      {country.country}
+                                    </div>
+                                    {country.code !== "other" && (
+                                      <div className="text-xs text-muted-foreground">
+                                        {country.code}
+                                      </div>
+                                    )}
+                                  </div>
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Custom Country Code Input (only shown when "Other" is selected) */}
+                        {selectedCountryCode === "other" && (
+                          <div className="relative w-24">
+                            <Input
+                              type="text"
+                              value={customCountryCode}
+                              onChange={(e) => handleCustomCountryCodeChange(e.target.value)}
+                              placeholder="+123"
+                              className="w-full text-center"
+                              disabled={isSubmitting}
+                              maxLength={5}
+                            />
+                          </div>
+                        )}
+
+                        {/* Phone Number Input */}
+                        <div className="relative flex-1">
+                          <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                          <Input
+                            id="modal-phone"
+                            type="tel"
+                            value={formData.phone}
+                            onChange={(e) =>
+                              handleInputChange("phone", e.target.value)
+                            }
+                            placeholder="90 123 45 67"
+                            className={`pl-10 w-full transition-all duration-200 ${
+                              errors.phone
+                                ? "border-red-500 focus:ring-red-500"
+                                : "focus:ring-blue-500"
+                            }`}
+                            disabled={isSubmitting}
+                            inputMode="numeric"
+                          />
+                        </div>
                       </div>
                       {errors.phone && (
                         <p className="text-sm text-red-500 animate-in slide-in-from-top-1 duration-200">
