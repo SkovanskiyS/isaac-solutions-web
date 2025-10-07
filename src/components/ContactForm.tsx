@@ -8,22 +8,22 @@ import { Label } from "@/components/ui/label";
 import { ArrowRight, CheckCircle, User, Phone, X, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-// Country codes with flags
+// Country codes with flags and example formats
 const COUNTRY_CODES = [
-  { code: "+998", country: "Uzbekistan", flag: "🇺🇿" },
-  { code: "+7", country: "Russia/Kazakhstan", flag: "🇷🇺" },
-  { code: "+1", country: "USA/Canada", flag: "🇺🇸" },
-  { code: "+44", country: "United Kingdom", flag: "🇬🇧" },
-  { code: "+91", country: "India", flag: "🇮🇳" },
-  { code: "+86", country: "China", flag: "🇨🇳" },
-  { code: "+49", country: "Germany", flag: "🇩🇪" },
-  { code: "+33", country: "France", flag: "🇫🇷" },
-  { code: "+81", country: "Japan", flag: "🇯🇵" },
-  { code: "+82", country: "South Korea", flag: "🇰🇷" },
-  { code: "+971", country: "UAE", flag: "🇦🇪" },
-  { code: "+966", country: "Saudi Arabia", flag: "🇸🇦" },
-  { code: "+90", country: "Turkey", flag: "🇹🇷" },
-  { code: "other", country: "Other", flag: "🌍" },
+  { code: "+998", country: "Uzbekistan", flag: "🇺🇿", placeholder: "90 123 45 67", example: "90 123 45 67" },
+  { code: "+7", country: "Russia/Kazakhstan", flag: "🇷🇺", placeholder: "912 123 45 67", example: "912 123 45 67" },
+  { code: "+1", country: "USA/Canada", flag: "🇺🇸", placeholder: "(555) 123-4567", example: "(555) 123-4567" },
+  { code: "+44", country: "United Kingdom", flag: "🇬🇧", placeholder: "7700 900123", example: "7700 900123" },
+  { code: "+91", country: "India", flag: "🇮🇳", placeholder: "98765 43210", example: "98765 43210" },
+  { code: "+86", country: "China", flag: "🇨🇳", placeholder: "138 0013 8000", example: "138 0013 8000" },
+  { code: "+49", country: "Germany", flag: "🇩🇪", placeholder: "151 23456789", example: "151 23456789" },
+  { code: "+33", country: "France", flag: "🇫🇷", placeholder: "6 12 34 56 78", example: "6 12 34 56 78" },
+  { code: "+81", country: "Japan", flag: "🇯🇵", placeholder: "90-1234-5678", example: "90-1234-5678" },
+  { code: "+82", country: "South Korea", flag: "🇰🇷", placeholder: "10-1234-5678", example: "10-1234-5678" },
+  { code: "+971", country: "UAE", flag: "🇦🇪", placeholder: "50 123 4567", example: "50 123 4567" },
+  { code: "+966", country: "Saudi Arabia", flag: "🇸🇦", placeholder: "50 123 4567", example: "50 123 4567" },
+  { code: "+90", country: "Turkey", flag: "🇹🇷", placeholder: "532 123 45 67", example: "532 123 45 67" },
+  { code: "other", country: "Other", flag: "🌍", placeholder: "123456789", example: "123456789" },
 ];
 
 interface ContactFormProps {
@@ -173,6 +173,12 @@ export default function ContactForm({
     if (sanitized.startsWith("+") || sanitized === "") {
       setCustomCountryCode(sanitized);
     }
+  };
+
+  // Get the current placeholder for phone number based on selected country
+  const getPhonePlaceholder = () => {
+    const country = COUNTRY_CODES.find(c => c.code === selectedCountryCode);
+    return country?.placeholder || "123456789";
   };
 
   // Get the full phone number with country code
@@ -451,7 +457,7 @@ export default function ContactForm({
                             onChange={(e) =>
                               handleInputChange("phone", e.target.value)
                             }
-                            placeholder="90 123 45 67"
+                            placeholder={getPhonePlaceholder()}
                             className={`pl-10 w-full transition-all duration-200 ${
                               errors.phone
                                 ? "border-red-500 focus:ring-red-500"
