@@ -113,7 +113,7 @@ export default function Navigation({ currentPage = "home" }: NavigationProps) {
                 </Link>
                 <Link
                   href={`/${locale}/pricing`}
-                  className="text-blue-500 font-semibold active:text-blue-600 active:scale-95 transition-all duration-150 hover:text-blue-400 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-blue-500"
+                  className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300"
                 >
                   {t("pricing")}
                 </Link>
@@ -211,7 +211,7 @@ export default function Navigation({ currentPage = "home" }: NavigationProps) {
                   </Link>
                   <Link
                     href={`/${locale}/pricing`}
-                    className="block text-blue-500 font-semibold hover:text-blue-400 transition-colors duration-150 py-2"
+                    className="block text-foreground hover:text-blue-400 active:text-blue-500 transition-colors duration-150 font-medium py-2"
                     onClick={closeMobileMenu}
                   >
                     {t("pricing")}
