@@ -19,7 +19,7 @@ const clientLogos: Logo[] = [
   {
     id: 1,
     name: "Bron24",
-    src: "/portfolio/bron24.png",
+    src: "/Bron24.png",
     alt: "Bron24 - Online Booking Platform",
   },
   {
@@ -37,7 +37,7 @@ const clientLogos: Logo[] = [
   {
     id: 4,
     name: "Amity University",
-    src: "/amity-university.png",
+    src: "/AMITY.PNG.png",
     alt: "Amity University - Educational Institution",
   },
   {
