@@ -31,25 +31,25 @@ const clientLogos: Logo[] = [
   {
     id: 3,
     name: "Beeline",
-    src: "https://upload.wikimedia.org/wikipedia/commons/3/31/Beeline_logo_2021.svg",
+    src: "/beeline.png",
     alt: "Beeline - Telecommunications Company",
   },
   {
     id: 4,
     name: "Amity University",
-    src: "https://upload.wikimedia.org/wikipedia/en/1/1c/Amity_University_logo.png",
+    src: "/amity-university.png",
     alt: "Amity University - Educational Institution",
   },
   {
     id: 5,
     name: "Payme",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Payme_logo.svg/512px-Payme_logo.svg.png",
+    src: "/payme.png",
     alt: "Payme - Payment System",
   },
   {
     id: 6,
     name: "Click",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Click_Uzbekistan_logo.svg/512px-Click_Uzbekistan_logo.svg.png",
+    src: "/click.png",
     alt: "Click - Payment System",
   },
 ];
