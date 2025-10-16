@@ -6,11 +6,13 @@ import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import FadeIn from "@/components/animations/FadeIn";
 import { Building2 } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface Logo {
   id: number;
   name: string;
   src: string;
+  srcDark?: string;
   alt: string;
 }
 
@@ -20,18 +22,20 @@ const clientLogos: Logo[] = [
     id: 1,
     name: "Bron24",
     src: "/Bron24.png",
+    srcDark: "/Bron24_Dark.png",
     alt: "Bron24 - Online Booking Platform",
   },
   {
     id: 2,
     name: "Vita Coffee",
-    src: "/portfolio/vita-coffee.png",
+    src: "/VitaCoffee.jpg",
     alt: "Vita Coffee - Coffee Shop Brand",
   },
   {
     id: 3,
     name: "Beeline",
-    src: "/beeline.png",
+    src: "/BeelinelogoLight.svg",
+    srcDark: "/BeelinelogoDark.svg",
     alt: "Beeline - Telecommunications Company",
   },
   {
@@ -44,12 +48,14 @@ const clientLogos: Logo[] = [
     id: 5,
     name: "Payme",
     src: "/payme.png",
+    srcDark: "/PaymeDark.png",
     alt: "Payme - Payment System",
   },
   {
     id: 6,
     name: "Click",
     src: "/click.png",
+    srcDark: "/ClickDark.png",
     alt: "Click - Payment System",
   },
 ];
@@ -63,9 +69,13 @@ export default function ClientLogos({
   className = "",
 }: ClientLogosProps) {
   const t = useTranslations();
+  const { theme } = useTheme();
+
+  // Duplicate logos for seamless infinite scroll
+  const duplicatedLogos = [...clientLogos, ...clientLogos];
 
   return (
-    <section className={`w-full py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-muted/5 to-background ${className}`}>
+    <section className={`w-full py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-muted/5 to-background overflow-hidden ${className}`}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <FadeIn className="text-center mb-12">
@@ -81,43 +91,30 @@ export default function ClientLogos({
           </p>
         </FadeIn>
 
-        {/* Logo Grid - 3 columns on desktop for 6 logos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {clientLogos.map((logo, index) => (
-            <FadeIn key={logo.id} delay={0.1 * (index + 1)}>
-              <div className="group relative">
-                {/* Card Container */}
-                <div className="relative glass rounded-2xl p-8 md:p-12 border-2 border-border hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-2 shadow-corporate hover:shadow-2xl hover:shadow-blue-500/10 bg-card/50 backdrop-blur-sm overflow-hidden">
-                  {/* Background gradient effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Corner accent */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Logo Container */}
-                  <div className="relative flex items-center justify-center h-32 md:h-40">
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={300}
-                      height={160}
-                      className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110 drop-shadow-lg
-                        dark:brightness-0 dark:invert dark:opacity-90 dark:group-hover:opacity-100
-                        light:opacity-80 light:group-hover:opacity-100"
-                      priority={index < 2}
-                    />
-                  </div>
-                  
-                  {/* Company Name */}
-                  <div className="relative mt-6 text-center">
-                    <p className="text-lg font-semibold text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                      {logo.name}
-                    </p>
-                  </div>
+        {/* Scrolling Logo Container */}
+        <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
+          {/* Scrolling logos */}
+          <div className="flex gap-8 animate-scroll-40s hover:pause-animation px-4">
+            {duplicatedLogos.map((logo, index) => (
+              <div
+                key={`${logo.id}-${index}`}
+                className="group flex-shrink-0 w-80"
+              >
+                {/* Logo Container - Clean & Simple */}
+                <div className="flex items-center justify-center h-40 p-6 bg-white dark:bg-background rounded-xl transition-all duration-300 hover:scale-105">
+                  <Image
+                    src={theme === 'dark' && logo.srcDark ? logo.srcDark : logo.src}
+                    alt={logo.alt}
+                    width={280}
+                    height={140}
+                    className="w-full h-full object-contain"
+                    priority={index < 6}
+                    style={{ maxWidth: '100%', maxHeight: '100%' }}
+                  />
                 </div>
               </div>
-            </FadeIn>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
