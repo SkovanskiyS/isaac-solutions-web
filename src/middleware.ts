@@ -1,15 +1,12 @@
 import createMiddleware from "next-intl/middleware";
+import { i18nConfig } from "@/config";
 
 // Create the internationalization middleware
 const intlMiddleware = createMiddleware({
-  locales: ["en", "uz", "ru"],
-  defaultLocale: "en",
+  locales: i18nConfig.locales,
+  defaultLocale: i18nConfig.defaultLocale,
   // Handle all routes for internationalization
-  pathnames: {
-    "/": "/",
-    "/pricing": "/pricing",
-    "/faq": "/faq",
-  },
+  pathnames: i18nConfig.pathnames,
 });
 
 export default intlMiddleware;

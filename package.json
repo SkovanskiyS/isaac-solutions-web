@@ -9,9 +9,9 @@
     "typecheck": "npx tsc --noEmit",
     "lint": "npm run typecheck && next lint",
     "format": "npx @biomejs/biome format --write",
-    "security-check": "node security-check.js",
+    "security-check": "node scripts/security-check.js",
     "precommit": "npm run security-check",
-    "test-auth": "node test-auth-middleware.js"
+    "test-auth": "node scripts/test-auth-middleware.js"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",

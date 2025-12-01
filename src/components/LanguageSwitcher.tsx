@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState, useTransition, useRef, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Globe, Check, ChevronDown } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -78,44 +77,21 @@ export default function LanguageSwitcher() {
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <Button
-        variant="ghost"
-        size="sm"
-        className={`
-          flex items-center gap-2 
-          hover:bg-accent/80 
-          active:scale-95 
-          transition-all 
-          duration-200
-          rounded-xl
-          px-3 py-2
-          border border-border/50
-          ${isOpen ? "bg-accent shadow-md border-blue-500/30" : "hover:border-border"}
-        `}
+      <button
+        className="text-foreground hover:text-blue-500 active:text-blue-600 active:scale-95 transition-all duration-150 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all after:duration-300 flex items-center gap-1.5"
         disabled={isPending}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Globe
-          className={`w-4 h-4 transition-all duration-200 ${isOpen ? "text-blue-500 scale-110" : "text-muted-foreground"}`}
-        />
-        <span className="text-sm font-medium hidden sm:inline">
-          {currentLanguage?.flag}
-        </span>
-        <span className="text-sm font-medium hidden md:inline">
+        <span className="flex items-center gap-1.5">
           {currentLanguage?.name}
+          <ChevronDown
+            className={`w-3.5 h-3.5 transition-all duration-300 ${isOpen ? "rotate-180" : ""}`}
+          />
         </span>
-        <ChevronDown
-          className={`
-            w-3.5 h-3.5 
-            transition-all 
-            duration-300 
-            ${isOpen ? "rotate-180 text-blue-500" : "text-muted-foreground"}
-          `}
-        />
         {isPending && (
           <div className="w-3 h-3 border-2 border-blue-500 border-t-transparent rounded-full animate-spin ml-1" />
         )}
-      </Button>
+      </button>
 
       {/* Dropdown Menu */}
       {isOpen && (
