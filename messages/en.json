@@ -116,6 +116,7 @@
     }
   },
   "portfolio": {
+    "badge": "Our Work",
     "title": "Featured Projects",
     "subtitle": "Discover our latest work showcasing innovation, quality, and client success.",
     "projects": {

@@ -4,94 +4,112 @@
 
 @layer base {
   /* ===================================
-   * THEME VARIABLES - LIGHT MODE
+   * THEME VARIABLES - LIGHT MODE (Futuristic AI Theme)
    * ================================= */
   :root {
-    /* Core Colors */
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    /* Core Colors - Light with futuristic tint */
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
+    --card: 220 15% 98%;
+    --card-foreground: 220 20% 10%;
+    --popover: 220 15% 98%;
+    --popover-foreground: 220 20% 10%;
     
     /* Interactive Elements */
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 5% 45%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --primary: 190 95% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 90% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 280 85% 60%;
+    --accent-foreground: 0 0% 100%;
     
     /* States */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 220 15% 88%;
+    --input: 220 15% 90%;
+    --ring: 190 95% 45%;
     
     /* Layout */
-    --radius: 0.5rem;
+    --radius: 0.75rem;
     
-    /* Custom Brand Variables */
-    --gradient-from: 0 0% 100%;
-    --gradient-to: 0 0% 100%;
-    --nav-bg: 0 0% 100% / 0.98;
-    --card-bg: 0 0% 100% / 0.98;
+    /* Custom Brand Variables - AI Futuristic */
+    --gradient-from: 220 20% 97%;
+    --gradient-to: 230 25% 95%;
+    --nav-bg: 220 20% 98% / 0.85;
+    --card-bg: 220 15% 100% / 0.9;
     
-    /* Semantic Colors */
+    /* Semantic Colors - Neon AI Palette */
     --text-primary: var(--foreground);
-    --text-secondary: 240 5% 40%;
+    --text-secondary: 220 10% 40%;
     --text-muted: var(--muted-foreground);
-    --accent-blue: 220 91% 60%;
-    --accent-purple: 280 91% 70%;
+    --accent-cyan: 190 95% 50%;
+    --accent-purple: 280 90% 65%;
+    --accent-blue: 220 95% 60%;
+    --accent-pink: 320 90% 65%;
+    --accent-green: 160 95% 45%;
     --chart-grid: var(--border);
-    --chart-price: 142 76% 36%;
+    --chart-price: 160 95% 45%;
+    
+    /* AI Glow Effects */
+    --glow-cyan: 190 95% 50%;
+    --glow-purple: 280 90% 65%;
+    --glow-blue: 220 95% 60%;
   }
 
   /* ===================================
-   * THEME VARIABLES - DARK MODE
+   * THEME VARIABLES - DARK MODE (Cyber AI Theme)
    * ================================= */
   .dark {
-    /* Core Colors */
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    /* Core Colors - Deep space dark */
+    --background: 230 25% 5%;
+    --foreground: 0 0% 95%;
+    --card: 230 25% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 230 25% 8%;
+    --popover-foreground: 0 0% 95%;
     
-    /* Interactive Elements */
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    /* Interactive Elements - Neon Palette */
+    --primary: 190 95% 55%;
+    --primary-foreground: 230 25% 5%;
+    --secondary: 280 90% 70%;
+    --secondary-foreground: 230 25% 5%;
+    --muted: 230 20% 12%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 320 90% 65%;
+    --accent-foreground: 230 25% 5%;
     
     /* States */
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 230 20% 15%;
+    --input: 230 20% 12%;
+    --ring: 190 95% 55%;
     
-    /* Custom Brand Variables - Dark Mode */
-    --gradient-from: 240 15% 9%;
-    --gradient-to: 240 12% 6%;
-    --nav-bg: 240 10% 3.9% / 0.8;
-    --card-bg: 240 10% 3.9% / 0.5;
+    /* Custom Brand Variables - Dark Cyber Mode */
+    --gradient-from: 230 30% 6%;
+    --gradient-to: 260 30% 4%;
+    --nav-bg: 230 25% 5% / 0.85;
+    --card-bg: 230 25% 8% / 0.8;
     
-    /* Semantic Colors - Dark Mode Overrides */
+    /* Semantic Colors - Neon Dark Mode */
     --text-primary: var(--foreground);
     --text-secondary: var(--muted-foreground);
     --text-muted: var(--muted-foreground);
+    --accent-cyan: 190 95% 55%;
+    --accent-purple: 280 90% 70%;
+    --accent-blue: 220 95% 65%;
+    --accent-pink: 320 90% 70%;
+    --accent-green: 160 95% 50%;
     --chart-grid: var(--border);
-    --chart-price: 158 64% 52%;
+    --chart-price: 160 95% 50%;
+    
+    /* AI Glow Effects - Brighter for dark mode */
+    --glow-cyan: 190 95% 55%;
+    --glow-purple: 280 90% 70%;
+    --glow-blue: 220 95% 65%;
   }
 
   /* ===================================
@@ -239,106 +257,296 @@
   }
 
   /* ===================================
-   * GLASSMORPHISM & PREMIUM EFFECTS
+   * GLASSMORPHISM & FUTURISTIC AI EFFECTS
    * ================================= */
   .glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(59, 130, 246, 0.15);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(6, 182, 212, 0.2);
   }
 
   .glass-strong {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(6, 182, 212, 0.25);
   }
 
   .dark .glass {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(10, 15, 30, 0.6);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.05);
   }
 
   .dark .glass-strong {
-    background: rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(10, 15, 30, 0.8);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    box-shadow: 0 0 40px rgba(6, 182, 212, 0.08);
   }
 
+  /* AI Neon Shadows */
   .shadow-corporate {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
-                0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 15px -3px rgba(6, 182, 212, 0.1),
+                0 2px 6px -2px rgba(139, 92, 246, 0.08);
   }
 
   .shadow-corporate-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08),
-                0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 25px -5px rgba(6, 182, 212, 0.15),
+                0 4px 10px -3px rgba(139, 92, 246, 0.1);
   }
 
   .shadow-corporate-xl {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08),
-                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.2),
+                0 10px 15px -5px rgba(139, 92, 246, 0.12);
   }
 
   .dark .shadow-corporate {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
-                0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px -3px rgba(6, 182, 212, 0.2),
+                0 2px 6px -2px rgba(139, 92, 246, 0.15),
+                0 0 20px rgba(6, 182, 212, 0.05);
   }
 
   .dark .shadow-corporate-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
-                0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px -5px rgba(6, 182, 212, 0.25),
+                0 4px 10px -3px rgba(139, 92, 246, 0.2),
+                0 0 40px rgba(6, 182, 212, 0.08);
   }
 
   .dark .shadow-corporate-xl {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6),
-                0 10px 10px -5px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 25px 50px -12px rgba(6, 182, 212, 0.3),
+                0 15px 25px -8px rgba(139, 92, 246, 0.25),
+                0 0 60px rgba(6, 182, 212, 0.1);
   }
 
-  /* Premium gradient backgrounds */
+  /* Futuristic Neon Glow Effects */
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4),
+                0 0 40px rgba(6, 182, 212, 0.2),
+                0 0 60px rgba(6, 182, 212, 0.1);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4),
+                0 0 40px rgba(139, 92, 246, 0.2),
+                0 0 60px rgba(139, 92, 246, 0.1);
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4),
+                0 0 40px rgba(236, 72, 153, 0.2),
+                0 0 60px rgba(236, 72, 153, 0.1);
+  }
+
+  /* AI Grid Background */
+  .ai-grid-bg {
+    background-image: 
+      linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .dark .ai-grid-bg {
+    background-image: 
+      linear-gradient(rgba(6, 182, 212, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Premium AI gradient backgrounds */
   .gradient-corporate {
-    background: #ffffff;
+    background: linear-gradient(135deg, 
+      rgba(6, 182, 212, 0.03) 0%,
+      rgba(139, 92, 246, 0.03) 50%,
+      rgba(236, 72, 153, 0.02) 100%);
   }
 
   .dark .gradient-corporate {
     background: linear-gradient(135deg, 
-      rgba(59, 130, 246, 0.1) 0%, 
-      rgba(147, 51, 234, 0.1) 100%);
+      rgba(6, 182, 212, 0.08) 0%, 
+      rgba(139, 92, 246, 0.08) 50%,
+      rgba(236, 72, 153, 0.05) 100%);
   }
 
-  /* Professional text gradients */
+  /* Futuristic AI text gradients */
   .text-gradient-corporate {
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #6366f1 100%);
+    background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 50%, #ec4899 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    padding: 0.05em 0 0.2em 0;
+    line-height: 1.4;
+    display: inline-block;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
-  /* Elevated cards */
+  .text-gradient-ai {
+    background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 25%, #8b5cf6 50%, #ec4899 75%, #06b6d4 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 4s linear infinite;
+    padding: 0.05em 0 0.2em 0;
+    line-height: 1.4;
+    display: inline-block;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+
+  /* Shimmer animation for badges and highlights */
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .animate-shimmer {
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Elevated cards with AI styling */
   .card-elevated {
     position: relative;
-    background: #ffffff;
-    border: 1px solid rgba(59, 130, 246, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark .card-elevated {
-    background: rgba(15, 23, 42, 0.95);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(10, 15, 30, 0.9);
+    border: 1px solid rgba(6, 182, 212, 0.2);
   }
 
   .card-elevated:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px -12px rgba(6, 182, 212, 0.25),
+                0 0 30px rgba(139, 92, 246, 0.1);
   }
 
-  /* Professional dividers */
+  .dark .card-elevated:hover {
+    box-shadow: 0 25px 50px -12px rgba(6, 182, 212, 0.3),
+                0 0 50px rgba(6, 182, 212, 0.15),
+                0 0 80px rgba(139, 92, 246, 0.1);
+  }
+
+  /* AI Neural Network Line Dividers */
   .divider-corporate {
     height: 1px;
     background: linear-gradient(90deg, 
-      transparent 0%, 
-      rgba(59, 130, 246, 0.3) 50%, 
+      transparent 0%,
+      rgba(6, 182, 212, 0.5) 25%,
+      rgba(139, 92, 246, 0.5) 50%,
+      rgba(236, 72, 153, 0.5) 75%,
       transparent 100%);
+  }
+
+  /* Cyber Border Animation */
+  .border-glow {
+    position: relative;
+  }
+
+  .border-glow::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(90deg, #06b6d4, #8b5cf6, #ec4899, #06b6d4);
+    background-size: 300% 100%;
+    border-radius: inherit;
+    animation: border-glow-animation 3s linear infinite;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  @keyframes border-glow-animation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+  }
+
+  /* Scan Line Effect */
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.8), transparent);
+    animation: scan-line 3s ease-in-out infinite;
+  }
+
+  @keyframes scan-line {
+    0%, 100% { top: 0; opacity: 0; }
+    50% { opacity: 1; }
+    100% { top: 100%; }
+  }
+
+  /* Pulse Ring Animation for buttons */
+  .pulse-ring {
+    position: relative;
+  }
+
+  .pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 2px solid rgba(6, 182, 212, 0.4);
+    border-radius: inherit;
+    animation: pulse-ring-animation 2s ease-out infinite;
+  }
+
+  @keyframes pulse-ring-animation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.15);
+      opacity: 0;
+    }
+  }
+
+  /* Holographic Shimmer */
+  .holographic {
+    background: linear-gradient(
+      135deg,
+      rgba(6, 182, 212, 0.1) 0%,
+      rgba(139, 92, 246, 0.1) 25%,
+      rgba(236, 72, 153, 0.1) 50%,
+      rgba(6, 182, 212, 0.1) 75%,
+      rgba(139, 92, 246, 0.1) 100%
+    );
+    background-size: 400% 400%;
+    animation: holographic-shimmer 8s ease infinite;
+  }
+
+  @keyframes holographic-shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Data Stream Animation */
+  .data-stream {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(6, 182, 212, 0.03) 2px,
+      rgba(6, 182, 212, 0.03) 4px
+    );
+    animation: data-stream-scroll 20s linear infinite;
+  }
+
+  @keyframes data-stream-scroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100vh; }
   }
 }
 

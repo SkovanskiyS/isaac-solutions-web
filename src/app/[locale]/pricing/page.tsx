@@ -3,6 +3,7 @@
 import Navigation from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   Check,
   Code2,
@@ -12,46 +13,70 @@ import {
   Smartphone,
   Package,
   Sparkles,
+  Brain,
+  Cpu,
+  ArrowRight,
 } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { useTranslations } from "next-intl";
 import ScrollReveal from "@/components/animations/ScrollReveal";
 import FadeIn from "@/components/animations/FadeIn";
+import dynamic from "next/dynamic";
+import Link from "next/link";
+
+const NeuralBackground = dynamic(() => import("@/components/NeuralBackground"), {
+  ssr: false,
+});
 
 export default function PricingPage() {
   const t = useTranslations("pricing");
   const contactT = useTranslations("contactForm");
+  const footerT = useTranslations("footer");
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background ai-grid-bg relative overflow-hidden">
+      {/* Neural Network Background */}
+      <NeuralBackground />
+      
       <Navigation currentPage="pricing" />
 
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Animated gradient orbs with AI colors */}
+        <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[100px] -z-10 animate-float"></div>
+        <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-purple-500/12 rounded-full blur-[120px] -z-10 animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/3 right-1/3 w-[350px] h-[350px] bg-pink-500/10 rounded-full blur-[100px] -z-10 animate-float" style={{ animationDelay: '2s' }}></div>
+
+        <div className="max-w-7xl mx-auto relative">
           <FadeIn delay={0.1}>
-            <div className="text-center mb-16">
+            <div className="text-center mb-20">
               <Badge
                 variant="outline"
-                className="mb-4 glass border-blue-500/30"
+                className="mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500"
               >
+                <Cpu className="w-4 h-4 mr-2" />
                 {t("badge")}
               </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                {t("title")}
+              <h1 className="text-5xl md:text-7xl font-black text-foreground mb-8 leading-tight">
+                <span className="text-gradient-corporate">{t("title")}</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
                 {t("subtitle")}
               </p>
             </div>
           </FadeIn>
 
           {/* Web Development */}
-          <div className="mb-16 sm:mb-20">
+          <div className="mb-20 sm:mb-28 relative">
+            {/* Section background decoration */}
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
+            
             <ScrollReveal>
-              <div className="flex items-center justify-center mb-8">
-                <Code2 className="w-8 h-8 text-blue-600 mr-3 animate-bounce-subtle" />
-                <h2 className="text-3xl font-bold text-foreground">
-                  {t("webDev.title")}
+              <div className="flex flex-col items-center justify-center mb-12 pt-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 glow-cyan shadow-lg">
+                  <Code2 className="w-10 h-10 text-white" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black text-foreground">
+                  <span className="text-gradient-corporate">{t("webDev.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -179,12 +204,17 @@ export default function PricingPage() {
           </div>
 
           {/* Mobile Development */}
-          <div className="mb-16 sm:mb-20">
+          <div className="mb-20 sm:mb-28 relative">
+            {/* Section background decoration */}
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
+            
             <ScrollReveal>
-              <div className="flex items-center justify-center mb-8">
-                <Smartphone className="w-8 h-8 text-blue-600 mr-3 animate-bounce-subtle" />
-                <h2 className="text-3xl font-bold text-foreground">
-                  {t("mobileDev.title")}
+              <div className="flex flex-col items-center justify-center mb-12 pt-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 glow-purple shadow-lg">
+                  <Smartphone className="w-10 h-10 text-white" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black text-foreground">
+                  <span className="text-gradient-corporate">{t("mobileDev.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -318,12 +348,17 @@ export default function PricingPage() {
           </div>
 
           {/* Telegram Bot */}
-          <div className="mb-16 sm:mb-20">
+          <div className="mb-20 sm:mb-28 relative">
+            {/* Section background decoration */}
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
+            
             <ScrollReveal>
-              <div className="flex items-center justify-center mb-8">
-                <MessageCircle className="w-8 h-8 text-blue-600 mr-3 animate-bounce-subtle" />
-                <h2 className="text-3xl font-bold text-foreground">
-                  {t("telegramBot.title")}
+              <div className="flex flex-col items-center justify-center mb-12 pt-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-sky-600 rounded-2xl flex items-center justify-center mb-6 glow-cyan shadow-lg">
+                  <MessageCircle className="w-10 h-10 text-white" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black text-foreground">
+                  <span className="text-gradient-corporate">{t("telegramBot.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -459,12 +494,17 @@ export default function PricingPage() {
           </div>
 
           {/* UI/UX Design */}
-          <div className="mb-16 sm:mb-20">
+          <div className="mb-20 sm:mb-28 relative">
+            {/* Section background decoration */}
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
+            
             <ScrollReveal>
-              <div className="flex items-center justify-center mb-8">
-                <Palette className="w-8 h-8 text-blue-600 mr-3 animate-bounce-subtle" />
-                <h2 className="text-3xl font-bold text-foreground">
-                  {t("uiUxDesign.title")}
+              <div className="flex flex-col items-center justify-center mb-12 pt-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 glow-pink shadow-lg">
+                  <Palette className="w-10 h-10 text-white" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black text-foreground">
+                  <span className="text-gradient-corporate">{t("uiUxDesign.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -598,18 +638,23 @@ export default function PricingPage() {
           </div>
 
           {/* All-In Package */}
-          <div className="mb-16 sm:mb-20">
+          <div className="mb-20 sm:mb-28 relative">
+            {/* Section background decoration */}
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
+            
             <ScrollReveal>
-              <div className="flex items-center justify-center mb-8">
-                <Wrench className="w-8 h-8 text-blue-600 mr-3 animate-bounce-subtle" />
-                <h2 className="text-3xl font-bold text-foreground">
-                  {t("allInPackage.title")}
+              <div className="flex flex-col items-center justify-center mb-8 pt-8">
+                <div className="w-20 h-20 bg-gradient-to-br from-violet-500 to-fuchsia-600 rounded-2xl flex items-center justify-center mb-6 glow-purple shadow-lg">
+                  <Wrench className="w-10 h-10 text-white" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black text-foreground">
+                  <span className="text-gradient-corporate">{t("allInPackage.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <p className="text-center text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
+              <p className="text-center text-xl text-muted-foreground mb-12 max-w-3xl mx-auto font-light">
                 {t("allInPackage.subtitle")}
               </p>
             </ScrollReveal>
@@ -748,25 +793,120 @@ export default function PricingPage() {
             </div>
           </div>
 
+          {/* Divider */}
+          <div className="divider-corporate my-16"></div>
+
           {/* Contact CTA */}
           <ScrollReveal delay={0.2}>
-            <div className="text-center glass-strong rounded-2xl p-6 sm:p-12 border-2 border-blue-500/30 shadow-corporate-xl">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-                {t("cta.title")}
-              </h2>
-              <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-                {t("cta.description")}
-              </p>
-              <div className="flex justify-center w-full">
-                <ContactForm
-                  buttonText={t("cta.buttonText")}
-                  className="w-full max-w-xs sm:max-w-md mx-auto"
-                />
+            <div className="relative text-center glass-strong rounded-3xl p-8 sm:p-16 border-2 border-cyan-500/30 shadow-corporate-xl overflow-hidden">
+              {/* Holographic background effect */}
+              <div className="absolute inset-0 holographic opacity-20"></div>
+              
+              {/* Gradient orb decorations */}
+              <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[80px] -z-10"></div>
+              <div className="absolute bottom-0 right-1/4 w-[250px] h-[250px] bg-purple-500/10 rounded-full blur-[80px] -z-10"></div>
+              
+              <div className="relative z-10">
+                <Brain className="w-16 h-16 text-cyan-500 mx-auto mb-8" />
+                <h2 className="text-4xl sm:text-5xl font-black mb-6">
+                  <span className="text-gradient-ai">{t("cta.title")}</span>
+                </h2>
+                <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                  {t("cta.description")}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mx-auto max-w-lg">
+                  <div className="pulse-ring rounded-xl w-full sm:w-auto">
+                    <ContactForm
+                      buttonText={t("cta.buttonText")}
+                      size="xl"
+                    />
+                  </div>
+                  <Link href="/" className="w-full sm:w-auto">
+                    <Button
+                      variant="outline"
+                      size="xl"
+                      className="w-full sm:w-auto group glass border-purple-500/40 hover:bg-purple-500/10 shadow-corporate hover:shadow-corporate-lg hover:border-purple-400/60 transition-all duration-300"
+                    >
+                      <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                      View Our Work
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Footer - Modern AI Style */}
+      <footer className="border-t border-cyan-500/20 bg-background/80 backdrop-blur-xl py-16 px-4 sm:px-6 lg:px-8 relative">
+        <div className="absolute inset-0 ai-grid-bg opacity-30"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center glow-cyan">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-2xl font-black text-gradient-corporate">
+                  {footerT("company")}
+                </span>
+              </div>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                {footerT("description")}
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-foreground font-bold mb-6 text-lg">
+                {footerT("services.title")}
+              </h4>
+              <ul className="space-y-3 text-muted-foreground">
+                {(footerT.raw("services.items") as string[]).map(
+                  (item: string, index: number) => (
+                    <li key={index}>
+                      <a
+                        href="/#services"
+                        className="hover:text-cyan-500 transition-colors duration-300 flex items-center group"
+                      >
+                        <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        {item}
+                      </a>
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-foreground font-bold mb-6 text-lg">
+                {footerT("company_info.title")}
+              </h4>
+              <ul className="space-y-3 text-muted-foreground">
+                {(footerT.raw("company_info.items") as string[]).map(
+                  (item: string, index: number) => (
+                    <li key={index}>
+                      <a
+                        href={`/#${item.toLowerCase()}`}
+                        className="hover:text-cyan-500 transition-colors duration-300 flex items-center group"
+                      >
+                        <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        {item}
+                      </a>
+                    </li>
+                  ),
+                )}
+              </ul>
+            </div>
+          </div>
+
+          <div className="divider-corporate mt-12 mb-8"></div>
+          
+          <div className="text-center">
+            <p className="text-muted-foreground">{footerT("copyright")}</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

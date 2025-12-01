@@ -1,63 +1,19 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 import FadeIn from "@/components/animations/FadeIn";
-import { Building2 } from "lucide-react";
-import { useTheme } from "@/contexts/ThemeContext";
+import { Sparkles } from "lucide-react";
 
-interface Logo {
-  id: number;
-  name: string;
-  src: string;
-  srcDark?: string;
-  alt: string;
-}
-
-// Real client logos from portfolio projects and partners
-const clientLogos: Logo[] = [
-  {
-    id: 1,
-    name: "Bron24",
-    src: "/Bron24.png",
-    srcDark: "/Bron24_Dark.png",
-    alt: "Bron24 - Online Booking Platform",
-  },
-  {
-    id: 2,
-    name: "Vita Coffee",
-    src: "/VitaCoffee.jpg",
-    alt: "Vita Coffee - Coffee Shop Brand",
-  },
-  {
-    id: 3,
-    name: "Beeline",
-    src: "/BeelinelogoLight.svg",
-    srcDark: "/BeelinelogoDark.svg",
-    alt: "Beeline - Telecommunications Company",
-  },
-  {
-    id: 4,
-    name: "Amity University",
-    src: "/AMITY.PNG.png",
-    alt: "Amity University - Educational Institution",
-  },
-  {
-    id: 5,
-    name: "Payme",
-    src: "/payme.png",
-    srcDark: "/PaymeDark.png",
-    alt: "Payme - Payment System",
-  },
-  {
-    id: 6,
-    name: "Click",
-    src: "/click.png",
-    srcDark: "/ClickDark.png",
-    alt: "Click - Payment System",
-  },
+// Client names for text-based display
+const clients = [
+  { id: 1, name: "Bron24", color: "from-cyan-400 to-blue-500" },
+  { id: 2, name: "Vita Coffee", color: "from-amber-400 to-orange-500" },
+  { id: 3, name: "Beeline", color: "from-yellow-400 to-yellow-500" },
+  { id: 4, name: "Amity University", color: "from-blue-400 to-indigo-500" },
+  { id: 5, name: "Payme", color: "from-cyan-400 to-teal-500" },
+  { id: 6, name: "Click", color: "from-purple-400 to-pink-500" },
 ];
 
 interface ClientLogosProps {
@@ -69,49 +25,46 @@ export default function ClientLogos({
   className = "",
 }: ClientLogosProps) {
   const t = useTranslations();
-  const { theme } = useTheme();
 
-  // Duplicate logos for seamless infinite scroll
-  const duplicatedLogos = [...clientLogos, ...clientLogos];
+  // Duplicate for seamless infinite scroll
+  const duplicatedClients = [...clients, ...clients];
 
   return (
-    <section className={`w-full py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-muted/5 to-background overflow-hidden ${className}`}>
+    <section className={`w-full py-20 px-4 sm:px-6 lg:px-8 overflow-hidden relative ${className}`}>
+      {/* Background decoration */}
+      <div className="absolute inset-0 gradient-corporate -z-10"></div>
+      
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <FadeIn className="text-center mb-12">
-          <Badge className="mb-4 glass border-blue-500/30 text-blue-500 font-semibold px-4 py-1.5">
-            <Building2 className="w-4 h-4 mr-1" />
+        <FadeIn className="text-center mb-16">
+          <Badge variant="outline" className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500">
+            <Sparkles className="w-4 h-4 mr-2" />
             {t("trustedCompanies.badge") || "Our Clients"}
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-foreground mb-6">
             {t("trustedCompanies.title") || "Trusted by Industry Leaders"}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto font-light">
             {t("trustedCompanies.subtitle") || "Join the companies that trust us with their most important projects."}
           </p>
         </FadeIn>
 
         {/* Scrolling Logo Container */}
-        <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
-          {/* Scrolling logos */}
-          <div className="flex gap-8 animate-scroll-40s hover:pause-animation px-4">
-            {duplicatedLogos.map((logo, index) => (
+        <div className="relative overflow-x-clip -mx-4 sm:-mx-6 lg:-mx-8">
+          {/* Gradient fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+          
+          {/* Scrolling text logos */}
+          <div className="flex gap-12 animate-scroll-40s hover:pause-animation px-4 items-center pb-4">
+            {duplicatedClients.map((client, index) => (
               <div
-                key={`${logo.id}-${index}`}
-                className="group flex-shrink-0 w-80"
+                key={`${client.id}-${index}`}
+                className="group flex-shrink-0"
               >
-                {/* Logo Container - Clean & Simple */}
-                <div className="flex items-center justify-center h-40 p-6 bg-white dark:bg-background rounded-xl transition-all duration-300 hover:scale-105">
-                  <Image
-                    src={theme === 'dark' && logo.srcDark ? logo.srcDark : logo.src}
-                    alt={logo.alt}
-                    width={280}
-                    height={140}
-                    className="w-full h-full object-contain"
-                    priority={index < 6}
-                    style={{ maxWidth: '100%', maxHeight: '100%' }}
-                  />
-                </div>
+                <span className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${client.color} bg-clip-text text-transparent opacity-60 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap`}>
+                  {client.name}
+                </span>
               </div>
             ))}
           </div>

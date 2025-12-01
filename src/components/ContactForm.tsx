@@ -280,7 +280,7 @@ export default function ContactForm({
           size={size}
           variant={variant}
           onClick={handleButtonClick}
-          className="group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg w-full sm:w-auto"
+          className="group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-corporate-lg w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-0"
         >
           <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
           {buttonText}
@@ -480,7 +480,7 @@ export default function ContactForm({
                     <div className="pt-4">
                       <Button
                         type="submit"
-                        className="w-full group relative overflow-hidden"
+                        className="w-full group relative overflow-hidden bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-0"
                         disabled={isSubmitting}
                         size="lg"
                       >

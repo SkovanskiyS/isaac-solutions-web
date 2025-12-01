@@ -127,6 +127,7 @@
     }
   },
   "portfolio": {
+    "badge": "Bizning Ishlarimiz",
     "title": "Tanlangan loyihalar",
     "subtitle": "Innovatsiya, sifat va mijoz muvaffaqiyatini namoyish etuvchi so'nggi ishlarimizni ko'ring.",
     "projects": {
