@@ -106,6 +106,10 @@ export default {
           '0%': { backgroundPosition: '200% 0' },
           '100%': { backgroundPosition: '-200% 0' },
         },
+        'blink': {
+          '0%, 50%': { opacity: '1' },
+          '51%, 100%': { opacity: '0' },
+        },
       },
       animation: {
         'fade-in': 'fade-in 0.6s ease-out',
@@ -116,6 +120,7 @@ export default {
         'glow': 'glow 2s ease-in-out infinite',
         'float': 'float 3s ease-in-out infinite',
         'shimmer': 'shimmer 25s linear infinite',
+        'blink': 'blink 0.7s step-end infinite',
       },
     }
   },

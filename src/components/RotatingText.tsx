@@ -1,78 +1,75 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 
-const texts = [
+// Constants outside component
+const TEXTS = [
   "Build with Us.",
   "Biz bilan yarating.",
   "Создавайте с нами.",
-];
+] as const;
 
-export default function RotatingText() {
+const TYPING_SPEED = 80;
+const DELETING_SPEED = 50;
+const PAUSE_DURATION = 2000;
+
+const RotatingText = memo(function RotatingText() {
   const [mounted, setMounted] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
-  const [text, setText] = useState("");
+  const [displayLength, setDisplayLength] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
-  // Wait for mount
+  // Mount effect
   useEffect(() => {
     setMounted(true);
-    setText(texts[0]);
+    setDisplayLength(TEXTS[0].length);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
   }, []);
 
   useEffect(() => {
     if (!mounted) return;
 
-    const currentFullText = texts[textIndex];
-    let timer: ReturnType<typeof setTimeout>;
-
+    const currentFullText = TEXTS[textIndex];
+    
     if (!isDeleting) {
-      // Typing
-      if (text.length < currentFullText.length) {
-        timer = setTimeout(() => {
-          setText(currentFullText.slice(0, text.length + 1));
-        }, 80);
+      if (displayLength < currentFullText.length) {
+        timerRef.current = setTimeout(() => {
+          setDisplayLength((prev) => prev + 1);
+        }, TYPING_SPEED);
       } else {
-        // Pause before deleting
-        timer = setTimeout(() => setIsDeleting(true), 2000);
+        timerRef.current = setTimeout(() => setIsDeleting(true), PAUSE_DURATION);
       }
     } else {
-      // Deleting
-      if (text.length > 0) {
-        timer = setTimeout(() => {
-          setText(text.slice(0, -1));
-        }, 50);
+      if (displayLength > 0) {
+        timerRef.current = setTimeout(() => {
+          setDisplayLength((prev) => prev - 1);
+        }, DELETING_SPEED);
       } else {
-        // Move to next text
         setIsDeleting(false);
-        setTextIndex((prev) => (prev + 1) % texts.length);
+        setTextIndex((prev) => (prev + 1) % TEXTS.length);
       }
     }
 
-    return () => clearTimeout(timer);
-  }, [mounted, text, isDeleting, textIndex]);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [mounted, displayLength, isDeleting, textIndex]);
 
-  // Server-side / initial render
   if (!mounted) {
-    return <span>{texts[0]}</span>;
+    return <span>{TEXTS[0]}</span>;
   }
+
+  const displayText = TEXTS[textIndex].slice(0, displayLength);
 
   return (
     <span>
-      {text}
-      <span
-        style={{
-          borderRight: "4px solid currentColor",
-          marginLeft: "4px",
-          animation: "blink 0.7s step-end infinite",
-        }}
-      />
-      <style>{`
-        @keyframes blink {
-          0%, 50% { opacity: 1; }
-          51%, 100% { opacity: 0; }
-        }
-      `}</style>
+      {displayText}
+      <span className="inline-block w-1 h-[1em] ml-1 bg-current animate-blink" />
     </span>
   );
-}
+});
+
+export default RotatingText;

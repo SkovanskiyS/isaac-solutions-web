@@ -49,13 +49,17 @@ export default function PricingPage() {
         <div className="max-w-7xl mx-auto relative">
           <FadeIn delay={0.1}>
             <div className="text-center mb-20">
-              <Badge
-                variant="outline"
-                className="mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500"
-              >
-                <Cpu className="w-4 h-4 mr-2" />
-                {t("badge")}
-              </Badge>
+              <div className="inline-flex items-center gap-2 mb-8">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500"></div>
+                <Badge
+                  variant="outline"
+                  className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500"
+                >
+                  <Cpu className="w-4 h-4 mr-2" />
+                  {t("badge")}
+                </Badge>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
+              </div>
               <h1 className="text-5xl md:text-7xl font-black text-foreground mb-8 leading-tight">
                 <span className="text-gradient-corporate">{t("title")}</span>
               </h1>

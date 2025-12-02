@@ -89,10 +89,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center">
             <FadeIn delay={0.1}>
-              <Badge variant="outline" className="mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500">
-                <Brain className="w-4 h-4 mr-2" />
-                {t("hero.badge")}
-              </Badge>
+              <div className="inline-flex items-center gap-2 mb-8">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500"></div>
+                <Badge variant="outline" className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500">
+                  <Brain className="w-4 h-4 mr-2" />
+                  {t("hero.badge")}
+                </Badge>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
+              </div>
             </FadeIn>
             <FadeIn delay={0.2}>
               <h1 className="text-6xl md:text-8xl font-black text-foreground mb-8 leading-[0.9] tracking-tight">
@@ -204,10 +208,14 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-20">
-            <Badge variant="outline" className="mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500">
-              <Cpu className="w-4 h-4 mr-2" />
-              {t("services.badge") || "Our Services"}
-            </Badge>
+            <div className="inline-flex items-center gap-2 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500"></div>
+              <Badge variant="outline" className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500">
+                <Cpu className="w-4 h-4 mr-2" />
+                {t("services.badge") || "Our Services"}
+              </Badge>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
+            </div>
             <h2 className="text-5xl md:text-6xl font-black text-foreground mb-6">
               {t("services.title")}
             </h2>
@@ -363,19 +371,23 @@ export default function Home() {
         id="about"
         className="py-32 px-4 sm:px-6 lg:px-8 scroll-mt-20 relative overflow-hidden"
       >
-        {/* Enhanced Background decoration */}
-        <div className="absolute inset-0 gradient-corporate -z-10"></div>
-        <div className="absolute inset-0 ai-grid-bg -z-10 opacity-50"></div>
-        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-cyan-500/8 rounded-full blur-[150px] -z-10 animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-purple-500/8 rounded-full blur-[150px] -z-10 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-pink-500/5 rounded-full blur-[200px] -z-10"></div>
+        {/* Enhanced Background decoration - more subtle */}
+        <div className="absolute inset-0 gradient-corporate -z-10 opacity-50"></div>
+        <div className="absolute inset-0 ai-grid-bg -z-10 opacity-20"></div>
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[150px] -z-10"></div>
+        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-purple-500/5 rounded-full blur-[150px] -z-10"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-pink-500/3 rounded-full blur-[200px] -z-10"></div>
 
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-24">
-            <Badge variant="outline" className="mb-8 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 shadow-2xl shadow-purple-500/40 rounded-full px-8 py-3 text-white border-0 font-bold text-sm tracking-widest uppercase hover:shadow-purple-400/60 hover:scale-105 transition-all duration-500 animate-shimmer">
-              <Rocket className="w-5 h-5 mr-2.5 animate-bounce" />
-              {t("about.badge") || "Our Team"}
-            </Badge>
+            <div className="inline-flex items-center gap-2 mb-8">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500"></div>
+              <Badge variant="outline" className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500">
+                <Rocket className="w-4 h-4 mr-2" />
+                {t("about.badge") || "Our Team"}
+              </Badge>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
+            </div>
             <h2 className="text-5xl md:text-7xl font-black mb-8">
               <span className="text-gradient-corporate">{t("about.title")}</span>
             </h2>
