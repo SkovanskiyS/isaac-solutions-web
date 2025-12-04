@@ -90,12 +90,14 @@ const Navigation = memo(function Navigation({ currentPage = "home" }: Navigation
     }
   }, [closeMobileMenu]);
 
-  // Memoized nav class
+  // Memoized nav class with enhanced glassmorphism
   const navClassName = useMemo(() => {
-    const baseClass = "border-b border-cyan-500/20 backdrop-blur-2xl fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out bg-background/85 transform";
+    const baseClass = "border-b border-cyan-500/20 fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out transform";
     const visibilityClass = isVisible ? "translate-y-0" : "-translate-y-full";
-    const scrollClass = isScrolled ? "shadow-lg shadow-cyan-500/10 bg-background/95" : "shadow-corporate";
-    return `${baseClass} ${visibilityClass} ${scrollClass}`;
+    const glassClass = isScrolled 
+      ? "bg-background/80 backdrop-blur-[32px] saturate-[180%] shadow-[0_8px_32px_rgba(6,182,212,0.12),0_0_60px_rgba(6,182,212,0.06),inset_0_-1px_0_rgba(6,182,212,0.1)] border-cyan-500/30" 
+      : "bg-background/60 backdrop-blur-[24px] saturate-[150%] shadow-corporate";
+    return `${baseClass} ${visibilityClass} ${glassClass}`;
   }, [isVisible, isScrolled]);
 
   return (

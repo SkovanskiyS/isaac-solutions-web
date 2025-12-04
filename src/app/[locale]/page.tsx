@@ -135,7 +135,7 @@ export default function Home() {
               className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
             >
               <StaggerItem>
-                <div className="h-full text-center group hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 bg-card/40 backdrop-blur-xl p-10 rounded-3xl border border-border/50 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 relative overflow-hidden flex flex-col">
+                <div className="h-full text-center group hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 glass-premium glass-shine p-10 rounded-3xl border border-border/50 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 relative overflow-hidden flex flex-col">
                   {/* Subtle gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-500/5 group-hover:to-blue-500/5 transition-all duration-500 rounded-3xl"></div>
                   <div className="relative z-10 flex flex-col items-center flex-1">
@@ -152,7 +152,7 @@ export default function Home() {
                 </div>
               </StaggerItem>
               <StaggerItem>
-                <div className="h-full text-center group hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 bg-card/40 backdrop-blur-xl p-10 rounded-3xl border border-border/50 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 relative overflow-hidden flex flex-col">
+                <div className="h-full text-center group hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 glass-premium glass-shine p-10 rounded-3xl border border-border/50 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 relative overflow-hidden flex flex-col">
                   {/* Subtle gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500 rounded-3xl"></div>
                   <div className="relative z-10 flex flex-col items-center flex-1">
@@ -169,7 +169,7 @@ export default function Home() {
                 </div>
               </StaggerItem>
               <StaggerItem>
-                <div className="h-full text-center group hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 bg-card/40 backdrop-blur-xl p-10 rounded-3xl border border-border/50 hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 relative overflow-hidden flex flex-col">
+                <div className="h-full text-center group hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 glass-premium glass-shine p-10 rounded-3xl border border-border/50 hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 relative overflow-hidden flex flex-col">
                   {/* Subtle gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-green-500/0 group-hover:from-emerald-500/5 group-hover:to-green-500/5 transition-all duration-500 rounded-3xl"></div>
                   <div className="relative z-10 flex flex-col items-center flex-1">
@@ -347,7 +347,7 @@ export default function Home() {
           </div>
 
           <ScrollReveal delay={0.4} className="mt-20 text-center">
-            <div className="inline-flex items-center px-12 py-6 glass-strong rounded-2xl border-2 border-cyan-500/30 hover:border-cyan-400/50 hover:scale-105 transition-all duration-300 shadow-corporate-xl group relative overflow-hidden">
+            <div className="inline-flex items-center px-12 py-6 glass-morph rounded-2xl hover:scale-105 transition-all duration-300 shadow-corporate-xl group relative overflow-hidden">
               <div className="absolute inset-0 holographic opacity-30 group-hover:opacity-50 transition-opacity"></div>
               <Brain className="w-8 h-8 text-cyan-500 mr-4 group-hover:animate-pulse relative z-10" />
               <span className="text-foreground font-bold text-xl relative z-10">
@@ -661,7 +661,7 @@ export default function Home() {
 
           {/* Company Mission Statement */}
           <ScrollReveal delay={0.4} className="mt-24 text-center">
-            <div className="max-w-4xl mx-auto glass-strong p-10 rounded-3xl border-2 border-cyan-500/30 shadow-corporate-xl relative overflow-hidden">
+            <div className="max-w-4xl mx-auto glass-premium p-10 rounded-3xl shadow-corporate-xl relative overflow-hidden">
               <div className="absolute inset-0 holographic opacity-20"></div>
               <div className="relative z-10">
                 <Brain className="w-12 h-12 text-cyan-500 mx-auto mb-6" />
@@ -709,7 +709,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
-            <div className="inline-block glass-strong p-10 rounded-3xl border-2 border-cyan-500/30 shadow-corporate-xl relative overflow-hidden">
+            <div className="inline-block glass-premium glass-shine p-10 rounded-3xl shadow-corporate-xl relative overflow-hidden">
               <div className="absolute inset-0 holographic opacity-20"></div>
               <div className="relative z-10 flex flex-col items-start gap-5 text-muted-foreground">
                 {(t.raw("cta.features") as string[]).map(
