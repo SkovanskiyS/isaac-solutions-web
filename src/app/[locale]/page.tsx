@@ -396,7 +396,7 @@ export default function Home() {
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
             {/* Founder 1 - Javohir */}
             <ScrollReveal delay={0.1}>
               <Card className="group relative h-full rounded-[2rem] border-0 bg-transparent overflow-hidden">
@@ -562,93 +562,6 @@ export default function Home() {
                         )
                       }
                       className="w-full bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-400 hover:to-violet-500 text-white font-semibold py-6 rounded-xl shadow-lg shadow-purple-500/30 hover:shadow-purple-400/50 hover:scale-[1.02] transition-all duration-300 group/btn"
-                    >
-                      <Linkedin className="w-5 h-5 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      {t("about.linkedinProfile")}
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-            </ScrollReveal>
-
-            {/* Team Member 3 - Fayzullo */}
-            <ScrollReveal delay={0.3}>
-              <Card className="group relative h-full rounded-[2rem] border-0 bg-transparent overflow-hidden">
-                {/* Animated border gradient */}
-                <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-pink-500 via-rose-500 to-pink-400 p-[2px] opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-[2px] rounded-[calc(2rem-2px)] bg-background/95 backdrop-blur-xl"></div>
-                </div>
-                
-                {/* Card content */}
-                <div className="relative z-10 p-8 flex flex-col h-full">
-                  {/* Floating particles effect on hover */}
-                  <div className="absolute top-4 right-4 w-2 h-2 bg-pink-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity"></div>
-                  <div className="absolute top-8 right-8 w-1.5 h-1.5 bg-rose-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity" style={{ animationDelay: '0.2s' }}></div>
-                  
-                  {/* Profile image with enhanced styling */}
-                  <div className="relative mx-auto mb-8">
-                    <div className="absolute inset-0 w-44 h-44 rounded-full bg-gradient-to-br from-pink-400 to-rose-600 blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-pulse"></div>
-                    <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-pink-400/50 group-hover:border-pink-400 transition-all duration-500 shadow-2xl shadow-pink-500/30 group-hover:shadow-pink-400/50 group-hover:scale-105">
-                      <Image
-                        src="/fayzullo-lutpillayev.jpg"
-                        alt={`${t("about.team.alex.name")} - ${t("about.team.alex.position")}`}
-                        width={160}
-                        height={160}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      {/* Shine effect */}
-                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full" style={{ transition: 'transform 0.7s ease-out, opacity 0.3s' }}></div>
-                    </div>
-                    {/* Status indicator */}
-                    <div className="absolute bottom-2 right-2 w-5 h-5 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full border-3 border-background shadow-lg shadow-emerald-500/50"></div>
-                  </div>
-                  
-                  {/* Name and position */}
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-gradient-corporate transition-all duration-300">
-                      {t("about.team.alex.name")}
-                    </h3>
-                    <p className="text-pink-500 font-semibold text-lg flex items-center justify-center gap-2">
-                      <span className="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></span>
-                      {t("about.team.alex.position")}
-                    </p>
-                  </div>
-                  
-                  {/* Bio */}
-                  <p className="text-muted-foreground text-sm leading-relaxed text-center mb-6 flex-grow">
-                    {t("about.team.alex.bio")}
-                  </p>
-                  
-                  {/* Skills section */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-3 text-sm text-center flex items-center justify-center gap-2">
-                      <Sparkles className="w-4 h-4 text-pink-400" />
-                      {t("about.team.alex.expertise")}
-                    </h4>
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      {(t.raw("about.team.alex.skills") as string[]).map(
-                        (skill: string, index: number) => (
-                          <Badge
-                            key={index}
-                            className="bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/30 hover:bg-pink-500/20 hover:border-pink-400/50 transition-all duration-300 text-xs px-3 py-1"
-                          >
-                            {skill}
-                          </Badge>
-                        ),
-                      )}
-                    </div>
-                  </div>
-                  
-                  {/* LinkedIn button */}
-                  <div className="mt-auto pt-4">
-                    <Button
-                      onClick={() =>
-                        window.open(
-                          "https://www.linkedin.com/in/fayzullo-lutpillayev-892923258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-                          "_blank",
-                        )
-                      }
-                      className="w-full bg-gradient-to-r from-pink-500 to-rose-600 hover:from-pink-400 hover:to-rose-500 text-white font-semibold py-6 rounded-xl shadow-lg shadow-pink-500/30 hover:shadow-pink-400/50 hover:scale-[1.02] transition-all duration-300 group/btn"
                     >
                       <Linkedin className="w-5 h-5 mr-2 group-hover/btn:scale-110 transition-transform" />
                       {t("about.linkedinProfile")}
