@@ -20,6 +20,7 @@ interface Project {
   accentColor: "cyan" | "purple" | "pink";
   deviceType: "laptop" | "phone" | "both";
   stats?: { label: string; value: string }[];
+  link?: string;
 }
 
 // Constants extracted outside component
@@ -29,10 +30,11 @@ const FEATURED_PROJECTS: Project[] = [
     nameKey: "bron24.name",
     descriptionKey: "bron24.description",
     tagsKey: "bron24.tags",
-    image: "/Bron24main.png",
-    mobileImage: "/Bron24mobilepicutre.jpg",
+    image: "/optimized/Bron24main.webp",
+    mobileImage: "/optimized/Bron24mobilepicutre.webp",
     accentColor: "cyan",
     deviceType: "both",
+    link: "https://www.bron24.uz/uz",
     stats: [
       { label: "Users", value: "10K+" },
       { label: "Bookings", value: "50K+" },
@@ -43,7 +45,7 @@ const FEATURED_PROJECTS: Project[] = [
     nameKey: "vitaCoffee.name",
     descriptionKey: "vitaCoffee.description",
     tagsKey: "vitaCoffee.tags",
-    image: "/VitaCoffee.jpg",
+    image: "/optimized/VitaCoffee.webp",
     accentColor: "purple",
     deviceType: "laptop",
     stats: [
@@ -56,7 +58,7 @@ const FEATURED_PROJECTS: Project[] = [
     nameKey: "techflowCrm.name",
     descriptionKey: "techflowCrm.description",
     tagsKey: "techflowCrm.tags",
-    image: "/Bron24_Dark.png",
+    image: "/optimized/Bron24_Dark.webp",
     accentColor: "pink",
     deviceType: "laptop",
     stats: [
@@ -204,26 +206,41 @@ const DeviceMockupCard = memo(function DeviceMockupCard({
               </div>
 
               <div
-                className={`relative aspect-[16/10] rounded-lg overflow-hidden bg-gray-950 ring-1 ${colors.ring}`}
+                className={`relative aspect-[16/9] rounded-lg overflow-hidden bg-gray-950 ring-1 ${colors.ring}`}
               >
                 <Image
                   src={project.image}
                   alt={`${name} on laptop`}
                   fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
-                  sizes="(max-width: 768px) 100vw, 60vw"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 1200px"
+                  quality={90}
                   priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
-                    <button
-                      className={`flex items-center gap-2 px-6 py-3 rounded-full ${colors.button} text-white font-medium shadow-xl transition-all duration-200`}
-                    >
-                      <Globe className="w-4 h-4" />
-                      <span>View Live</span>
-                      <ArrowUpRight className="w-4 h-4" />
-                    </button>
+                    {project.link ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex items-center gap-2 px-6 py-3 rounded-full ${colors.button} text-white font-medium shadow-xl transition-all duration-200 hover:scale-105`}
+                      >
+                        <Globe className="w-4 h-4" />
+                        <span>View Live</span>
+                        <ArrowUpRight className="w-4 h-4" />
+                      </a>
+                    ) : (
+                      <button
+                        className={`flex items-center gap-2 px-6 py-3 rounded-full ${colors.button} text-white font-medium shadow-xl transition-all duration-200`}
+                      >
+                        <Globe className="w-4 h-4" />
+                        <span>View Live</span>
+                        <ArrowUpRight className="w-4 h-4" />
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -246,8 +263,10 @@ const DeviceMockupCard = memo(function DeviceMockupCard({
                     src={project.mobileImage}
                     alt={`${name} on mobile`}
                     fill
-                    className="object-cover object-top"
-                    sizes="160px"
+                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 160px"
+                    quality={85}
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none" />
                 </div>
@@ -301,13 +320,6 @@ const DeviceMockupCard = memo(function DeviceMockupCard({
               {tag}
             </Badge>
           ))}
-        </div>
-
-        <div className="pt-4">
-          <button className="group/btn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-foreground text-background font-medium hover:gap-3 transition-all duration-300">
-            <span>View Case Study</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-          </button>
         </div>
       </div>
     </div>

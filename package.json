@@ -11,7 +11,9 @@
     "format": "npx @biomejs/biome format --write",
     "security-check": "node scripts/security-check.js",
     "precommit": "npm run security-check",
-    "test-auth": "node scripts/test-auth-middleware.js"
+    "test-auth": "node scripts/test-auth-middleware.js",
+    "optimize-images": "node scripts/optimize-images.js",
+    "image-report": "node scripts/image-report.js"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
@@ -46,6 +48,7 @@
     "eslint": "^9.27.0",
     "eslint-config-next": "15.1.7",
     "postcss": "^8.5.3",
+    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"
   }

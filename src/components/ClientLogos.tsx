@@ -4,35 +4,89 @@ import FadeIn from "@/components/animations/FadeIn";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { memo, useMemo } from "react";
+import Image from "next/image";
+import { memo } from "react";
 
-// Constants extracted outside component
+// Client logos configuration
 const CLIENTS = [
-  { id: 1, name: "Bron24", color: "from-green-300 to-emerald-400" },
-  { id: 2, name: "Vita Coffee", color: "from-orange-300 to-amber-400" },
-  { id: 3, name: "Beeline", color: "from-yellow-200 to-yellow-400" },
-  { id: 4, name: "Amity University", color: "from-pink-300 to-rose-400" },
-  { id: 5, name: "Payme", color: "from-cyan-300 to-blue-400" },
-  { id: 6, name: "Click", color: "from-purple-300 to-violet-400" },
+  {
+    id: 1,
+    name: "Bron24",
+    logo: "/Bron24.png",
+    darkLogo: "/Bron24_Dark.png",
+  },
+  {
+    id: 2,
+    name: "Vita Coffee",
+    logo: "/VitaCoffee.jpg",
+    darkLogo: "/VitaCoffee.jpg",
+  },
+  {
+    id: 3,
+    name: "Beeline",
+    logo: "/BeelinelogoLight.svg",
+    darkLogo: "/BeelinelogoDark.svg",
+  },
+  {
+    id: 4,
+    name: "Amity University",
+    logo: "/AMITY.PNG.png",
+    darkLogo: "/AMITY.PNG.png",
+  },
+  {
+    id: 5,
+    name: "Payme",
+    logo: "/payme.png",
+    darkLogo: "/payme.png",
+  },
+  {
+    id: 6,
+    name: "Click",
+    logo: "/click.png",
+    darkLogo: "/ClickDark.png",
+  },
 ] as const;
 
 interface ClientLogosProps {
   className?: string;
-  speed?: "slow" | "normal" | "fast";
 }
 
-// Memoized client item to prevent re-renders
-const ClientItem = memo(function ClientItem({
+// Memoized logo card with hover effects
+const ClientLogo = memo(function ClientLogo({
   name,
-  color,
-}: { name: string; color: string }) {
+  logo,
+  darkLogo,
+}: {
+  name: string;
+  logo: string;
+  darkLogo: string;
+}) {
   return (
-    <div className="group flex-shrink-0">
-      <span
-        className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${color} bg-clip-text text-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap`}
-      >
-        {name}
-      </span>
+    <div className="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      <div className="relative h-24 flex items-center justify-center">
+        {/* Light mode logo */}
+        <Image
+          src={logo}
+          alt={`${name} logo`}
+          fill
+          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+          className="object-contain dark:hidden opacity-80 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"
+          loading="lazy"
+          quality={85}
+        />
+        {/* Dark mode logo - mix-blend-screen makes black backgrounds transparent */}
+        <Image
+          src={darkLogo}
+          alt={`${name} logo`}
+          fill
+          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+          className="object-contain hidden dark:block mix-blend-screen opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"
+          loading="lazy"
+          quality={85}
+        />
+      </div>
     </div>
   );
 });
@@ -41,9 +95,6 @@ const ClientLogos = memo(function ClientLogos({
   className = "",
 }: ClientLogosProps) {
   const t = useTranslations();
-
-  // Duplicate clients for seamless scroll - memoized
-  const duplicatedClients = useMemo(() => [...CLIENTS, ...CLIENTS], []);
 
   return (
     <section
@@ -54,7 +105,7 @@ const ClientLogos = memo(function ClientLogos({
       <div className="max-w-7xl mx-auto">
         <FadeIn className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-6">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500" />
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary/50" />
             <Badge
               variant="outline"
               className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500"
@@ -62,7 +113,7 @@ const ClientLogos = memo(function ClientLogos({
               <Sparkles className="w-4 h-4 mr-2" />
               {t("trustedCompanies.badge") || "Our Clients"}
             </Badge>
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500" />
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50" />
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-foreground mb-6">
             {t("trustedCompanies.title") || "Trusted by Industry Leaders"}
@@ -73,20 +124,18 @@ const ClientLogos = memo(function ClientLogos({
           </p>
         </FadeIn>
 
-        <div className="relative overflow-x-clip -mx-4 sm:-mx-6 lg:-mx-8">
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-          <div className="flex gap-12 animate-scroll-40s hover:pause-animation px-4 items-center pb-4">
-            {duplicatedClients.map((client, index) => (
-              <ClientItem
-                key={`${client.id}-${index}`}
+        <FadeIn delay={0.2}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+            {CLIENTS.map((client) => (
+              <ClientLogo
+                key={client.id}
                 name={client.name}
-                color={client.color}
+                logo={client.logo}
+                darkLogo={client.darkLogo}
               />
             ))}
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );
