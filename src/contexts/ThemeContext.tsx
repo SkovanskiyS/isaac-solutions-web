@@ -62,9 +62,19 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     if (!mounted) return;
 
     const root = document.documentElement;
-    root.classList.remove("dark", "light");
-    root.classList.add(theme);
-    root.dataset.theme = theme;
+    
+    // Use startViewTransition for smoother theme changes (if supported)
+    if (document.startViewTransition && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.startViewTransition(() => {
+        root.classList.remove("dark", "light");
+        root.classList.add(theme);
+        root.dataset.theme = theme;
+      });
+    } else {
+      root.classList.remove("dark", "light");
+      root.classList.add(theme);
+      root.dataset.theme = theme;
+    }
   }, [theme, mounted]);
 
   const setTheme = useCallback((newTheme: Theme) => {

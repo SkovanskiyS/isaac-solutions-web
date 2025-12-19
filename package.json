@@ -13,7 +13,9 @@
     "precommit": "npm run security-check",
     "test-auth": "node scripts/test-auth-middleware.js",
     "optimize-images": "node scripts/optimize-images.js",
-    "image-report": "node scripts/image-report.js"
+    "image-report": "node scripts/image-report.js",
+    "cleanup": "node scripts/remove-test-files.js",
+    "prebuild": "npm run cleanup"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",

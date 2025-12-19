@@ -203,7 +203,7 @@ export default function Home() {
       </section>
 
       {/* Client Logos Carousel */}
-      <ClientLogos speed="normal" />
+      <ClientLogos />
 
       {/* Divider */}
       <div className="divider-corporate my-20" />

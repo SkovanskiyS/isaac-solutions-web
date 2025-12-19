@@ -9,24 +9,32 @@ const ThemeToggle = memo(function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
 
+  const handleToggle = () => {
+    // Add haptic feedback on mobile devices
+    if (navigator.vibrate) {
+      navigator.vibrate(10);
+    }
+    toggleTheme();
+  };
+
   return (
     <Button
       variant="ghost"
       size="sm"
-      onClick={toggleTheme}
-      className="relative h-9 w-9 rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center border border-border/50 hover:border-border active:scale-95"
+      onClick={handleToggle}
+      className="relative h-9 w-9 rounded-xl transition-all duration-200 hover:scale-105 flex items-center justify-center border border-border/50 hover:border-border active:scale-95"
       aria-label={`Switch to ${isDark ? "light" : "dark"} theme`}
     >
       <div className="relative h-5 w-5 flex items-center justify-center">
         <Sun
-          className={`absolute h-5 w-5 transition-all duration-500 text-amber-500 ${
+          className={`absolute h-5 w-5 transition-all duration-300 text-amber-500 ${
             isDark
               ? "rotate-90 scale-0 opacity-0"
               : "rotate-0 scale-100 opacity-100"
           }`}
         />
         <Moon
-          className={`absolute h-5 w-5 transition-all duration-500 text-blue-400 ${
+          className={`absolute h-5 w-5 transition-all duration-300 text-blue-400 ${
             isDark
               ? "rotate-0 scale-100 opacity-100"
               : "-rotate-90 scale-0 opacity-0"

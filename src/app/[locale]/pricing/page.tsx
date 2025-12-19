@@ -1,6 +1,5 @@
 ﻿"use client";
 
-import ContactForm from "@/components/ContactForm";
 import Navigation from "@/components/Navigation";
 import FadeIn from "@/components/animations/FadeIn";
 import ScrollReveal from "@/components/animations/ScrollReveal";
@@ -23,12 +22,22 @@ import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
+// Dynamic imports for heavy components to improve initial load
 const NeuralBackground = dynamic(
   () => import("@/components/NeuralBackground"),
   {
     ssr: false,
+    loading: () => <div className="fixed inset-0 bg-background/50 -z-10" />,
   },
 );
+
+const ContactForm = dynamic(() => import("@/components/ContactForm"), {
+  loading: () => (
+    <div className="animate-pulse bg-muted/20 rounded-lg h-96 flex items-center justify-center">
+      <p className="text-muted-foreground">Loading form...</p>
+    </div>
+  ),
+});
 
 export default function PricingPage() {
   const t = useTranslations("pricing");

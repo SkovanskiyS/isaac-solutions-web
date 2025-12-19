@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===================================
+ * VIEW TRANSITIONS API SUPPORT
+ * Enable smooth theme transitions
+ * ================================= */
+@supports (view-transition-name: none) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 200ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
 @layer base {
   /* ===================================
    * THEME VARIABLES - LIGHT MODE (Futuristic AI Theme)
@@ -126,25 +138,22 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    /* Prevent layout shift during theme transitions */
-    transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-                color 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* ===================================
    * PERFORMANCE OPTIMIZATIONS
    * ================================= */
   
-  /* Optimize theme transitions - applied to all elements that need it */
-  *,
-  *::before,
-  *::after {
+  /* Optimized theme transitions - only for specific elements */
+  /* Remove global * selector for better performance */
+  body,
+  [class*="bg-"],
+  [class*="text-"],
+  [class*="border-"] {
     transition: 
-      color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 300ms cubic-bezier(0.4, 0, 0.2, 1);
+      color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 150ms cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Reduce motion for users who prefer it */
