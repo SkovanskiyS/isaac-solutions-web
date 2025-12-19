@@ -8,7 +8,6 @@ export { default as ClientLanguageSwitcher } from "./ClientLanguageSwitcher";
 export { default as ClientLogos } from "./ClientLogos";
 export { default as ParticleBackground } from "./ParticleBackground";
 export { default as NeuralBackground } from "./NeuralBackground";
-export { default as TradingViewWidget } from "./TradingViewWidget";
 export { Logo, LogoIcon, LogoWithText } from "./Logo";
 
 // Animation Components

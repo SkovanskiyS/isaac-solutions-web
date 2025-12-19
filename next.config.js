@@ -99,16 +99,16 @@ const nextConfig = {
             value: 'strict-origin-when-cross-origin',
           },
           {
-            // Content Security Policy - allows TradingView widgets and Supabase
+            // Content Security Policy - Supabase integration
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://s.tradingview.com https://s3.tradingview.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https: blob:",
               "font-src 'self' data:",
-              "connect-src 'self' https://gojsvtjidhpagqpuvgkt.supabase.co wss://gojsvtjidhpagqpuvgkt.supabase.co https://s.tradingview.com https://s3.tradingview.com",
-              "frame-src https://s.tradingview.com https://www.tradingview.com",
+              "connect-src 'self' https://gojsvtjidhpagqpuvgkt.supabase.co wss://gojsvtjidhpagqpuvgkt.supabase.co",
+              "frame-src 'none'",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
