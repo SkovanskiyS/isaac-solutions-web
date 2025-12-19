@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
-import { ReactNode, memo, useMemo } from "react";
+import { type Variants, motion } from "framer-motion";
+import { type ReactNode, memo, useMemo } from "react";
 
 interface StaggerContainerProps {
   children: ReactNode;
@@ -27,14 +27,17 @@ const StaggerContainer = memo(function StaggerContainer({
   staggerDelay = 0.1,
   className = "",
 }: StaggerContainerProps) {
-  const variants = useMemo<Variants>(() => ({
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: staggerDelay,
+  const variants = useMemo<Variants>(
+    () => ({
+      hidden: {},
+      visible: {
+        transition: {
+          staggerChildren: staggerDelay,
+        },
       },
-    },
-  }), [staggerDelay]);
+    }),
+    [staggerDelay],
+  );
 
   return (
     <motion.div

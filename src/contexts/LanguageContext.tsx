@@ -1,7 +1,7 @@
 "use client";
 
-import React, { createContext, useContext, ReactNode } from "react";
 import { useLocale } from "next-intl";
+import React, { createContext, useContext, type ReactNode } from "react";
 
 interface LanguageContextType {
   locale: string;

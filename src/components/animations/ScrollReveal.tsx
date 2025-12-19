@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { ReactNode, useRef, memo, useMemo } from "react";
+import { type ReactNode, memo, useMemo, useRef } from "react";
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -35,16 +35,22 @@ const ScrollReveal = memo(function ScrollReveal({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once, margin: VIEW_MARGIN });
 
-  const initial = useMemo(() => ({
-    opacity: 0,
-    ...DIRECTIONS[direction],
-  }), [direction]);
+  const initial = useMemo(
+    () => ({
+      opacity: 0,
+      ...DIRECTIONS[direction],
+    }),
+    [direction],
+  );
 
-  const transition = useMemo(() => ({
-    duration,
-    delay,
-    ease: EASE,
-  }), [duration, delay]);
+  const transition = useMemo(
+    () => ({
+      duration,
+      delay,
+      ease: EASE,
+    }),
+    [duration, delay],
+  );
 
   return (
     <motion.div

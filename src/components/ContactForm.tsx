@@ -1,29 +1,121 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ArrowRight, CheckCircle, User, Phone, X, ChevronDown } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  ChevronDown,
+  Phone,
+  User,
+  X,
+} from "lucide-react";
 import { useTranslations } from "next-intl";
+import type React from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 // Country codes with flags and example formats
 const COUNTRY_CODES = [
-  { code: "+998", country: "Uzbekistan", flag: "🇺🇿", placeholder: "90 123 45 67", example: "90 123 45 67" },
-  { code: "+7", country: "Russia/Kazakhstan", flag: "🇷🇺", placeholder: "912 123 45 67", example: "912 123 45 67" },
-  { code: "+1", country: "USA/Canada", flag: "🇺🇸", placeholder: "(555) 123-4567", example: "(555) 123-4567" },
-  { code: "+44", country: "United Kingdom", flag: "🇬🇧", placeholder: "7700 900123", example: "7700 900123" },
-  { code: "+91", country: "India", flag: "🇮🇳", placeholder: "98765 43210", example: "98765 43210" },
-  { code: "+86", country: "China", flag: "🇨🇳", placeholder: "138 0013 8000", example: "138 0013 8000" },
-  { code: "+49", country: "Germany", flag: "🇩🇪", placeholder: "151 23456789", example: "151 23456789" },
-  { code: "+33", country: "France", flag: "🇫🇷", placeholder: "6 12 34 56 78", example: "6 12 34 56 78" },
-  { code: "+81", country: "Japan", flag: "🇯🇵", placeholder: "90-1234-5678", example: "90-1234-5678" },
-  { code: "+82", country: "South Korea", flag: "🇰🇷", placeholder: "10-1234-5678", example: "10-1234-5678" },
-  { code: "+971", country: "UAE", flag: "🇦🇪", placeholder: "50 123 4567", example: "50 123 4567" },
-  { code: "+966", country: "Saudi Arabia", flag: "🇸🇦", placeholder: "50 123 4567", example: "50 123 4567" },
-  { code: "+90", country: "Turkey", flag: "🇹🇷", placeholder: "532 123 45 67", example: "532 123 45 67" },
-  { code: "other", country: "Other", flag: "🌍", placeholder: "123456789", example: "123456789" },
+  {
+    code: "+998",
+    country: "Uzbekistan",
+    flag: "🇺🇿",
+    placeholder: "90 123 45 67",
+    example: "90 123 45 67",
+  },
+  {
+    code: "+7",
+    country: "Russia/Kazakhstan",
+    flag: "🇷🇺",
+    placeholder: "912 123 45 67",
+    example: "912 123 45 67",
+  },
+  {
+    code: "+1",
+    country: "USA/Canada",
+    flag: "🇺🇸",
+    placeholder: "(555) 123-4567",
+    example: "(555) 123-4567",
+  },
+  {
+    code: "+44",
+    country: "United Kingdom",
+    flag: "🇬🇧",
+    placeholder: "7700 900123",
+    example: "7700 900123",
+  },
+  {
+    code: "+91",
+    country: "India",
+    flag: "🇮🇳",
+    placeholder: "98765 43210",
+    example: "98765 43210",
+  },
+  {
+    code: "+86",
+    country: "China",
+    flag: "🇨🇳",
+    placeholder: "138 0013 8000",
+    example: "138 0013 8000",
+  },
+  {
+    code: "+49",
+    country: "Germany",
+    flag: "🇩🇪",
+    placeholder: "151 23456789",
+    example: "151 23456789",
+  },
+  {
+    code: "+33",
+    country: "France",
+    flag: "🇫🇷",
+    placeholder: "6 12 34 56 78",
+    example: "6 12 34 56 78",
+  },
+  {
+    code: "+81",
+    country: "Japan",
+    flag: "🇯🇵",
+    placeholder: "90-1234-5678",
+    example: "90-1234-5678",
+  },
+  {
+    code: "+82",
+    country: "South Korea",
+    flag: "🇰🇷",
+    placeholder: "10-1234-5678",
+    example: "10-1234-5678",
+  },
+  {
+    code: "+971",
+    country: "UAE",
+    flag: "🇦🇪",
+    placeholder: "50 123 4567",
+    example: "50 123 4567",
+  },
+  {
+    code: "+966",
+    country: "Saudi Arabia",
+    flag: "🇸🇦",
+    placeholder: "50 123 4567",
+    example: "50 123 4567",
+  },
+  {
+    code: "+90",
+    country: "Turkey",
+    flag: "🇹🇷",
+    placeholder: "532 123 45 67",
+    example: "532 123 45 67",
+  },
+  {
+    code: "other",
+    country: "Other",
+    flag: "🌍",
+    placeholder: "123456789",
+    example: "123456789",
+  },
 ];
 
 interface ContactFormProps {
@@ -85,7 +177,7 @@ export default function ContactForm({
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (showCountryDropdown && !target.closest('.country-selector')) {
+      if (showCountryDropdown && !target.closest(".country-selector")) {
         setShowCountryDropdown(false);
       }
     };
@@ -120,14 +212,16 @@ export default function ContactForm({
     } else if (formData.name.trim().length < 2) {
       newErrors.name = "Name must be at least 2 characters";
       isValid = false;
-    } else if (!/^[a-zA-Z\s\u0400-\u04FF\u0600-\u06FF'-]+$/.test(formData.name)) {
+    } else if (
+      !/^[a-zA-Z\s\u0400-\u04FF\u0600-\u06FF'-]+$/.test(formData.name)
+    ) {
       newErrors.name = "Name can only contain letters and spaces";
       isValid = false;
     }
 
     // Phone validation - only digits
     const cleanPhone = formData.phone.replace(/[\s\-\(\)]/g, "");
-    
+
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
       isValid = false;
@@ -150,7 +244,10 @@ export default function ContactForm({
   const handleInputChange = (field: "name" | "phone", value: string) => {
     if (field === "name") {
       // Only allow letters, spaces, and common name characters (including Cyrillic and Arabic)
-      const sanitizedValue = value.replace(/[^a-zA-Z\s\u0400-\u04FF\u0600-\u06FF'-]/g, "");
+      const sanitizedValue = value.replace(
+        /[^a-zA-Z\s\u0400-\u04FF\u0600-\u06FF'-]/g,
+        "",
+      );
       setFormData((prev) => ({ ...prev, [field]: sanitizedValue }));
     } else if (field === "phone") {
       // Only allow digits, spaces, parentheses, and hyphens for formatting
@@ -186,13 +283,14 @@ export default function ContactForm({
 
   // Get the current placeholder for phone number based on selected country
   const getPhonePlaceholder = () => {
-    const country = COUNTRY_CODES.find(c => c.code === selectedCountryCode);
+    const country = COUNTRY_CODES.find((c) => c.code === selectedCountryCode);
     return country?.placeholder || "123456789";
   };
 
   // Get the full phone number with country code
   const getFullPhoneNumber = () => {
-    const code = selectedCountryCode === "other" ? customCountryCode : selectedCountryCode;
+    const code =
+      selectedCountryCode === "other" ? customCountryCode : selectedCountryCode;
     return `${code} ${formData.phone}`;
   };
 
@@ -219,7 +317,7 @@ export default function ContactForm({
 
     try {
       const fullPhone = getFullPhoneNumber();
-      
+
       // Submit to Supabase API
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -389,18 +487,22 @@ export default function ContactForm({
                         <div className="relative country-selector">
                           <button
                             type="button"
-                            onClick={() => setShowCountryDropdown(!showCountryDropdown)}
+                            onClick={() =>
+                              setShowCountryDropdown(!showCountryDropdown)
+                            }
                             className="h-10 px-3 py-2 border border-input bg-background rounded-md hover:bg-accent hover:text-accent-foreground transition-colors flex items-center gap-2 min-w-[120px]"
                             disabled={isSubmitting}
                           >
                             <span className="text-lg">
-                              {selectedCountryCode === "other" 
-                                ? "🌍" 
-                                : COUNTRY_CODES.find(c => c.code === selectedCountryCode)?.flag}
+                              {selectedCountryCode === "other"
+                                ? "🌍"
+                                : COUNTRY_CODES.find(
+                                    (c) => c.code === selectedCountryCode,
+                                  )?.flag}
                             </span>
                             <span className="text-sm font-medium">
-                              {selectedCountryCode === "other" 
-                                ? customCountryCode || "Other" 
+                              {selectedCountryCode === "other"
+                                ? customCountryCode || "Other"
                                 : selectedCountryCode}
                             </span>
                             <ChevronDown className="w-4 h-4 ml-auto text-muted-foreground" />
@@ -413,10 +515,14 @@ export default function ContactForm({
                                 <button
                                   key={country.code}
                                   type="button"
-                                  onClick={() => handleCountryCodeSelect(country.code)}
+                                  onClick={() =>
+                                    handleCountryCodeSelect(country.code)
+                                  }
                                   className="w-full px-4 py-2.5 text-left hover:bg-accent transition-colors flex items-center gap-3 border-b border-border/50 last:border-0"
                                 >
-                                  <span className="text-xl">{country.flag}</span>
+                                  <span className="text-xl">
+                                    {country.flag}
+                                  </span>
                                   <div className="flex-1">
                                     <div className="text-sm font-medium text-foreground">
                                       {country.country}
@@ -439,7 +545,9 @@ export default function ContactForm({
                             <Input
                               type="text"
                               value={customCountryCode}
-                              onChange={(e) => handleCustomCountryCodeChange(e.target.value)}
+                              onChange={(e) =>
+                                handleCustomCountryCodeChange(e.target.value)
+                              }
                               placeholder="+123"
                               className="w-full text-center"
                               disabled={isSubmitting}

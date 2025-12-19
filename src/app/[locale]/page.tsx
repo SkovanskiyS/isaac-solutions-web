@@ -1,5 +1,15 @@
 "use client";
 
+import Navigation from "@/components/Navigation";
+import RotatingText from "@/components/RotatingText";
+import ThemeToggle from "@/components/ThemeToggle";
+import FadeIn from "@/components/animations/FadeIn";
+import ScrollReveal from "@/components/animations/ScrollReveal";
+import SlideIn from "@/components/animations/SlideIn";
+import StaggerContainer, {
+  StaggerItem,
+} from "@/components/animations/StaggerContainer";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,39 +18,29 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import ThemeToggle from "@/components/ThemeToggle";
-import Navigation from "@/components/Navigation";
-import Link from "next/link";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
-import dynamic from "next/dynamic";
 import {
-  Code2,
-  Smartphone,
-  Zap,
-  CheckCircle,
   ArrowRight,
-  Lightbulb,
-  Globe,
-  Palette,
-  User,
-  Linkedin,
-  Brain,
-  Cpu,
-  Sparkles,
   Bot,
+  Brain,
+  CheckCircle,
+  CircuitBoard,
+  Code2,
+  Cpu,
+  Globe,
+  Lightbulb,
+  Linkedin,
+  Palette,
   Rocket,
   Shield,
-  CircuitBoard,
+  Smartphone,
+  Sparkles,
+  User,
+  Zap,
 } from "lucide-react";
-import FadeIn from "@/components/animations/FadeIn";
-import SlideIn from "@/components/animations/SlideIn";
-import ScrollReveal from "@/components/animations/ScrollReveal";
-import StaggerContainer, {
-  StaggerItem,
-} from "@/components/animations/StaggerContainer";
-import RotatingText from "@/components/RotatingText";
+import { useTranslations } from "next-intl";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
 
 // Lazy load heavy components for better performance
 const ClientLogos = dynamic(() => import("@/components/ClientLogos"), {
@@ -61,9 +61,12 @@ const ContactForm = dynamic(() => import("@/components/ContactForm"), {
   ssr: false,
 });
 
-const NeuralBackground = dynamic(() => import("@/components/NeuralBackground"), {
-  ssr: false,
-});
+const NeuralBackground = dynamic(
+  () => import("@/components/NeuralBackground"),
+  {
+    ssr: false,
+  },
+);
 
 export default function Home() {
   const t = useTranslations();
@@ -72,7 +75,7 @@ export default function Home() {
     <div className="min-h-screen bg-background ai-grid-bg relative overflow-hidden">
       {/* Neural Network Background */}
       <NeuralBackground />
-      
+
       {/* Navigation */}
       <Navigation currentPage="home" />
 
@@ -82,20 +85,29 @@ export default function Home() {
         className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden scroll-mt-20"
       >
         {/* Animated gradient orbs with AI colors */}
-        <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[100px] -z-10 animate-float"></div>
-        <div className="absolute bottom-20 right-1/4 w-[600px] h-[600px] bg-purple-500/15 rounded-full blur-[120px] -z-10 animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-pink-500/10 rounded-full blur-[150px] -z-10 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[100px] -z-10 animate-float" />
+        <div
+          className="absolute bottom-20 right-1/4 w-[600px] h-[600px] bg-purple-500/15 rounded-full blur-[120px] -z-10 animate-float"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-pink-500/10 rounded-full blur-[150px] -z-10 animate-float"
+          style={{ animationDelay: "2s" }}
+        />
 
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center">
             <FadeIn delay={0.1}>
               <div className="inline-flex items-center gap-2 mb-8">
-                <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500"></div>
-                <Badge variant="outline" className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500">
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500" />
+                <Badge
+                  variant="outline"
+                  className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500"
+                >
                   <Brain className="w-4 h-4 mr-2" />
                   {t("hero.badge")}
                 </Badge>
-                <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500" />
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
@@ -128,7 +140,7 @@ export default function Home() {
                 </a>
               </div>
             </FadeIn>
-            
+
             {/* AI Feature Cards */}
             <StaggerContainer
               staggerDelay={0.15}
@@ -137,7 +149,7 @@ export default function Home() {
               <StaggerItem>
                 <div className="h-full text-center group hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 glass-premium glass-shine p-10 rounded-3xl border border-border/50 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 relative overflow-hidden flex flex-col">
                   {/* Subtle gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-500/5 group-hover:to-blue-500/5 transition-all duration-500 rounded-3xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-blue-500/0 group-hover:from-cyan-500/5 group-hover:to-blue-500/5 transition-all duration-500 rounded-3xl" />
                   <div className="relative z-10 flex flex-col items-center flex-1">
                     <div className="w-20 h-20 mb-6 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-[1.25rem] flex items-center justify-center shadow-lg shadow-cyan-500/25 group-hover:shadow-xl group-hover:shadow-cyan-500/30 group-hover:scale-105 transition-all duration-500">
                       <Bot className="w-10 h-10 text-white" />
@@ -154,7 +166,7 @@ export default function Home() {
               <StaggerItem>
                 <div className="h-full text-center group hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 glass-premium glass-shine p-10 rounded-3xl border border-border/50 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 relative overflow-hidden flex flex-col">
                   {/* Subtle gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500 rounded-3xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/0 to-pink-500/0 group-hover:from-purple-500/5 group-hover:to-pink-500/5 transition-all duration-500 rounded-3xl" />
                   <div className="relative z-10 flex flex-col items-center flex-1">
                     <div className="w-20 h-20 mb-6 bg-gradient-to-br from-purple-400 to-pink-500 rounded-[1.25rem] flex items-center justify-center shadow-lg shadow-purple-500/25 group-hover:shadow-xl group-hover:shadow-purple-500/30 group-hover:scale-105 transition-all duration-500">
                       <Palette className="w-10 h-10 text-white" />
@@ -171,7 +183,7 @@ export default function Home() {
               <StaggerItem>
                 <div className="h-full text-center group hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500 glass-premium glass-shine p-10 rounded-3xl border border-border/50 hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 relative overflow-hidden flex flex-col">
                   {/* Subtle gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-green-500/0 group-hover:from-emerald-500/5 group-hover:to-green-500/5 transition-all duration-500 rounded-3xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/0 to-green-500/0 group-hover:from-emerald-500/5 group-hover:to-green-500/5 transition-all duration-500 rounded-3xl" />
                   <div className="relative z-10 flex flex-col items-center flex-1">
                     <div className="w-20 h-20 mb-6 bg-gradient-to-br from-emerald-400 to-green-500 rounded-[1.25rem] flex items-center justify-center shadow-lg shadow-emerald-500/25 group-hover:shadow-xl group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
                       <Shield className="w-10 h-10 text-white" />
@@ -194,7 +206,7 @@ export default function Home() {
       <ClientLogos speed="normal" />
 
       {/* Divider */}
-      <div className="divider-corporate my-20"></div>
+      <div className="divider-corporate my-20" />
 
       {/* Services Section - AI Themed */}
       <section
@@ -202,19 +214,22 @@ export default function Home() {
         className="py-28 px-4 sm:px-6 lg:px-8 scroll-mt-20 relative"
       >
         {/* Background decoration */}
-        <div className="absolute inset-0 gradient-corporate -z-10"></div>
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[150px] -z-10"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] -z-10"></div>
+        <div className="absolute inset-0 gradient-corporate -z-10" />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[150px] -z-10" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] -z-10" />
 
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-20">
             <div className="inline-flex items-center gap-2 mb-6">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500"></div>
-              <Badge variant="outline" className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500" />
+              <Badge
+                variant="outline"
+                className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500"
+              >
                 <Cpu className="w-4 h-4 mr-2" />
                 {t("services.badge") || "Our Services"}
               </Badge>
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500" />
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-foreground mb-6">
               {t("services.title")}
@@ -227,7 +242,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollReveal delay={0.1}>
               <Card className="group relative card-elevated h-full border-2 border-cyan-500/20 hover:border-cyan-400/50 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-500 hover:-translate-y-3 rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 group-hover:from-cyan-500/10 group-hover:to-blue-500/10 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 group-hover:from-cyan-500/10 group-hover:to-blue-500/10 transition-all duration-500" />
                 <CardHeader className="relative z-10">
                   <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 glow-cyan">
                     <Code2 className="w-10 h-10 text-white" />
@@ -267,7 +282,7 @@ export default function Home() {
 
             <ScrollReveal delay={0.2}>
               <Card className="group relative card-elevated h-full border-2 border-purple-500/20 hover:border-purple-400/50 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-500 hover:-translate-y-3 rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 group-hover:from-purple-500/10 group-hover:to-pink-500/10 transition-all duration-500" />
                 <CardHeader className="relative z-10">
                   <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 glow-purple">
                     <Smartphone className="w-10 h-10 text-white" />
@@ -307,7 +322,7 @@ export default function Home() {
 
             <ScrollReveal delay={0.3}>
               <Card className="group relative card-elevated h-full border-2 border-pink-500/20 hover:border-pink-400/50 shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-500 hover:-translate-y-3 rounded-3xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-orange-500/5 group-hover:from-pink-500/10 group-hover:to-orange-500/10 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-orange-500/5 group-hover:from-pink-500/10 group-hover:to-orange-500/10 transition-all duration-500" />
                 <CardHeader className="relative z-10">
                   <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 glow-pink">
                     <Palette className="w-10 h-10 text-white" />
@@ -348,7 +363,7 @@ export default function Home() {
 
           <ScrollReveal delay={0.4} className="mt-20 text-center">
             <div className="inline-flex items-center px-12 py-6 glass-morph rounded-2xl hover:scale-105 transition-all duration-300 shadow-corporate-xl group relative overflow-hidden">
-              <div className="absolute inset-0 holographic opacity-30 group-hover:opacity-50 transition-opacity"></div>
+              <div className="absolute inset-0 holographic opacity-30 group-hover:opacity-50 transition-opacity" />
               <Brain className="w-8 h-8 text-cyan-500 mr-4 group-hover:animate-pulse relative z-10" />
               <span className="text-foreground font-bold text-xl relative z-10">
                 {t("services.aiAdvantage.label")}
@@ -362,9 +377,9 @@ export default function Home() {
       </section>
 
       {/* Portfolio Section */}
-      <div className="divider-corporate my-20"></div>
+      <div className="divider-corporate my-20" />
       <Portfolio />
-      <div className="divider-corporate my-20"></div>
+      <div className="divider-corporate my-20" />
 
       {/* About Section - Futuristic Team */}
       <section
@@ -372,21 +387,24 @@ export default function Home() {
         className="py-32 px-4 sm:px-6 lg:px-8 scroll-mt-20 relative overflow-hidden"
       >
         {/* Enhanced Background decoration - more subtle */}
-        <div className="absolute inset-0 gradient-corporate -z-10 opacity-50"></div>
-        <div className="absolute inset-0 ai-grid-bg -z-10 opacity-20"></div>
-        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[150px] -z-10"></div>
-        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-purple-500/5 rounded-full blur-[150px] -z-10"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-pink-500/3 rounded-full blur-[200px] -z-10"></div>
+        <div className="absolute inset-0 gradient-corporate -z-10 opacity-50" />
+        <div className="absolute inset-0 ai-grid-bg -z-10 opacity-20" />
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-cyan-500/5 rounded-full blur-[150px] -z-10" />
+        <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-purple-500/5 rounded-full blur-[150px] -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-pink-500/3 rounded-full blur-[200px] -z-10" />
 
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-24">
             <div className="inline-flex items-center gap-2 mb-8">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500"></div>
-              <Badge variant="outline" className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500" />
+              <Badge
+                variant="outline"
+                className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500"
+              >
                 <Rocket className="w-4 h-4 mr-2" />
                 {t("about.badge") || "Our Team"}
               </Badge>
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500" />
             </div>
             <h2 className="text-5xl md:text-7xl font-black mb-8">
               <span className="text-gradient-ai">{t("about.title")}</span>
@@ -402,18 +420,21 @@ export default function Home() {
               <Card className="group relative h-full rounded-[2rem] border-0 bg-transparent overflow-hidden">
                 {/* Animated border gradient */}
                 <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-cyan-500 via-blue-500 to-cyan-400 p-[2px] opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-[2px] rounded-[calc(2rem-2px)] bg-background/95 backdrop-blur-xl"></div>
+                  <div className="absolute inset-[2px] rounded-[calc(2rem-2px)] bg-background/95 backdrop-blur-xl" />
                 </div>
-                
+
                 {/* Card content */}
                 <div className="relative z-10 p-8 flex flex-col h-full">
                   {/* Floating particles effect on hover */}
-                  <div className="absolute top-4 right-4 w-2 h-2 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity"></div>
-                  <div className="absolute top-8 right-8 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity" style={{ animationDelay: '0.2s' }}></div>
-                  
+                  <div className="absolute top-4 right-4 w-2 h-2 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity" />
+                  <div
+                    className="absolute top-8 right-8 w-1.5 h-1.5 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity"
+                    style={{ animationDelay: "0.2s" }}
+                  />
+
                   {/* Profile image with enhanced styling */}
                   <div className="relative mx-auto mb-8">
-                    <div className="absolute inset-0 w-44 h-44 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-pulse"></div>
+                    <div className="absolute inset-0 w-44 h-44 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-pulse" />
                     <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-cyan-400/50 group-hover:border-cyan-400 transition-all duration-500 shadow-2xl shadow-cyan-500/30 group-hover:shadow-cyan-400/50 group-hover:scale-105">
                       <Image
                         src="/javohir-atabekov.jpg"
@@ -423,28 +444,33 @@ export default function Home() {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       {/* Shine effect */}
-                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full" style={{ transition: 'transform 0.7s ease-out, opacity 0.3s' }}></div>
+                      <div
+                        className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full"
+                        style={{
+                          transition: "transform 0.7s ease-out, opacity 0.3s",
+                        }}
+                      />
                     </div>
                     {/* Status indicator */}
-                    <div className="absolute bottom-2 right-2 w-5 h-5 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full border-3 border-background shadow-lg shadow-emerald-500/50"></div>
+                    <div className="absolute bottom-2 right-2 w-5 h-5 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full border-3 border-background shadow-lg shadow-emerald-500/50" />
                   </div>
-                  
+
                   {/* Name and position */}
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-gradient-corporate transition-all duration-300">
                       {t("about.team.javohir.name")}
                     </h3>
                     <p className="text-cyan-500 font-semibold text-lg flex items-center justify-center gap-2">
-                      <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+                      <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
                       {t("about.team.javohir.position")}
                     </p>
                   </div>
-                  
+
                   {/* Bio */}
                   <p className="text-muted-foreground text-sm leading-relaxed text-center mb-6 flex-grow">
                     {t("about.team.javohir.bio")}
                   </p>
-                  
+
                   {/* Skills section */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-foreground mb-3 text-sm text-center flex items-center justify-center gap-2">
@@ -464,7 +490,7 @@ export default function Home() {
                       )}
                     </div>
                   </div>
-                  
+
                   {/* LinkedIn button */}
                   <div className="mt-auto pt-4">
                     <Button
@@ -489,18 +515,21 @@ export default function Home() {
               <Card className="group relative h-full rounded-[2rem] border-0 bg-transparent overflow-hidden">
                 {/* Animated border gradient */}
                 <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-purple-500 via-violet-500 to-purple-400 p-[2px] opacity-60 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute inset-[2px] rounded-[calc(2rem-2px)] bg-background/95 backdrop-blur-xl"></div>
+                  <div className="absolute inset-[2px] rounded-[calc(2rem-2px)] bg-background/95 backdrop-blur-xl" />
                 </div>
-                
+
                 {/* Card content */}
                 <div className="relative z-10 p-8 flex flex-col h-full">
                   {/* Floating particles effect on hover */}
-                  <div className="absolute top-4 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity"></div>
-                  <div className="absolute top-8 right-8 w-1.5 h-1.5 bg-violet-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity" style={{ animationDelay: '0.2s' }}></div>
-                  
+                  <div className="absolute top-4 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity" />
+                  <div
+                    className="absolute top-8 right-8 w-1.5 h-1.5 bg-violet-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity"
+                    style={{ animationDelay: "0.2s" }}
+                  />
+
                   {/* Profile image with enhanced styling */}
                   <div className="relative mx-auto mb-8">
-                    <div className="absolute inset-0 w-44 h-44 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-pulse"></div>
+                    <div className="absolute inset-0 w-44 h-44 rounded-full bg-gradient-to-br from-purple-400 to-violet-600 blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-pulse" />
                     <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-purple-400/50 group-hover:border-purple-400 transition-all duration-500 shadow-2xl shadow-purple-500/30 group-hover:shadow-purple-400/50 group-hover:scale-105">
                       <Image
                         src="/jahongir-masharipov.jpg"
@@ -510,28 +539,33 @@ export default function Home() {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       {/* Shine effect */}
-                      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full" style={{ transition: 'transform 0.7s ease-out, opacity 0.3s' }}></div>
+                      <div
+                        className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -translate-x-full group-hover:translate-x-full"
+                        style={{
+                          transition: "transform 0.7s ease-out, opacity 0.3s",
+                        }}
+                      />
                     </div>
                     {/* Status indicator */}
-                    <div className="absolute bottom-2 right-2 w-5 h-5 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full border-3 border-background shadow-lg shadow-emerald-500/50"></div>
+                    <div className="absolute bottom-2 right-2 w-5 h-5 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full border-3 border-background shadow-lg shadow-emerald-500/50" />
                   </div>
-                  
+
                   {/* Name and position */}
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-gradient-corporate transition-all duration-300">
                       {t("about.team.jahongir.name")}
                     </h3>
                     <p className="text-purple-500 font-semibold text-lg flex items-center justify-center gap-2">
-                      <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></span>
+                      <span className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
                       {t("about.team.jahongir.position")}
                     </p>
                   </div>
-                  
+
                   {/* Bio */}
                   <p className="text-muted-foreground text-sm leading-relaxed text-center mb-6 flex-grow">
                     {t("about.team.jahongir.bio")}
                   </p>
-                  
+
                   {/* Skills section */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-foreground mb-3 text-sm text-center flex items-center justify-center gap-2">
@@ -551,7 +585,7 @@ export default function Home() {
                       )}
                     </div>
                   </div>
-                  
+
                   {/* LinkedIn button */}
                   <div className="mt-auto pt-4">
                     <Button
@@ -575,7 +609,7 @@ export default function Home() {
           {/* Company Mission Statement */}
           <ScrollReveal delay={0.4} className="mt-24 text-center">
             <div className="max-w-4xl mx-auto glass-premium p-10 rounded-3xl shadow-corporate-xl relative overflow-hidden">
-              <div className="absolute inset-0 holographic opacity-20"></div>
+              <div className="absolute inset-0 holographic opacity-20" />
               <div className="relative z-10">
                 <Brain className="w-12 h-12 text-cyan-500 mx-auto mb-6" />
                 <h3 className="text-4xl font-black text-foreground mb-6 text-gradient-corporate">
@@ -593,10 +627,13 @@ export default function Home() {
       {/* Call to Action Section - Futuristic */}
       <section className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Background decorations */}
-        <div className="absolute inset-0 gradient-corporate -z-10"></div>
-        <div className="absolute top-0 left-1/3 w-[700px] h-[700px] bg-cyan-500/15 rounded-full blur-[150px] -z-10 animate-float"></div>
-        <div className="absolute bottom-0 right-1/3 w-[600px] h-[600px] bg-purple-500/15 rounded-full blur-[120px] -z-10 animate-float" style={{ animationDelay: '1.5s' }}></div>
-        
+        <div className="absolute inset-0 gradient-corporate -z-10" />
+        <div className="absolute top-0 left-1/3 w-[700px] h-[700px] bg-cyan-500/15 rounded-full blur-[150px] -z-10 animate-float" />
+        <div
+          className="absolute bottom-0 right-1/3 w-[600px] h-[600px] bg-purple-500/15 rounded-full blur-[120px] -z-10 animate-float"
+          style={{ animationDelay: "1.5s" }}
+        />
+
         <div className="max-w-5xl mx-auto text-center relative">
           <ScrollReveal>
             <h2 className="text-5xl md:text-7xl font-black mb-8 text-gradient-ai leading-tight pb-4">
@@ -614,7 +651,11 @@ export default function Home() {
                 <ContactForm buttonText={t("cta.getStarted")} size="xl" />
               </div>
               <a href="#portfolio" className="w-full sm:w-auto">
-                <Button variant="outline" size="xl" className="w-full sm:w-auto group glass border-purple-500/40 hover:border-purple-400/60 hover:bg-purple-500/10 transition-all duration-300">
+                <Button
+                  variant="outline"
+                  size="xl"
+                  className="w-full sm:w-auto group glass border-purple-500/40 hover:border-purple-400/60 hover:bg-purple-500/10 transition-all duration-300"
+                >
                   <Sparkles className="w-5 h-5 mr-2 group-hover:animate-spin transition-transform" />
                   {t("cta.viewStories")}
                 </Button>
@@ -623,11 +664,14 @@ export default function Home() {
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
             <div className="inline-block glass-premium glass-shine p-10 rounded-3xl shadow-corporate-xl relative overflow-hidden">
-              <div className="absolute inset-0 holographic opacity-20"></div>
+              <div className="absolute inset-0 holographic opacity-20" />
               <div className="relative z-10 flex flex-col items-start gap-5 text-muted-foreground">
                 {(t.raw("cta.features") as string[]).map(
                   (feature: string, index: number) => (
-                    <div key={index} className="flex items-center group hover:translate-x-3 transition-transform duration-300">
+                    <div
+                      key={index}
+                      className="flex items-center group hover:translate-x-3 transition-transform duration-300"
+                    >
                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                         <CheckCircle className="w-5 h-5 text-white" />
                       </div>
@@ -643,7 +687,7 @@ export default function Home() {
 
       {/* Footer - Modern AI Style */}
       <footer className="border-t border-cyan-500/20 bg-background/80 backdrop-blur-xl py-16 px-4 sm:px-6 lg:px-8 relative">
-        <div className="absolute inset-0 ai-grid-bg opacity-30"></div>
+        <div className="absolute inset-0 ai-grid-bg opacity-30" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             <div className="col-span-1 md:col-span-2">
@@ -703,8 +747,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="divider-corporate mt-12 mb-8"></div>
-          
+          <div className="divider-corporate mt-12 mb-8" />
+
           <div className="text-center">
             <p className="text-muted-foreground">{t("footer.copyright")}</p>
           </div>

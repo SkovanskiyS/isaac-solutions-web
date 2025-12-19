@@ -1,9 +1,9 @@
 "use client";
 
-import { memo } from "react";
-import { useTheme } from "@/contexts/ThemeContext";
-import { Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "@/contexts/ThemeContext";
+import { Moon, Sun } from "lucide-react";
+import { memo } from "react";
 
 const ThemeToggle = memo(function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
@@ -20,12 +20,16 @@ const ThemeToggle = memo(function ThemeToggle() {
       <div className="relative h-5 w-5 flex items-center justify-center">
         <Sun
           className={`absolute h-5 w-5 transition-all duration-500 text-amber-500 ${
-            isDark ? "rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"
+            isDark
+              ? "rotate-90 scale-0 opacity-0"
+              : "rotate-0 scale-100 opacity-100"
           }`}
         />
         <Moon
           className={`absolute h-5 w-5 transition-all duration-500 text-blue-400 ${
-            isDark ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-0 opacity-0"
+            isDark
+              ? "rotate-0 scale-100 opacity-100"
+              : "-rotate-90 scale-0 opacity-0"
           }`}
         />
       </div>

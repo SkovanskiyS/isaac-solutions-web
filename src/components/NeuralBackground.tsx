@@ -1,7 +1,7 @@
-  "use client";
+"use client";
 
-import { useEffect, useRef, useCallback, useMemo } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 
 interface Node {
   x: number;
@@ -14,23 +14,23 @@ interface Node {
 
 // Pre-defined colors as constants (moved outside component)
 const COLORS = [
-  "rgba(6, 182, 212,",   // cyan
-  "rgba(139, 92, 246,",  // purple
-  "rgba(236, 72, 153,",  // pink
-  "rgba(59, 130, 246,",  // blue
+  "rgba(6, 182, 212,", // cyan
+  "rgba(139, 92, 246,", // purple
+  "rgba(236, 72, 153,", // pink
+  "rgba(59, 130, 246,", // blue
 ] as const;
 
 // Configuration constants
 const CONFIG = {
-  NODE_DIVISOR: 15000,      // Higher = fewer nodes
-  MAX_NODES: 100,           // Reduced from 150
+  NODE_DIVISOR: 15000, // Higher = fewer nodes
+  MAX_NODES: 100, // Reduced from 150
   MAX_DISTANCE_RATIO: 0.15, // Reduced from 0.2
   MIN_SPEED: 0.2,
-  BASE_SPEED: 1.2,          // Reduced from 1.8
+  BASE_SPEED: 1.2, // Reduced from 1.8
   FRICTION: 0.995,
-  MOUSE_RADIUS: 120,        // Reduced from 150
-  MOUSE_FORCE: 0.1,         // Reduced from 0.15
-  FRAME_SKIP: 2,            // Only update connections every N frames
+  MOUSE_RADIUS: 120, // Reduced from 150
+  MOUSE_FORCE: 0.1, // Reduced from 0.15
+  FRAME_SKIP: 2, // Only update connections every N frames
 } as const;
 
 export default function NeuralBackground() {
@@ -50,7 +50,7 @@ export default function NeuralBackground() {
     const nodes: Node[] = [];
     const nodeCount = Math.min(
       Math.floor((width * height) / CONFIG.NODE_DIVISOR),
-      CONFIG.MAX_NODES
+      CONFIG.MAX_NODES,
     );
 
     for (let i = 0; i < nodeCount; i++) {
@@ -76,7 +76,7 @@ export default function NeuralBackground() {
 
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     // Visibility API to pause when tab is hidden
@@ -93,7 +93,7 @@ export default function NeuralBackground() {
         const dpr = Math.min(window.devicePixelRatio || 1, 2); // Cap DPR at 2
         const width = window.innerWidth;
         const height = window.innerHeight;
-        
+
         canvas.width = width * dpr;
         canvas.height = height * dpr;
         canvas.style.width = `${width}px`;
@@ -101,8 +101,9 @@ export default function NeuralBackground() {
         ctx.scale(dpr, dpr);
 
         dimensionsRef.current = { width, height };
-        maxDistanceRef.current = Math.min(width, height) * CONFIG.MAX_DISTANCE_RATIO;
-        
+        maxDistanceRef.current =
+          Math.min(width, height) * CONFIG.MAX_DISTANCE_RATIO;
+
         // Recreate nodes on resize
         nodesRef.current = createNodes(width, height);
       }, 100);
@@ -115,7 +116,8 @@ export default function NeuralBackground() {
     let lastMouseUpdate = 0;
     const handleMouseMove = (e: MouseEvent) => {
       const now = performance.now();
-      if (now - lastMouseUpdate > 16) { // ~60fps throttle
+      if (now - lastMouseUpdate > 16) {
+        // ~60fps throttle
         mouseRef.current = { x: e.clientX, y: e.clientY };
         lastMouseUpdate = now;
       }
@@ -124,7 +126,9 @@ export default function NeuralBackground() {
 
     // Initialize nodes
     nodesRef.current = createNodes(window.innerWidth, window.innerHeight);
-    maxDistanceRef.current = Math.min(window.innerWidth, window.innerHeight) * CONFIG.MAX_DISTANCE_RATIO;
+    maxDistanceRef.current =
+      Math.min(window.innerWidth, window.innerHeight) *
+      CONFIG.MAX_DISTANCE_RATIO;
 
     // Animation loop
     const animate = () => {
@@ -141,7 +145,7 @@ export default function NeuralBackground() {
       }
 
       ctx.clearRect(0, 0, width, height);
-      
+
       const nodes = nodesRef.current;
       const maxDistance = maxDistanceRef.current;
       const maxDistSq = maxDistance * maxDistance; // Avoid sqrt in distance checks
@@ -154,7 +158,7 @@ export default function NeuralBackground() {
 
         for (let i = 0; i < nodes.length; i++) {
           const node = nodes[i];
-          
+
           // Mouse interaction - optimized
           const dx = mouseX - node.x;
           const dy = mouseY - node.y;
@@ -162,7 +166,9 @@ export default function NeuralBackground() {
 
           if (distSq < mouseRadiusSq && distSq > 0) {
             const distance = Math.sqrt(distSq);
-            const force = (CONFIG.MOUSE_RADIUS - distance) / CONFIG.MOUSE_RADIUS * CONFIG.MOUSE_FORCE;
+            const force =
+              ((CONFIG.MOUSE_RADIUS - distance) / CONFIG.MOUSE_RADIUS) *
+              CONFIG.MOUSE_FORCE;
             node.vx -= (dx / distance) * force;
             node.vy -= (dy / distance) * force;
           }
@@ -188,10 +194,20 @@ export default function NeuralBackground() {
           }
 
           // Bounce off edges
-          if (node.x < 0) { node.x = 0; node.vx *= -1; }
-          else if (node.x > width) { node.x = width; node.vx *= -1; }
-          if (node.y < 0) { node.y = 0; node.vy *= -1; }
-          else if (node.y > height) { node.y = height; node.vy *= -1; }
+          if (node.x < 0) {
+            node.x = 0;
+            node.vx *= -1;
+          } else if (node.x > width) {
+            node.x = width;
+            node.vx *= -1;
+          }
+          if (node.y < 0) {
+            node.y = 0;
+            node.vy *= -1;
+          } else if (node.y > height) {
+            node.y = height;
+            node.vy *= -1;
+          }
         }
       }
 
@@ -208,7 +224,7 @@ export default function NeuralBackground() {
           if (distSq < maxDistSq) {
             const distance = Math.sqrt(distSq);
             const opacity = (1 - distance / maxDistance) * 0.25;
-            
+
             // Use simple color instead of gradient for performance
             ctx.strokeStyle = `${COLORS[nodeI.colorIndex]}${opacity})`;
             ctx.beginPath();
@@ -223,7 +239,7 @@ export default function NeuralBackground() {
       for (let i = 0; i < nodes.length; i++) {
         const node = nodes[i];
         const color = COLORS[node.colorIndex];
-        
+
         // Simplified glow - single circle instead of radial gradient
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius * 2.5, 0, Math.PI * 2);
@@ -257,10 +273,10 @@ export default function NeuralBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ 
+      style={{
         opacity: theme === "light" ? 0 : 0.7,
         mixBlendMode: "screen",
-        visibility: theme === "light" ? "hidden" : "visible"
+        visibility: theme === "light" ? "hidden" : "visible",
       }}
     />
   );

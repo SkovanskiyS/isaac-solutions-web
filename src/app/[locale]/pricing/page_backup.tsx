@@ -1,8 +1,8 @@
-﻿import Navigation from "@/components/Navigation";
+﻿import ContactForm from "@/components/ContactForm";
+import Navigation from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Check, Code2, MessageCircle, Palette, Wrench } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
 
 export default function PricingPage() {
   return (

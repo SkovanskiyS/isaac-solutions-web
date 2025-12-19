@@ -1,5 +1,5 @@
-import createMiddleware from "next-intl/middleware";
 import { i18nConfig } from "@/config";
+import createMiddleware from "next-intl/middleware";
 
 // Create the internationalization middleware
 const intlMiddleware = createMiddleware({

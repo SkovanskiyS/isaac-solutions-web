@@ -1,9 +1,15 @@
 "use client";
 
-import React, { memo, useId, useMemo } from "react";
+import type React from "react";
+import { memo, useId, useMemo } from "react";
 
 // Types
-type LogoVariant = "primary" | "corporate" | "elegant" | "geometric" | "wordmark";
+type LogoVariant =
+  | "primary"
+  | "corporate"
+  | "elegant"
+  | "geometric"
+  | "wordmark";
 
 interface LogoProps {
   className?: string;
@@ -21,9 +27,9 @@ interface LogoVariantProps {
 }
 
 // Shared text component to reduce duplication
-const LogoText = memo(function LogoText({ 
-  subtitle 
-}: { 
+const LogoText = memo(function LogoText({
+  subtitle,
+}: {
   subtitle: string;
 }) {
   return (
@@ -46,11 +52,16 @@ const LogoWrapper = memo(function LogoWrapper({
   className: string;
   children: React.ReactNode;
 }) {
-  return <div className={`flex items-center gap-3 ${className}`}>{children}</div>;
+  return (
+    <div className={`flex items-center gap-3 ${className}`}>{children}</div>
+  );
 });
 
 // Variant components map for cleaner switch
-const LOGO_VARIANTS: Record<LogoVariant, React.ComponentType<LogoVariantProps>> = {
+const LOGO_VARIANTS: Record<
+  LogoVariant,
+  React.ComponentType<LogoVariantProps>
+> = {
   primary: PrimaryLogo,
   corporate: CorporateLogo,
   elegant: ElegantLogo,
@@ -61,7 +72,7 @@ const LOGO_VARIANTS: Record<LogoVariant, React.ComponentType<LogoVariantProps>> 
 /**
  * Isaac Solutions Logo Component
  * Professional, formal design for enterprise software company
- * 
+ *
  * Variants:
  * - primary: Main logo - Abstract "I" with forward momentum (recommended)
  * - corporate: Formal square logo with integrated IS monogram
@@ -78,19 +89,19 @@ export const Logo = memo(function Logo({
 }: LogoProps) {
   const uniqueId = useId();
   const gradientId = `logo-grad-${uniqueId}`;
-  
+
   const combinedClassName = useMemo(() => {
     const animationClass = animated ? "transition-all duration-300" : "";
     return `${className} ${animationClass}`.trim();
   }, [className, animated]);
 
   const LogoComponent = LOGO_VARIANTS[variant] ?? LOGO_VARIANTS.primary;
-  
+
   return (
-    <LogoComponent 
-      size={size} 
-      className={combinedClassName} 
-      showText={showText} 
+    <LogoComponent
+      size={size}
+      className={combinedClassName}
+      showText={showText}
       gradientId={gradientId}
     />
   );
@@ -101,7 +112,12 @@ export const Logo = memo(function Logo({
  * Abstract "I" representing Isaac, with forward-leaning design suggesting progress
  * Professional, clean, suitable for all business contexts
  */
-function PrimaryLogo({ size, className, showText, gradientId }: LogoVariantProps) {
+function PrimaryLogo({
+  size,
+  className,
+  showText,
+  gradientId,
+}: LogoVariantProps) {
   return (
     <LogoWrapper className={className}>
       <svg
@@ -118,11 +134,26 @@ function PrimaryLogo({ size, className, showText, gradientId }: LogoVariantProps
             <stop offset="100%" stopColor="#7c3aed" />
           </linearGradient>
         </defs>
-        <rect x="2" y="2" width="44" height="44" rx="10" fill={`url(#${gradientId})`} />
+        <rect
+          x="2"
+          y="2"
+          width="44"
+          height="44"
+          rx="10"
+          fill={`url(#${gradientId})`}
+        />
         <rect x="12" y="10" width="24" height="5" rx="2" fill="white" />
         <path d="M19 15L21 38H27L29 15H19Z" fill="white" />
         <rect x="12" y="33" width="24" height="5" rx="2" fill="white" />
-        <rect x="30" y="18" width="3" height="12" rx="1.5" fill="white" opacity="0.6" />
+        <rect
+          x="30"
+          y="18"
+          width="3"
+          height="12"
+          rx="1.5"
+          fill="white"
+          opacity="0.6"
+        />
       </svg>
       {showText && <LogoText subtitle="Software Development" />}
     </LogoWrapper>
@@ -134,7 +165,12 @@ function PrimaryLogo({ size, className, showText, gradientId }: LogoVariantProps
  * Integrated "I" and "S" in a professional square format
  * Best for formal documents, business cards, enterprise contexts
  */
-function CorporateLogo({ size, className, showText, gradientId }: LogoVariantProps) {
+function CorporateLogo({
+  size,
+  className,
+  showText,
+  gradientId,
+}: LogoVariantProps) {
   return (
     <LogoWrapper className={className}>
       <svg
@@ -152,8 +188,25 @@ function CorporateLogo({ size, className, showText, gradientId }: LogoVariantPro
             <stop offset="100%" stopColor="#7c3aed" />
           </linearGradient>
         </defs>
-        <rect x="2" y="2" width="44" height="44" rx="6" fill={`url(#${gradientId})`} />
-        <rect x="5" y="5" width="38" height="38" rx="4" fill="none" stroke="white" strokeWidth="1" opacity="0.2" />
+        <rect
+          x="2"
+          y="2"
+          width="44"
+          height="44"
+          rx="6"
+          fill={`url(#${gradientId})`}
+        />
+        <rect
+          x="5"
+          y="5"
+          width="38"
+          height="38"
+          rx="4"
+          fill="none"
+          stroke="white"
+          strokeWidth="1"
+          opacity="0.2"
+        />
         <rect x="10" y="12" width="6" height="24" rx="1" fill="white" />
         <rect x="8" y="12" width="10" height="4" rx="1" fill="white" />
         <rect x="8" y="32" width="10" height="4" rx="1" fill="white" />
@@ -175,7 +228,12 @@ function CorporateLogo({ size, className, showText, gradientId }: LogoVariantPro
  * Clean lines forming abstract "I" with subtle depth
  * Premium, minimalist, works well at all sizes
  */
-function ElegantLogo({ size, className, showText, gradientId }: LogoVariantProps) {
+function ElegantLogo({
+  size,
+  className,
+  showText,
+  gradientId,
+}: LogoVariantProps) {
   const gradientId2 = `${gradientId}-2`;
   return (
     <LogoWrapper className={className}>
@@ -199,9 +257,33 @@ function ElegantLogo({ size, className, showText, gradientId }: LogoVariantProps
         </defs>
         <circle cx="24" cy="24" r="22" fill={`url(#${gradientId})`} />
         {/* Back layer - creates depth */}
-        <rect x="17" y="11" width="14" height="4" rx="2" fill="white" opacity="0.4" />
-        <rect x="20" y="15" width="8" height="18" rx="1" fill="white" opacity="0.4" />
-        <rect x="17" y="33" width="14" height="4" rx="2" fill="white" opacity="0.4" />
+        <rect
+          x="17"
+          y="11"
+          width="14"
+          height="4"
+          rx="2"
+          fill="white"
+          opacity="0.4"
+        />
+        <rect
+          x="20"
+          y="15"
+          width="8"
+          height="18"
+          rx="1"
+          fill="white"
+          opacity="0.4"
+        />
+        <rect
+          x="17"
+          y="33"
+          width="14"
+          height="4"
+          rx="2"
+          fill="white"
+          opacity="0.4"
+        />
         {/* Front layer - main shape */}
         <rect x="15" y="10" width="14" height="4" rx="2" fill="white" />
         <rect x="18" y="14" width="8" height="18" rx="1" fill="white" />
@@ -227,7 +309,12 @@ function ElegantLogo({ size, className, showText, gradientId }: LogoVariantProps
  * Represents solutions, integration, and connectivity
  * Tech-forward but professional
  */
-function GeometricLogo({ size, className, showText, gradientId }: LogoVariantProps) {
+function GeometricLogo({
+  size,
+  className,
+  showText,
+  gradientId,
+}: LogoVariantProps) {
   return (
     <LogoWrapper className={className}>
       <svg
@@ -245,16 +332,61 @@ function GeometricLogo({ size, className, showText, gradientId }: LogoVariantPro
             <stop offset="100%" stopColor="#7c3aed" />
           </linearGradient>
         </defs>
-        <path d="M24 3L43 14V34L24 45L5 34V14L24 3Z" fill={`url(#${gradientId})`} />
-        <path d="M24 7L39 16V32L24 41L9 32V16L24 7Z" fill="none" stroke="white" strokeWidth="1" opacity="0.2" />
+        <path
+          d="M24 3L43 14V34L24 45L5 34V14L24 3Z"
+          fill={`url(#${gradientId})`}
+        />
+        <path
+          d="M24 7L39 16V32L24 41L9 32V16L24 7Z"
+          fill="none"
+          stroke="white"
+          strokeWidth="1"
+          opacity="0.2"
+        />
         <path d="M24 10L29 14L24 18L19 14L24 10Z" fill="white" />
         <rect x="20" y="16" width="8" height="14" fill="white" />
         <path d="M24 28L29 32L24 36L19 32L24 28Z" fill="white" />
         {/* Connection lines */}
-        <line x1="14" y1="20" x2="19" y2="20" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
-        <line x1="29" y1="20" x2="34" y2="20" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
-        <line x1="14" y1="28" x2="19" y2="28" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
-        <line x1="29" y1="28" x2="34" y2="28" stroke="white" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
+        <line
+          x1="14"
+          y1="20"
+          x2="19"
+          y2="20"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          opacity="0.7"
+        />
+        <line
+          x1="29"
+          y1="20"
+          x2="34"
+          y2="20"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          opacity="0.7"
+        />
+        <line
+          x1="14"
+          y1="28"
+          x2="19"
+          y2="28"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          opacity="0.7"
+        />
+        <line
+          x1="29"
+          y1="28"
+          x2="34"
+          y2="28"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          opacity="0.7"
+        />
         {/* Corner nodes */}
         <circle cx="12" cy="20" r="2" fill="white" opacity="0.8" />
         <circle cx="36" cy="20" r="2" fill="white" opacity="0.8" />
@@ -271,7 +403,12 @@ function GeometricLogo({ size, className, showText, gradientId }: LogoVariantPro
  * Minimal mark with focus on company name
  * Best for formal letterheads, documents, small favicon
  */
-function WordmarkLogo({ size, className, showText, gradientId }: LogoVariantProps) {
+function WordmarkLogo({
+  size,
+  className,
+  showText,
+  gradientId,
+}: LogoVariantProps) {
   return (
     <LogoWrapper className={className}>
       <svg
@@ -288,7 +425,14 @@ function WordmarkLogo({ size, className, showText, gradientId }: LogoVariantProp
             <stop offset="100%" stopColor="#7c3aed" />
           </linearGradient>
         </defs>
-        <rect x="2" y="2" width="44" height="44" rx="8" fill={`url(#${gradientId})`} />
+        <rect
+          x="2"
+          y="2"
+          width="44"
+          height="44"
+          rx="8"
+          fill={`url(#${gradientId})`}
+        />
         <rect x="14" y="10" width="20" height="4" rx="1" fill="white" />
         <rect x="20" y="14" width="8" height="20" rx="1" fill="white" />
         <rect x="14" y="34" width="20" height="4" rx="1" fill="white" />
@@ -310,7 +454,14 @@ export const LogoIcon = memo(function LogoIcon({
   size = 40,
   variant = "primary",
 }: Omit<LogoProps, "showText" | "animated">) {
-  return <Logo className={className} size={size} variant={variant} showText={false} />;
+  return (
+    <Logo
+      className={className}
+      size={size}
+      variant={variant}
+      showText={false}
+    />
+  );
 });
 
 /**

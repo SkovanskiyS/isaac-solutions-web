@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase-admin";
+import { type NextRequest, NextResponse } from "next/server";
 
 // Simple contact form data - only name and phone
 interface ContactFormData {

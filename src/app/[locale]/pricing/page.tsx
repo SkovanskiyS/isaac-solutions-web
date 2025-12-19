@@ -1,31 +1,34 @@
 ﻿"use client";
 
+import ContactForm from "@/components/ContactForm";
 import Navigation from "@/components/Navigation";
+import FadeIn from "@/components/animations/FadeIn";
+import ScrollReveal from "@/components/animations/ScrollReveal";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
+  ArrowRight,
+  Brain,
   Check,
   Code2,
-  MessageCircle,
-  Palette,
-  Wrench,
-  Smartphone,
-  Package,
-  Brain,
   Cpu,
-  ArrowRight,
+  MessageCircle,
+  Package,
+  Palette,
+  Smartphone,
+  Wrench,
 } from "lucide-react";
-import ContactForm from "@/components/ContactForm";
 import { useTranslations } from "next-intl";
-import ScrollReveal from "@/components/animations/ScrollReveal";
-import FadeIn from "@/components/animations/FadeIn";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
-const NeuralBackground = dynamic(() => import("@/components/NeuralBackground"), {
-  ssr: false,
-});
+const NeuralBackground = dynamic(
+  () => import("@/components/NeuralBackground"),
+  {
+    ssr: false,
+  },
+);
 
 export default function PricingPage() {
   const t = useTranslations("pricing");
@@ -36,20 +39,26 @@ export default function PricingPage() {
     <div className="min-h-screen bg-background ai-grid-bg relative overflow-hidden">
       {/* Neural Network Background */}
       <NeuralBackground />
-      
+
       <Navigation currentPage="pricing" />
 
       <section className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated gradient orbs with AI colors */}
-        <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[100px] -z-10 animate-float"></div>
-        <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-purple-500/12 rounded-full blur-[120px] -z-10 animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/3 right-1/3 w-[350px] h-[350px] bg-pink-500/10 rounded-full blur-[100px] -z-10 animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-10 left-1/4 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[100px] -z-10 animate-float" />
+        <div
+          className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-purple-500/12 rounded-full blur-[120px] -z-10 animate-float"
+          style={{ animationDelay: "1s" }}
+        />
+        <div
+          className="absolute top-1/3 right-1/3 w-[350px] h-[350px] bg-pink-500/10 rounded-full blur-[100px] -z-10 animate-float"
+          style={{ animationDelay: "2s" }}
+        />
 
         <div className="max-w-7xl mx-auto relative">
           <FadeIn delay={0.1}>
             <div className="text-center mb-20">
               <div className="inline-flex items-center gap-2 mb-8">
-                <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500"></div>
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-cyan-500" />
                 <Badge
                   variant="outline"
                   className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-xl shadow-purple-500/30 rounded-full px-6 py-2.5 text-white border-0 font-semibold text-sm tracking-wider uppercase hover:shadow-purple-400/50 hover:scale-105 transition-all duration-500"
@@ -57,7 +66,7 @@ export default function PricingPage() {
                   <Cpu className="w-4 h-4 mr-2" />
                   {t("badge")}
                 </Badge>
-                <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500" />
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-foreground mb-8 leading-tight">
                 <span className="text-gradient-ai">{t("title")}</span>
@@ -71,8 +80,8 @@ export default function PricingPage() {
           {/* Web Development */}
           <div className="mb-20 sm:mb-28 relative">
             {/* Section background decoration */}
-            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
-            
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10" />
+
             <ScrollReveal>
               <div className="flex flex-col items-center justify-center mb-12 pt-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 glow-cyan shadow-lg">
@@ -214,17 +223,17 @@ export default function PricingPage() {
                   </div>
 
                   <ul className="space-y-3 mb-8 flex-grow">
-                    {(
-                      t.raw("webDev.packages.custom.features") as string[]
-                    ).map((feature: string, index: number) => (
-                      <li
-                        key={index}
-                        className="flex items-start group/item hover:translate-x-1 transition-transform"
-                      >
-                        <Check className="w-5 h-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
+                    {(t.raw("webDev.packages.custom.features") as string[]).map(
+                      (feature: string, index: number) => (
+                        <li
+                          key={index}
+                          className="flex items-start group/item hover:translate-x-1 transition-transform"
+                        >
+                          <Check className="w-5 h-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                          <span>{feature}</span>
+                        </li>
+                      ),
+                    )}
                   </ul>
 
                   <div className="mt-auto flex justify-center">
@@ -240,15 +249,17 @@ export default function PricingPage() {
           {/* Mobile Development */}
           <div className="mb-20 sm:mb-28 relative">
             {/* Section background decoration */}
-            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
-            
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10" />
+
             <ScrollReveal>
               <div className="flex flex-col items-center justify-center mb-12 pt-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 glow-purple shadow-lg">
                   <Smartphone className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-foreground">
-                  <span className="text-gradient-ai">{t("mobileDev.title")}</span>
+                  <span className="text-gradient-ai">
+                    {t("mobileDev.title")}
+                  </span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -417,15 +428,17 @@ export default function PricingPage() {
           {/* Telegram Bot */}
           <div className="mb-20 sm:mb-28 relative">
             {/* Section background decoration */}
-            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
-            
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10" />
+
             <ScrollReveal>
               <div className="flex flex-col items-center justify-center mb-12 pt-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-sky-600 rounded-2xl flex items-center justify-center mb-6 glow-cyan shadow-lg">
                   <MessageCircle className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-foreground">
-                  <span className="text-gradient-ai">{t("telegramBot.title")}</span>
+                  <span className="text-gradient-ai">
+                    {t("telegramBot.title")}
+                  </span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -596,15 +609,17 @@ export default function PricingPage() {
           {/* UI/UX Design */}
           <div className="mb-20 sm:mb-28 relative">
             {/* Section background decoration */}
-            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
-            
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10" />
+
             <ScrollReveal>
               <div className="flex flex-col items-center justify-center mb-12 pt-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-orange-500 rounded-2xl flex items-center justify-center mb-6 glow-pink shadow-lg">
                   <Palette className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-foreground">
-                  <span className="text-gradient-ai">{t("uiUxDesign.title")}</span>
+                  <span className="text-gradient-ai">
+                    {t("uiUxDesign.title")}
+                  </span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -773,15 +788,17 @@ export default function PricingPage() {
           {/* All-In Package */}
           <div className="mb-20 sm:mb-28 relative">
             {/* Section background decoration */}
-            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10"></div>
-            
+            <div className="absolute inset-0 gradient-corporate rounded-3xl -z-10" />
+
             <ScrollReveal>
               <div className="flex flex-col items-center justify-center mb-8 pt-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-violet-500 to-fuchsia-600 rounded-2xl flex items-center justify-center mb-6 glow-purple shadow-lg">
                   <Wrench className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-foreground">
-                  <span className="text-gradient-ai">{t("allInPackage.title")}</span>
+                  <span className="text-gradient-ai">
+                    {t("allInPackage.title")}
+                  </span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -935,9 +952,7 @@ export default function PricingPage() {
 
                   <ul className="space-y-3 mb-8 flex-grow">
                     {(
-                      t.raw(
-                        "allInPackage.packages.custom.features",
-                      ) as string[]
+                      t.raw("allInPackage.packages.custom.features") as string[]
                     ).map((feature: string, index: number) => (
                       <li
                         key={index}
@@ -962,18 +977,18 @@ export default function PricingPage() {
           </div>
 
           {/* Divider */}
-          <div className="divider-corporate my-16"></div>
+          <div className="divider-corporate my-16" />
 
           {/* Contact CTA */}
           <ScrollReveal delay={0.2}>
             <div className="relative text-center glass-strong rounded-3xl p-8 sm:p-16 border-2 border-cyan-500/30 shadow-corporate-xl overflow-hidden">
               {/* Holographic background effect */}
-              <div className="absolute inset-0 holographic opacity-20"></div>
-              
+              <div className="absolute inset-0 holographic opacity-20" />
+
               {/* Gradient orb decorations */}
-              <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[80px] -z-10"></div>
-              <div className="absolute bottom-0 right-1/4 w-[250px] h-[250px] bg-purple-500/10 rounded-full blur-[80px] -z-10"></div>
-              
+              <div className="absolute top-0 left-1/4 w-[300px] h-[300px] bg-cyan-500/10 rounded-full blur-[80px] -z-10" />
+              <div className="absolute bottom-0 right-1/4 w-[250px] h-[250px] bg-purple-500/10 rounded-full blur-[80px] -z-10" />
+
               <div className="relative z-10">
                 <Brain className="w-16 h-16 text-cyan-500 mx-auto mb-8" />
                 <h2 className="text-4xl sm:text-5xl font-black mb-6">
@@ -984,10 +999,7 @@ export default function PricingPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mx-auto max-w-lg">
                   <div className="pulse-ring rounded-xl w-full sm:w-auto">
-                    <ContactForm
-                      buttonText={t("cta.buttonText")}
-                      size="xl"
-                    />
+                    <ContactForm buttonText={t("cta.buttonText")} size="xl" />
                   </div>
                   <Link href="/" className="w-full sm:w-auto">
                     <Button
@@ -1008,7 +1020,7 @@ export default function PricingPage() {
 
       {/* Footer - Modern AI Style */}
       <footer className="border-t border-cyan-500/20 bg-background/80 backdrop-blur-xl py-16 px-4 sm:px-6 lg:px-8 relative">
-        <div className="absolute inset-0 ai-grid-bg opacity-30"></div>
+        <div className="absolute inset-0 ai-grid-bg opacity-30" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
             <div className="col-span-1 md:col-span-2">
@@ -1033,13 +1045,13 @@ export default function PricingPage() {
                 {(footerT.raw("services.items") as string[]).map(
                   (item: string, index: number) => (
                     <li key={index}>
-                      <a
+                      <Link
                         href="/#services"
                         className="hover:text-cyan-500 transition-colors duration-300 flex items-center group"
                       >
                         <ArrowRight className="w-4 h-4 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                         {item}
-                      </a>
+                      </Link>
                     </li>
                   ),
                 )}
@@ -1068,8 +1080,8 @@ export default function PricingPage() {
             </div>
           </div>
 
-          <div className="divider-corporate mt-12 mb-8"></div>
-          
+          <div className="divider-corporate mt-12 mb-8" />
+
           <div className="text-center">
             <p className="text-muted-foreground">{footerT("copyright")}</p>
           </div>

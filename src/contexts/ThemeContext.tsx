@@ -1,6 +1,14 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState, useCallback, useMemo } from "react";
+import type React from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 type Theme = "dark" | "light";
 
@@ -28,13 +36,15 @@ interface ThemeProviderProps {
 // Helper to get initial theme (runs once)
 const getInitialTheme = (): Theme => {
   if (typeof window === "undefined") return "dark";
-  
+
   const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) as Theme;
   if (savedTheme === "dark" || savedTheme === "light") {
     return savedTheme;
   }
-  
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 };
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
@@ -50,7 +60,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // Apply theme to document - optimized with direct DOM manipulation
   useEffect(() => {
     if (!mounted) return;
-    
+
     const root = document.documentElement;
     root.classList.remove("dark", "light");
     root.classList.add(theme);
@@ -71,11 +81,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, []);
 
   // Memoize context value to prevent unnecessary re-renders
-  const value = useMemo(() => ({
-    theme,
-    toggleTheme,
-    setTheme,
-  }), [theme, toggleTheme, setTheme]);
+  const value = useMemo(
+    () => ({
+      theme,
+      toggleTheme,
+      setTheme,
+    }),
+    [theme, toggleTheme, setTheme],
+  );
 
   // Prevent flash of unstyled content
   if (!mounted) return null;

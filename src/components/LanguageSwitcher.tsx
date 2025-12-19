@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useTransition, useRef, useEffect } from "react";
 import { Check, ChevronDown } from "lucide-react";
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useState, useTransition, useRef, useEffect } from "react";
 
 const languages = [
   { code: "en", name: "English", flag: "🇺🇸", nativeName: "English" },

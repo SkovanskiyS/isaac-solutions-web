@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ReactNode, memo, useMemo } from "react";
+import { type ReactNode, memo, useMemo } from "react";
 
 interface FadeInProps {
   children: ReactNode;
@@ -21,11 +21,14 @@ const FadeIn = memo(function FadeIn({
   duration = 0.5,
   className = "",
 }: FadeInProps) {
-  const transition = useMemo(() => ({
-    duration,
-    delay,
-    ease: EASE,
-  }), [duration, delay]);
+  const transition = useMemo(
+    () => ({
+      duration,
+      delay,
+      ease: EASE,
+    }),
+    [duration, delay],
+  );
 
   return (
     <motion.div

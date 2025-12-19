@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, memo } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
 // Constants outside component
 const TEXTS = [
@@ -33,14 +33,17 @@ const RotatingText = memo(function RotatingText() {
     if (!mounted) return;
 
     const currentFullText = TEXTS[textIndex];
-    
+
     if (!isDeleting) {
       if (displayLength < currentFullText.length) {
         timerRef.current = setTimeout(() => {
           setDisplayLength((prev) => prev + 1);
         }, TYPING_SPEED);
       } else {
-        timerRef.current = setTimeout(() => setIsDeleting(true), PAUSE_DURATION);
+        timerRef.current = setTimeout(
+          () => setIsDeleting(true),
+          PAUSE_DURATION,
+        );
       }
     } else {
       if (displayLength > 0) {
