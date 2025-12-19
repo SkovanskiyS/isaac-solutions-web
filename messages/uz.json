@@ -14,7 +14,7 @@
     "titleHighlight": "Biz bilan yarating.",
     "subtitle": "Biz yuqori sifatli dasturiy yechimlar va AI yordamida MVPlarni tez yetkazib beramiz — startap va korxonalarga g'oyadan ishga tushirishgacha qisqa muddatda yordam beramiz.",
     "viewWork": "Ishlarimizni ko'rish",
-    "startProject": "Loyihangizni bugun boshlang"
+    "startProject": "Boshlash"
   },
   "features": {
     "speed": {
@@ -244,6 +244,18 @@
             "Administrator paneli",
             "Kengaytirilgan SEO + analitika"
           ]
+        },
+        "custom": {
+          "title": "Maxsus yechim",
+          "priceUsd": "Biz bilan bog'laning",
+          "priceUzs": "So'rov bo'yicha",
+          "features": [
+            "Sizning ehtiyojlaringizga moslashtirilgan",
+            "Moslashuvchan hajm va muddatlar",
+            "Ajratilgan loyiha menejeri",
+            "Maxsus integratsiyalar",
+            "Ustuvor qo'llab-quvvatlash"
+          ]
         }
       }
     },
@@ -281,6 +293,18 @@
             "Nativ iOS va Android (Swift/Kotlin)",
             "Xavfsiz to'lovlar + integratsiyalar",
             "Administrator paneli + analitika"
+          ]
+        },
+        "custom": {
+          "title": "Maxsus yechim",
+          "priceUsd": "Biz bilan bog'laning",
+          "priceUzs": "So'rov bo'yicha",
+          "features": [
+            "Maxsus mobil yechim",
+            "Platformaga xos talablar",
+            "Kengaytirilgan integratsiyalar",
+            "Ajratilgan ishlab chiqish jamoasi",
+            "Doimiy qo'llab-quvvatlash va xizmat"
           ]
         }
       }
@@ -360,6 +384,18 @@
             "Foydalanish qulayligi testi",
             "Cheksiz tuzatishlar (loyiha doirasida)"
           ]
+        },
+        "custom": {
+          "title": "Maxsus yechim",
+          "priceUsd": "Biz bilan bog'laning",
+          "priceUzs": "So'rov bo'yicha",
+          "features": [
+            "Individual dizayn yondashuvi",
+            "Kompleks UX audit",
+            "Brend identifikatsiyasi ishlab chiqish",
+            "Animatsiya va motion dizayn",
+            "Ajratilgan dizaynerlar jamoasi"
+          ]
         }
       }
     },
@@ -399,6 +435,18 @@
             "Nativ iOS va Android ilovalar",
             "Premium Telegram bot (CRM, AI chatbot)",
             "Premium UX dizayn (tadqiqot + dizayn tizimi)"
+          ]
+        },
+        "custom": {
+          "title": "Maxsus yechim",
+          "priceUsd": "Biz bilan bog'laning",
+          "priceUzs": "So'rov bo'yicha",
+          "features": [
+            "To'liq moslashtirilgan raqamli ekotizim",
+            "Korporativ darajadagi arxitektura",
+            "Maxsus AI/ML integratsiyalari",
+            "Ajratilgan jamoa va loyiha menejeri",
+            "24/7 premium qo'llab-quvvatlash"
           ]
         }
       }
@@ -440,6 +488,18 @@
             "Xodimlar uchun rol asosidagi kirish",
             "AI chatbot funksiyalari",
             "3 oylik premium texnik yordam"
+          ]
+        },
+        "custom": {
+          "title": "Maxsus yechim",
+          "priceUsd": "Biz bilan bog'laning",
+          "priceUzs": "So'rov bo'yicha",
+          "features": [
+            "Individual bot arxitekturasi",
+            "Maxsus AI/ML funksiyalari",
+            "Korporativ integratsiyalar",
+            "Masshtablanadigan infratuzilma",
+            "Ajratilgan qo'llab-quvvatlash jamoasi"
           ]
         }
       }

@@ -12,7 +12,6 @@ import {
   Wrench,
   Smartphone,
   Package,
-  Sparkles,
   Brain,
   Cpu,
   ArrowRight,
@@ -61,7 +60,7 @@ export default function PricingPage() {
                 <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
               </div>
               <h1 className="text-5xl md:text-7xl font-black text-foreground mb-8 leading-tight">
-                <span className="text-gradient-corporate">{t("title")}</span>
+                <span className="text-gradient-ai">{t("title")}</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
                 {t("subtitle")}
@@ -80,19 +79,19 @@ export default function PricingPage() {
                   <Code2 className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-foreground">
-                  <span className="text-gradient-corporate">{t("webDev.title")}</span>
+                  <span className="text-gradient-ai">{t("webDev.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto pt-6">
               <ScrollReveal delay={0.1}>
                 <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-blue-500/20 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("webDev.packages.starter.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("webDev.packages.starter.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -126,12 +125,7 @@ export default function PricingPage() {
                 <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
-                      <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
                       {t("webDev.packages.standard.mostPopular")}
-                      <Sparkles
-                        className="w-4 h-4 ml-1.5 inline-block animate-sparkle"
-                        style={{ animationDelay: "0.5s" }}
-                      />
                     </Badge>
                   </div>
 
@@ -139,7 +133,7 @@ export default function PricingPage() {
                     <h3 className="text-2xl font-bold mb-2">
                       {t("webDev.packages.standard.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("webDev.packages.standard.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -170,12 +164,12 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
-                <Card className="card-elevated p-8 flex flex-col h-full rounded-2xl border-2 border-purple-500/20 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-purple-500/20 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("webDev.packages.premium.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("webDev.packages.premium.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -204,6 +198,42 @@ export default function PricingPage() {
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-pink-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
+
+              <ScrollReveal delay={0.4}>
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-dashed border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden bg-gradient-to-br from-cyan-500/5 to-purple-500/5">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold mb-2">
+                      {t("webDev.packages.custom.title")}
+                    </h3>
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
+                      {t("webDev.packages.custom.priceUsd")}
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-4">
+                      {t("webDev.packages.custom.priceUzs")}
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {(
+                      t.raw("webDev.packages.custom.features") as string[]
+                    ).map((feature: string, index: number) => (
+                      <li
+                        key={index}
+                        className="flex items-start group/item hover:translate-x-1 transition-transform"
+                      >
+                        <Check className="w-5 h-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto flex justify-center">
+                    <ContactForm buttonText={t("cta.buttonText")} />
+                  </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </Card>
+              </ScrollReveal>
             </div>
           </div>
 
@@ -218,19 +248,19 @@ export default function PricingPage() {
                   <Smartphone className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-foreground">
-                  <span className="text-gradient-corporate">{t("mobileDev.title")}</span>
+                  <span className="text-gradient-ai">{t("mobileDev.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto pt-6">
               <ScrollReveal delay={0.1}>
                 <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-green-500/20 hover:shadow-2xl hover:shadow-green-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("mobileDev.packages.starter.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("mobileDev.packages.starter.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -266,12 +296,7 @@ export default function PricingPage() {
                 <Card className="card-elevated p-6 sm:p-8 border-2 border-green-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
-                      <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
                       {t("mobileDev.packages.standard.mostPopular")}
-                      <Sparkles
-                        className="w-4 h-4 ml-1.5 inline-block animate-sparkle"
-                        style={{ animationDelay: "0.5s" }}
-                      />
                     </Badge>
                   </div>
 
@@ -279,7 +304,7 @@ export default function PricingPage() {
                     <h3 className="text-2xl font-bold mb-2">
                       {t("mobileDev.packages.standard.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("mobileDev.packages.standard.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -312,12 +337,12 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
-                <Card className="card-elevated p-8 flex flex-col h-full rounded-2xl border-2 border-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-emerald-500/20 hover:shadow-2xl hover:shadow-emerald-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("mobileDev.packages.premium.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("mobileDev.packages.premium.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -348,6 +373,44 @@ export default function PricingPage() {
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-emerald-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
+
+              <ScrollReveal delay={0.4}>
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-dashed border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden bg-gradient-to-br from-cyan-500/5 to-purple-500/5">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold mb-2">
+                      {t("mobileDev.packages.custom.title")}
+                    </h3>
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
+                      {t("mobileDev.packages.custom.priceUsd")}
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-4">
+                      {t("mobileDev.packages.custom.priceUzs")}
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {(
+                      t.raw("mobileDev.packages.custom.features") as string[]
+                    ).map((feature: string, index: number) => (
+                      <li
+                        key={index}
+                        className="flex items-start group/item hover:translate-x-1 transition-transform"
+                      >
+                        <Check className="w-5 h-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto flex justify-center">
+                    <ContactForm
+                      buttonText={contactT("modal.buttons.defaultButton")}
+                    />
+                  </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </Card>
+              </ScrollReveal>
             </div>
           </div>
 
@@ -362,19 +425,19 @@ export default function PricingPage() {
                   <MessageCircle className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-foreground">
-                  <span className="text-gradient-corporate">{t("telegramBot.title")}</span>
+                  <span className="text-gradient-ai">{t("telegramBot.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto pt-6">
               <ScrollReveal delay={0.1}>
                 <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-cyan-500/20 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("telegramBot.packages.starter.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("telegramBot.packages.starter.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -410,12 +473,7 @@ export default function PricingPage() {
                 <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
-                      <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
                       {t("telegramBot.packages.standard.mostPopular")}
-                      <Sparkles
-                        className="w-4 h-4 ml-1.5 inline-block animate-sparkle"
-                        style={{ animationDelay: "0.5s" }}
-                      />
                     </Badge>
                   </div>
 
@@ -423,7 +481,7 @@ export default function PricingPage() {
                     <h3 className="text-2xl font-bold mb-2">
                       {t("telegramBot.packages.standard.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("telegramBot.packages.standard.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -458,12 +516,12 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
-                <Card className="card-elevated p-8 flex flex-col h-full rounded-2xl border-2 border-sky-500/20 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-sky-500/20 hover:shadow-2xl hover:shadow-sky-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("telegramBot.packages.premium.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-sky-600 to-indigo-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("telegramBot.packages.premium.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -494,6 +552,44 @@ export default function PricingPage() {
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-indigo-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
+
+              <ScrollReveal delay={0.4}>
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-dashed border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden bg-gradient-to-br from-cyan-500/5 to-purple-500/5">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold mb-2">
+                      {t("telegramBot.packages.custom.title")}
+                    </h3>
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
+                      {t("telegramBot.packages.custom.priceUsd")}
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-4">
+                      {t("telegramBot.packages.custom.priceUzs")}
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {(
+                      t.raw("telegramBot.packages.custom.features") as string[]
+                    ).map((feature: string, index: number) => (
+                      <li
+                        key={index}
+                        className="flex items-start group/item hover:translate-x-1 transition-transform"
+                      >
+                        <Check className="w-5 h-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto flex justify-center">
+                    <ContactForm
+                      buttonText={contactT("modal.buttons.defaultButton")}
+                    />
+                  </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </Card>
+              </ScrollReveal>
             </div>
           </div>
 
@@ -508,19 +604,19 @@ export default function PricingPage() {
                   <Palette className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-foreground">
-                  <span className="text-gradient-corporate">{t("uiUxDesign.title")}</span>
+                  <span className="text-gradient-ai">{t("uiUxDesign.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto pt-6">
               <ScrollReveal delay={0.1}>
                 <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-pink-500/20 hover:shadow-2xl hover:shadow-pink-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("uiUxDesign.packages.starter.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("uiUxDesign.packages.starter.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -556,12 +652,7 @@ export default function PricingPage() {
                 <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-rose-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
-                      <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
                       {t("uiUxDesign.packages.standard.mostPopular")}
-                      <Sparkles
-                        className="w-4 h-4 ml-1.5 inline-block animate-sparkle"
-                        style={{ animationDelay: "0.5s" }}
-                      />
                     </Badge>
                   </div>
 
@@ -569,7 +660,7 @@ export default function PricingPage() {
                     <h3 className="text-2xl font-bold mb-2">
                       {t("uiUxDesign.packages.standard.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-rose-600 to-orange-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("uiUxDesign.packages.standard.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -602,12 +693,12 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
-                <Card className="card-elevated p-8 flex flex-col h-full rounded-2xl border-2 border-amber-500/20 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-amber-500/20 hover:shadow-2xl hover:shadow-amber-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("uiUxDesign.packages.premium.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("uiUxDesign.packages.premium.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -638,6 +729,44 @@ export default function PricingPage() {
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-yellow-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
+
+              <ScrollReveal delay={0.4}>
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-dashed border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden bg-gradient-to-br from-cyan-500/5 to-purple-500/5">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold mb-2">
+                      {t("uiUxDesign.packages.custom.title")}
+                    </h3>
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
+                      {t("uiUxDesign.packages.custom.priceUsd")}
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-4">
+                      {t("uiUxDesign.packages.custom.priceUzs")}
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {(
+                      t.raw("uiUxDesign.packages.custom.features") as string[]
+                    ).map((feature: string, index: number) => (
+                      <li
+                        key={index}
+                        className="flex items-start group/item hover:translate-x-1 transition-transform"
+                      >
+                        <Check className="w-5 h-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto flex justify-center">
+                    <ContactForm
+                      buttonText={contactT("modal.buttons.defaultButton")}
+                    />
+                  </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </Card>
+              </ScrollReveal>
             </div>
           </div>
 
@@ -652,7 +781,7 @@ export default function PricingPage() {
                   <Wrench className="w-10 h-10 text-white" />
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-foreground">
-                  <span className="text-gradient-corporate">{t("allInPackage.title")}</span>
+                  <span className="text-gradient-ai">{t("allInPackage.title")}</span>
                 </h2>
               </div>
             </ScrollReveal>
@@ -663,14 +792,14 @@ export default function PricingPage() {
               </p>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto pt-6">
               <ScrollReveal delay={0.2}>
                 <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-violet-500/20 hover:shadow-2xl hover:shadow-violet-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("allInPackage.packages.starter.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("allInPackage.packages.starter.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -708,12 +837,7 @@ export default function PricingPage() {
                 <Card className="card-elevated p-6 sm:p-8 border-2 border-blue-500 rounded-2xl relative flex flex-col h-full hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/30 transition-all duration-300 group overflow-visible">
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 whitespace-nowrap">
                     <Badge className="bg-gradient-to-r from-blue-500 via-purple-500 to-blue-600 text-white shadow-lg px-4 py-1.5 text-sm font-semibold animate-pulse hover:scale-110 transition-transform border-2 border-white/20">
-                      <Sparkles className="w-4 h-4 mr-1.5 inline-block animate-sparkle" />
                       {t("allInPackage.packages.standard.mostPopular")}
-                      <Sparkles
-                        className="w-4 h-4 ml-1.5 inline-block animate-sparkle"
-                        style={{ animationDelay: "0.5s" }}
-                      />
                     </Badge>
                   </div>
 
@@ -721,7 +845,7 @@ export default function PricingPage() {
                     <h3 className="text-2xl font-bold mb-2">
                       {t("allInPackage.packages.standard.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
                       {t("allInPackage.packages.standard.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -756,12 +880,12 @@ export default function PricingPage() {
               </ScrollReveal>
 
               <ScrollReveal delay={0.4}>
-                <Card className="card-elevated p-8 flex flex-col h-full rounded-2xl border-2 border-fuchsia-500/20 hover:shadow-2xl hover:shadow-fuchsia-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-fuchsia-500/20 hover:shadow-2xl hover:shadow-fuchsia-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden">
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2">
                       {t("allInPackage.packages.premium.title")}
                     </h3>
-                    <div className="text-3xl font-bold mb-4 bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
+                    <div className="text-2xl sm:text-3xl font-bold mb-4 text-gradient-ai whitespace-nowrap">
                       {t("allInPackage.packages.premium.priceUsd")}
                     </div>
                     <div className="text-sm text-muted-foreground mb-4">
@@ -792,6 +916,46 @@ export default function PricingPage() {
                   </div>
                   {/* Corner accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-pink-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </Card>
+              </ScrollReveal>
+
+              <ScrollReveal delay={0.5}>
+                <Card className="card-elevated p-6 sm:p-8 flex flex-col h-full rounded-2xl border-2 border-dashed border-cyan-500/40 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden bg-gradient-to-br from-cyan-500/5 to-purple-500/5">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold mb-2">
+                      {t("allInPackage.packages.custom.title")}
+                    </h3>
+                    <div className="text-3xl font-bold mb-4 text-gradient-ai">
+                      {t("allInPackage.packages.custom.priceUsd")}
+                    </div>
+                    <div className="text-sm text-muted-foreground mb-4">
+                      {t("allInPackage.packages.custom.priceUzs")}
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {(
+                      t.raw(
+                        "allInPackage.packages.custom.features",
+                      ) as string[]
+                    ).map((feature: string, index: number) => (
+                      <li
+                        key={index}
+                        className="flex items-start group/item hover:translate-x-1 transition-transform"
+                      >
+                        <Check className="w-5 h-5 text-cyan-500 mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto flex justify-center">
+                    <ContactForm
+                      buttonText={contactT("modal.buttons.defaultButton")}
+                    />
+                  </div>
+                  {/* Corner accent */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
             </div>
@@ -852,7 +1016,7 @@ export default function PricingPage() {
                 <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center glow-cyan">
                   <Brain className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-2xl font-black text-gradient-corporate">
+                <span className="text-2xl font-black text-gradient-ai">
                   {footerT("company")}
                 </span>
               </div>

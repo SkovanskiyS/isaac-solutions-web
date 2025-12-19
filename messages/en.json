@@ -6,7 +6,7 @@
     "portfolio": "Portfolio",
     "about": "About",
     "company": "Isaac Solutions",
-    "startProject": "Start Your Project Today"
+    "startProject": "Get Started"
   },
   "hero": {
     "badge": "AI-Powered Development",
@@ -14,7 +14,7 @@
     "titleHighlight": "Build with Us.",
     "subtitle": "We specialize in delivering high-quality software solutions and AI-powered MVPs — helping startups and enterprises move from idea to launch in record time.",
     "viewWork": "View Our Work",
-    "startProject": "Start Your Project Today"
+    "startProject": "Get Started"
   },
   "features": {
     "speed": {
@@ -207,6 +207,18 @@
             "Admin dashboard",
             "Advanced SEO + analytics"
           ]
+        },
+        "custom": {
+          "title": "Custom Solution",
+          "priceUsd": "Contact Us",
+          "priceUzs": "По запросу",
+          "features": [
+            "Tailored to your specific needs",
+            "Flexible scope and timeline",
+            "Dedicated project manager",
+            "Custom integrations",
+            "Priority support"
+          ]
         }
       }
     },
@@ -244,6 +256,18 @@
             "Native iOS & Android (Swift/Kotlin)",
             "Secure payments + integrations",
             "Admin dashboard + analytics"
+          ]
+        },
+        "custom": {
+          "title": "Custom Solution",
+          "priceUsd": "Contact Us",
+          "priceUzs": "По запросу",
+          "features": [
+            "Tailored mobile solution",
+            "Custom platform requirements",
+            "Advanced integrations",
+            "Dedicated development team",
+            "Ongoing maintenance & support"
           ]
         }
       }
@@ -323,6 +347,18 @@
             "Usability testing",
             "Unlimited revisions (within scope)"
           ]
+        },
+        "custom": {
+          "title": "Custom Solution",
+          "priceUsd": "Contact Us",
+          "priceUzs": "По запросу",
+          "features": [
+            "Bespoke design approach",
+            "Comprehensive UX audit",
+            "Brand identity development",
+            "Animation & motion design",
+            "Dedicated design team"
+          ]
         }
       }
     },
@@ -362,6 +398,18 @@
             "Native iOS & Android apps",
             "Premium Telegram bot (CRM, AI chatbot)",
             "Premium UX design (research + design system)"
+          ]
+        },
+        "custom": {
+          "title": "Custom Solution",
+          "priceUsd": "Contact Us",
+          "priceUzs": "По запросу",
+          "features": [
+            "Fully customized digital ecosystem",
+            "Enterprise-grade architecture",
+            "Custom AI/ML integrations",
+            "Dedicated team & project manager",
+            "24/7 premium support"
           ]
         }
       }
@@ -404,6 +452,18 @@
             "AI chatbot functions",
             "3-month premium support"
           ]
+        },
+        "custom": {
+          "title": "Custom Solution",
+          "priceUsd": "Contact Us",
+          "priceUzs": "По запросу",
+          "features": [
+            "Tailored bot architecture",
+            "Custom AI/ML features",
+            "Enterprise integrations",
+            "Scalable infrastructure",
+            "Dedicated support team"
+          ]
         }
       }
     },
@@ -431,7 +491,7 @@
     "cta": {
       "title": "Ready to Get Started?",
       "description": "Contact us today to discuss your project requirements and get a personalized quote.",
-      "buttonText": "Start Your Project Today"
+      "buttonText": "Get Started"
     }
   },
   "contactForm": {
@@ -456,7 +516,7 @@
       "buttons": {
         "sendMessage": "Send Message",
         "sending": "Sending...",
-        "defaultButton": "Start Your Project Today"
+        "defaultButton": "Get Started"
       },
       "success": {
         "title": "Thank you, {name}!",

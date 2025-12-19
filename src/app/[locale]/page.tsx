@@ -389,7 +389,7 @@ export default function Home() {
               <div className="h-px w-12 bg-gradient-to-l from-transparent to-cyan-500"></div>
             </div>
             <h2 className="text-5xl md:text-7xl font-black mb-8">
-              <span className="text-gradient-corporate">{t("about.title")}</span>
+              <span className="text-gradient-ai">{t("about.title")}</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
               {t("about.subtitle")}

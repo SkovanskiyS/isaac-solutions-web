@@ -9,11 +9,11 @@ import { Sparkles } from "lucide-react";
 // Constants extracted outside component
 const CLIENTS = [
   { id: 1, name: "Bron24", color: "from-green-300 to-emerald-400" },
-  { id: 2, name: "Vita Coffee", color: "from-amber-300 to-orange-400" },
-  { id: 3, name: "Beeline", color: "from-yellow-300 to-yellow-400" },
-  { id: 4, name: "Amity University", color: "from-yellow-300 to-amber-400" },
-  { id: 5, name: "Payme", color: "from-sky-200 to-blue-300" },
-  { id: 6, name: "Click", color: "from-blue-400 to-blue-500" },
+  { id: 2, name: "Vita Coffee", color: "from-orange-300 to-amber-400" },
+  { id: 3, name: "Beeline", color: "from-yellow-200 to-yellow-400" },
+  { id: 4, name: "Amity University", color: "from-pink-300 to-rose-400" },
+  { id: 5, name: "Payme", color: "from-cyan-300 to-blue-400" },
+  { id: 6, name: "Click", color: "from-purple-300 to-violet-400" },
 ] as const;
 
 interface ClientLogosProps {
@@ -25,7 +25,7 @@ interface ClientLogosProps {
 const ClientItem = memo(function ClientItem({ name, color }: { name: string; color: string }) {
   return (
     <div className="group flex-shrink-0">
-      <span className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${color} bg-clip-text text-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap`}>
+      <span className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${color} bg-clip-text text-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap`}>
         {name}
       </span>
     </div>

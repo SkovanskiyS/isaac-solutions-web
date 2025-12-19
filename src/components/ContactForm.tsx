@@ -280,10 +280,10 @@ export default function ContactForm({
           size={size}
           variant={variant}
           onClick={handleButtonClick}
-          className="group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-corporate-lg w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white border-0"
+          className="group relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-corporate-lg w-full sm:w-auto bg-gradient-to-r from-cyan-500/10 to-purple-600/10 hover:from-cyan-500/20 hover:to-purple-600/20 border border-cyan-500/30 hover:border-cyan-500/50"
         >
-          <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-          {buttonText}
+          <ArrowRight className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform text-gradient-ai" />
+          <span className="text-gradient-ai font-bold">{buttonText}</span>
         </Button>
       </div>
 
