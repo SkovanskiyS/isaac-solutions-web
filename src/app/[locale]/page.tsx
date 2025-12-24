@@ -29,7 +29,9 @@ import {
   Globe,
   Lightbulb,
   Linkedin,
+  Mail,
   Palette,
+  Phone,
   Rocket,
   Shield,
   Smartphone,
@@ -702,6 +704,32 @@ export default function Home() {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {t("footer.description")}
               </p>
+              
+              {/* Contact Info - Prominent */}
+              <div className="space-y-3">
+                <a
+                  href="tel:+998901881625"
+                  className="flex items-center gap-3 group hover:translate-x-2 transition-transform duration-300"
+                >
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-cyan-500/20">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-lg font-semibold text-foreground group-hover:text-cyan-500 transition-colors">
+                    +998 90 188 16 25
+                  </span>
+                </a>
+                <a
+                  href="mailto:hello@isaacbuilds.com"
+                  className="flex items-center gap-3 group hover:translate-x-2 transition-transform duration-300"
+                >
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg shadow-purple-500/20">
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-lg font-semibold text-foreground group-hover:text-purple-500 transition-colors">
+                    hello@isaacbuilds.com
+                  </span>
+                </a>
+              </div>
             </div>
 
             <div>
@@ -754,6 +782,15 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      
+      {/* Floating Call Button - Mobile Only */}
+      <a
+        href="tel:+998901881625"
+        className="fixed bottom-6 right-6 z-50 md:hidden flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500 to-purple-600 shadow-2xl shadow-cyan-500/40 hover:shadow-cyan-400/60 hover:scale-110 transition-all duration-300 animate-pulse"
+        aria-label="Call Isaac Solutions"
+      >
+        <Phone className="w-6 h-6 text-white" />
+      </a>
     </div>
   );
 }

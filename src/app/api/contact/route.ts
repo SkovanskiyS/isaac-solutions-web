@@ -1,10 +1,11 @@
 import { supabaseAdmin } from "@/lib/supabase-admin";
 import { type NextRequest, NextResponse } from "next/server";
 
-// Simple contact form data - only name and phone
+// Contact form data - name, phone, and optional package
 interface ContactFormData {
   name: string;
   phone: string;
+  package?: string;
 }
 
 export async function POST(request: NextRequest) {
@@ -36,6 +37,7 @@ export async function POST(request: NextRequest) {
         {
           name: body.name.trim(),
           phone: body.phone.trim(),
+          package: body.package?.trim() || null,
         },
       ])
       .select();

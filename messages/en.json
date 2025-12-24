@@ -6,7 +6,9 @@
     "portfolio": "Portfolio",
     "about": "About",
     "company": "Isaac Solutions",
-    "startProject": "Get Started"
+    "startProject": "Get Started",
+    "phone": "+998 90 188 16 25",
+    "callUs": "Call Us"
   },
   "hero": {
     "badge": "AI-Powered Development",
@@ -120,13 +122,13 @@
       },
       "vitaCoffee": {
         "name": "Vita Coffee",
-        "description": "Premium coffee e-commerce platform with subscription management, inventory tracking, and mobile-optimized checkout experience.",
-        "tags": ["E-commerce", "Subscription", "Mobile App"]
+        "description": "Telegram bot for premium coffee ordering with seamless subscription management, real-time order tracking, and integrated payment system.",
+        "tags": ["Telegram Bot", "E-commerce", "Subscription", "Payments"]
       },
-      "techflowCrm": {
-        "name": "TechFlow CRM",
-        "description": "Customer relationship management system with advanced lead tracking, automated email campaigns, and detailed reporting dashboard.",
-        "tags": ["CRM", "Automation", "Email Marketing"]
+      "deepRed": {
+        "name": "DEEP RED",
+        "description": "A platform where creators get paid, businesses find reach, and users discover useful activities instead of endless scrolling. API-first architecture designed for scaling in a competitive market.",
+        "tags": ["Creator Platform", "Business", "API-First", "Marketplace"]
       }
     }
   },
@@ -163,7 +165,7 @@
       "title": "Contact",
       "items": [
         "hello@isaacbuilds.com",
-        "+1 (555) 123-4567"
+        "+998 90 188 16 25"
       ]
     },
     "copyright": "© 2024 Isaac Solutions. All rights reserved."
@@ -180,9 +182,9 @@
           "priceUsd": "$300 - $500",
           "priceUzs": "3.8M - 6.5M UZS",
           "features": [
-            "Landing page (2–3 sections)",
+            "Landing page (3–5 sections)",
             "Mobile responsive",
-            "Contact form + Telegram/email integration"
+            "Contact form + Telegram/Email alerts"
           ]
         },
         "standard": {
@@ -191,21 +193,22 @@
           "priceUzs": "9M - 16.5M UZS",
           "mostPopular": "Best Value",
           "features": [
-            "Multi-page business website (5–7 pages)",
-            "Blog/News section",
-            "CMS for easy content editing",
-            "SEO-ready structure"
+            "Multi-page website (5–7 pages)",
+            "SEO-ready architecture",
+            "Social integration or Blog section",
+            "1 month free support"
           ]
         },
         "premium": {
           "title": "Premium Site",
-          "priceUsd": "$1,300 - $2,800",
-          "priceUzs": "16.5M - 36M UZS",
+          "priceUsd": "$1,500 - $3,000",
+          "priceUzs": "19M - 38M UZS",
           "features": [
-            "Custom web application or e-commerce",
+            "E-commerce or Web application",
             "Payment gateway (Payme, Click, Stripe)",
             "Admin dashboard",
-            "Advanced SEO + analytics"
+            "Analytics (GA4 + Facebook Pixel)",
+            "2 months free support"
           ]
         },
         "custom": {
@@ -213,11 +216,10 @@
           "priceUsd": "Contact Us",
           "priceUzs": "On Request",
           "features": [
-            "Tailored to your specific needs",
-            "Flexible scope and timeline",
+            "Tailored architecture",
+            "API integrations (CRM, ERP)",
             "Dedicated project manager",
-            "Custom integrations",
-            "Priority support"
+            "3+ months support"
           ]
         }
       }
@@ -491,13 +493,40 @@
     "cta": {
       "title": "Ready to Get Started?",
       "description": "Contact us today to discuss your project requirements and get a personalized quote.",
-      "buttonText": "Get Started"
+      "buttonText": "Get Started",
+      "consultationButton": "Book a Consultation"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Common questions answered to help you make an informed decision.",
+      "questions": [
+        {
+          "question": "Who owns the code after the project is complete?",
+          "answer": "You do. Once the project is delivered and paid for, all source code, assets, and intellectual property are transferred to you with full ownership rights."
+        },
+        {
+          "question": "How long does it typically take to build a website?",
+          "answer": "Starter sites take 1-2 weeks, Business sites 3-4 weeks, and Premium sites 4-8 weeks depending on complexity. Custom solutions are scoped individually."
+        },
+        {
+          "question": "What happens after my free support period ends?",
+          "answer": "You can continue with our monthly maintenance plans, or we can hand off the project with full documentation. We're always here if you need us again."
+        },
+        {
+          "question": "Can I upgrade my package later?",
+          "answer": "Absolutely! Many clients start with a Starter or Business site and upgrade as their needs grow. We'll credit your previous investment toward the upgrade."
+        },
+        {
+          "question": "Do you provide hosting and domain services?",
+          "answer": "We can help you set up hosting and domain registration, or deploy to your existing infrastructure. We recommend the best solution based on your needs."
+        }
+      ]
     }
   },
   "contactForm": {
     "modal": {
       "title": "Get Started Today",
-      "subtitle": "Tell us about your project and we'll get back to you within 24 hours.",
+      "subtitle": "Leave your contact details and we'll get in touch with you!",
       "thankYouTitle": "Thank You!",
       "fields": {
         "fullName": {
@@ -508,7 +537,7 @@
         },
         "phone": {
           "label": "Phone Number *",
-          "placeholder": "+1 (555) 123-4567",
+          "placeholder": "90 123 45 67",
           "required": "Phone number is required",
           "invalid": "Please enter a valid phone number"
         }

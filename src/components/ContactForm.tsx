@@ -123,6 +123,7 @@ interface ContactFormProps {
   size?: "sm" | "default" | "lg" | "xl";
   className?: string;
   buttonText?: string;
+  packageName?: string;
 }
 
 export default function ContactForm({
@@ -130,6 +131,7 @@ export default function ContactForm({
   size = "xl",
   className = "",
   buttonText,
+  packageName,
 }: ContactFormProps) {
   const t = useTranslations("contactForm");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -327,6 +329,7 @@ export default function ContactForm({
         body: JSON.stringify({
           name: formData.name.trim(),
           phone: fullPhone.trim(),
+          package: packageName,
         }),
       });
 
@@ -421,14 +424,13 @@ export default function ContactForm({
                       <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400" />
                     </div>
                     <h3 className="text-lg font-semibold text-foreground mb-2">
-                      Thank you, {formData.name}!
+                      {t("modal.success.title", { name: formData.name })}
                     </h3>
                     <p className="text-muted-foreground">
-                      We've received your contact information and will call you
-                      at {formData.phone} soon.
+                      {t("modal.success.message", { phone: getFullPhoneNumber() })}
                     </p>
                     <p className="text-sm text-muted-foreground mt-2">
-                      This window will close automatically in a few seconds.
+                      {t("modal.success.autoClose")}
                     </p>
                   </div>
                 </div>
@@ -436,7 +438,7 @@ export default function ContactForm({
                 /* Contact Form */
                 <div className="px-6 pb-6">
                   <p className="text-sm text-muted-foreground mb-6">
-                    Leave your contact details and we'll get in touch with you!
+                    {t("modal.subtitle")}
                   </p>
 
                   <form onSubmit={handleSubmit} className="space-y-4">
@@ -446,7 +448,7 @@ export default function ContactForm({
                         htmlFor="modal-name"
                         className="text-sm font-medium text-foreground"
                       >
-                        Full Name *
+                        {t("modal.fields.fullName.label")}
                       </Label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -457,7 +459,7 @@ export default function ContactForm({
                           onChange={(e) =>
                             handleInputChange("name", e.target.value)
                           }
-                          placeholder="Enter your full name"
+                          placeholder={t("modal.fields.fullName.placeholder")}
                           className={`pl-10 w-full transition-all duration-200 ${
                             errors.name
                               ? "border-red-500 focus:ring-red-500"
@@ -480,7 +482,7 @@ export default function ContactForm({
                         htmlFor="modal-phone"
                         className="text-sm font-medium text-foreground"
                       >
-                        Phone Number *
+                        {t("modal.fields.phone.label")}
                       </Label>
                       <div className="flex gap-2">
                         {/* Country Code Selector */}

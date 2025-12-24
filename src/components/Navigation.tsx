@@ -3,7 +3,7 @@
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
-import { Brain, Menu, X } from "lucide-react";
+import { Brain, Menu, Phone, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import type React from "react";
@@ -185,6 +185,20 @@ const Navigation = memo(function Navigation({
                   </Link>
                 </>
               )}
+              
+              {/* Phone Number - Desktop */}
+              <a
+                href="tel:+998901881625"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/30 hover:border-cyan-400/60 hover:from-cyan-500/20 hover:to-purple-500/20 transition-all duration-300 group"
+              >
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Phone className="w-3.5 h-3.5 text-white" />
+                </div>
+                <span className="text-sm font-semibold text-foreground group-hover:text-cyan-500 transition-colors">
+                  {t("phone")}
+                </span>
+              </a>
+              
               <LanguageSwitcher />
               <ThemeToggle />
             </div>
@@ -211,6 +225,19 @@ const Navigation = memo(function Navigation({
           {isMobileMenuOpen && (
             <div className="md:hidden border-t border-cyan-500/20 bg-[hsl(var(--nav-bg))] backdrop-blur-2xl">
               <div className="px-4 py-6 space-y-4">
+                {/* Phone Number - Mobile Menu (Prominent) */}
+                <a
+                  href="tel:+998901881625"
+                  className="flex items-center justify-center gap-3 w-full px-4 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 transition-all duration-300 shadow-lg shadow-cyan-500/25"
+                >
+                  <Phone className="w-5 h-5 text-white" />
+                  <span className="text-white font-bold text-lg">
+                    {t("phone")}
+                  </span>
+                </a>
+                
+                <div className="border-b border-cyan-500/20 pb-2" />
+                
                 {currentPage === "home" ? (
                   <>
                     <button

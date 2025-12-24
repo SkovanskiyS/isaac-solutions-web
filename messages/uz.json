@@ -6,7 +6,9 @@
     "portfolio": "Portfolio",
     "about": "Biz haqimizda",
     "company": "Isaac Solutions",
-    "startProject": "Loyihangizni boshlang"
+    "startProject": "Loyihangizni boshlang",
+    "phone": "+998 90 188 16 25",
+    "callUs": "Qo'ng'iroq qiling"
   },
   "hero": {
     "badge": "AI asosidagi rivojlantirish",
@@ -45,29 +47,29 @@
     "subtitle": "Biznes ehtiyojlaringizga moslashtirilgan kompleks ishlab chiqish yechimlari",
     "webDev": {
       "title": "Veb-ishlab chiqish",
-      "description": "Biz biznesingiz bilan birga o'sishga mo'ljallangan zamonaviy, kengaytiriladigan va moslashuvchan veb-ilovalarni yaratamiz. Landing sahifalardan tortib korporativ platformalargacha, bizning yechimlarimiz unumdorlik va qulaylikni hisobga olgan holda yaratilgan.",
+      "description": "Biznesingiz bilan birga rivojlanadigan zamonaviy, kengaytiriladigan va moslashuvchan veb-ilovalar yaratamiz. Oddiy landing sahifalardan tortib murakkab korporativ platformalargacha — har bir yechim yuqori samaradorlik va foydalanish qulayligi asosida qurilgan.",
       "features": [
         "React, Next.js, TypeScript",
         "Moslashuvchan dizayn",
-        "Optimallashtirilgan ishlash"
+        "Yuqori tezlik va optimallashtirilgan ishlash"
       ]
     },
     "mobileDev": {
       "title": "Mobil ishlab chiqish",
-      "description": "Jamoamiz iOS va Android uchun intuitiv mobil ilovalarni yaratib, barcha qurilmalarda silliq tajribani ta'minlaydi. Bu biznes ilova yoki mijozga yo'naltirilgan yechim bo'ladimi, biz uni tez, xavfsiz va foydalanish uchun qulay qilamiz.",
+      "description": "Jamoamiz iOS va Android uchun intuitiv mobil ilovalar yaratib, har qanday qurilmada uzluksiz tajriba ta'minlaydi. Ichki biznes ilova yoki mijozlarga mo'ljallangan yechim bo'ladimi — biz uni tez, xavfsiz va oddiy foydalaniladigan qilamiz.",
       "features": [
         "React Native, Flutter",
-        "Nativ ishlash",
-        "App Store joylash"
+        "Nativ tezlik va samaradorlik",
+        "App Store va Play Market joylash"
       ]
     },
     "uxUiDesign": {
       "title": "UX va UI Dizayn",
-      "description": "Chiroyli va qulay interfeyslar, foydalanuvchi uchun ajoyib tajriba yaratamiz. Biz foydalanish qulayligi, kirish imkoniyati va vizual jozibadorlikka e'tibor qaratamiz, shunda mahsulotingiz foydalanuvchilarni quvontiradi.",
+      "description": "Foydalanuvchini o'ziga tortadigan chiroyli va intuitiv interfeyslar loyihalashtiramiz. Foydalanish qulayligi, vizual jozibadorlik va hamma uchun ochiqlikka e'tibor qaratib, mahsulotingiz foydalanuvchilarni hayratda qoldirishini ta'minlaymiz.",
       "features": [
-        "Foydalanuvchi tajribasi dizayni",
-        "Interfeys dizayni",
-        "Prototiplash va testlash"
+        "Foydalanuvchi tajribasi (UX) dizayni",
+        "Interfeys (UI) dizayni",
+        "Prototiplash va foydalanish testlari"
       ]
     },
     "aiAdvantage": {
@@ -78,7 +80,7 @@
   "about": {
     "badge": "Bizning jamoa",
     "title": "Jamoamiz bilan tanishing",
-    "subtitle": "Dasturiy ta'minot ishlab chiqishning kelajagini innovatsiya va tajriba bilan qurayotgan uch g'ayratli tadbirkor.",
+    "subtitle": "Dasturiy ta'minot ishlab chiqishning kelajagini innovatsiya va tajriba bilan qurayotgan ikkita g'ayratli tadbirkor.",
     "team": {
       "javohir": {
         "name": "Javohir Atabekov",
@@ -120,18 +122,18 @@
     "projects": {
       "bron24": {
         "name": "Bron24",
-        "description": "Futbol va boshqa sport turlari uchun zamonaviy sport maydoni bron qilish platformasi. Real vaqt mavjudligi, oniy bron qilish va reyting tizimini o'z ichiga oladi.",
+        "description": "Futbol va boshqa sport turlarining maydonlarini bron qilish uchun zamonaviy platforma. Real vaqtda bo'sh joylarni ko'rish, bir zumda bron qilish va reyting tizimi imkoniyatlarini taqdim etadi.",
         "tags": ["Bron platformasi", "Sport", "Real vaqt", "Mobil ilova"]
       },
       "vitaCoffee": {
         "name": "Vita Coffee",
-        "description": "Obuna boshqaruvi, zaxira kuzatuvi va mobil qurilmalarga moslashgan to'lov tajribasi bilan premium qahva e-tijorat platformasi.",
-        "tags": ["E-tijorat", "Obuna", "Mobil ilova"]
+        "description": "Premium qahva buyurtma berish uchun Telegram bot. Qulay obuna boshqaruvi, real vaqtda buyurtma kuzatuvi va integratsiyalangan to'lov tizimi bilan.",
+        "tags": ["Telegram Bot", "E-commerce", "Obuna", "To'lovlar"]
       },
-      "techflowCrm": {
-        "name": "TechFlow CRM",
-        "description": "Keng qamrovli mijozlar bilan munosabatlarni boshqarish tizimi, rivojlangan potensial mijozlarni kuzatish, avtomatlashtirilgan email kampaniyalar va batafsil hisobot paneli bilan.",
-        "tags": ["CRM", "Avtomatlashtirish", "Email Marketing"]
+      "deepRed": {
+        "name": "DEEP RED",
+        "description": "Ijodkorlar pul ishlashi, bizneslar auditoriya topishi va foydalanuvchilar cheksiz skrolling o'rniga foydali mashg'ulotlar kashf etishi uchun platforma. Raqobatbardosh bozorda kengaytirish uchun API-first arxitektura.",
+        "tags": ["Ijodkorlar platformasi", "Biznes", "API-First", "Marketplace"]
       }
     }
   },
@@ -168,7 +170,7 @@
       "title": "Aloqa",
       "items": [
         "hello@isaacbuilds.com",
-        "+1 (555) 123-4567"
+        "+998 90 188 16 25"
       ]
     },
     "copyright": "© 2024 Isaac Solutions. Barcha huquqlar himoyalangan."
@@ -176,7 +178,7 @@
   "contactForm": {
     "modal": {
       "title": "Bugun boshlang",
-      "subtitle": "Loyihangiz haqida bizga ayting va 24 soat ichida javob beramiz.",
+      "subtitle": "Aloqa ma'lumotlaringizni qoldiring va biz siz bilan bog'lanamiz!",
       "thankYouTitle": "Rahmat!",
       "fields": {
         "fullName": {
@@ -187,7 +189,7 @@
         },
         "phone": {
           "label": "Telefon raqam *",
-          "placeholder": "+1 (555) 123-4567",
+          "placeholder": "90 123 45 67",
           "required": "Telefon raqam kiritish majburiy",
           "invalid": "Iltimos, to'g'ri telefon raqamini kiriting"
         }
@@ -217,9 +219,9 @@
           "priceUsd": "$300 - $500",
           "priceUzs": "3.8M - 6.5M so'm",
           "features": [
-            "Landing sahifa (2-3 bo'lim)",
+            "Landing sahifa (3–5 bo'lim)",
             "Mobil moslashuvchanlik",
-            "Aloqa formasi + Telegram/email integratsiya"
+            "Aloqa formasi + Telegram/Email xabarnomalar"
           ]
         },
         "standard": {
@@ -228,21 +230,22 @@
           "priceUzs": "9M - 16.5M so'm",
           "mostPopular": "Eng yaxshi narx",
           "features": [
-            "Ko'p sahifali biznes sayt (5-7 sahifa)",
-            "Blog/yangiliklar bo'limi",
-            "Oddiy kontent boshqaruv tizimi (CMS)",
-            "SEO optimallashtirilgan tuzilma"
+            "Ko'p sahifali sayt (5–7 sahifa)",
+            "SEO-optimallashtirilgan arxitektura",
+            "Ijtimoiy integratsiya yoki blog",
+            "1 oy bepul qo'llab-quvvatlash"
           ]
         },
         "premium": {
           "title": "Premium Sayt",
-          "priceUsd": "$1,300 - $2,800",
-          "priceUzs": "16.5M - 36M so'm",
+          "priceUsd": "$1,500 - $3,000",
+          "priceUzs": "19M - 38M so'm",
           "features": [
-            "Veb-ilova yoki internet-magazin",
-            "To'lov tizimlari (Payme, Click, Stripe)",
-            "Administrator paneli",
-            "Kengaytirilgan SEO + analitika"
+            "E-commerce yoki veb-ilova",
+            "To'lov shlyuzlari (Payme, Click, Stripe)",
+            "Admin paneli",
+            "Analitika (GA4 + Facebook Pixel)",
+            "2 oy bepul qo'llab-quvvatlash"
           ]
         },
         "custom": {
@@ -250,11 +253,10 @@
           "priceUsd": "Biz bilan bog'laning",
           "priceUzs": "So'rov bo'yicha",
           "features": [
-            "Sizning ehtiyojlaringizga moslashtirilgan",
-            "Moslashuvchan hajm va muddatlar",
+            "Maxsus arxitektura",
+            "API integratsiyalari (CRM, ERP)",
             "Ajratilgan loyiha menejeri",
-            "Maxsus integratsiyalar",
-            "Ustuvor qo'llab-quvvatlash"
+            "3+ oy qo'llab-quvvatlash"
           ]
         }
       }
@@ -528,7 +530,34 @@
     "cta": {
       "title": "Boshlashga tayyormisiz?",
       "description": "Loyihangiz talablarini muhokama qilish va shaxsiy narx olish uchun bugun biz bilan bog'laning.",
-      "buttonText": "Loyihani boshlash"
+      "buttonText": "Loyihani boshlash",
+      "consultationButton": "Konsultatsiyaga yozilish"
+    },
+    "faq": {
+      "title": "Ko'p beriladigan savollar",
+      "subtitle": "To'g'ri qaror qabul qilishingiz uchun keng tarqalgan savollarga javoblar.",
+      "questions": [
+        {
+          "question": "Loyiha tugagandan so'ng kod kimga tegishli bo'ladi?",
+          "answer": "Sizga. Loyiha topshirilgandan va to'langandan so'ng, barcha manba kodi, materiallar va intellektual mulk to'liq huquq bilan sizga o'tadi."
+        },
+        {
+          "question": "Veb-sayt yaratish odatda qancha vaqt oladi?",
+          "answer": "Starter saytlar 1-2 hafta, Business saytlar 3-4 hafta, Premium saytlar murakkabligiga qarab 4-8 hafta vaqt oladi. Maxsus yechimlar alohida baholanadi."
+        },
+        {
+          "question": "Bepul qo'llab-quvvatlash muddati tugagandan keyin nima bo'ladi?",
+          "answer": "Oylik texnik xizmat rejalarimizni davom ettirishingiz yoki loyihani to'liq hujjatlar bilan sizga topshirishimiz mumkin. Yana kerak bo'lsak, biz doimo aloqadamiz."
+        },
+        {
+          "question": "Keyinchalik paketni yangilash mumkinmi?",
+          "answer": "Albatta! Ko'p mijozlar Starter yoki Business saytdan boshlaydi va ehtiyojlar o'sishi bilan kengayadi. Yangilashda oldingi investitsiyangizni hisobga olamiz."
+        },
+        {
+          "question": "Hosting va domen xizmatlari bormi?",
+          "answer": "Hosting va domenni ro'yxatdan o'tkazishda yordam beramiz yoki mavjud infratuzilmangizga joylashtiramiz. Ehtiyojlaringizga qarab eng yaxshi yechimni tavsiya qilamiz."
+        }
+      ]
     }
   }
 }

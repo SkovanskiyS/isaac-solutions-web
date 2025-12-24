@@ -21,6 +21,7 @@ interface Project {
   deviceType: "laptop" | "phone" | "both";
   stats?: { label: string; value: string }[];
   link?: string;
+  status?: "live" | "development";
 }
 
 // Constants extracted outside component
@@ -45,26 +46,21 @@ const FEATURED_PROJECTS: Project[] = [
     nameKey: "vitaCoffee.name",
     descriptionKey: "vitaCoffee.description",
     tagsKey: "vitaCoffee.tags",
-    image: "/optimized/VitaCoffee.webp",
+    image: "/vitacoffeemobile.jpg",
     accentColor: "purple",
-    deviceType: "laptop",
-    stats: [
-      { label: "Performance", value: "98%" },
-      { label: "Conversion", value: "+45%" },
-    ],
+    deviceType: "phone",
+    link: "https://t.me/vita_coffee_bot",
   },
   {
     id: 3,
-    nameKey: "techflowCrm.name",
-    descriptionKey: "techflowCrm.description",
-    tagsKey: "techflowCrm.tags",
-    image: "/optimized/Bron24_Dark.webp",
+    nameKey: "deepRed.name",
+    descriptionKey: "deepRed.description",
+    tagsKey: "deepRed.tags",
+    image: "/deepredpc.png",
+    mobileImage: "/deepredmobile.jpg",
     accentColor: "pink",
-    deviceType: "laptop",
-    stats: [
-      { label: "Efficiency", value: "+60%" },
-      { label: "Clients", value: "200+" },
-    ],
+    deviceType: "both",
+    status: "development",
   },
 ] as const;
 
@@ -193,64 +189,121 @@ const DeviceMockupCard = memo(function DeviceMockupCard({
     >
       {/* Device Mockup Side */}
       <div className="w-full lg:w-3/5 relative group">
-        <div
-          className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-10 blur-3xl scale-110 group-hover:opacity-20 transition-opacity duration-700`}
-        />
+        {/* Background glow - only for laptop/both modes */}
+        {project.deviceType !== "phone" && (
+          <div
+            className={`absolute inset-0 bg-gradient-to-r ${colors.gradient} opacity-10 blur-3xl scale-110 group-hover:opacity-20 transition-opacity duration-700`}
+          />
+        )}
 
         <div className="relative">
-          <div className="relative mx-auto w-full max-w-2xl">
-            <div className="relative bg-gray-900 dark:bg-gray-800 rounded-t-xl pt-4 px-4 pb-2">
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-gray-700" />
-                <div className="w-1 h-1 rounded-full bg-gray-700" />
-              </div>
-
-              <div
-                className={`relative aspect-[16/9] rounded-lg overflow-hidden bg-gray-950 ring-1 ${colors.ring}`}
-              >
-                <Image
-                  src={project.image}
-                  alt={`${name} on laptop`}
-                  fill
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 1200px"
-                  quality={90}
-                  priority={index === 0}
-                  loading={index === 0 ? "eager" : "lazy"}
+          {/* Phone-only mockup for Telegram bots / mobile apps */}
+          {project.deviceType === "phone" ? (
+            <div className="relative flex items-center justify-center py-8">
+              <div className="relative w-40 sm:w-48 lg:w-56 transform group-hover:scale-[1.02] transition-transform duration-500">
+                {/* Gradient blur background behind phone */}
+                <div
+                  className={`absolute inset-0 scale-150 bg-gradient-to-r ${colors.gradient} opacity-15 blur-3xl group-hover:opacity-25 transition-opacity duration-700`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
-                    {project.link ? (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex items-center gap-2 px-6 py-3 rounded-full ${colors.button} text-white font-medium shadow-xl transition-all duration-200 hover:scale-105`}
-                      >
-                        <Globe className="w-4 h-4" />
-                        <span>View Live</span>
-                        <ArrowUpRight className="w-4 h-4" />
-                      </a>
-                    ) : (
-                      <button
-                        className={`flex items-center gap-2 px-6 py-3 rounded-full ${colors.button} text-white font-medium shadow-xl transition-all duration-200`}
-                      >
-                        <Globe className="w-4 h-4" />
-                        <span>View Live</span>
-                        <ArrowUpRight className="w-4 h-4" />
-                      </button>
-                    )}
+                <div className="relative bg-gray-900 dark:bg-gray-800 rounded-[2rem] p-1.5 shadow-2xl ring-1 ring-white/10">
+                  {/* Phone notch/dynamic island */}
+                  <div className="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-1.5 bg-gray-800 dark:bg-gray-700 rounded-full z-10" />
+                  <div className={`relative aspect-[9/19] rounded-[1.5rem] overflow-hidden bg-gray-950 ring-1 ${colors.ring}`}>
+                    <Image
+                      src={project.image}
+                      alt={`${name} on mobile`}
+                      fill
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
+                      sizes="(max-width: 640px) 160px, (max-width: 1024px) 192px, 224px"
+                      quality={90}
+                      priority={index === 0}
+                      loading={index === 0 ? "eager" : "lazy"}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none" />
+                    {/* Hover overlay with link */}
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`flex items-center gap-1.5 px-4 py-2 rounded-full ${colors.button} text-white text-xs font-medium shadow-xl transition-all duration-200 hover:scale-105`}
+                          >
+                            <Globe className="w-3 h-3" />
+                            <span>View</span>
+                            <ArrowUpRight className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Phone shadow */}
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4/5 h-4 bg-black/20 dark:bg-black/40 blur-xl rounded-full" />
+              </div>
+            </div>
+          ) : (
+            /* Laptop mockup for desktop apps */
+            <div className="relative mx-auto w-full max-w-2xl">
+              <div className="relative bg-gray-900 dark:bg-gray-800 rounded-t-xl pt-4 px-4 pb-2">
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-gray-700" />
+                  <div className="w-1 h-1 rounded-full bg-gray-700" />
+                </div>
+
+                <div
+                  className={`relative aspect-[16/9] rounded-lg overflow-hidden bg-gray-950 ring-1 ${colors.ring}`}
+                >
+                  <Image
+                    src={project.image}
+                    alt={`${name} on laptop`}
+                    fill
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 60vw, 1200px"
+                    quality={90}
+                    priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
+                      {project.status === "development" ? (
+                        <div className="flex items-center gap-2 px-6 py-3 rounded-full bg-amber-500/90 text-white font-medium shadow-xl">
+                          <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                          <span>On Development</span>
+                        </div>
+                      ) : project.link ? (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex items-center gap-2 px-6 py-3 rounded-full ${colors.button} text-white font-medium shadow-xl transition-all duration-200 hover:scale-105`}
+                        >
+                          <Globe className="w-4 h-4" />
+                          <span>View Live</span>
+                          <ArrowUpRight className="w-4 h-4" />
+                        </a>
+                      ) : (
+                        <button
+                          className={`flex items-center gap-2 px-6 py-3 rounded-full ${colors.button} text-white font-medium shadow-xl transition-all duration-200`}
+                        >
+                          <Globe className="w-4 h-4" />
+                          <span>View Live</span>
+                          <ArrowUpRight className="w-4 h-4" />
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="relative h-4 bg-gradient-to-b from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 rounded-b-xl">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-700 dark:bg-gray-600 rounded-b-lg" />
+              <div className="relative h-4 bg-gradient-to-b from-gray-800 to-gray-900 dark:from-gray-700 dark:to-gray-800 rounded-b-xl">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-1 bg-gray-700 dark:bg-gray-600 rounded-b-lg" />
+              </div>
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4/5 h-4 bg-black/20 dark:bg-black/40 blur-xl rounded-full" />
             </div>
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-4/5 h-4 bg-black/20 dark:bg-black/40 blur-xl rounded-full" />
-          </div>
+          )}
 
           {project.deviceType === "both" && project.mobileImage && (
             <div

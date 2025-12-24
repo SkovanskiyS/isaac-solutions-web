@@ -10,10 +10,10 @@ import {
   ArrowRight,
   Brain,
   Check,
+  ChevronDown,
   Code2,
   Cpu,
   MessageCircle,
-  Package,
   Palette,
   Smartphone,
   Wrench,
@@ -132,7 +132,7 @@ export default function PricingPage() {
                   </ul>
 
                   <div className="mt-auto flex justify-center">
-                    <ContactForm buttonText={t("cta.buttonText")} />
+                    <ContactForm buttonText={t("cta.buttonText")} packageName="Web Starter Site" />
                   </div>
                   {/* Corner accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -174,7 +174,7 @@ export default function PricingPage() {
                   </ul>
 
                   <div className="mt-auto flex justify-center">
-                    <ContactForm buttonText={t("cta.buttonText")} />
+                    <ContactForm buttonText={t("cta.buttonText")} packageName="Web Business Site" />
                   </div>
                   {/* Corner accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -210,7 +210,7 @@ export default function PricingPage() {
                   </ul>
 
                   <div className="mt-auto flex justify-center">
-                    <ContactForm buttonText={t("cta.buttonText")} />
+                    <ContactForm buttonText={t("cta.buttonText")} packageName="Web Premium Site" />
                   </div>
                   {/* Corner accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-pink-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -246,7 +246,7 @@ export default function PricingPage() {
                   </ul>
 
                   <div className="mt-auto flex justify-center">
-                    <ContactForm buttonText={t("cta.buttonText")} />
+                    <ContactForm buttonText={t("cta.consultationButton")} packageName="Web Custom Solution" />
                   </div>
                   {/* Corner accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -305,6 +305,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="Mobile Starter"
                     />
                   </div>
                   {/* Corner accent */}
@@ -349,6 +350,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="Mobile Standard"
                     />
                   </div>
                   {/* Corner accent */}
@@ -387,6 +389,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="Mobile Premium"
                     />
                   </div>
                   {/* Corner accent */}
@@ -425,6 +428,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="Mobile Custom Solution"
                     />
                   </div>
                   {/* Corner accent */}
@@ -484,6 +488,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="Telegram Starter Bot"
                     />
                   </div>
                   {/* Corner accent */}
@@ -530,6 +535,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="Telegram Business Bot"
                     />
                   </div>
                   {/* Corner accent */}
@@ -568,6 +574,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="Telegram Premium Bot"
                     />
                   </div>
                   {/* Corner accent */}
@@ -606,6 +613,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="Telegram Custom Solution"
                     />
                   </div>
                   {/* Corner accent */}
@@ -665,6 +673,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="UI/UX Starter"
                     />
                   </div>
                   {/* Corner accent */}
@@ -709,6 +718,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="UI/UX Standard"
                     />
                   </div>
                   {/* Corner accent */}
@@ -747,6 +757,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="UI/UX Premium"
                     />
                   </div>
                   {/* Corner accent */}
@@ -785,6 +796,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="UI/UX Custom Solution"
                     />
                   </div>
                   {/* Corner accent */}
@@ -852,6 +864,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="All-In Starter"
                     />
                   </div>
                   {/* Corner accent */}
@@ -898,6 +911,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="All-In Growth"
                     />
                   </div>
                   {/* Corner accent */}
@@ -938,6 +952,7 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="All-In Premium"
                     />
                   </div>
                   {/* Corner accent */}
@@ -976,12 +991,49 @@ export default function PricingPage() {
                   <div className="mt-auto flex justify-center">
                     <ContactForm
                       buttonText={contactT("modal.buttons.defaultButton")}
+                      packageName="All-In Custom Solution"
                     />
                   </div>
                   {/* Corner accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
               </ScrollReveal>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mb-20 sm:mb-28 relative">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
+                  <span className="text-gradient-ai">{t("faq.title")}</span>
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                  {t("faq.subtitle")}
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="max-w-3xl mx-auto space-y-4">
+              {(t.raw("faq.questions") as Array<{question: string; answer: string}>).map(
+                (item, index) => (
+                  <ScrollReveal key={index} delay={0.1 * index}>
+                    <details className="group glass-strong rounded-xl border border-cyan-500/20 overflow-hidden hover:border-cyan-500/40 transition-colors">
+                      <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <h3 className="text-lg font-semibold text-foreground pr-4">
+                          {item.question}
+                        </h3>
+                        <ChevronDown className="w-5 h-5 text-cyan-500 flex-shrink-0 transition-transform group-open:rotate-180" />
+                      </summary>
+                      <div className="px-6 pb-6 pt-0">
+                        <p className="text-muted-foreground leading-relaxed">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </details>
+                  </ScrollReveal>
+                ),
+              )}
             </div>
           </div>
 
