@@ -232,7 +232,7 @@
           "priceUsd": "$800 - $1,200",
           "priceUzs": "10M - 15M UZS",
           "features": [
-            "Simple app (2–3 screens)",
+            "Simple app (up to 12 screens)",
             "Android or iOS (native)",
             "Basic UI/UX design"
           ]
@@ -244,7 +244,7 @@
           "mostPopular": "Best Value",
           "features": [
             "Cross-platform app (Flutter / React Native)",
-            "5–8 screens (login, profile, forms)",
+            "13-20 screens",
             "API integration",
             "Push notifications"
           ]
@@ -321,7 +321,7 @@
           "priceUzs": "2.5M - 4M UZS",
           "features": [
             "Logo design",
-            "Landing page or 1-screen app design",
+            "Landing page or 12-screen app design",
             "Style guide (colors, fonts)",
             "1 round of revisions"
           ]
@@ -426,7 +426,7 @@
           "features": [
             "Simple menu bot (FAQ, contacts)",
             "Custom branding",
-            "1 language support",
+            "3 language support",
             "1-month support"
           ]
         },
@@ -439,7 +439,6 @@
             "Ordering system (products/services)",
             "Online payments (Payme, Click)",
             "Notifications for admins",
-            "Multi-language support",
             "2-month support"
           ]
         },
@@ -494,7 +493,7 @@
       "title": "Ready to Get Started?",
       "description": "Contact us today to discuss your project requirements and get a personalized quote.",
       "buttonText": "Get Started",
-      "consultationButton": "Book a Consultation"
+      "consultationButton": "Get Started"
     },
     "faq": {
       "title": "Frequently Asked Questions",

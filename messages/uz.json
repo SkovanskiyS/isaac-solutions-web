@@ -269,7 +269,7 @@
           "priceUsd": "$800 - $1,200",
           "priceUzs": "10M - 15M so'm",
           "features": [
-            "Oddiy ilova (2-3 ekran)",
+            "Oddiy ilova (12 tagacha ekran)",
             "Android yoki iOS (nativ)",
             "Asosiy UI/UX dizayn"
           ]
@@ -281,7 +281,7 @@
           "mostPopular": "Eng yaxshi narx",
           "features": [
             "Krossplatforma ilova (Flutter / React Native)",
-            "5-8 ekran (kirish, profil, formalar)",
+            "13-20 ekran",
             "API integratsiya",
             "Push-bildirishnomalar"
           ]
@@ -358,7 +358,7 @@
           "priceUzs": "2.5M - 4M so'm",
           "features": [
             "Logotip dizayni",
-            "Landing yoki 1 ekran dizayni",
+            "Landing yoki 12 ekran dizayni",
             "Staylgayd (ranglar, shriftlar)",
             "1 ta tuzatish raundi"
           ]
@@ -463,7 +463,7 @@
           "features": [
             "Oddiy menyu bot (FAQ, kontaktlar)",
             "Maxsus brending",
-            "1 ta til qo'llab-quvvatlash",
+            "3 ta til qo'llab-quvvatlash",
             "1 oylik texnik yordam"
           ]
         },
@@ -476,7 +476,6 @@
             "Buyurtma tizimi (mahsulotlar/xizmatlar)",
             "Onlayn to'lovlar (Payme, Click)",
             "Adminlar uchun bildirishnomalar",
-            "Ko'p tilli qo'llab-quvvatlash",
             "2 oylik texnik yordam"
           ]
         },
@@ -531,7 +530,7 @@
       "title": "Boshlashga tayyormisiz?",
       "description": "Loyihangiz talablarini muhokama qilish va shaxsiy narx olish uchun bugun biz bilan bog'laning.",
       "buttonText": "Loyihani boshlash",
-      "consultationButton": "Konsultatsiyaga yozilish"
+      "consultationButton": "Loyihani boshlash"
     },
     "faq": {
       "title": "Ko'p beriladigan savollar",
